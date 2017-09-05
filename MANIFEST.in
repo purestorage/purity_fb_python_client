@@ -1,0 +1,5 @@
+# Include the license file
+include LICENSE.txt
+
+# Include the purity_fb files
+recursive-include purity_fb *

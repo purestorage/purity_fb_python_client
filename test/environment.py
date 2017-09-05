@@ -1,0 +1,2 @@
+HOST = 'localhost'
+API_TOKEN = 'T-9709078c-6c05-495f-af2c-9318888097f1'
