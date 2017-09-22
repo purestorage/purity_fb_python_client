@@ -18,7 +18,7 @@ Create a new file system
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, rest
+from purity_fb import PurityFb, FileSystem, NfsRule, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -28,7 +28,7 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     # create a local file system object with given name, provisioned size, and NFS enabled.
-    myfs = FileSystem(name="myfs", provisioned="5000", nfs=NfsProtocol(enabled=True))
+    myfs = FileSystem(name="myfs", provisioned="5000", nfs=NfsRule(enabled=True))
     try:
         # post the file system object myfs on the array
         res = fb.file_systems.create_file_systems(file_system=myfs)
@@ -79,8 +79,10 @@ if res:
     try:
         # list all file systems
         fb.file_systems.list_file_systems()
-        # list with page size 5, and sort by provisioned in descendant order
+        # list and sort by provisioned in descendant order
         res = fb.file_systems.list_file_systems(limit=5, sort="provisioned-")
+        # list with page size 5
+        res = fb.file_systems.list_file_systems(limit=5)
         # list all remaining file systems
         res = fb.file_systems.list_file_systems(token=res.pagination_info.continuation_token)
         # list with filter
@@ -126,7 +128,7 @@ Update an existing file system
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, rest
+from purity_fb import PurityFb, FileSystem, NfsRule, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -137,7 +139,7 @@ except rest.ApiException as e:
 if res:
     # create a local file system object with provisioned size, and NFS enabled
     # note that name field should be None
-    new_attr = FileSystem(provisioned="1024", nfs=NfsProtocol(enabled=True), http=ProtocolRule(enabled=False))
+    new_attr = FileSystem(provisioned="1024", nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False))
     try:
         # update the file system named myfs on the array
         res = fb.file_systems.update_file_systems(name="myfs", attributes=new_attr)

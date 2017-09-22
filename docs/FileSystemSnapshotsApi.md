@@ -77,18 +77,18 @@ fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
-except rest.ApiException sources=as e:
+except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
         # list all file system snapshots
         fb.file_system_snapshots.list_file_system_snapthosts()
         # list with page size 5, and sort by source file system name
-        res = fb.file_system_snapshots.list_file_system_snapthosts(limit=5, sort="source")
+        res = fb.file_system_snapshots.list_file_system_snapshots(limit=5, sort="source")
         # list all remaining file system snapshots
-        res = fb.file_system_snapshots.list_file_system_snapthosts(token=res.pagination_info.continuation_token)
+        res = fb.file_system_snapshots.list_file_system_snapshots(token=res.pagination_info.continuation_token)
         # list with filter
-        res = fb.file_system_snapshots.list_file_system_snapthost(filter='source=\'myfs*\' and contains(suffix, \'1\')')
+        res = fb.file_system_snapshots.list_file_system_snapshots(filter='source=\'myfs*\' and contains(suffix, \'1\')')
     except rest.ApiException as e:
         print("Exception when listing file system snapshots: %s\n" % e)
 ```

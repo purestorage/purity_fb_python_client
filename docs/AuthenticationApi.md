@@ -60,24 +60,25 @@ Log out from the server
 
 ### Example 
 ```python
-from __future__ import print_function
-import time
-import purity_fb
-from purity_fb.rest import ApiException
-from pprint import pprint
+from purity_fb import PurityFb, FileSystem, rest
 
-# Configure API key authorization: AuthTokenHeader
-purity_fb.configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# purity_fb.configuration.api_key_prefix['x-auth-token'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = purity_fb.AuthenticationApi()
-
-try: 
-    api_instance.logout()
-except ApiException as e:
-    print("Exception when calling AuthenticationApi->logout: %s\n" % e)
+fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    # login to the array with your API_TOKEN
+    # use *_with_http_info method to get response header as well as body
+    res = fb.authentication.login_with_http_info(API_TOKEN)
+    X_AUTH_TOKEN = res[2]['x-auth-token']
+    # update x-auth-token header using the response of log in
+    fb.authentication._api_client.default_headers['x-auth-token'] = X_AUTH_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+try:
+    # logout from the array
+    # use *_with_http_info method to get response header as well as body
+    fb.authentication.logout_with_http_info()
+except rest.ApiException as e:
+    print("Exception when logging out from the array: %s\n" % e)
 ```
 
 ### Parameters

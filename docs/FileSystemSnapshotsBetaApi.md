@@ -27,7 +27,7 @@ except rest.ApiException as e:
 if res:
     try:
         # delete a file system snapshot named myfs.mysnap
-        fb.file_system_snapshots_beta.delete_file_system_snapthosts(name="myfs.mysnap")
+        fb.file_system_snapshots_beta.delete_file_system_snapshots(name="myfs.mysnap")
     except rest.ApiException as e:
         print("Exception when deleting file system snapshots: %s\n" % e)
 ```
