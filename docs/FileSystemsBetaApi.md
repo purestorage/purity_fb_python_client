@@ -16,7 +16,7 @@ Delete a file system by name
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, rest
+from purity_fb import PurityFb, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
