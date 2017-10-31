@@ -32,10 +32,8 @@ from .models.version_response import VersionResponse
 
 # import apis into sdk package
 from .apis.authentication_api import AuthenticationApi
-from .apis.file_system_snapshots_beta_api import FileSystemSnapshotsBetaApi
 from .apis.file_system_snapshots_1dot0_api import FileSystemSnapshots1dot0Api
 from .apis.file_system_snapshots_1dot1_api import FileSystemSnapshots1dot1Api
-from .apis.file_systems_beta_api import FileSystemsBetaApi
 from .apis.file_systems_1dot0_api import FileSystems1dot0Api
 from .apis.file_systems_1dot1_api import FileSystems1dot1Api
 from .apis.version_api import VersionApi

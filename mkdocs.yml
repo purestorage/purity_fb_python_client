@@ -12,9 +12,6 @@ pages:
     - 1.1 APIs:
         - File Systems: FileSystems1dot1Api.md
         - File System snapshots: FileSystemSnapshots1dot1Api.md
-    - Beta APIs:
-        - File Systems (Beta): FileSystemsBetaApi.md
-        - File System Snapshots (Beta): FileSystemSnapshotsBetaApi.md
 - Models:
     - Response:
         - Pagination Information: PaginationInfo.md

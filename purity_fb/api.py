@@ -34,8 +34,6 @@ class PurityFb:
         self._file_system_snapshots = globals()[self._class_name(FILE_SYSTEM_SNAPSHOTS, self._version)](
             api_client=self._api_client)
 
-        self._file_systems_beta = FileSystemsBetaApi(api_client=self._api_client)
-        self._file_system_snapshots_beta = FileSystemSnapshotsBetaApi(api_client=self._api_client)
         if api_token:
             self.login(api_token)
         self.enable_verify_ssl()
@@ -124,11 +122,3 @@ class PurityFb:
     @property
     def file_system_snapshots(self):
         return self._file_system_snapshots
-
-    @property
-    def file_systems_beta(self):
-        return self._file_systems_beta
-
-    @property
-    def file_system_snapshots_beta(self):
-        return self._file_system_snapshots_beta

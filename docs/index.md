@@ -162,16 +162,6 @@ Version | Property | Type | Descripstion
 1.0 | *file_system_snapshots* | [**FileSystemSnapshots1dot0Api**](FileSystemSnapshots1dot0Api.md) | API for the file system snapshots endpoint (**create** and **list**) |
 
 
-#### **Beta Endpoints**
-
-Third, there are beta APIs that are not guaranteed to work.
-
-Property | Type | Descripstion
------------- | ------------- | -------------
-*file_system_beta* | [**FileSystemsBetaApi**](FileSystemsBetaApi.md) | API for the beta file system endpoint  (**delete** only) |
-*file_system_snapshot_beta* | [**FileSystemSnapshotsBetaApi**](FileSystemSnapshotsBetaApi.md) | API for the beta file system snapshots endpoint (**delete** only) |
-
-
 #### Call with HTTP information
 Every method of each endpoint returns an object representing the body of the response from the server.
 If other information such as response status code or response header is needed, the corresponding method 
