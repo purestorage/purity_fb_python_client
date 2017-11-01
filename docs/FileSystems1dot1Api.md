@@ -79,7 +79,7 @@ except rest.ApiException as e:
 if res:
     try:
         # delete a file system with name myfs
-        fb.file_systems_beta.delete_file_systems(name="myfs")
+        fb.file_systems.delete_file_systems(name="myfs")
     except rest.ApiException as e:
         print("Exception when deleting file system: %s\n" % e)
 ```
