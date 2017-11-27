@@ -11,7 +11,7 @@ HOST = os.environ.get('REST_TEST_HOST', 'localhost')
 API_TOKEN = os.environ.get('REST_TEST_API_TOKEN', 'T-9709078c-6c05-495f-af2c-9318888097f1')
 # ir
 INTERNAL_API_TOKEN = os.environ.get('REST_TEST_INTERNAL_API_TOKEN', 'T-9709078c-6c05-495f-af2c-9318888097f1')
-VERSIONS = ['1.0', '1.1']
+VERSIONS = ['1.0', '1.1', '1.2']
 
 def get_test_versions(host):
     array = PurityFb(host)

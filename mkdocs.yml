@@ -12,6 +12,11 @@ pages:
     - 1.1 APIs:
         - File Systems: FileSystems1dot1Api.md
         - File System snapshots: FileSystemSnapshots1dot1Api.md
+    - 1.2(+) APIs:
+        - Alerts: AlertsApi.md
+        - Alert Watchers: AlertWatchersApi.md
+        - File Systems: FileSystems1dot1Api.md
+        - File System snapshots: FileSystemSnapshots1dot1Api.md
 - Models:
     - Response:
         - Pagination Information: PaginationInfo.md

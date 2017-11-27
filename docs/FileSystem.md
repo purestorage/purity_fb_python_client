@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **space** | [**Space**](Space.md) | the space specification of the file system | [optional] 
 **nfs** | [**NfsRule**](NfsRule.md) | NFS configuration. Modifiable. | [optional] 
 **http** | [**ProtocolRule**](ProtocolRule.md) | HTTP configuration. Modifiable. | [optional] 
-**smb** | [**ProtocolRule**](ProtocolRule.md) | SMB configuration. Modifiable. | [optional] 
+**smb** | [**SmbRule**](SmbRule.md) | SMB configuration. Modifiable. | [optional] 
 **destroyed** | **bool** | is the file system destroyed? False by default. Modifiable. | [optional] 
 **time_remaining** | **int** | time in milliseconds before the file system is eradicated. Null if not destroyed. | [optional] 
 

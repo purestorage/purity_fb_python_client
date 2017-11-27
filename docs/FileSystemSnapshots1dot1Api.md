@@ -72,7 +72,7 @@ Delete a file system snapshot by name
 ```python
 from purity_fb import PurityFb, rest
 
-fb = PurityFb("10.255.9.28", version=1.1) # assume the array IP is 10.255.9.28
+fb = PurityFb("10.255.9.28", version=1.2) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
@@ -177,7 +177,7 @@ Update an existing file system snapshot
 ```python
 from purity_fb import PurityFb, FileSystemSnapshot, rest
 
-fb = PurityFb("10.255.9.28", version=1.1) # assume the array IP is 10.255.9.28
+fb = PurityFb("10.255.9.28", version=1.2) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN

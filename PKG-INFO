@@ -1,5 +1,5 @@
-Metadata-Version: 1.1
+Metadata-Version: 1.2
 Name: purity_fb
-Version: 1.1
+Version: 1.2
 Summary: A python client for Purity//FB REST API.
 License: Apache 2.0

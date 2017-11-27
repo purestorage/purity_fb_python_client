@@ -9,7 +9,7 @@ import urllib3
 FILE_SYSTEMS = 'FileSystems'
 FILE_SYSTEM_SNAPSHOTS = 'FileSystemSnapshots'
 
-SUPPORTED_VERSIONS = ['1.0', '1.1']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2']
 
 class PurityFb:
     DEFAULT_READ_TIMEOUT = 30.0
@@ -33,6 +33,15 @@ class PurityFb:
         self._file_systems = globals()[self._class_name(FILE_SYSTEMS, self._version)](api_client=self._api_client)
         self._file_system_snapshots = globals()[self._class_name(FILE_SYSTEM_SNAPSHOTS, self._version)](
             api_client=self._api_client)
+
+        if self._version >= LooseVersion('1.2'):
+            self._admins = AdminsApi(api_client=self._api_client)
+            self._alerts = AlertsApi(api_client=self._api_client)
+            self._alert_watchers = AlertWatchersApi(api_client=self._api_client)
+            self._arrays = ArraysApi(api_client=self._api_client)
+            self._blade = BladeApi(api_client=self._api_client)
+            self._dns = DnsApi(api_client=self._api_client)
+            self._hardware = HardwareApi(api_client=self._api_client)
 
         if api_token:
             self.login(api_token)
@@ -116,9 +125,37 @@ class PurityFb:
         return self._auth
 
     @property
+    def admins(self):
+        return self._admins
+
+    @property
+    def alerts(self):
+        return self._alerts
+
+    @property
+    def alert_watchers(self):
+        return self._alert_watchers
+
+    @property
+    def arrays(self):
+        return self._arrays
+
+    @property
+    def blade(self):
+        return self._blade
+
+    @property
+    def dns(self):
+        return self._dns
+
+    @property
     def file_systems(self):
         return self._file_systems
 
     @property
     def file_system_snapshots(self):
         return self._file_system_snapshots
+
+    @property
+    def hardware(self):
+        return self._hardware
