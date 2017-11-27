@@ -24,7 +24,7 @@ try:
     # no need to login to get API versions
     res = fb.api_version.list_versions()
     assert isinstance(res, VersionResponse)
-    print (res.versions)  # ["1.0", "1.1"]
+    print (res.versions)  # ["1.0", "1.1", "1.2"]
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 ```
