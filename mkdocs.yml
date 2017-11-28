@@ -12,19 +12,34 @@ pages:
     - 1.1 APIs:
         - File Systems: FileSystems1dot1Api.md
         - File System snapshots: FileSystemSnapshots1dot1Api.md
-    - 1.2(+) APIs:
+    - 1.2 APIs:
+        - Admins: AdminsApi.md
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
-        - File Systems: FileSystems1dot1Api.md
-        - File System snapshots: FileSystemSnapshots1dot1Api.md
+        - Alert Watchers Tests: AlertWatcherTest.md
+        - Array Http Performances: ArraysApi.md
+        - Array Performances: ArraysApi.md
+        - Array S3 Perfomrances: ArraysApi.md
+        - Array Spaces: ArraysApi.md
+        - Blades: BladeApi.md
+        - File Systems: FileSystems1dot2Api.md
+        - File System snapshots: FileSystemSnapshots1dot2Api.md
+        - Hardware: HardwareApi.md
 - Models:
     - Response:
         - Pagination Information: PaginationInfo.md
         - Error: ErrorResponse.md
         - API Version: VersionResponse.md
         - Login: LoginResponse.md
+        - Admin: AdminResponse.md
+        - AlertWatcher: AlertWatcherResponse.md
+        - AlertWatcherTest: AlertWatcherTestResponse.md
+        - ArrayPerformance: ArrayPerformanceResponse.md
+        - ArraySpaceResponse: ArraySpaceResponse.md
+        - Blade: BladeResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
+        - Hardware: HardwareResponse.md
     - Error: PureError.md
     - Space: Space.md
     - File System:
