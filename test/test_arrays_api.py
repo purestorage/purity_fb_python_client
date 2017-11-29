@@ -43,11 +43,11 @@ class TestArraysApi(unittest.TestCase):
         res = self.arrays.list_arrays_http_specific_performance()
         if DEBUG:
             print_list(res.items)
-        check_is_list_of(res.items, ArrayPerformance)
+        check_is_list_of(res.items, ArrayHttpPerformance)
         res = self.arrays.list_arrays_http_specific_performance(
             end_time=self.current, resolution=30000
         )
-        check_is_list_of(res.items, ArrayPerformance)
+        check_is_list_of(res.items, ArrayHttpPerformance)
 
     def test_list_arrays_performance(self):
         """
@@ -71,11 +71,11 @@ class TestArraysApi(unittest.TestCase):
         res = self.arrays.list_arrays_s3_specific_performance()
         if DEBUG:
             print_list(res.items)
-        check_is_list_of(res.items, ArrayPerformance)
+        check_is_list_of(res.items, ArrayS3Performance)
         res = self.arrays.list_arrays_s3_specific_performance(
             end_time=self.current, resolution=30000
         )
-        check_is_list_of(res.items, ArrayPerformance)
+        check_is_list_of(res.items, ArrayS3Performance)
 
     def test_list_arrays_space(self):
         """
