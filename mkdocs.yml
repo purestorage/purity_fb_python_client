@@ -22,6 +22,7 @@ pages:
         - Array S3 Perfomrances: ArraysApi.md
         - Array Spaces: ArraysApi.md
         - Blades: BladeApi.md
+        - Dns: DnsApi.md
         - File Systems: FileSystems1dot2Api.md
         - File System snapshots: FileSystemSnapshots1dot2Api.md
         - Hardware: HardwareApi.md
@@ -37,11 +38,28 @@ pages:
         - ArrayPerformance: ArrayPerformanceResponse.md
         - ArraySpaceResponse: ArraySpaceResponse.md
         - Blade: BladeResponse.md
+        - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
         - Hardware: HardwareResponse.md
     - Error: PureError.md
     - Space: Space.md
+    - Admin:
+        - Admin: Admin.md
+    - Alert:
+        - Alert: Alert.md
+    - Alert Watcher:
+        - Alert Watcher: AlertWatcher.md
+        - Alert Watcher Test: AlertWatcherTest.md
+    - Arrays:
+        - Array Space: ArraySpace.md
+        - Array Performance: ArrayPerformance.md
+        - Array S3 Performance: ArrayS3Performance.md
+        - Array Http Performance: ArrayHttpPerformance.md
+    - Blade:
+        - Blade: Blade.md
+    - Dns:
+        - Dns: Dns.md
     - File System:
         - File System: FileSystem.md
         - NFS Protocol: NfsRule.md
@@ -49,4 +67,6 @@ pages:
     - File System Snapshot:
         - File System Snapshot: FileSystemSnapshot.md
         - Snapshot Suffix: SnapshotSuffix.md
+    - Hardware:
+        - Hardware: Hardware.md
 theme: readthedocs

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 
 # **list_arrays_http_specific_performance**
-> ArrayPerformanceResponse list_arrays_http_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
+> ArrayHttpPerformanceResponse list_arrays_http_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
 
 
 
@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArrayPerformanceResponse**](ArrayPerformanceResponse.md)
+[**ArrayHttpPerformanceResponse**](ArrayHttpPerformanceResponse.md)
 
 ### Authorization
 
@@ -140,7 +140,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_arrays_s3_specific_performance**
-> ArrayPerformanceResponse list_arrays_s3_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
+> ArrayS3PerformanceResponse list_arrays_s3_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
 
 
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArrayPerformanceResponse**](ArrayPerformanceResponse.md)
+[**ArrayS3PerformanceResponse**](ArrayS3PerformanceResponse.md)
 
 ### Authorization
 

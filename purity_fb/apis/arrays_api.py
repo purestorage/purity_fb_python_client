@@ -62,7 +62,7 @@ class ArraysApi(object):
         :param int start_time: time to start sample in milliseconds since epoch
         :param int end_time: time to end sample in milliseconds since epoch
         :param int resolution: sample frequency in milliseconds
-        :return: ArrayPerformanceResponse
+        :return: ArrayHttpPerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -95,7 +95,7 @@ class ArraysApi(object):
         :param int start_time: time to start sample in milliseconds since epoch
         :param int end_time: time to end sample in milliseconds since epoch
         :param int resolution: sample frequency in milliseconds
-        :return: ArrayPerformanceResponse
+        :return: ArrayHttpPerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -166,7 +166,7 @@ class ArraysApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='ArrayPerformanceResponse',
+                                        response_type='ArrayHttpPerformanceResponse',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -334,7 +334,7 @@ class ArraysApi(object):
         :param int start_time: time to start sample in milliseconds since epoch
         :param int end_time: time to end sample in milliseconds since epoch
         :param int resolution: sample frequency in milliseconds
-        :return: ArrayPerformanceResponse
+        :return: ArrayS3PerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -367,7 +367,7 @@ class ArraysApi(object):
         :param int start_time: time to start sample in milliseconds since epoch
         :param int end_time: time to end sample in milliseconds since epoch
         :param int resolution: sample frequency in milliseconds
-        :return: ArrayPerformanceResponse
+        :return: ArrayS3PerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -438,7 +438,7 @@ class ArraysApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='ArrayPerformanceResponse',
+                                        response_type='ArrayS3PerformanceResponse',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

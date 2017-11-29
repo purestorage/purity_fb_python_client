@@ -159,12 +159,6 @@ purity_fb = PurityFb("10.255.3.20")  //Calling latest API
 purity_fb = PurityFb("10.255.3.20", version=1.0)  //Calling 1.0 API
 ```
 
-Version | Property | Type | Descripstion
------------- | ------------ | ------------- | -------------
-1.1 | *file_systems* | [**FileSystems1dot1Api**](FileSystems1dot1Api.md) | APIs for the file system endpoint (**create**, **list**, **update** and **delete**) |
-1.0 | *file_systems* | [**FileSystems1dot0Api**](FileSystems1dot0Api.md) | APIs for the file system endpoint (**create**, **list** and **update**) |
-
-
 #### Call with HTTP information
 Every method of each endpoint returns an object representing the body of the response from the server.
 If other information such as response status code or response header is needed, the corresponding method 
@@ -240,8 +234,12 @@ at most 20 retries in total, among which at most 15 connection retries and at mo
  - [AlertWatcherResponse](AlertWatcherResponse.md)
  - [AlertWatcherTest](AlertWatcherTest.md)
  - [AlertWatcherTestResponse](AlertWatcherTestResponse.md)
+ - [ArrayHttpPerformance](ArrayHttpPerformance.md)
+ - [ArrayHttpPerformanceResponse](ArrayHttpPerformanceResponse.md)
  - [ArrayPerformance](ArrayPerformance.md)
  - [ArrayPerformanceResponse](ArrayPerformanceResponse.md)
+ - [ArrayS3Performance](ArrayS3Performance.md)
+ - [ArrayS3PerformanceResponse](ArrayS3PerformanceResponse.md)
  - [ArraySpace](ArraySpace.md)
  - [ArraySpaceResponse](ArraySpaceResponse.md)
  - [Blade](Blade.md)

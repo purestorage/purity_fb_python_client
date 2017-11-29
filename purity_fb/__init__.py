@@ -23,8 +23,12 @@ from .models.alert_watcher import AlertWatcher
 from .models.alert_watcher_response import AlertWatcherResponse
 from .models.alert_watcher_test import AlertWatcherTest
 from .models.alert_watcher_test_response import AlertWatcherTestResponse
+from .models.array_http_performance import ArrayHttpPerformance
+from .models.array_http_performance_response import ArrayHttpPerformanceResponse
 from .models.array_performance import ArrayPerformance
 from .models.array_performance_response import ArrayPerformanceResponse
+from .models.array_s3_performance import ArrayS3Performance
+from .models.array_s3_performance_response import ArrayS3PerformanceResponse
 from .models.array_space import ArraySpace
 from .models.array_space_response import ArraySpaceResponse
 from .models.blade import Blade
