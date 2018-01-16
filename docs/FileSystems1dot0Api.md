@@ -128,7 +128,7 @@ Update an existing file system
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, NfsRule, rest
+from purity_fb import PurityFb, FileSystem, NfsRule, ProtocolRule, SmbRule, rest
 
 fb = PurityFb("10.255.9.28", version=1.0) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -139,7 +139,7 @@ except rest.ApiException as e:
 if res:
     # create a local file system object with provisioned size, and NFS enabled
     # note that name field should be None
-    new_attr = FileSystem(provisioned="1024", nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False))
+    new_attr = FileSystem(provisioned="1024", nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"))
     try:
         # update the file system named myfs on the array
         res = fb.file_systems.update_file_systems(name="myfs", attributes=new_attr)

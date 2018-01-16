@@ -37,7 +37,7 @@ class SmbRule(object):
 
     attribute_map = {
         'enabled': 'enabled',
-        'acl_mode': 'acl-mode'
+        'acl_mode': 'acl_mode'
     }
 
     def __init__(self, enabled=False, acl_mode='shared'):
