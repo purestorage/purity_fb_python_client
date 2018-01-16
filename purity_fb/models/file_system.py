@@ -58,7 +58,7 @@ class FileSystem(object):
         'time_remaining': 'time_remaining'
     }
 
-    def __init__(self, name=None, created=None, fast_remove_directory_enabled=False, provisioned=0, snapshot_directory_enabled=False, space=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None):
+    def __init__(self, name=None, created=None, fast_remove_directory_enabled=False, provisioned=None, snapshot_directory_enabled=False, space=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None):
         """
         FileSystem - a model defined in Swagger
         """
