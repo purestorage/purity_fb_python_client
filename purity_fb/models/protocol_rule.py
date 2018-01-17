@@ -38,7 +38,7 @@ class ProtocolRule(object):
         'enabled': 'enabled'
     }
 
-    def __init__(self, enabled=False):
+    def __init__(self, enabled=None):
         """
         ProtocolRule - a model defined in Swagger
         """
@@ -52,7 +52,7 @@ class ProtocolRule(object):
     def enabled(self):
         """
         Gets the enabled of this ProtocolRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :return: The enabled of this ProtocolRule.
         :rtype: bool
@@ -63,7 +63,7 @@ class ProtocolRule(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this ProtocolRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :param enabled: The enabled of this ProtocolRule.
         :type: bool

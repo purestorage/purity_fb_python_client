@@ -58,7 +58,7 @@ class FileSystem(object):
         'time_remaining': 'time_remaining'
     }
 
-    def __init__(self, name=None, created=None, fast_remove_directory_enabled=False, provisioned=None, snapshot_directory_enabled=False, space=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None):
+    def __init__(self, name=None, created=None, fast_remove_directory_enabled=None, provisioned=None, snapshot_directory_enabled=None, space=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None):
         """
         FileSystem - a model defined in Swagger
         """
@@ -148,7 +148,7 @@ class FileSystem(object):
     def fast_remove_directory_enabled(self):
         """
         Gets the fast_remove_directory_enabled of this FileSystem.
-        is fast remove directory enabled? Modifiable.
+        is fast remove directory enabled? Modifiable. Default false when creating a new file-system
 
         :return: The fast_remove_directory_enabled of this FileSystem.
         :rtype: bool
@@ -159,7 +159,7 @@ class FileSystem(object):
     def fast_remove_directory_enabled(self, fast_remove_directory_enabled):
         """
         Sets the fast_remove_directory_enabled of this FileSystem.
-        is fast remove directory enabled? Modifiable.
+        is fast remove directory enabled? Modifiable. Default false when creating a new file-system
 
         :param fast_remove_directory_enabled: The fast_remove_directory_enabled of this FileSystem.
         :type: bool
@@ -171,7 +171,7 @@ class FileSystem(object):
     def provisioned(self):
         """
         Gets the provisioned of this FileSystem.
-        the provisioned size of the file system in bytes. Modifiable
+        the provisioned size of the file system in bytes. Modifiable. Default 0 when creating a new file-system
 
         :return: The provisioned of this FileSystem.
         :rtype: int
@@ -182,7 +182,7 @@ class FileSystem(object):
     def provisioned(self, provisioned):
         """
         Sets the provisioned of this FileSystem.
-        the provisioned size of the file system in bytes. Modifiable
+        the provisioned size of the file system in bytes. Modifiable. Default 0 when creating a new file-system
 
         :param provisioned: The provisioned of this FileSystem.
         :type: int
@@ -194,7 +194,7 @@ class FileSystem(object):
     def snapshot_directory_enabled(self):
         """
         Gets the snapshot_directory_enabled of this FileSystem.
-        is snapshot directory enabled? Modifiable.
+        is snapshot directory enabled? Modifiable. Default false when creating a new file-system
 
         :return: The snapshot_directory_enabled of this FileSystem.
         :rtype: bool
@@ -205,7 +205,7 @@ class FileSystem(object):
     def snapshot_directory_enabled(self, snapshot_directory_enabled):
         """
         Sets the snapshot_directory_enabled of this FileSystem.
-        is snapshot directory enabled? Modifiable.
+        is snapshot directory enabled? Modifiable. Default false when creating a new file-system
 
         :param snapshot_directory_enabled: The snapshot_directory_enabled of this FileSystem.
         :type: bool

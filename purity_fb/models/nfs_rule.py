@@ -40,7 +40,7 @@ class NfsRule(object):
         'rules': 'rules'
     }
 
-    def __init__(self, enabled=False, rules=None):
+    def __init__(self, enabled=None, rules=None):
         """
         NfsRule - a model defined in Swagger
         """
@@ -57,7 +57,7 @@ class NfsRule(object):
     def enabled(self):
         """
         Gets the enabled of this NfsRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :return: The enabled of this NfsRule.
         :rtype: bool
@@ -68,7 +68,7 @@ class NfsRule(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this NfsRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :param enabled: The enabled of this NfsRule.
         :type: bool
