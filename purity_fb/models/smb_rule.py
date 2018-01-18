@@ -40,7 +40,7 @@ class SmbRule(object):
         'acl_mode': 'acl_mode'
     }
 
-    def __init__(self, enabled=False, acl_mode='shared'):
+    def __init__(self, enabled=None, acl_mode=None):
         """
         SmbRule - a model defined in Swagger
         """
@@ -57,7 +57,7 @@ class SmbRule(object):
     def enabled(self):
         """
         Gets the enabled of this SmbRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :return: The enabled of this SmbRule.
         :rtype: bool
@@ -68,7 +68,7 @@ class SmbRule(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this SmbRule.
-        is the protocol enabled?
+        is the protocol enabled? Default false when creating a new rule
 
         :param enabled: The enabled of this SmbRule.
         :type: bool
@@ -80,7 +80,7 @@ class SmbRule(object):
     def acl_mode(self):
         """
         Gets the acl_mode of this SmbRule.
-        SMB ACL mode
+        SMB ACL mode. Default shared when creating a new rule.
 
         :return: The acl_mode of this SmbRule.
         :rtype: str
@@ -91,7 +91,7 @@ class SmbRule(object):
     def acl_mode(self, acl_mode):
         """
         Sets the acl_mode of this SmbRule.
-        SMB ACL mode
+        SMB ACL mode. Default shared when creating a new rule.
 
         :param acl_mode: The acl_mode of this SmbRule.
         :type: str

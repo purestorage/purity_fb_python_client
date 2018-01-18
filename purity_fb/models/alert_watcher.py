@@ -40,7 +40,7 @@ class AlertWatcher(object):
         'enabled': 'enabled'
     }
 
-    def __init__(self, name=None, enabled=True):
+    def __init__(self, name=None, enabled=None):
         """
         AlertWatcher - a model defined in Swagger
         """
@@ -80,7 +80,7 @@ class AlertWatcher(object):
     def enabled(self):
         """
         Gets the enabled of this AlertWatcher.
-        is email notification enabled?
+        is email notification enabled? Default true when adding a new watcher
 
         :return: The enabled of this AlertWatcher.
         :rtype: bool
@@ -91,7 +91,7 @@ class AlertWatcher(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this AlertWatcher.
-        is email notification enabled?
+        is email notification enabled? Default true when adding a new watcher
 
         :param enabled: The enabled of this AlertWatcher.
         :type: bool
