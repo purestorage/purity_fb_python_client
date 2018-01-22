@@ -40,6 +40,7 @@ class PurityFb:
             self._alert_watchers = AlertWatchersApi(api_client=self._api_client)
             self._arrays = ArraysApi(api_client=self._api_client)
             self._blade = BladeApi(api_client=self._api_client)
+            self._certificates = CertificatesApi(api_client=self._api_client)
             self._dns = DnsApi(api_client=self._api_client)
             self._hardware = HardwareApi(api_client=self._api_client)
 
@@ -143,6 +144,10 @@ class PurityFb:
     @property
     def blade(self):
         return self._blade
+
+    @property
+    def certificates(self):
+        return self._certificates
 
     @property
     def dns(self):

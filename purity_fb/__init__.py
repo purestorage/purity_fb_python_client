@@ -34,6 +34,8 @@ from .models.array_space_response import ArraySpaceResponse
 from .models.blade import Blade
 from .models.blade_response import BladeResponse
 from .models._built_in import BuiltIn
+from .models.certificate import Certificate
+from .models.certificate_response import CertificateResponse
 from .models.dns import Dns
 from .models.dns_response import DnsResponse
 from .models.error_response import ErrorResponse
@@ -62,6 +64,7 @@ from .apis.alerts_api import AlertsApi
 from .apis.arrays_api import ArraysApi
 from .apis.authentication_api import AuthenticationApi
 from .apis.blade_api import BladeApi
+from .apis.certificates_api import CertificatesApi
 from .apis.dns_api import DnsApi
 from .apis.file_system_snapshots_1dot0_api import FileSystemSnapshots1dot0Api
 from .apis.file_system_snapshots_1dot1_api import FileSystemSnapshots1dot1Api

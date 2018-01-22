@@ -245,6 +245,8 @@ at most 20 retries in total, among which at most 15 connection retries and at mo
  - [Blade](Blade.md)
  - [BladeResponse](BladeResponse.md)
  - [BuiltIn](BuiltIn.md)
+ - [Certificate](Certificate.md)
+ - [CertificateResponse](CertificateResponse.md)
  - [Dns](Dns.md)
  - [DnsResponse](DnsResponse.md)
  - [ErrorResponse](ErrorResponse.md)
