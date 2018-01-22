@@ -34,6 +34,8 @@ from .array_space_response import ArraySpaceResponse
 from .blade import Blade
 from .blade_response import BladeResponse
 from ._built_in import BuiltIn
+from .certificate import Certificate
+from .certificate_response import CertificateResponse
 from .dns import Dns
 from .dns_response import DnsResponse
 from .error_response import ErrorResponse

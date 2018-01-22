@@ -22,6 +22,7 @@ pages:
         - Array S3 Perfomrances: ArraysApi.md
         - Array Spaces: ArraysApi.md
         - Blades: BladeApi.md
+        - Certificates: CertificateApi.md
         - Dns: DnsApi.md
         - File Systems: FileSystems1dot2Api.md
         - File System snapshots: FileSystemSnapshots1dot2Api.md
@@ -38,6 +39,7 @@ pages:
         - ArrayPerformance: ArrayPerformanceResponse.md
         - ArraySpaceResponse: ArraySpaceResponse.md
         - Blade: BladeResponse.md
+        - Certificate: CertificateResponse.md
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
@@ -58,6 +60,8 @@ pages:
         - Array Http Performance: ArrayHttpPerformance.md
     - Blade:
         - Blade: Blade.md
+    - Certificate:
+        - Certificate: Certificate.md
     - Dns:
         - Dns: Dns.md
     - File System:
