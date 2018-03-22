@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **created** | **int** | creation timestamp of the object | [optional] 
 **suffix** | **str** | the suffix of the snapshot, e.g., snap1 | [optional] 
 **source** | **str** | the name of the source file system | [optional] 
-**destroyed** | **bool** | is the file system snapshot destroyed? False by default. Modifiable. | [optional] 
+**destroyed** | **bool** | is the file system snapshot destroyed? False by default. | [optional] 
 **source_destroyed** | **bool** | is the source file system destroyed? | [optional] 
 **time_remaining** | **int** | time in milliseconds before the file system snapshot is eradicated. Null if not destroyed. | [optional] 
 

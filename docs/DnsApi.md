@@ -4,8 +4,8 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_dns**](DnsApi.md#list_dns) | **GET** /1.2/dns | 
-[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.2/dns | 
+[**list_dns**](DnsApi.md#list_dns) | **GET** /1.3/dns | 
+[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.3/dns | 
 
 
 # **list_dns**
