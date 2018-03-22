@@ -4,8 +4,10 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.0/file-system-snapshots | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.0/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.3/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.3/file-system-snapshots | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.3/file-system-snapshots | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.3/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**
@@ -17,27 +19,24 @@ Create snapshots for the specified source file systems
 
 ### Example 
 ```python
-from __future__ import print_function
-import time
-import purity_fb
-from purity_fb.rest import ApiException
-from pprint import pprint
+from purity_fb import PurityFb, SnapshotSuffix, rest
 
-# Configure API key authorization: AuthTokenHeader
-purity_fb.configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# purity_fb.configuration.api_key_prefix['x-auth-token'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = purity_fb.FileSystemSnapshotsApi()
-sources = ['sources_example'] # list[str] | a list of names of source file systems
-suffix = purity_fb.SnapshotSuffix() # SnapshotSuffix | the suffix of the snapshot (optional)
-
-try: 
-    api_response = api_instance.create_file_system_snapshots(sources, suffix=suffix)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling FileSystemSnapshotsApi->create_file_system_snapshots: %s\n" % e)
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # create a snapshot for the file system named myfs
+        res = fb.file_system_snapshots.create_file_system_snapshots(sources=["myfs"])
+        print(filesystem_snap_response)
+        # create a snapshot with suffix mysnap for the file system named myfs
+        res = fb.file_system_snapshots.create_file_system_snapshots(sources=["myfs"], suffix=SnapshotSuffix("mysnap"))
+        print(filesystem_snap_response)
+    except rest.ApiException as e:
+        print("Exception when creating file system snapshots: %s\n" % e)
 ```
 
 ### Parameters
@@ -62,6 +61,52 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **delete_file_system_snapshots**
+> delete_file_system_snapshots(name)
+
+
+
+Delete a file system snapshot by name
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # eradicate a file system snapshot named myfs.mysnap
+        fb.file_system_snapshots.delete_file_system_snapshots(name="myfs.mysnap")
+    except rest.ApiException as e:
+        print("Exception when deleting file system snapshots: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| name of the file system snapshot to be deleted | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **list_file_system_snapshots**
 > FileSystemSnapshotResponse list_file_system_snapshots(filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only, names_or_sources=names_or_sources)
 
@@ -73,7 +118,7 @@ List file system snapshots
 ```python
 from purity_fb import PurityFb, rest
 
-fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
@@ -82,7 +127,7 @@ except rest.ApiException as e:
 if res:
     try:
         # list all file system snapshots
-        fb.file_system_snapshots.list_file_system_snapthosts()
+        fb.file_system_snapshots.list_file_system_snapshots()
         # list with page size 5, and sort by source file system name
         res = fb.file_system_snapshots.list_file_system_snapshots(limit=5, sort="source")
         # list all remaining file system snapshots
@@ -104,7 +149,57 @@ Name | Type | Description  | Notes
  **token** | **str**| token | [optional] 
  **total** | **bool**| return a total object in addition to the other results | [optional] [default to false]
  **total_only** | **bool**| return only the total object | [optional] [default to false]
- **names_or_sources** | [**list[str]**](str.md)| a list of names of snapshots or source file systems | [optional] 
+ **names_or_sources** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the source. | [optional] 
+
+### Return type
+
+[**FileSystemSnapshotResponse**](FileSystemSnapshotResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **update_file_system_snapshots**
+> FileSystemSnapshotResponse update_file_system_snapshots(name, attributes)
+
+
+
+Update an existing file system snapshot
+
+### Example 
+```python
+from purity_fb import PurityFb, FileSystemSnapshot, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    # create a local file system snapshot object with destroyed field being true
+    new_attr = FileSystemSnapshot(destroyed=True)
+    try:
+        # destroying the file system snapshot myfs.snap
+        res = fb.file_system_snapshots.update_file_system_snapshots(name="myfs.snap", attributes=new_attr)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when updating file system snapshot: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **name** | **str**| the name of the file system snapshot to be updated | 
+ **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| the new attributes, only modifiable fields could be used. | 
 
 ### Return type
 

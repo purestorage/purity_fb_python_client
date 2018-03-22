@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
 **certificate** | **str** | the text of the certificate | [optional] 
 **common_name** | **str** | FQDN or management IP address of the current array | [optional] 
 **country** | **str** | The country field listed in the certificate | [optional] 

@@ -4,8 +4,8 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.2/alerts | 
-[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.2/alerts | 
+[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.3/alerts | 
+[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.3/alerts | 
 
 
 # **list_alerts**
@@ -62,7 +62,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_alerts**
-> AlertResponse update_alerts(names=names, flagged=flagged)
+> AlertResponse update_alerts(alert_settings, names=names)
 
 
 
@@ -70,7 +70,7 @@ Update alerts
 
 ### Example 
 ```python
-from purity_fb import PurityFb, AlertWatcher, rest
+from purity_fb import PurityFb, Alert, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -79,22 +79,22 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    flagged = False
+    alert_settings = Alert(flagged=False)
     try:
         # unflag an alert with the given id
         res = fb.alerts.update_alerts(
-            names=['1'], flagged=flagged)
+            names=['1'], alert_settings=alert_settings)
         print(res)
     except rest.ApiException as e:
-        print("Exception when updating alert watchers: %s\n" % e)
+        print("Exception when updating alert: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **alert_settings** | [**Alert**](Alert.md)|  | 
  **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **flagged** | [**Alert**](Alert.md)|  | [optional] 
 
 ### Return type
 
