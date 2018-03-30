@@ -4,14 +4,58 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.2/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.2/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.2/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.2/arrays/space | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.3/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.3/arrays/http-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.3/arrays/performance | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.3/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.3/arrays/space | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.3/arrays | 
 
+
+# **list_arrays**
+> ArrayResponse list_arrays()
+
+
+
+List arrays
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        res = fb.arrays.list_arrays()
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing arrays: %s\n" % e)```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**ArrayResponse**](ArrayResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_arrays_http_specific_performance**
-> ArrayHttpPerformanceResponse list_arrays_http_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
+> ArrayPerformanceResponse list_arrays_http_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
 
 
 
@@ -58,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArrayHttpPerformanceResponse**](ArrayHttpPerformanceResponse.md)
+[**ArrayPerformanceResponse**](ArrayPerformanceResponse.md)
 
 ### Authorization
 
@@ -140,7 +184,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_arrays_s3_specific_performance**
-> ArrayS3PerformanceResponse list_arrays_s3_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
+> ArrayPerformanceResponse list_arrays_s3_specific_performance(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, start_time=start_time, end_time=end_time, resolution=resolution)
 
 
 
@@ -187,7 +231,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ArrayS3PerformanceResponse**](ArrayS3PerformanceResponse.md)
+[**ArrayPerformanceResponse**](ArrayPerformanceResponse.md)
 
 ### Authorization
 
@@ -261,6 +305,52 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **update_arrays**
+> ArrayResponse update_arrays(array_settings)
+
+
+
+Update arrays
+
+### Example 
+```python
+from purity_fb import PurityFb, PureArray, rest
+
+fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        array_settings = PureArray(name="example-name", ntp_servers=["0.example.ntp.server"])
+        res = fb.arrays.update_arrays(array_settings=array_settings)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing arrays: %s\n" % e)```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **array_settings** | [**PureArray**](PureArray.md)|  | 
+
+### Return type
+
+[**ArrayResponse**](ArrayResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)

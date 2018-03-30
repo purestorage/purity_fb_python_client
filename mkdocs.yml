@@ -6,27 +6,33 @@ pages:
 - Endpoints:
     - Authentication: AuthenticationApi.md
     - API Version: VersionApi.md
-    - 1.0 APIs:
-        - File Systems: FileSystems1dot0Api.md
-        - File System snapshots: FileSystemSnapshots1dot0Api.md
-    - 1.1 APIs:
-        - File Systems: FileSystems1dot1Api.md
-        - File System snapshots: FileSystemSnapshots1dot1Api.md
-    - 1.2 APIs:
+    - APIs:
         - Admins: AdminsApi.md
+        - Arrays: ArraysApi.md
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
         - Alert Watchers Tests: AlertWatcherTest.md
         - Array Http Performances: ArraysApi.md
         - Array Performances: ArraysApi.md
-        - Array S3 Perfomrances: ArraysApi.md
+        - Array S3 Performances: ArraysApi.md
         - Array Spaces: ArraysApi.md
         - Blades: BladeApi.md
+        - Buckets: BucketsApi.md
         - Certificates: CertificatesApi.md
+        - Directory Service: DirectoryServicesApi.md
         - Dns: DnsApi.md
-        - File Systems: FileSystems1dot2Api.md
-        - File System snapshots: FileSystemSnapshots1dot2Api.md
+        - File Systems: FileSystemsApi.md
+        - File System Snapshots: FileSystemSnapshotsApi.md
         - Hardware: HardwareApi.md
+        - Hardware Connectors: HardwareConnectorApi.md
+        - Link Aggregation Group: LinkAggregationGroupApi.md
+        - Network Interface: NetworkInterfacesApi.md
+        - Object Store Access Keys: ObjectStoreAccessKeysApi.md
+        - Object Store Accounts: ObjectStoreAccountsApi.md
+        - Object Store Users: ObjectStoreUsersApi.md
+        - Smtp: SmtpApi.md
+        - Subnets: SubnetsApi.md
+
 - Models:
     - Response:
         - Pagination Information: PaginationInfo.md
@@ -34,16 +40,25 @@ pages:
         - API Version: VersionResponse.md
         - Login: LoginResponse.md
         - Admin: AdminResponse.md
-        - AlertWatcher: AlertWatcherResponse.md
-        - AlertWatcherTest: AlertWatcherTestResponse.md
-        - ArrayPerformance: ArrayPerformanceResponse.md
-        - ArraySpaceResponse: ArraySpaceResponse.md
+        - Alert Watcher: AlertWatcherResponse.md
+        - Alert Watcher Test: AlertWatcherTestResponse.md
+        - Array: ArrayResponse.md
+        - Array Performance: ArrayPerformanceResponse.md
+        - Array Space: ArraySpaceResponse.md
         - Blade: BladeResponse.md
+        - Bucket: BucketResponse.md
         - Certificate: CertificateResponse.md
+        - Directory Service: DirectoryServiceResponse.md
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
+        - File Systems Performance: FileSystemsPerformance.md
         - Hardware: HardwareResponse.md
+        - Object Store Access Key: ObjectStoreAccessKeyResponse.md
+        - Object Store Account: ObjectStoreAccountResponse.md
+        - Object Store User: ObjectStoreUserResponse.md
+        - Smtp: SmtpResponse.md
+        - Test Result: TestResultsResponse.md
     - Error: PureError.md
     - Space: Space.md
     - Admin:
@@ -58,10 +73,16 @@ pages:
         - Array Performance: ArrayPerformance.md
         - Array S3 Performance: ArrayS3Performance.md
         - Array Http Performance: ArrayHttpPerformance.md
+        - Pure Array: PureArray.md
     - Blade:
         - Blade: Blade.md
+    - Bucket:
+        - Bucket: Bucket.md
     - Certificate:
         - Certificate: Certificate.md
+    - Directory Service:
+        - Directory Service: DirectoryService.md
+        - Test Result: TestResult.md
     - Dns:
         - Dns: Dns.md
     - File System:
@@ -73,4 +94,18 @@ pages:
         - Snapshot Suffix: SnapshotSuffix.md
     - Hardware:
         - Hardware: Hardware.md
+    - Hardware Connector:
+        - Hardware Connector: HardwareConnector.md
+    - Link Aggregation Group:
+        - Link Aggregation Group: LinkAggregationGroup.md
+    - Network Interface:
+        - Network Interface: NetworkInterface.md
+    - Object Store:
+        - Object Store Access Key: ObjectStoreAccessKey.md
+        - Object Store Account: ObjectStoreAccount.md
+        - Object Store User: ObjectStoreUser.md
+    - Smtp:
+        - Smtp: Smtp.md
+    - Subnet:
+        - Subnet: Subnet.md
 theme: readthedocs

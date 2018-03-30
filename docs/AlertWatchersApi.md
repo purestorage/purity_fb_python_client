@@ -4,11 +4,11 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.2/alert-watchers | 
-[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.2/alert-watchers | 
-[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.2/alert-watchers | 
-[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.2/alert-watchers/test | 
-[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.2/alert-watchers | 
+[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.3/alert-watchers | 
+[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.3/alert-watchers | 
+[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.3/alert-watchers | 
+[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.3/alert-watchers/test | 
+[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.3/alert-watchers | 
 
 
 # **create_alert_watchers**
@@ -106,7 +106,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_alert_watchers**
-> AlertWatcherResponse list_alert_watchers(filter=filter, sort=sort, start=start, limit=limit, token=token, names=names)
+> AlertWatcherResponse list_alert_watchers(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -136,12 +136,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type
 
