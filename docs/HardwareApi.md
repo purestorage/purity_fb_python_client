@@ -4,8 +4,8 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.2/hardware | 
-[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.2/hardware | 
+[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.3/hardware | 
+[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.3/hardware | 
 
 
 # **list_hardware**

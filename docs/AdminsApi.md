@@ -4,8 +4,8 @@ All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.2/admins | 
-[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.2/admins | 
+[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.3/admins | 
+[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.3/admins | 
 
 
 # **list_admins**
@@ -17,27 +17,22 @@ list all administrative accounts
 
 ### Example 
 ```python
-from __future__ import print_function
-import time
-import purity_fb
-from purity_fb.rest import ApiException
-from pprint import pprint
+from purity_fb import PurityFb, Admin, rest
 
-# Configure API key authorization: AuthTokenHeader
-purity_fb.configuration.api_key['x-auth-token'] = 'YOUR_API_KEY'
-# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
-# purity_fb.configuration.api_key_prefix['x-auth-token'] = 'Bearer'
-
-# create an instance of the API class
-api_instance = purity_fb.AdminsApi()
-expose = false # bool | display the unmasked API token (optional) (default to false)
-names = ['names_example'] # list[str] | A list of names. (optional)
-
-try: 
-    api_response = api_instance.list_admins(expose=expose, names=names)
-    pprint(api_response)
-except ApiException as e:
-    print("Exception when calling AdminsApi->list_admins: %s\n" % e)
+fb = PurityFb('10.255.8.20') # assume the array IP is 10.255.8.20
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print('Exception when logging in to the array: %s\n' % e)
+if res:
+    try:
+        # list all admin accounts (given sufficient permissions)
+        res = fb.admins.list_admins()
+        # list a subset of admin accounts by name
+        res = fb.admins.list_admins(names=['pureuser'])
+    except rest.ApiException as e:
+        print("Exception when listing admins: %s\n" % e)
 ```
 
 ### Parameters

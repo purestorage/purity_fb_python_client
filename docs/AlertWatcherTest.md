@@ -3,6 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
 **accepted** | **bool** | is the email accepted? | [optional] 
 **error** | **str** | error message (if failed) | [optional] 
 
