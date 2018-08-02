@@ -40,7 +40,7 @@ class SmbRule(object):
         'acl_mode': 'acl-mode'
     }
 
-    def __init__(self, enabled=None, acl_mode='shared'):
+    def __init__(self, enabled=None, acl_mode=None):
         """
         SmbRule - a model defined in Swagger
         """
@@ -80,7 +80,7 @@ class SmbRule(object):
     def acl_mode(self):
         """
         Gets the acl_mode of this SmbRule.
-        SMB ACL mode
+        SMB ACL mode. Default shared when creating a new file system. Possible values are shared and native.
 
         :return: The acl_mode of this SmbRule.
         :rtype: str
@@ -91,17 +91,11 @@ class SmbRule(object):
     def acl_mode(self, acl_mode):
         """
         Sets the acl_mode of this SmbRule.
-        SMB ACL mode
+        SMB ACL mode. Default shared when creating a new file system. Possible values are shared and native.
 
         :param acl_mode: The acl_mode of this SmbRule.
         :type: str
         """
-        allowed_values = ["shared", "native"]
-        if acl_mode not in allowed_values:
-            raise ValueError(
-                "Invalid value for `acl_mode` ({0}), must be one of {1}"
-                .format(acl_mode, allowed_values)
-            )
 
         self._acl_mode = acl_mode
 

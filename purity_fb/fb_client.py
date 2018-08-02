@@ -12,14 +12,16 @@ from . import purity_fb_1dot0
 from . import purity_fb_1dot1
 from . import purity_fb_1dot2
 from . import purity_fb_1dot3
+from . import purity_fb_1dot4
 
-SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4']
 
 version_module_dict = {
     '1.0': purity_fb_1dot0,
     '1.1': purity_fb_1dot1,
     '1.2': purity_fb_1dot2,
-    '1.3': purity_fb_1dot3
+    '1.3': purity_fb_1dot3,
+    '1.4': purity_fb_1dot4
 }
 
 
@@ -34,13 +36,16 @@ class PurityFb:
             connect=PurityFb.DEFAULT_CONN_TIMEOUT,
             read=PurityFb.DEFAULT_READ_TIMEOUT)
         self.retries = urllib3.Retry(total=PurityFb.DEFAULT_RETRIES)
-        self.version = VersionApi(self._api_client)
+        self.api_version = VersionApi(self._api_client)
         self.disable_verify_ssl()
 
         if version:
             self._version = self._check_rest_version(version)
         else:
             self._version = self._choose_rest_version()
+
+        # Take the latest REST API version which is the client version as user agent version
+        self._api_client.user_agent = 'Purity_FB_Python_Client/' + str(SUPPORTED_VERSIONS[-1])
 
         purity_fb_version_module = version_module_dict.get(str(self._version))
         # This setting is needed for the _api_client to be able to deserialize response
@@ -64,7 +69,7 @@ class PurityFb:
 
     def list_versions(self):
         try:
-            return self.version.list_versions().versions
+            return self.api_version.list_versions().versions
         except rest.ApiException:
             return ['1.0']
 

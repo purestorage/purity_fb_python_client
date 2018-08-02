@@ -7,12 +7,14 @@ Name | Type | Description | Notes
 **created** | **int** | creation timestamp of the object | [optional] 
 **fast_remove_directory_enabled** | **bool** | is fast remove directory enabled? Modifiable. Default false when creating a new file-system | [optional] 
 **provisioned** | **int** | the provisioned size of the file system in bytes. Modifiable. Default 0 when creating a new file-system | [optional] 
+**hard_limit_enabled** | **bool** | is the file system&#39;s size a hard limit quota. Default is false | [optional] 
 **snapshot_directory_enabled** | **bool** | is snapshot directory enabled? Modifiable. Default false when creating a new file-system | [optional] 
 **nfs** | [**NfsRule**](NfsRule.md) | NFS configuration. Modifiable. | [optional] 
 **http** | [**ProtocolRule**](ProtocolRule.md) | HTTP configuration. Modifiable. | [optional] 
 **smb** | [**SmbRule**](SmbRule.md) | SMB configuration. Modifiable. | [optional] 
 **destroyed** | **bool** | is the file system destroyed? False by default. Modifiable. | [optional] 
 **time_remaining** | **int** | time in milliseconds before the file system is eradicated. Null if not destroyed. | [optional] 
+**space** | [**Space**](Space.md) | the space specification of the file system | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

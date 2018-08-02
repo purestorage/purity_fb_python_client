@@ -436,7 +436,7 @@ class Certificate(object):
     def status(self):
         """
         Gets the status of this Certificate.
-        The type of certificate - self-signed or imported
+        The type of certificate. Possible values are self-signed and imported.
 
         :return: The status of this Certificate.
         :rtype: str
@@ -447,17 +447,11 @@ class Certificate(object):
     def status(self, status):
         """
         Sets the status of this Certificate.
-        The type of certificate - self-signed or imported
+        The type of certificate. Possible values are self-signed and imported.
 
         :param status: The status of this Certificate.
         :type: str
         """
-        allowed_values = ["self-signed", "imported"]
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

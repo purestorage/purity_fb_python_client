@@ -38,7 +38,8 @@ class FileSystem(object):
         'snapshot_directory_enabled': 'bool',
         'nfs': 'NfsRule',
         'http': 'ProtocolRule',
-        'smb': 'SmbRule'
+        'smb': 'ProtocolRule',
+        'space': 'Space'
     }
 
     attribute_map = {
@@ -49,10 +50,11 @@ class FileSystem(object):
         'snapshot_directory_enabled': 'snapshot_directory_enabled',
         'nfs': 'nfs',
         'http': 'http',
-        'smb': 'smb'
+        'smb': 'smb',
+        'space': 'space'
     }
 
-    def __init__(self, name=None, created=None, fast_remove_directory_enabled=None, provisioned=None, snapshot_directory_enabled=None, nfs=None, http=None, smb=None):
+    def __init__(self, name=None, created=None, fast_remove_directory_enabled=None, provisioned=None, snapshot_directory_enabled=None, nfs=None, http=None, smb=None, space=None):
         """
         FileSystem - a model defined in Swagger
         """
@@ -65,6 +67,7 @@ class FileSystem(object):
         self._nfs = None
         self._http = None
         self._smb = None
+        self._space = None
 
         if name is not None:
           self.name = name
@@ -82,6 +85,8 @@ class FileSystem(object):
           self.http = http
         if smb is not None:
           self.smb = smb
+        if space is not None:
+          self.space = space
 
     @property
     def name(self):
@@ -251,7 +256,7 @@ class FileSystem(object):
         SMB configuration. Modifiable.
 
         :return: The smb of this FileSystem.
-        :rtype: SmbRule
+        :rtype: ProtocolRule
         """
         return self._smb
 
@@ -262,10 +267,33 @@ class FileSystem(object):
         SMB configuration. Modifiable.
 
         :param smb: The smb of this FileSystem.
-        :type: SmbRule
+        :type: ProtocolRule
         """
 
         self._smb = smb
+
+    @property
+    def space(self):
+        """
+        Gets the space of this FileSystem.
+        the space specification of the file system
+
+        :return: The space of this FileSystem.
+        :rtype: Space
+        """
+        return self._space
+
+    @space.setter
+    def space(self, space):
+        """
+        Sets the space of this FileSystem.
+        the space specification of the file system
+
+        :param space: The space of this FileSystem.
+        :type: Space
+        """
+
+        self._space = space
 
     def to_dict(self):
         """

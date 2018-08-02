@@ -1,13 +1,13 @@
-# purity_fb.FileSystemsApi
+# purity_fb_1dot4.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.3/file-systems | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.3/file-systems | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.3/file-systems | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.3/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.4/file-systems | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.4/file-systems | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.4/file-systems | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.4/file-systems | 
 
 
 # **create_file_systems**
@@ -29,13 +29,14 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     # create a local file system object with given name, provisioned size, and NFS enabled.
-    myfs = FileSystem(name="myfs", provisioned="5000", nfs=NfsRule(enabled=True))
+    myfs = FileSystem(name="myfs", provisioned="5000", hard_limit_enabled=True, nfs=NfsRule(enabled=True))
     try:
         # post the file system object myfs on the array
         res = fb.file_systems.create_file_systems(file_system=myfs)
         print(res)
     except rest.ApiException as e:
         print("Exception when creating file system: %s\n" % e)
+
 ```
 
 ### Parameters
@@ -167,7 +168,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_systems**
-> FileSystemResponse update_file_systems(name, attributes)
+> FileSystemResponse update_file_systems(name, attributes, ignore_usage=ignore_usage)
 
 
 
@@ -186,10 +187,10 @@ except rest.ApiException as e:
 if res:
     # create a local file system object with provisioned size, and NFS enabled
     # note that name field should be None
-    new_attr = FileSystem(provisioned="1024", nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"))
+    new_attr = FileSystem(provisioned="1024", hard_limit_enabled=True, nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"))
     try:
         # update the file system named myfs on the array
-        res = fb.file_systems.update_file_systems(name="myfs", attributes=new_attr)
+        res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True, attributes=new_attr)
         print(res)
     except rest.ApiException as e:
         print("Exception when updating file system: %s\n" % e)
@@ -201,6 +202,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| the name of the file system to be updated | 
  **attributes** | [**FileSystem**](FileSystem.md)| the new attributes, only modifiable fields could be used. | 
+ **ignore_usage** | **bool**| Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True. | [optional] 
 
 ### Return type
 

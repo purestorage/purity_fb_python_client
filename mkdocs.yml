@@ -49,6 +49,7 @@ pages:
         - Bucket: BucketResponse.md
         - Certificate: CertificateResponse.md
         - Directory Service: DirectoryServiceResponse.md
+        - Directory Service Roles: DirectoryServiceRolesResponse.md
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
@@ -81,6 +82,7 @@ pages:
         - Certificate: Certificate.md
     - Directory Service:
         - Directory Service: DirectoryService.md
+        - Directory Service Role: DirectoryServiceRole.md
         - Test Result: TestResult.md
     - Dns:
         - Dns: Dns.md

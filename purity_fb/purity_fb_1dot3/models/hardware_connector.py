@@ -95,7 +95,7 @@ class HardwareConnector(object):
     def connector_type(self):
         """
         Gets the connector_type of this HardwareConnector.
-        Form-factor of the interface (QSFP vs SFP vs RJ-45)
+        Form-factor of the interface. Possible values are QSFP, RJ-45 and SFP.
 
         :return: The connector_type of this HardwareConnector.
         :rtype: str
@@ -106,17 +106,11 @@ class HardwareConnector(object):
     def connector_type(self, connector_type):
         """
         Sets the connector_type of this HardwareConnector.
-        Form-factor of the interface (QSFP vs SFP vs RJ-45)
+        Form-factor of the interface. Possible values are QSFP, RJ-45 and SFP.
 
         :param connector_type: The connector_type of this HardwareConnector.
         :type: str
         """
-        allowed_values = ["QSFP", "RJ-45", "SFP"]
-        if connector_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `connector_type` ({0}), must be one of {1}"
-                .format(connector_type, allowed_values)
-            )
 
         self._connector_type = connector_type
 

@@ -1,10 +1,10 @@
-# purity_fb.BucketsApi
+# purity_fb_1dot4.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.3/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.4/buckets | 
 
 
 # **list_buckets**
@@ -37,8 +37,7 @@ if res:
         # list with filter
         res = fb.buckets.list_buckets(filter='name=\'mybucket*\'')
     except rest.ApiException as e:
-        print("Exception when listing buckets: %s\n" % e)
-```
+        print("Exception when listing buckets: %s\n" % e)```
 
 ### Parameters
 

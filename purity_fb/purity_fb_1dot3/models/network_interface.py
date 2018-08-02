@@ -238,13 +238,6 @@ class NetworkInterface(object):
         :param services: The services of this NetworkInterface.
         :type: list[str]
         """
-        allowed_values = ["data", "management", "support"]
-        if not set(services).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `services` [{0}], must be a subset of [{1}]"
-                .format(", ".join(map(str, set(services)-set(allowed_values))),
-                        ", ".join(map(str, allowed_values)))
-            )
 
         self._services = services
 
@@ -252,6 +245,7 @@ class NetworkInterface(object):
     def type(self):
         """
         Gets the type of this NetworkInterface.
+        Possible values are vip.
 
         :return: The type of this NetworkInterface.
         :rtype: str
@@ -262,16 +256,11 @@ class NetworkInterface(object):
     def type(self, type):
         """
         Sets the type of this NetworkInterface.
+        Possible values are vip.
 
         :param type: The type of this NetworkInterface.
         :type: str
         """
-        allowed_values = ["vip"]
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"
-                .format(type, allowed_values)
-            )
 
         self._type = type
 

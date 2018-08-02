@@ -286,7 +286,7 @@ class Hardware(object):
     def status(self):
         """
         Gets the status of this Hardware.
-        component status
+        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown and unused.
 
         :return: The status of this Hardware.
         :rtype: str
@@ -297,17 +297,11 @@ class Hardware(object):
     def status(self, status):
         """
         Sets the status of this Hardware.
-        component status
+        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown and unused.
 
         :param status: The status of this Hardware.
         :type: str
         """
-        allowed_values = ["critical", "healthy", "identifying", "unhealthy", "unknown", "unused"]
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"
-                .format(status, allowed_values)
-            )
 
         self._status = status
 
@@ -338,7 +332,7 @@ class Hardware(object):
     def type(self):
         """
         Gets the type of this Hardware.
-        component type
+        Component type. Possible values are ch, eth, fb, fm and pwr.
 
         :return: The type of this Hardware.
         :rtype: str
@@ -349,17 +343,11 @@ class Hardware(object):
     def type(self, type):
         """
         Sets the type of this Hardware.
-        component type
+        Component type. Possible values are ch, eth, fb, fm and pwr.
 
         :param type: The type of this Hardware.
         :type: str
         """
-        allowed_values = ["ch", "eth", "fb", "fm", "pwr"]
-        if type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `type` ({0}), must be one of {1}"
-                .format(type, allowed_values)
-            )
 
         self._type = type
 

@@ -16,7 +16,7 @@ Name | Type | Description | Notes
 **organization** | **str** | The organization field listed in the certificate | [optional] 
 **organizational_unit** | **str** | The organizational unit field listed in the certificate | [optional] 
 **state** | **str** | The state/province field listed in the certificate | [optional] 
-**status** | **str** | The type of certificate - self-signed or imported | [optional] 
+**status** | **str** | The type of certificate. Possible values are self-signed and imported. | [optional] 
 **valid_from** | **str** | The start date of when this certificate is valid | [optional] 
 **valid_to** | **str** | The end date of when this certificate is valid | [optional] 
 **passphrase** | **str** | the passphrase used to encrypt private_key | [optional] 

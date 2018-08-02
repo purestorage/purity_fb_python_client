@@ -36,6 +36,7 @@ class TestResult(object):
         'component_name': 'str',
         'description': 'str',
         'destination': 'str',
+        'enabled': 'bool',
         'resource': 'str',
         'result_details': 'str',
         'success': 'bool',
@@ -48,13 +49,14 @@ class TestResult(object):
         'component_name': 'component_name',
         'description': 'description',
         'destination': 'destination',
+        'enabled': 'enabled',
         'resource': 'resource',
         'result_details': 'result_details',
         'success': 'success',
         'test_type': 'test_type'
     }
 
-    def __init__(self, name=None, component_address=None, component_name=None, description=None, destination=None, resource=None, result_details=None, success=None, test_type=None):
+    def __init__(self, name=None, component_address=None, component_name=None, description=None, destination=None, enabled=None, resource=None, result_details=None, success=None, test_type=None):
         """
         TestResult - a model defined in Swagger
         """
@@ -64,6 +66,7 @@ class TestResult(object):
         self._component_name = None
         self._description = None
         self._destination = None
+        self._enabled = None
         self._resource = None
         self._result_details = None
         self._success = None
@@ -79,6 +82,8 @@ class TestResult(object):
           self.description = description
         if destination is not None:
           self.destination = destination
+        if enabled is not None:
+          self.enabled = enabled
         if resource is not None:
           self.resource = resource
         if result_details is not None:
@@ -204,6 +209,29 @@ class TestResult(object):
         self._destination = destination
 
     @property
+    def enabled(self):
+        """
+        Gets the enabled of this TestResult.
+        Is the service enabled?
+
+        :return: The enabled of this TestResult.
+        :rtype: bool
+        """
+        return self._enabled
+
+    @enabled.setter
+    def enabled(self, enabled):
+        """
+        Sets the enabled of this TestResult.
+        Is the service enabled?
+
+        :param enabled: The enabled of this TestResult.
+        :type: bool
+        """
+
+        self._enabled = enabled
+
+    @property
     def resource(self):
         """
         Gets the resource of this TestResult.
@@ -276,7 +304,7 @@ class TestResult(object):
     def test_type(self):
         """
         Gets the test_type of this TestResult.
-        The type of the test
+        The type of the test. Possible values are phonehome, phonehome-ping, remote-assist, directory-service, directory-service-connecting, directory-service-binding, directory-service-group-searching, and directory-service-uri-searching.
 
         :return: The test_type of this TestResult.
         :rtype: str
@@ -287,17 +315,11 @@ class TestResult(object):
     def test_type(self, test_type):
         """
         Sets the test_type of this TestResult.
-        The type of the test
+        The type of the test. Possible values are phonehome, phonehome-ping, remote-assist, directory-service, directory-service-connecting, directory-service-binding, directory-service-group-searching, and directory-service-uri-searching.
 
         :param test_type: The test_type of this TestResult.
         :type: str
         """
-        allowed_values = ["phonehome", "phonehome-ping", "remote-assist", "directory-service", "directory-service-connecting", "directory-service-binding", "directory-service-group-searching", "directory-service-uri-searching"]
-        if test_type not in allowed_values:
-            raise ValueError(
-                "Invalid value for `test_type` ({0}), must be one of {1}"
-                .format(test_type, allowed_values)
-            )
 
         self._test_type = test_type
 

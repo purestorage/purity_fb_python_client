@@ -100,7 +100,7 @@ class PureArray(object):
     def id(self):
         """
         Gets the id of this PureArray.
-        A unique ID chosen by the system. Cannot change.
+        A globally unique ID chosen by the system. Cannot change. Cannot ever refer to another resource.
 
         :return: The id of this PureArray.
         :rtype: str
@@ -111,7 +111,7 @@ class PureArray(object):
     def id(self, id):
         """
         Sets the id of this PureArray.
-        A unique ID chosen by the system. Cannot change.
+        A globally unique ID chosen by the system. Cannot change. Cannot ever refer to another resource.
 
         :param id: The id of this PureArray.
         :type: str
@@ -144,6 +144,7 @@ class PureArray(object):
     def os(self):
         """
         Gets the os of this PureArray.
+        Possible values are Purity//FA and Purity//FB.
 
         :return: The os of this PureArray.
         :rtype: str
@@ -154,16 +155,11 @@ class PureArray(object):
     def os(self, os):
         """
         Sets the os of this PureArray.
+        Possible values are Purity//FA and Purity//FB.
 
         :param os: The os of this PureArray.
         :type: str
         """
-        allowed_values = ["Purity//FA", "Purity//FB"]
-        if os not in allowed_values:
-            raise ValueError(
-                "Invalid value for `os` ({0}), must be one of {1}"
-                .format(os, allowed_values)
-            )
 
         self._os = os
 
