@@ -26,6 +26,6 @@ from .pagination_info import PaginationInfo
 from .protocol_rule import ProtocolRule
 from .pure_error import PureError
 from .pure_object import PureObject
-from .smb_rule import SmbRule
 from .snapshot_suffix import SnapshotSuffix
+from .space import Space
 from .version_response import VersionResponse

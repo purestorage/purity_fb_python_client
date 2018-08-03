@@ -46,7 +46,7 @@ class ObjectStoreAccessKey(object):
         'secret_access_key': 'secret_access_key'
     }
 
-    def __init__(self, name=None, created=None, user=None, enabled=True, secret_access_key=None):
+    def __init__(self, name=None, created=None, user=None, enabled=None, secret_access_key=None):
         """
         ObjectStoreAccessKey - a model defined in Swagger
         """
@@ -141,7 +141,7 @@ class ObjectStoreAccessKey(object):
     def enabled(self):
         """
         Gets the enabled of this ObjectStoreAccessKey.
-        is the access key enabled?
+        is the access key enabled? Default is true
 
         :return: The enabled of this ObjectStoreAccessKey.
         :rtype: bool
@@ -152,7 +152,7 @@ class ObjectStoreAccessKey(object):
     def enabled(self, enabled):
         """
         Sets the enabled of this ObjectStoreAccessKey.
-        is the access key enabled?
+        is the access key enabled? Default is true
 
         :param enabled: The enabled of this ObjectStoreAccessKey.
         :type: bool

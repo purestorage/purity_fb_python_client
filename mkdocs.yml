@@ -8,6 +8,7 @@ pages:
     - API Version: VersionApi.md
     - APIs:
         - Admins: AdminsApi.md
+        - Admins Cache: AdminsCacheApi.md
         - Arrays: ArraysApi.md
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
@@ -26,6 +27,7 @@ pages:
         - Hardware: HardwareApi.md
         - Hardware Connectors: HardwareConnectorsApi.md
         - Link Aggregation Group: LinkAggregationGroupsApi.md
+        - Logs: LogsApi.md
         - Network Interface: NetworkInterfacesApi.md
         - Object Store Access Keys: ObjectStoreAccessKeysApi.md
         - Object Store Accounts: ObjectStoreAccountsApi.md
@@ -40,6 +42,8 @@ pages:
         - API Version: VersionResponse.md
         - Login: LoginResponse.md
         - Admin: AdminResponse.md
+        - Admin Cache: AdminCacheResponse.md
+        - Alert: AlertResponse.md
         - Alert Watcher: AlertWatcherResponse.md
         - Alert Watcher Test: AlertWatcherTestResponse.md
         - Array: ArrayResponse.md
@@ -48,20 +52,27 @@ pages:
         - Blade: BladeResponse.md
         - Bucket: BucketResponse.md
         - Certificate: CertificateResponse.md
+        - Client Performance: ClientPerformanceResponse.md
         - Directory Service: DirectoryServiceResponse.md
+        - Directory Service Roles: DirectoryServiceRolesResponse.md
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
         - Hardware: HardwareResponse.md
+        - Hardware Connector: HardwareConnectorResponse.md
+        - Link Aggregation Group: LinkAggregationGroupResponse.md
+        - Network Interface: NetworkInterfaceResponse.md
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
         - Object Store User: ObjectStoreUserResponse.md
         - Smtp: SmtpResponse.md
+        - Subnet: SubnetResponse.md
         - Test Result: TestResultResponse.md
     - Error: PureError.md
     - Space: Space.md
     - Admin:
         - Admin: Admin.md
+        - Admin Cache: AdminCache.md
     - Alert:
         - Alert: Alert.md
     - Alert Watcher:
@@ -73,6 +84,7 @@ pages:
         - Array S3 Performance: ArrayS3Performance.md
         - Array Http Performance: ArrayHttpPerformance.md
         - Pure Array: PureArray.md
+        - Client Performance: ClientPerformance.md
     - Blade:
         - Blade: Blade.md
     - Bucket:
@@ -81,6 +93,7 @@ pages:
         - Certificate: Certificate.md
     - Directory Service:
         - Directory Service: DirectoryService.md
+        - Directory Service Role: DirectoryServiceRole.md
         - Test Result: TestResult.md
     - Dns:
         - Dns: Dns.md

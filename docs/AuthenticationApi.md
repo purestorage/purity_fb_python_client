@@ -1,4 +1,4 @@
-# purity_fb.AuthenticationApi
+# purity_fb_1dot4.AuthenticationApi
 
 All URIs are relative to *https://purity_fb_server/api*
 

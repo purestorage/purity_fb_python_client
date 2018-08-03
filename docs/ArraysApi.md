@@ -1,15 +1,16 @@
-# purity_fb.ArraysApi
+# purity_fb_1dot4.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.3/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.3/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.3/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.3/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.3/arrays/space | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.3/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.4/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.4/arrays/http-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.4/arrays/performance | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.4/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.4/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.4/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.4/arrays | 
 
 
 # **list_arrays**
@@ -272,6 +273,57 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ArraySpaceResponse**](ArraySpaceResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_clients_performance**
+> ClientPerformanceResponse list_clients_performance(names=names, filter=filter, sort=sort, limit=limit)
+
+
+
+List client performance
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb('10.255.8.20') # assume the array IP is 10.255.8.20
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print('Exception when logging in to the array: %s\n' % e)
+if res:
+    try:
+        # list client performance for all clients
+        res = fb.arrays.list_clients_performance()
+        # list client performance for one specific array client
+        res = fb.arrays.list_clients_performance(names=['123.123.123.123:8080'])
+    except rest.ApiException as e:
+        print("Exception when listing client performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **sort** | **str**| The way to order the results. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+
+### Return type
+
+[**ClientPerformanceResponse**](ClientPerformanceResponse.md)
 
 ### Authorization
 

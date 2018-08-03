@@ -26,8 +26,8 @@ from .models.pagination_info import PaginationInfo
 from .models.protocol_rule import ProtocolRule
 from .models.pure_error import PureError
 from .models.pure_object import PureObject
-from .models.smb_rule import SmbRule
 from .models.snapshot_suffix import SnapshotSuffix
+from .models.space import Space
 from .models.version_response import VersionResponse
 
 # import apis into sdk package

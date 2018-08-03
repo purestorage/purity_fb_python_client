@@ -214,7 +214,7 @@ class Alert(object):
     def severity(self):
         """
         Gets the severity of this Alert.
-        severity of the alert
+        Severity of the alert. Possible values are info, warning and critical.
 
         :return: The severity of this Alert.
         :rtype: str
@@ -225,17 +225,11 @@ class Alert(object):
     def severity(self, severity):
         """
         Sets the severity of this Alert.
-        severity of the alert
+        Severity of the alert. Possible values are info, warning and critical.
 
         :param severity: The severity of this Alert.
         :type: str
         """
-        allowed_values = ["info", "warning", "critical"]
-        if severity not in allowed_values:
-            raise ValueError(
-                "Invalid value for `severity` ({0}), must be one of {1}"
-                .format(severity, allowed_values)
-            )
 
         self._severity = severity
 
@@ -266,7 +260,7 @@ class Alert(object):
     def state(self):
         """
         Gets the state of this Alert.
-        the current state of the alert
+        The current state of the alert. Possible values are open, closing, closed and waiting to downgrade.
 
         :return: The state of this Alert.
         :rtype: str
@@ -277,17 +271,11 @@ class Alert(object):
     def state(self, state):
         """
         Sets the state of this Alert.
-        the current state of the alert
+        The current state of the alert. Possible values are open, closing, closed and waiting to downgrade.
 
         :param state: The state of this Alert.
         :type: str
         """
-        allowed_values = ["open", "closing", "closed", "waiting to downgrade"]
-        if state not in allowed_values:
-            raise ValueError(
-                "Invalid value for `state` ({0}), must be one of {1}"
-                .format(state, allowed_values)
-            )
 
         self._state = state
 

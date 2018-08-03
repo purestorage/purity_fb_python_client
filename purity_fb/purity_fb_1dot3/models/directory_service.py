@@ -213,13 +213,6 @@ class DirectoryService(object):
         :param services: The services of this DirectoryService.
         :type: list[str]
         """
-        allowed_values = ["nfs", "smb"]
-        if not set(services).issubset(set(allowed_values)):
-            raise ValueError(
-                "Invalid values for `services` [{0}], must be a subset of [{1}]"
-                .format(", ".join(map(str, set(services)-set(allowed_values))),
-                        ", ".join(map(str, allowed_values)))
-            )
 
         self._services = services
 

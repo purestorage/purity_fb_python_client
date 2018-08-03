@@ -194,7 +194,7 @@ class LinkAggregationGroup(object):
     def status(self):
         """
         Gets the status of this LinkAggregationGroup.
-        Health status of the LAG
+        Health status of the LAG. Possible values are critical, healthy, identifying, unclaimed, unhealthy, unrecognized and unused.
 
         :return: The status of this LinkAggregationGroup.
         :rtype: str
@@ -205,17 +205,11 @@ class LinkAggregationGroup(object):
     def status(self, status):
         """
         Sets the status of this LinkAggregationGroup.
-        Health status of the LAG
+        Health status of the LAG. Possible values are critical, healthy, identifying, unclaimed, unhealthy, unrecognized and unused.
 
         :param status: The status of this LinkAggregationGroup.
         :type: str
         """
-        allowed_values = ["critical", "healthy", "identifying", "unclaimed", "unhealthy", "unrecognized", "unused"]
-        if status not in allowed_values:
-            raise ValueError(
-                "Invalid value for `status` ({0}), must be one of {1}"
-                .format(status, allowed_values)
-            )
 
         self._status = status
 

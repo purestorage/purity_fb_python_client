@@ -40,7 +40,8 @@ class FileSystem(object):
         'http': 'ProtocolRule',
         'smb': 'SmbRule',
         'destroyed': 'bool',
-        'time_remaining': 'int'
+        'time_remaining': 'int',
+        'space': 'Space'
     }
 
     attribute_map = {
@@ -53,10 +54,11 @@ class FileSystem(object):
         'http': 'http',
         'smb': 'smb',
         'destroyed': 'destroyed',
-        'time_remaining': 'time_remaining'
+        'time_remaining': 'time_remaining',
+        'space': 'space'
     }
 
-    def __init__(self, name=None, created=None, fast_remove_directory_enabled=None, provisioned=None, snapshot_directory_enabled=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None):
+    def __init__(self, name=None, created=None, fast_remove_directory_enabled=None, provisioned=None, snapshot_directory_enabled=None, nfs=None, http=None, smb=None, destroyed=None, time_remaining=None, space=None):
         """
         FileSystem - a model defined in Swagger
         """
@@ -71,6 +73,7 @@ class FileSystem(object):
         self._smb = None
         self._destroyed = None
         self._time_remaining = None
+        self._space = None
 
         if name is not None:
           self.name = name
@@ -92,6 +95,8 @@ class FileSystem(object):
           self.destroyed = destroyed
         if time_remaining is not None:
           self.time_remaining = time_remaining
+        if space is not None:
+          self.space = space
 
     @property
     def name(self):
@@ -322,6 +327,29 @@ class FileSystem(object):
         """
 
         self._time_remaining = time_remaining
+
+    @property
+    def space(self):
+        """
+        Gets the space of this FileSystem.
+        the space specification of the file system
+
+        :return: The space of this FileSystem.
+        :rtype: Space
+        """
+        return self._space
+
+    @space.setter
+    def space(self, space):
+        """
+        Sets the space of this FileSystem.
+        the space specification of the file system
+
+        :param space: The space of this FileSystem.
+        :type: Space
+        """
+
+        self._space = space
 
     def to_dict(self):
         """

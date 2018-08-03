@@ -4,9 +4,9 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | name of the object | [optional] 
-**id** | **str** | A unique ID chosen by the system. Cannot change. | [optional] 
+**id** | **str** | A globally unique ID chosen by the system. Cannot change. Cannot ever refer to another resource. | [optional] 
 **ntp_servers** | **list[str]** |  | [optional] 
-**os** | **str** |  | [optional] 
+**os** | **str** | Possible values are Purity//FA and Purity//FB. | [optional] 
 **version** | **str** |  | [optional] 
 **revision** | **str** |  | [optional] 
 

@@ -72,7 +72,7 @@ class ApiClient(object):
             self.host = host
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.0.0/python'
+        self.user_agent = 'Purity_FB_Python_Client'  # This will be the default if not set by wrapper
         self.models = models
 
     @property

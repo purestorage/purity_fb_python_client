@@ -1,13 +1,13 @@
-# purity_fb.ObjectStoreAccessKeysApi
+# purity_fb_1dot4.ObjectStoreAccessKeysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.3/object-store-access-keys | 
-[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.3/object-store-access-keys | 
-[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.3/object-store-access-keys | 
-[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.3/object-store-access-keys | 
+[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.4/object-store-access-keys | 
+[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.4/object-store-access-keys | 
+[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.4/object-store-access-keys | 
+[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.4/object-store-access-keys | 
 
 
 # **create_object_store_access_keys**

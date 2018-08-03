@@ -1,11 +1,11 @@
-# purity_fb.HardwareApi
+# purity_fb_1dot4.HardwareApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.3/hardware | 
-[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.3/hardware | 
+[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.4/hardware | 
+[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.4/hardware | 
 
 
 # **list_hardware**
@@ -27,12 +27,10 @@ except rest.ApiException as e:
     print('Exception when logging in to the array: %s\n' % e)
 if res:
     try:
-        # list all hardware components
-        res = fb.hardware.list_hardware()
-        # list a subset of hardware components by name
-        res = fb.hardware.list_hardware(names=['CH1.FB1', 'CH1.FB2'])
-        # list all ethernet ports
-        res = fb.hardware.list_hardware(filter='type=\'eth\'')
+        # list all fans
+        res = fb.hardware.list_hardware(filter='type=\'fan\'')
+        # list all XFMs
+        res = fb.hardware.list_hardware(filter='type=\'xfm\'')
     except rest.ApiException as e:
         print("Exception when listing hardware: %s\n" % e)
 ```
