@@ -1,13 +1,17 @@
-# purity_fb_1dot4.FileSystemsApi
+# purity_fb_1dot5.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.4/file-systems | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.4/file-systems | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.4/file-systems | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.4/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.5/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.5/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.5/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.5/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.5/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.5/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.5/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.5/file-systems | 
 
 
 # **create_file_systems**
@@ -60,6 +64,55 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **create_filesystem_policies**
+> PolicyObjectsResponse create_filesystem_policies(policy_names=policy_names, member_names=member_names)
+
+
+
+Create a connection between a file system and a policy
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN)  # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # attach policy to a file system
+        # assume we have a policy named "p1", and a file system named "myfs"
+        res = fb.file_systems.create_filesystem_policies(policy_names=["p1"],
+                                                         member_names=["myfs"])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when attaching policy to a file system: %s\n" % e)```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+
+### Return type
+
+[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **delete_file_systems**
 > delete_file_systems(name)
 
@@ -90,6 +143,55 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **name** | **str**| name of the file system to be deleted | 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **delete_filesystem_policies**
+> delete_filesystem_policies(policy_names=policy_names, member_names=member_names)
+
+
+
+Delete a connection betwwen a file system and a policy
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN)  # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # attach policy to a file system
+        # assume we have a policy named "p1", and a file system named "myfs"
+        res = fb.file_systems.delete_filesystem_policies(policy_names=["p1"],
+                                                         member_names=["myfs"])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when deleting policy against a file system: %s\n" % e)```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
 
 ### Return type
 
@@ -155,6 +257,156 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FileSystemResponse**](FileSystemResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_file_systems_performance**
+> FileSystemPerformanceResponse list_file_systems_performance(resolution=resolution, protocol=protocol, end_time=end_time, filter=filter, limit=limit, names=names, sort=sort, start_time=start_time, start=start, token=token, total_only=total_only)
+
+
+
+List instant or historical file system performance.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list instantaneous nfs performance for all file systems
+        res = fb.file_systems.list_file_systems_performance(protocol='nfs')
+        print(res)
+
+        # list instantaneous nfs performance for file systems 'fs1' and 'fs2'
+        res = fb.file_systems.list_file_systems_performance(names=['fs1', 'fs2'], protocol='nfs')
+        print(res)
+
+        # list historical file systems nfs performance for all file systems between some
+        # start time and end time
+        res = fb.file_systems.list_file_systems_performance(
+            start_time=START_TIME,
+            end_time=END_TIME,
+            protocol='nfs',
+            resolution=30000)
+        print(res)
+
+        # list historical file systems nfs performance for file systems 'fs1' and 'fs2' between some
+        # start time and end time
+        res = fb.file_systems.list_file_systems_performance(
+            start_time=START_TIME,
+            end_time=END_TIME,
+            resolution=30000,
+            protocol='nfs',
+            names=['fs1', 'fs2'])
+        print(res)
+
+        # total instantaneous performance across 2 filesystems
+        res = fb.file_systems.list_file_systems_performance(names=['fs1', 'fs2'], protocol='nfs',
+                                                            total_only=True)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing file system performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
+ **protocol** | **str**| to sample performance of a certain protocol | [optional] 
+ **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **sort** | **str**| The way to order the results. | [optional] 
+ **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
+ **start** | **int**| start | [optional] 
+ **token** | **str**| token | [optional] 
+ **total_only** | **bool**| return only the total object | [optional] [default to false]
+
+### Return type
+
+[**FileSystemPerformanceResponse**](FileSystemPerformanceResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_filesystem_policies**
+> PolicyObjectsResponse list_filesystem_policies(policy_names=policy_names, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+
+
+
+List policy attached to filesystems
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list all policies
+        res = fb.file_systems.list_filesystem_policies()
+        print(res)
+        # assume we have a policy named "p1", and a file system named "myfs"
+        res = fb.file_systems.list_filesystem_policies(policy_names=["p1"],
+                                                        member_names=["myfs"])
+        print(res)
+        # list and sort by name in descendant order
+        res = fb.file_systems.list_filesystem_policies(limit=5, sort="policy.name-")
+        print(res)
+        # list with page size 5
+        res = fb.file_systems.list_filesystem_policies(limit=5)
+        print(res)
+        # list all remaining policies
+        res = fb.file_systems.list_filesystem_policies(token=res.pagination_info.continuation_token)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing policy file system: %s\n" % e)```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **sort** | **str**| The way to order the results. | [optional] 
+ **start** | **int**| start | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **token** | **str**| token | [optional] 
+
+### Return type
+
+[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
 
 ### Authorization
 

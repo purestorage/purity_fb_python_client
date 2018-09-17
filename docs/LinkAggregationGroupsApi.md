@@ -1,13 +1,13 @@
-# purity_fb_1dot4.LinkAggregationGroupsApi
+# purity_fb_1dot5.LinkAggregationGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.4/link-aggregation-groups | 
-[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.4/link-aggregation-groups | 
-[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.4/link-aggregation-groups | 
-[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.4/link-aggregation-groups | 
+[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.5/link-aggregation-groups | 
+[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.5/link-aggregation-groups | 
+[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.5/link-aggregation-groups | 
+[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.5/link-aggregation-groups | 
 
 
 # **create_link_aggregation_groups**

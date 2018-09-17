@@ -1,11 +1,11 @@
-# purity_fb_1dot4.AdminsApi
+# purity_fb_1dot5.AdminsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.4/admins | 
-[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.4/admins | 
+[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.5/admins | 
+[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.5/admins | 
 
 
 # **list_admins**

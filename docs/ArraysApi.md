@@ -1,16 +1,16 @@
-# purity_fb_1dot4.ArraysApi
+# purity_fb_1dot5.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.4/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.4/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.4/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.4/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.4/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.4/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.4/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.5/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.5/arrays/http-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.5/arrays/performance | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.5/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.5/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.5/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.5/arrays | 
 
 
 # **list_arrays**
@@ -24,7 +24,7 @@ List arrays
 ```python
 from purity_fb import PurityFb, rest
 
-fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
@@ -347,7 +347,7 @@ Update arrays
 ```python
 from purity_fb import PurityFb, PureArray, rest
 
-fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
@@ -359,7 +359,7 @@ if res:
         res = fb.arrays.update_arrays(array_settings=array_settings)
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing arrays: %s\n" % e)
+        print("Exception when updating arrays: %s\n" % e)
 ```
 
 ### Parameters
