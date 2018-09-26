@@ -13,15 +13,17 @@ from . import purity_fb_1dot1
 from . import purity_fb_1dot2
 from . import purity_fb_1dot3
 from . import purity_fb_1dot4
+from . import purity_fb_1dot5
 
-SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5']
 
 version_module_dict = {
     '1.0': purity_fb_1dot0,
     '1.1': purity_fb_1dot1,
     '1.2': purity_fb_1dot2,
     '1.3': purity_fb_1dot3,
-    '1.4': purity_fb_1dot4
+    '1.4': purity_fb_1dot4,
+    '1.5': purity_fb_1dot5
 }
 
 

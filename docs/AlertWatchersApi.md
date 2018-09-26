@@ -1,14 +1,14 @@
-# purity_fb_1dot4.AlertWatchersApi
+# purity_fb_1dot5.AlertWatchersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.4/alert-watchers | 
-[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.4/alert-watchers | 
-[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.4/alert-watchers | 
-[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.4/alert-watchers/test | 
-[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.4/alert-watchers | 
+[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.5/alert-watchers | 
+[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.5/alert-watchers | 
+[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.5/alert-watchers | 
+[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.5/alert-watchers/test | 
+[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.5/alert-watchers | 
 
 
 # **create_alert_watchers**

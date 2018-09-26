@@ -1,12 +1,12 @@
-# purity_fb_1dot4.ObjectStoreAccountsApi
+# purity_fb_1dot5.ObjectStoreAccountsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.4/object-store-accounts | 
-[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.4/object-store-accounts | 
-[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.4/object-store-accounts | 
+[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.5/object-store-accounts | 
+[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.5/object-store-accounts | 
+[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.5/object-store-accounts | 
 
 
 # **create_object_store_accounts**
@@ -32,7 +32,8 @@ if res:
         res = fb.object_store_accounts.create_object_store_accounts(names=["myobjaccount"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating object store account: %s\n" % e)```
+        print("Exception when creating object store account: %s\n" % e)
+```
 
 ### Parameters
 
@@ -77,7 +78,8 @@ if res:
         # delete a object store account with name myobjaccount
         fb.object_store_accounts.delete_object_store_accounts(names=["myobjaccount"])
     except rest.ApiException as e:
-        print("Exception when deleting object store account: %s\n" % e)```
+        print("Exception when deleting object store account: %s\n" % e)
+```
 
 ### Parameters
 
@@ -130,7 +132,8 @@ if res:
         # list with filter
         res = fb.object_store_accounts.list_object_store_accounts(filter='name=\'myobjaccount*\'')
     except rest.ApiException as e:
-        print("Exception when listing object store accounts: %s\n" % e)```
+        print("Exception when listing object store accounts: %s\n" % e)
+```
 
 ### Parameters
 

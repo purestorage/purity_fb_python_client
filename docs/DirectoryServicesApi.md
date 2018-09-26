@@ -1,14 +1,14 @@
-# purity_fb_1dot4.DirectoryServicesApi
+# purity_fb_1dot5.DirectoryServicesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.4/directory-services | 
-[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.4/directory-services/roles | 
-[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.4/directory-services/test | 
-[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.4/directory-services | 
-[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.4/directory-services/roles | 
+[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.5/directory-services | 
+[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.5/directory-services/roles | 
+[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.5/directory-services/test | 
+[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.5/directory-services | 
+[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.5/directory-services/roles | 
 
 
 # **list_directory_services**

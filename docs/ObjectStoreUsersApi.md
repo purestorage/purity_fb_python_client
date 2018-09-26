@@ -1,12 +1,12 @@
-# purity_fb_1dot4.ObjectStoreUsersApi
+# purity_fb_1dot5.ObjectStoreUsersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_users**](ObjectStoreUsersApi.md#create_object_store_users) | **POST** /1.4/object-store-users | 
-[**delete_object_store_users**](ObjectStoreUsersApi.md#delete_object_store_users) | **DELETE** /1.4/object-store-users | 
-[**list_object_store_users**](ObjectStoreUsersApi.md#list_object_store_users) | **GET** /1.4/object-store-users | 
+[**create_object_store_users**](ObjectStoreUsersApi.md#create_object_store_users) | **POST** /1.5/object-store-users | 
+[**delete_object_store_users**](ObjectStoreUsersApi.md#delete_object_store_users) | **DELETE** /1.5/object-store-users | 
+[**list_object_store_users**](ObjectStoreUsersApi.md#list_object_store_users) | **GET** /1.5/object-store-users | 
 
 
 # **create_object_store_users**

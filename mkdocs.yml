@@ -32,6 +32,7 @@ pages:
         - Object Store Access Keys: ObjectStoreAccessKeysApi.md
         - Object Store Accounts: ObjectStoreAccountsApi.md
         - Object Store Users: ObjectStoreUsersApi.md
+        - Policies: PoliciesApi.md
         - Smtp: SmtpApi.md
         - Subnets: SubnetsApi.md
 
@@ -57,6 +58,7 @@ pages:
         - Directory Service Roles: DirectoryServiceRolesResponse.md
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
+        - File System Performance: FileSystemPerformanceResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
         - Hardware: HardwareResponse.md
         - Hardware Connector: HardwareConnectorResponse.md
@@ -65,6 +67,8 @@ pages:
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
         - Object Store User: ObjectStoreUserResponse.md
+        - Policy: PolicyResponse.md
+        - Policy Objects: PolicyObjectsResponse.md
         - Smtp: SmtpResponse.md
         - Subnet: SubnetResponse.md
         - Test Result: TestResultResponse.md
@@ -89,6 +93,8 @@ pages:
         - Blade: Blade.md
     - Bucket:
         - Bucket: Bucket.md
+        - Bucket Patch: BucketPatch.md
+        - Bucket Post: BucketPost.md
     - Certificate:
         - Certificate: Certificate.md
     - Directory Service:
@@ -99,6 +105,7 @@ pages:
         - Dns: Dns.md
     - File System:
         - File System: FileSystem.md
+        - File System Performance: FileSystemPerformance.md
         - NFS Protocol: NfsRule.md
         - Protocol Rule: ProtocolRule.md
     - File System Snapshot:
@@ -116,6 +123,12 @@ pages:
         - Object Store Access Key: ObjectStoreAccessKey.md
         - Object Store Account: ObjectStoreAccount.md
         - Object Store User: ObjectStoreUser.md
+    - Policy:
+        - Policy: Policy.md
+        - Policy Objects: PolicyObjects.md
+        - Policy Patch: PolicyPatch.md
+        - Policy Reference: PolicyReference.md
+        - Resource Rule: ResourceRule.md
     - Smtp:
         - Smtp: Smtp.md
     - Subnet:
