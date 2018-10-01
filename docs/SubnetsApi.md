@@ -135,7 +135,8 @@ if res:
         # list with filter
         res = fb.subnets.list_subnets(filter='vlan=8')
     except rest.ApiException as e:
-        print("Exception when listing subnets: %s\n" % e)```
+        print("Exception when listing subnets: %s\n" % e)
+```
 
 ### Parameters
 

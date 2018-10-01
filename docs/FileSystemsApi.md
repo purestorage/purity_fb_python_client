@@ -89,7 +89,8 @@ if res:
                                                          member_names=["myfs"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when attaching policy to a file system: %s\n" % e)```
+        print("Exception when attaching policy to a file system: %s\n" % e)
+```
 
 ### Parameters
 
@@ -184,7 +185,8 @@ if res:
                                                          member_names=["myfs"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when deleting policy against a file system: %s\n" % e)```
+        print("Exception when deleting policy against a file system: %s\n" % e)
+```
 
 ### Parameters
 
@@ -390,7 +392,8 @@ if res:
         res = fb.file_systems.list_filesystem_policies(token=res.pagination_info.continuation_token)
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing policy file system: %s\n" % e)```
+        print("Exception when listing policy file system: %s\n" % e)
+```
 
 ### Parameters
 
