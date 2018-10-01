@@ -74,7 +74,8 @@ if res:
         res = fb.smtp.update_smtp(smtp_settings=smtp_settings)
         print(res)
     except rest.ApiException as e:
-        print("Exception when updating smtp configuration settings: %s\n" % e)```
+        print("Exception when updating smtp configuration settings: %s\n" % e)
+```
 
 ### Parameters
 

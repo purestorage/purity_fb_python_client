@@ -208,7 +208,8 @@ if res:
             res = fb.file_system_snapshots.list_filesystem_snapshot_policies(token=res.pagination_info.continuation_token)
             print(res)
     except rest.ApiException as e:
-        print("Exception when listing policy file system snapshot: %s\n" % e)```
+        print("Exception when listing policy file system snapshot: %s\n" % e)
+```
 
 ### Parameters
 

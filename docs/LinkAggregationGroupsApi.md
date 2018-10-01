@@ -136,7 +136,8 @@ if res:
         # list with filter
         res = fb.link_aggregation_groups.list_link_aggregation_groups(filter="mac_address=24:a9:37:11:f5:21")
     except rest.ApiException as e:
-        print("Exception when listing link aggregation groups: %s\n" % e)```
+        print("Exception when listing link aggregation groups: %s\n" % e)
+```
 
 ### Parameters
 
