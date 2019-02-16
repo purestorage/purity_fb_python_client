@@ -34,7 +34,7 @@ class FileSystemSnapshot(object):
         'name': 'str',
         'created': 'int',
         'destroyed': 'bool',
-        'policy': 'PolicyReference',
+        'policy': 'FixedReference',
         'source': 'str',
         'source_destroyed': 'bool',
         'suffix': 'str',
@@ -159,7 +159,7 @@ class FileSystemSnapshot(object):
         reference of the associated policy.
 
         :return: The policy of this FileSystemSnapshot.
-        :rtype: PolicyReference
+        :rtype: FixedReference
         """
         return self._policy
 
@@ -170,7 +170,7 @@ class FileSystemSnapshot(object):
         reference of the associated policy.
 
         :param policy: The policy of this FileSystemSnapshot.
-        :type: PolicyReference
+        :type: FixedReference
         """
 
         self._policy = policy

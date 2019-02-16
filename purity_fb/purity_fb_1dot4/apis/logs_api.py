@@ -53,8 +53,8 @@ class LogsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int end_time: time to end sample in milliseconds since epoch
-        :param int start_time: time to start sample in milliseconds since epoch
+        :param int end_time: Time to end sample in milliseconds since epoch.
+        :param int start_time: Time to start sample in milliseconds since epoch.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,8 +79,8 @@ class LogsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int end_time: time to end sample in milliseconds since epoch
-        :param int start_time: time to start sample in milliseconds since epoch
+        :param int end_time: Time to end sample in milliseconds since epoch.
+        :param int start_time: Time to start sample in milliseconds since epoch.
         :return: file
                  If the method is called asynchronously,
                  returns the request thread.

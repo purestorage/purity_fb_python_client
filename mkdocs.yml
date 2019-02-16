@@ -9,10 +9,10 @@ pages:
     - APIs:
         - Admins: AdminsApi.md
         - Admins Cache: AdminsCacheApi.md
-        - Arrays: ArraysApi.md
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
         - Alert Watchers Tests: AlertWatcherTest.md
+        - Arrays: ArraysApi.md
         - Array Http Performances: ArraysApi.md
         - Array Performances: ArraysApi.md
         - Array S3 Performances: ArraysApi.md
@@ -20,9 +20,10 @@ pages:
         - Blades: BladeApi.md
         - Buckets: BucketsApi.md
         - Certificates: CertificatesApi.md
-        - Directory Service: DirectoryServicesApi.md
+        - Directory Services: DirectoryServicesApi.md
         - Dns: DnsApi.md
         - File Systems: FileSystemsApi.md
+        - File System Performances: FileSystemsApi.md
         - File System Snapshots: FileSystemSnapshotsApi.md
         - Hardware: HardwareApi.md
         - Hardware Connectors: HardwareConnectorsApi.md
@@ -33,8 +34,13 @@ pages:
         - Object Store Accounts: ObjectStoreAccountsApi.md
         - Object Store Users: ObjectStoreUsersApi.md
         - Policies: PoliciesApi.md
+        - Quotas for Groups: QuotasGroupsApi.md
+        - Quotas for Users: QuotasUsersApi.md
         - Smtp: SmtpApi.md
         - Subnets: SubnetsApi.md
+        - Support: SupportApi.md
+        - Usage for Groups: UsageGroupsApi.md
+        - Usage for Users: UsageUsersApi.md
 
 - Models:
     - Response:
@@ -69,8 +75,11 @@ pages:
         - Object Store User: ObjectStoreUserResponse.md
         - Policy: PolicyResponse.md
         - Policy Objects: PolicyObjectsResponse.md
+        - Quotas or Usages for Groups: QuotasGroupResponse.md
+        - Quotas or Usages for Users: QuotasUserResponse.md
         - Smtp: SmtpResponse.md
         - Subnet: SubnetResponse.md
+        - Support: SupportResponse.md
         - Test Result: TestResultResponse.md
     - Error: PureError.md
     - Space: Space.md
@@ -100,6 +109,7 @@ pages:
     - Directory Service:
         - Directory Service: DirectoryService.md
         - Directory Service Role: DirectoryServiceRole.md
+        - Directory Service SMB Specific Attributes: DirectoryserviceSmb.md
         - Test Result: TestResult.md
     - Dns:
         - Dns: Dns.md
@@ -111,6 +121,9 @@ pages:
     - File System Snapshot:
         - File System Snapshot: FileSystemSnapshot.md
         - Snapshot Suffix: SnapshotSuffix.md
+    - Fixed Reference:
+        - Fixed Reference: FixedReference.md
+        - Resource Type: ResourceType.md
     - Hardware:
         - Hardware: Hardware.md
     - Hardware Connector:
@@ -129,8 +142,16 @@ pages:
         - Policy Patch: PolicyPatch.md
         - Policy Reference: PolicyReference.md
         - Resource Rule: ResourceRule.md
+    - Quotas:
+        - Group of Quota or Usage: QuotasgroupGroup.md
+        - Quota or Usage for Group: QuotasGroup.md
+        - Quota or Usage for User: QuotasUser.md
+        - User of Quota or Usage: QuotasuserUser.md
     - Smtp:
         - Smtp: Smtp.md
     - Subnet:
         - Subnet: Subnet.md
+    - Support:
+        - Support: Support.md
+        - Support Remote Assist Paths: SupportRemoteAssistPaths.md
 theme: readthedocs

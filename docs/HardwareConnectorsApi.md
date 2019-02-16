@@ -1,11 +1,11 @@
-# purity_fb_1dot5.HardwareConnectorsApi
+# purity_fb_1dot6.HardwareConnectorsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.5/hardware-connectors | 
-[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.5/hardware-connectors | 
+[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.6/hardware-connectors | 
+[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.6/hardware-connectors | 
 
 
 # **list_hardware_connectors**
@@ -38,8 +38,7 @@ if res:
         # list with filter
         res = fb.hardware_connectors.list_hardware_connectors(filter='port_count=4')
     except rest.ApiException as e:
-        print("Exception when listing hardware connectors: %s\n" % e)
-```
+        print("Exception when listing hardware connectors: %s\n" % e)```
 
 ### Parameters
 

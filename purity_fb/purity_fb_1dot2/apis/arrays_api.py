@@ -53,8 +53,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :return: ArrayHttpPerformanceResponse
                  If the method is called asynchronously,
@@ -80,8 +80,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :return: ArrayHttpPerformanceResponse
                  If the method is called asynchronously,
@@ -162,8 +162,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :param str protocol: to sample performance of a certain protocol
         :return: ArrayPerformanceResponse
@@ -190,8 +190,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :param str protocol: to sample performance of a certain protocol
         :return: ArrayPerformanceResponse
@@ -275,8 +275,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :return: ArrayS3PerformanceResponse
                  If the method is called asynchronously,
@@ -302,8 +302,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :return: ArrayS3PerformanceResponse
                  If the method is called asynchronously,
@@ -384,8 +384,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :param str type: to sample space of either file systems or object store
         :return: ArraySpaceResponse
@@ -412,8 +412,8 @@ class ArraysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param int start_time: time to start sample in milliseconds since epoch
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
         :param str type: to sample space of either file systems or object store
         :return: ArraySpaceResponse

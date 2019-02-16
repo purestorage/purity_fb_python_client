@@ -1,14 +1,14 @@
-# purity_fb_1dot5.DirectoryServicesApi
+# purity_fb_1dot6.DirectoryServicesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.5/directory-services | 
-[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.5/directory-services/roles | 
-[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.5/directory-services/test | 
-[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.5/directory-services | 
-[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.5/directory-services/roles | 
+[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.6/directory-services | 
+[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.6/directory-services/roles | 
+[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.6/directory-services/test | 
+[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.6/directory-services | 
+[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.6/directory-services/roles | 
 
 
 # **list_directory_services**
@@ -31,7 +31,7 @@ except rest.ApiException as e:
 if res:
     try:
         # list Directory Services configuration
-        res = fb.directory_services.list_directory_services(names=["management"])
+        res = fb.directory_services.list_directory_services(names=["smb"])
         print(res)
     except rest.ApiException as e:
         print("Exception when listing directory services configuration: %s\n" % e)
@@ -171,7 +171,7 @@ Update directory services
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest
+from purity_fb import PurityFb, rest, DirectoryService
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -182,15 +182,18 @@ except rest.ApiException as e:
 if res:
     try:
         # update Directory Services management configuration
-        name="management"
+        name = 'smb'
         URI = 'ldaps://ad1.mycompany.com'
         BASE_DN = 'DC=mycompany,DC=com'
         BIND_USER = 'CN=John,OU=Users,DC=mycompany,DC=com'
         BIND_PW = '****'
 
+        SMB_JOIN_OU = 'OU=PureStorage,OU=StorageArrays,OU=ServiceMachines'
+        SMB_ATTRS = {'join_ou': SMB_JOIN_OU}
+
         directory_service = DirectoryService(base_dn=BASE_DN, bind_password=BIND_PW, bind_user=BIND_USER, uris=[URI],
-                                             enabled=True)
-        res = self.directory_services.update_directory_services(names=[name], directory_service=directory_service)
+                                             enabled=True, smb=SMB_ATTRS)
+        res = fb.directory_services.update_directory_services(names=[name], directory_service=directory_service)
         print(res)
     except rest.ApiException as e:
         print("Exception when updating directory services configuration: %s\n" % e)

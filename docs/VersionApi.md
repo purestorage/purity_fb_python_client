@@ -1,4 +1,4 @@
-# purity_fb_1dot5.VersionApi
+# purity_fb_1dot6.VersionApi
 
 All URIs are relative to *https://purity_fb_server/api*
 

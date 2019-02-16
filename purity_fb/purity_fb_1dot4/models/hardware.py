@@ -286,7 +286,7 @@ class Hardware(object):
     def status(self):
         """
         Gets the status of this Hardware.
-        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown and unused.
+        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown, and unused.
 
         :return: The status of this Hardware.
         :rtype: str
@@ -297,7 +297,7 @@ class Hardware(object):
     def status(self, status):
         """
         Sets the status of this Hardware.
-        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown and unused.
+        Component status. Possible values are critical, healthy, identifying, unhealthy, unknown, and unused.
 
         :param status: The status of this Hardware.
         :type: str
@@ -332,7 +332,7 @@ class Hardware(object):
     def type(self):
         """
         Gets the type of this Hardware.
-        Component type. Possible values are ch, eth, fb, fm and pwr.
+        Component type. Possible values are ch, eth, fan, fb, fm, pwr and xfm.
 
         :return: The type of this Hardware.
         :rtype: str
@@ -343,7 +343,7 @@ class Hardware(object):
     def type(self, type):
         """
         Sets the type of this Hardware.
-        Component type. Possible values are ch, eth, fb, fm and pwr.
+        Component type. Possible values are ch, eth, fan, fb, fm, pwr and xfm.
 
         :param type: The type of this Hardware.
         :type: str

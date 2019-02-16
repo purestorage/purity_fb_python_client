@@ -53,7 +53,7 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] sources: a list of names of source file systems (required)
+        :param list[str] sources: A list of names of source file systems. (required)
         :param SnapshotSuffix suffix: the suffix of the snapshot
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
@@ -79,7 +79,7 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] sources: a list of names of source file systems (required)
+        :param list[str] sources: A list of names of source file systems. (required)
         :param SnapshotSuffix suffix: the suffix of the snapshot
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
@@ -167,8 +167,8 @@ class FileSystemSnapshotsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :param list[str] names_or_sources: A comma-separated list of resource names. Either the name of the snapshot or the source.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
@@ -199,8 +199,8 @@ class FileSystemSnapshotsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :param list[str] names_or_sources: A comma-separated list of resource names. Either the name of the snapshot or the source.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,

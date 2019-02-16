@@ -58,7 +58,7 @@ class BucketsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -88,7 +88,7 @@ class BucketsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.

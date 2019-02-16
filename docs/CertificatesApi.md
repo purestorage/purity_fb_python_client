@@ -1,11 +1,11 @@
-# purity_fb_1dot5.CertificatesApi
+# purity_fb_1dot6.CertificatesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_certificates**](CertificatesApi.md#list_certificates) | **GET** /1.5/certificates | 
-[**update_certificates**](CertificatesApi.md#update_certificates) | **PATCH** /1.5/certificates | 
+[**list_certificates**](CertificatesApi.md#list_certificates) | **GET** /1.6/certificates | 
+[**update_certificates**](CertificatesApi.md#update_certificates) | **PATCH** /1.6/certificates | 
 
 
 # **list_certificates**

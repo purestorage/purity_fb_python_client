@@ -7,9 +7,8 @@ Name | Type | Description | Notes
 **id** | **str** | A globally unique ID chosen by the system. Cannot change. Cannot ever refer to another resource. | [optional] 
 **ntp_servers** | **list[str]** |  | [optional] 
 **os** | **str** | Possible values are Purity//FA and Purity//FB. | [optional] 
-**revision** | **str** |  | [optional] 
-**time_zone** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
+**revision** | **str** |  | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

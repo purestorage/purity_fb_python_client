@@ -481,8 +481,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -513,8 +513,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -607,15 +607,15 @@ class FileSystemsApi(object):
             for asynchronous request. (optional)
         :param int resolution: sample frequency in milliseconds
         :param str protocol: to sample performance of a certain protocol
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
         :param list[str] names: A list of names.
         :param str sort: The way to order the results.
-        :param int start_time: time to start sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
         :param int start: start
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :return: FileSystemPerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -642,15 +642,15 @@ class FileSystemsApi(object):
             for asynchronous request. (optional)
         :param int resolution: sample frequency in milliseconds
         :param str protocol: to sample performance of a certain protocol
-        :param int end_time: time to end sample in milliseconds since epoch
+        :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
         :param list[str] names: A list of names.
         :param str sort: The way to order the results.
-        :param int start_time: time to start sample in milliseconds since epoch
+        :param int start_time: Time to start sample in milliseconds since epoch.
         :param int start: start
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :return: FileSystemPerformanceResponse
                  If the method is called asynchronously,
                  returns the request thread.

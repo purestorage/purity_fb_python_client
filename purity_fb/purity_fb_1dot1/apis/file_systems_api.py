@@ -3,7 +3,7 @@
 """
     Purity//FB REST Client
 
-    Client for Purity//FB REST API (1.0 - 1.1), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Client for Purity//FB REST API (1.0), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.1
     Contact: info@purestorage.com
@@ -267,8 +267,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -299,8 +299,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.

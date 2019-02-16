@@ -262,7 +262,7 @@ class ObjectStoreAccountsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :param list[str] names: A list of names.
         :return: ObjectStoreAccountResponse
                  If the method is called asynchronously,
@@ -293,7 +293,7 @@ class ObjectStoreAccountsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total_only: return only the total object
+        :param bool total_only: Return only the total object.
         :param list[str] names: A list of names.
         :return: ObjectStoreAccountResponse
                  If the method is called asynchronously,

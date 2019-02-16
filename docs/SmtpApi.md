@@ -1,11 +1,11 @@
-# purity_fb_1dot5.SmtpApi
+# purity_fb_1dot6.SmtpApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_smtp**](SmtpApi.md#list_smtp) | **GET** /1.5/smtp | 
-[**update_smtp**](SmtpApi.md#update_smtp) | **PATCH** /1.5/smtp | 
+[**list_smtp**](SmtpApi.md#list_smtp) | **GET** /1.6/smtp | 
+[**update_smtp**](SmtpApi.md#update_smtp) | **PATCH** /1.6/smtp | 
 
 
 # **list_smtp**
@@ -74,8 +74,7 @@ if res:
         res = fb.smtp.update_smtp(smtp_settings=smtp_settings)
         print(res)
     except rest.ApiException as e:
-        print("Exception when updating smtp configuration settings: %s\n" % e)
-```
+        print("Exception when updating smtp configuration settings: %s\n" % e)```
 
 ### Parameters
 

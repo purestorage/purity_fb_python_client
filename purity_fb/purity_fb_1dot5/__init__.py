@@ -58,6 +58,7 @@ from .models.file_system_performance_response import FileSystemPerformanceRespon
 from .models.file_system_response import FileSystemResponse
 from .models.file_system_snapshot import FileSystemSnapshot
 from .models.file_system_snapshot_response import FileSystemSnapshotResponse
+from .models._fixed_reference import FixedReference
 from .models.hardware import Hardware
 from .models.hardware_connector import HardwareConnector
 from .models.hardware_connector_response import HardwareConnectorResponse
@@ -91,6 +92,7 @@ from .models.pure_object import PureObject
 from .models.reference import Reference
 from .models._resource import Resource
 from .models._resource_rule import ResourceRule
+from .models._resource_type import ResourceType
 from .models.smb_rule import SmbRule
 from .models.smtp import Smtp
 from .models.smtp_response import SmtpResponse
