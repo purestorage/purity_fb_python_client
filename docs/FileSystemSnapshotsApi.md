@@ -1,14 +1,14 @@
-# purity_fb_1dot5.FileSystemSnapshotsApi
+# purity_fb_1dot6.FileSystemSnapshotsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.5/file-system-snapshots | 
-[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.5/file-system-snapshots | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.5/file-system-snapshots | 
-[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.5/file-system-snapshots/policies | 
-[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.5/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.6/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.6/file-system-snapshots | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.6/file-system-snapshots | 
+[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.6/file-system-snapshots/policies | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.6/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**
@@ -44,7 +44,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sources** | [**list[str]**](str.md)| a list of names of source file systems | 
+ **sources** | [**list[str]**](str.md)| A list of names of source file systems. | 
  **suffix** | [**SnapshotSuffix**](SnapshotSuffix.md)| the suffix of the snapshot | [optional] 
 
 ### Return type
@@ -152,8 +152,8 @@ Name | Type | Description  | Notes
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **total** | **bool**| return a total object in addition to the other results | [optional] [default to false]
- **total_only** | **bool**| return only the total object | [optional] [default to false]
+ **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **names_or_sources** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the source. | [optional] 
 
 ### Return type
@@ -208,8 +208,7 @@ if res:
             res = fb.file_system_snapshots.list_filesystem_snapshot_policies(token=res.pagination_info.continuation_token)
             print(res)
     except rest.ApiException as e:
-        print("Exception when listing policy file system snapshot: %s\n" % e)
-```
+        print("Exception when listing policy file system snapshot: %s\n" % e)```
 
 ### Parameters
 
@@ -270,7 +269,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| the name of the file system snapshot to be updated | 
+ **name** | **str**| The name of the file system snapshot to be updated. | 
  **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| the new attributes, only modifiable fields could be used. | 
 
 ### Return type

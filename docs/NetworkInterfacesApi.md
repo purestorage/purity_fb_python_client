@@ -1,13 +1,13 @@
-# purity_fb_1dot5.NetworkInterfacesApi
+# purity_fb_1dot6.NetworkInterfacesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.5/network-interfaces | 
-[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.5/network-interfaces | 
-[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.5/network-interfaces | 
-[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.5/network-interfaces | 
+[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.6/network-interfaces | 
+[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.6/network-interfaces | 
+[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.6/network-interfaces | 
+[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.6/network-interfaces | 
 
 
 # **create_network_interfaces**
@@ -138,8 +138,7 @@ if res:
         # list with filter
         res = fb.network_interfaces.list_network_interfaces(filter='vlan=8')
     except rest.ApiException as e:
-        print("Exception when listing network interfaces: %s\n" % e)
-```
+        print("Exception when listing network interfaces: %s\n" % e)```
 
 ### Parameters
 

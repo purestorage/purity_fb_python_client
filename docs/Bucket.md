@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **destroyed** | **bool** | is the bucket destroyed? False by default. Modifiable. | [optional] 
 **time_remaining** | **int** | time in milliseconds before the bucket is eradicated. Null if not destroyed. | [optional] 
 **object_count** | **int** | the number of object within the bucket. | [optional] 
+**versioning** | **str** | the versioning state for objects within the bucket. Possible values are none, enabled, and suspended. | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

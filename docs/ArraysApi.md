@@ -1,16 +1,16 @@
-# purity_fb_1dot5.ArraysApi
+# purity_fb_1dot6.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.5/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.5/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.5/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.5/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.5/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.5/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.5/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.6/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.6/arrays/http-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.6/arrays/performance | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.6/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.6/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.6/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.6/arrays | 
 
 
 # **list_arrays**
@@ -92,8 +92,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
- **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
 
 ### Return type
@@ -151,8 +151,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
- **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **protocol** | **str**| to sample performance of a certain protocol | [optional] 
 
@@ -207,8 +207,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
- **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
 
 ### Return type
@@ -265,8 +265,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
- **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **type** | **str**| to sample space of either file systems or object store | [optional] 
 

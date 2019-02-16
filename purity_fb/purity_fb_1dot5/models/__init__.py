@@ -58,6 +58,7 @@ from .file_system_performance_response import FileSystemPerformanceResponse
 from .file_system_response import FileSystemResponse
 from .file_system_snapshot import FileSystemSnapshot
 from .file_system_snapshot_response import FileSystemSnapshotResponse
+from ._fixed_reference import FixedReference
 from .hardware import Hardware
 from .hardware_connector import HardwareConnector
 from .hardware_connector_response import HardwareConnectorResponse
@@ -91,6 +92,7 @@ from .pure_object import PureObject
 from .reference import Reference
 from ._resource import Resource
 from ._resource_rule import ResourceRule
+from ._resource_type import ResourceType
 from .smb_rule import SmbRule
 from .smtp import Smtp
 from .smtp_response import SmtpResponse

@@ -163,8 +163,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -195,8 +195,8 @@ class FileSystemsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param bool total: return a total object in addition to the other results
-        :param bool total_only: return only the total object
+        :param bool total: Return a total object in addition to the other results.
+        :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.

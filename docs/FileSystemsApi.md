@@ -1,17 +1,17 @@
-# purity_fb_1dot5.FileSystemsApi
+# purity_fb_1dot6.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.5/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.5/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.5/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.5/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.5/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.5/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.5/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.5/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.6/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.6/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.6/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.6/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.6/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.6/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.6/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.6/file-systems | 
 
 
 # **create_file_systems**
@@ -32,15 +32,20 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    # create a local file system object with given name, provisioned size, and NFS enabled.
-    myfs = FileSystem(name="myfs", provisioned="5000", hard_limit_enabled=True, nfs=NfsRule(enabled=True))
+    # create a local file system object with given name, provisioned size, default quotas,
+    # and NFSv4.1 enabled.
+    default_user_space_quota = 1024000
+    default_group_space_quota = 1024000000
+    myfs = FileSystem(name="myfs", provisioned=5000, hard_limit_enabled=True,
+                      nfs=NfsRule(v4_1_enabled=True), default_user_quota=default_user_space_quota,
+                      default_group_quota=default_group_space_quota)
     try:
-        # post the file system object myfs on the array
+        # post the file system object myfs on the array with the specific default user and group
+        # quotas
         res = fb.file_systems.create_file_systems(file_system=myfs)
         print(res)
     except rest.ApiException as e:
         print("Exception when creating file system: %s\n" % e)
-
 ```
 
 ### Parameters
@@ -89,8 +94,7 @@ if res:
                                                          member_names=["myfs"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when attaching policy to a file system: %s\n" % e)
-```
+        print("Exception when attaching policy to a file system: %s\n" % e)```
 
 ### Parameters
 
@@ -185,8 +189,7 @@ if res:
                                                          member_names=["myfs"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when deleting policy against a file system: %s\n" % e)
-```
+        print("Exception when deleting policy against a file system: %s\n" % e)```
 
 ### Parameters
 
@@ -237,8 +240,8 @@ if res:
         res = fb.file_systems.list_file_systems(limit=5, sort="provisioned-")
         # list all remaining file systems
         res = fb.file_systems.list_file_systems(token=res.pagination_info.continuation_token)
-        # list with filter
-        res = fb.file_systems.list_file_systems(filter='name=\'myfs*\' and nfs.enabled and not(smb.enabled)')
+        # list with filter to see only file systems with at least one type of nfs enabled
+        res = fb.file_systems.list_file_systems(filter='nfs.v3_enabled or nfs.v4_1_enabled')
     except rest.ApiException as e:
         print("Exception when listing file systems: %s\n" % e)
 ```
@@ -253,8 +256,8 @@ Name | Type | Description  | Notes
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **total** | **bool**| return a total object in addition to the other results | [optional] [default to false]
- **total_only** | **bool**| return only the total object | [optional] [default to false]
+ **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
 
@@ -331,15 +334,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **protocol** | **str**| to sample performance of a certain protocol | [optional] 
- **end_time** | **int**| time to end sample in milliseconds since epoch | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
- **start_time** | **int**| time to start sample in milliseconds since epoch | [optional] 
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
  **start** | **int**| start | [optional] 
  **token** | **str**| token | [optional] 
- **total_only** | **bool**| return only the total object | [optional] [default to false]
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
 
@@ -392,8 +395,7 @@ if res:
         res = fb.file_systems.list_filesystem_policies(token=res.pagination_info.continuation_token)
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing policy file system: %s\n" % e)
-```
+        print("Exception when listing policy file system: %s\n" % e)```
 
 ### Parameters
 
@@ -440,9 +442,13 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    # create a local file system object with provisioned size, and NFS enabled
+    # update a file system object with a new provisioned size. enable hard limits.
+    # enable NFSv4.1, and disable NFSv3. enable SMB in native ACL mode. disable HTTP
+    # adjust the default user quota to a new value
     # note that name field should be None
-    new_attr = FileSystem(provisioned="1024", hard_limit_enabled=True, nfs=NfsRule(enabled=True), http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"))
+    new_attr = FileSystem(provisioned=1024, hard_limit_enabled=True, nfs=NfsRule(v3_enabled=False, v4_1_enabled=True),
+                          http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"),
+                          default_user_quota=4096)
     try:
         # update the file system named myfs on the array
         res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True, attributes=new_attr)

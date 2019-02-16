@@ -1,12 +1,12 @@
-# purity_fb_1dot5.ObjectStoreAccountsApi
+# purity_fb_1dot6.ObjectStoreAccountsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.5/object-store-accounts | 
-[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.5/object-store-accounts | 
-[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.5/object-store-accounts | 
+[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.6/object-store-accounts | 
+[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.6/object-store-accounts | 
+[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.6/object-store-accounts | 
 
 
 # **create_object_store_accounts**
@@ -144,7 +144,7 @@ Name | Type | Description  | Notes
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **total_only** | **bool**| return only the total object | [optional] [default to false]
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type

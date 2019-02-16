@@ -1,13 +1,13 @@
-# purity_fb_1dot5.BucketsApi
+# purity_fb_1dot6.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.5/buckets | 
-[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.5/buckets | 
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.5/buckets | 
-[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.5/buckets | 
+[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.6/buckets | 
+[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.6/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.6/buckets | 
+[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.6/buckets | 
 
 
 # **create_buckets**
@@ -35,8 +35,7 @@ if res:
         res = fb.buckets.create_buckets(names=["mybucket"], account=attr)
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating bucket: %s\n" % e)
-```
+        print("Exception when creating bucket: %s\n" % e)        print("Exception when creating bucket: %s\n" % e)```
 
 ### Parameters
 
@@ -83,8 +82,7 @@ if res:
         res = fb.buckets.delete_buckets(names=["mybucket"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating object store account: %s\n" % e)
-```
+        print("Exception when creating object store account: %s\n" % e)        print("Exception when creating object store account: %s\n" % e)```
 
 ### Parameters
 
@@ -142,8 +140,7 @@ if res:
         res = fb.buckets.list_buckets(filter='name=\'mybucket*\'')
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing buckets: %s\n" % e)        print("Exception when listing buckets: %s\n" % e)
-```
+        print("Exception when listing buckets: %s\n" % e)        print("Exception when listing buckets: %s\n" % e)        print("Exception when listing buckets: %s\n" % e)```
 
 ### Parameters
 
@@ -154,7 +151,7 @@ Name | Type | Description  | Notes
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **total_only** | **bool**| return only the total object | [optional] [default to false]
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type
@@ -195,8 +192,7 @@ if res:
         res = fb.buckets.update_buckets(names=["mybucket"], destroyed=Bucket(destroyed=True))
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating object store account: %s\n" % e)
-```
+        print("Exception when creating object store account: %s\n" % e)        print("Exception when creating object store account: %s\n" % e)```
 
 ### Parameters
 
