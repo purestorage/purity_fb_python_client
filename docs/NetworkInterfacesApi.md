@@ -138,7 +138,8 @@ if res:
         # list with filter
         res = fb.network_interfaces.list_network_interfaces(filter='vlan=8')
     except rest.ApiException as e:
-        print("Exception when listing network interfaces: %s\n" % e)```
+        print("Exception when listing network interfaces: %s\n" % e)
+```
 
 ### Parameters
 

@@ -35,7 +35,8 @@ if res:
         res = fb.buckets.create_buckets(names=["mybucket"], account=attr)
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating bucket: %s\n" % e)        print("Exception when creating bucket: %s\n" % e)```
+        print("Exception when creating bucket: %s\n" % e)
+```
 
 ### Parameters
 
@@ -82,7 +83,8 @@ if res:
         res = fb.buckets.delete_buckets(names=["mybucket"])
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating object store account: %s\n" % e)        print("Exception when creating object store account: %s\n" % e)```
+        print("Exception when creating object store account: %s\n" % e)
+```
 
 ### Parameters
 
@@ -140,7 +142,8 @@ if res:
         res = fb.buckets.list_buckets(filter='name=\'mybucket*\'')
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing buckets: %s\n" % e)        print("Exception when listing buckets: %s\n" % e)        print("Exception when listing buckets: %s\n" % e)```
+        print("Exception when listing buckets: %s\n" % e)
+```
 
 ### Parameters
 
@@ -192,7 +195,8 @@ if res:
         res = fb.buckets.update_buckets(names=["mybucket"], destroyed=Bucket(destroyed=True))
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating object store account: %s\n" % e)        print("Exception when creating object store account: %s\n" % e)```
+        print("Exception when creating object store account: %s\n" % e)
+```
 
 ### Parameters
 
