@@ -1,14 +1,14 @@
-# purity_fb_1dot6.DirectoryServicesApi
+# purity_fb_1dot7.DirectoryServicesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.6/directory-services | 
-[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.6/directory-services/roles | 
-[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.6/directory-services/test | 
-[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.6/directory-services | 
-[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.6/directory-services/roles | 
+[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.7/directory-services | 
+[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.7/directory-services/roles | 
+[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.7/directory-services/test | 
+[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.7/directory-services | 
+[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.7/directory-services/roles | 
 
 
 # **list_directory_services**
@@ -31,7 +31,7 @@ except rest.ApiException as e:
 if res:
     try:
         # list Directory Services configuration
-        res = fb.directory_services.list_directory_services(names=["smb"])
+        res = fb.directory_services.list_directory_services(names=["nfs"])
         print(res)
     except rest.ApiException as e:
         print("Exception when listing directory services configuration: %s\n" % e)
@@ -181,7 +181,7 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # update Directory Services management configuration
+        # update Directory Services smb configuration to specify a join OU in an LDAP server
         name = 'smb'
         URI = 'ldaps://ad1.mycompany.com'
         BASE_DN = 'DC=mycompany,DC=com'
@@ -194,6 +194,23 @@ if res:
         directory_service = DirectoryService(base_dn=BASE_DN, bind_password=BIND_PW, bind_user=BIND_USER, uris=[URI],
                                              enabled=True, smb=SMB_ATTRS)
         res = fb.directory_services.update_directory_services(names=[name], directory_service=directory_service)
+        print(res)
+
+        # update Directory Services nfs configuration to use an NIS configuration
+        name = 'nfs'
+        MASTER_SERVER_HOSTNAME = 'nis.master.server.example.com'
+        BACKUP_SERVER_HOSTNAME = 'nis.backup.server.example.com'
+        BACKUP_SERVER_IP = '188.123.4.43'
+        nis_servers = [MASTER_SERVER_HOSTNAME, BACKUP_SERVER_IP, BACKUP_SERVER_HOSTNAME]
+
+        NIS_DOMAIN = 'my-nis-domain'
+        NFS_ATTRS = {'nis_domains': [NIS_DOMAIN], 'nis_servers': nis_servers}
+
+        # the only fields needed in order to enable the nfs directory service when configuring
+        # NIS are an NIS domain and NIS servers
+        directory_service = DirectoryService(enabled=True, nfs=NFS_ATTRS)
+        res = fb.directory_services.update_directory_services(names=[name],
+                                                              directory_service=directory_service)
         print(res)
     except rest.ApiException as e:
         print("Exception when updating directory services configuration: %s\n" % e)

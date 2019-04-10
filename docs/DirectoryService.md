@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **services** | **list[str]** | Services that the directory service configuration is used for. | [optional] 
 **uris** | **list[str]** | List of URIs for the configured directory servers. | [optional] 
 **smb** | [**DirectoryserviceSmb**](DirectoryserviceSmb.md) |  | [optional] 
+**nfs** | [**DirectoryserviceNfs**](DirectoryserviceNfs.md) |  | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

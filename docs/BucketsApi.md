@@ -1,13 +1,13 @@
-# purity_fb_1dot6.BucketsApi
+# purity_fb_1dot7.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.6/buckets | 
-[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.6/buckets | 
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.6/buckets | 
-[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.6/buckets | 
+[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.7/buckets | 
+[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.7/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.7/buckets | 
+[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.7/buckets | 
 
 
 # **create_buckets**

@@ -15,8 +15,9 @@ from . import purity_fb_1dot3
 from . import purity_fb_1dot4
 from . import purity_fb_1dot5
 from . import purity_fb_1dot6
+from . import purity_fb_1dot7
 
-SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7']
 
 version_module_dict = {
     '1.0': purity_fb_1dot0,
@@ -26,6 +27,7 @@ version_module_dict = {
     '1.4': purity_fb_1dot4,
     '1.5': purity_fb_1dot5,
     '1.6': purity_fb_1dot6,
+    '1.7': purity_fb_1dot7
 }
 
 
@@ -34,15 +36,20 @@ class PurityFb:
     DEFAULT_CONN_TIMEOUT = 10.0
     DEFAULT_RETRIES = 5
 
-    def __init__(self, host, version=None, api_token=None):
+    def __init__(self, host, version=None, api_token=None, ca_certs_file_path=None):
         self._api_client = ApiClient(host='https://{}/api'.format(host))
         self.request_timeout = urllib3.Timeout(
             connect=PurityFb.DEFAULT_CONN_TIMEOUT,
             read=PurityFb.DEFAULT_READ_TIMEOUT)
         self.retries = urllib3.Retry(total=PurityFb.DEFAULT_RETRIES)
-        self.api_version = VersionApi(self._api_client)
-        self.disable_verify_ssl()
 
+        if not ca_certs_file_path:
+            self.disable_verify_ssl()
+        else:
+            self.configure_ca_certificate_file(ca_certs_file_path)
+            self.enable_verify_ssl()
+
+        self.api_version = VersionApi(self._api_client)
         if version:
             self._version = self._check_rest_version(version)
         else:
@@ -89,11 +96,37 @@ class PurityFb:
     def logout(self):
         return self.authentication.logout_with_http_info()[1]
 
+    def allow_verify_ssl(self, ca_certs_file_path=None):
+        """ Change our certificate requirements so that a certificate is validated if provided,
+        but a certificate is not required.
+        Optionally, if a CA certificate(s) file path is provided, configure the client to use
+        that CA certificate file.
+        """
+        if ca_certs_file_path:
+            self.configure_ca_certificate_file(ca_certs_file_path)
+        self._api_client.rest_client.pool_manager.connection_pool_kw['cert_reqs'] = ssl.CERT_OPTIONAL
+
     def disable_verify_ssl(self):
+        """ Change our certificate requirements so that a certificate is validated if provided,
+        but a certificate is not required.
+        """
         self._api_client.rest_client.pool_manager.connection_pool_kw['cert_reqs'] = ssl.CERT_NONE
 
-    def enable_verify_ssl(self):
+    def enable_verify_ssl(self, ca_certs_file_path=None):
+        """ Change our certificate requirements so that a certificate is required and validated.
+        Optionally, if a CA certificate(s) file path is provided, configure the client to use
+        that CA certificate file.
+        """
+        if ca_certs_file_path:
+            self.configure_ca_certificate_file(ca_certs_file_path)
         self._api_client.rest_client.pool_manager.connection_pool_kw['cert_reqs'] = ssl.CERT_REQUIRED
+
+    def configure_ca_certificate_file(self, ca_certs_file_path):
+        """"
+        :param ca_certs_file_path: The path to the CA certificate(s) file to use.
+        :return:
+        """
+        self._api_client.rest_client.pool_manager.connection_pool_kw['ca_certs'] = ca_certs_file_path
 
     @property
     def request_timeout(self):
