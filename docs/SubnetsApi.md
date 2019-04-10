@@ -1,13 +1,13 @@
-# purity_fb_1dot6.SubnetsApi
+# purity_fb_1dot7.SubnetsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.6/subnets | 
-[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.6/subnets | 
-[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.6/subnets | 
-[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.6/subnets | 
+[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.7/subnets | 
+[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.7/subnets | 
+[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.7/subnets | 
+[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.7/subnets | 
 
 
 # **create_subnets**

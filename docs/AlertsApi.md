@@ -1,11 +1,11 @@
-# purity_fb_1dot6.AlertsApi
+# purity_fb_1dot7.AlertsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.6/alerts | 
-[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.6/alerts | 
+[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.7/alerts | 
+[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.7/alerts | 
 
 
 # **list_alerts**

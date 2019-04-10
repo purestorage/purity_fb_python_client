@@ -1,18 +1,18 @@
-# purity_fb_1dot6.PoliciesApi
+# purity_fb_1dot7.PoliciesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.6/policies | 
-[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.6/policies/file-systems | 
-[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.6/policies | 
-[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.6/policies/file-systems | 
-[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.6/policies | 
-[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.6/policies/file-system-snapshots | 
-[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.6/policies/file-systems | 
-[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.6/policies/members | 
-[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.6/policies | 
+[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.7/policies | 
+[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.7/policies/file-systems | 
+[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.7/policies | 
+[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.7/policies/file-systems | 
+[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.7/policies | 
+[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.7/policies/file-system-snapshots | 
+[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.7/policies/file-systems | 
+[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.7/policies/members | 
+[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.7/policies | 
 
 
 # **create_policies**

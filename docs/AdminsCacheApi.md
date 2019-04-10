@@ -1,11 +1,11 @@
-# purity_fb_1dot6.AdminsCacheApi
+# purity_fb_1dot7.AdminsCacheApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_admin_cache**](AdminsCacheApi.md#delete_admin_cache) | **DELETE** /1.6/admins/cache | 
-[**list_admin_cache**](AdminsCacheApi.md#list_admin_cache) | **GET** /1.6/admins/cache | 
+[**delete_admin_cache**](AdminsCacheApi.md#delete_admin_cache) | **DELETE** /1.7/admins/cache | 
+[**list_admin_cache**](AdminsCacheApi.md#list_admin_cache) | **GET** /1.7/admins/cache | 
 
 
 # **delete_admin_cache**

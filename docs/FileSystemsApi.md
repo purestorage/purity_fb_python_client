@@ -1,17 +1,17 @@
-# purity_fb_1dot6.FileSystemsApi
+# purity_fb_1dot7.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.6/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.6/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.6/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.6/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.6/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.6/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.6/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.6/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.7/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.7/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.7/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.7/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.7/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.7/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.7/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.7/file-systems | 
 
 
 # **create_file_systems**

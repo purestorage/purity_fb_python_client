@@ -1,16 +1,16 @@
-# purity_fb_1dot6.ArraysApi
+# purity_fb_1dot7.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.6/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.6/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.6/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.6/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.6/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.6/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.6/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.7/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.7/arrays/http-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.7/arrays/performance | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.7/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.7/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.7/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.7/arrays | 
 
 
 # **list_arrays**
