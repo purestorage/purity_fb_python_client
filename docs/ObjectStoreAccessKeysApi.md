@@ -1,13 +1,13 @@
-# purity_fb_1dot7.ObjectStoreAccessKeysApi
+# purity_fb_1dot8.ObjectStoreAccessKeysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.7/object-store-access-keys | 
-[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.7/object-store-access-keys | 
-[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.7/object-store-access-keys | 
-[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.7/object-store-access-keys | 
+[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.8/object-store-access-keys | 
+[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.8/object-store-access-keys | 
+[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.8/object-store-access-keys | 
+[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.8/object-store-access-keys | 
 
 
 # **create_object_store_access_keys**
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-Create a new object store access key
+Create a new object store access key.
 
 ### Example 
 ```python
@@ -34,6 +34,10 @@ if res:
         res = fb.object_store_access_keys.create_object_store_access_keys(
             object_store_access_key=ObjectStoreAccessKey(user={'name': 'myobjuser'}))
         print(res)
+        # make another access key for the user with id '100abf42-0000-4000-8023-000det400090'
+        res = fb.object_store_access_keys.create_object_store_access_keys(
+            object_store_access_key=ObjectStoreAccessKey(user={'id': '100abf42-0000-4000-8023-000det400090'}))
+        print(res)
     except rest.ApiException as e:
         print("Exception when creating object store access key: %s\n" % e)
 ```
@@ -42,7 +46,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **object_store_access_key** | [**Objectstoreaccesskey**](Objectstoreaccesskey.md)| The attribute map used to create the object store access key | [optional] 
+ **object_store_access_key** | [**Objectstoreaccesskey**](Objectstoreaccesskey.md)| The attribute map used to create the object store access key. | [optional] 
 
 ### Return type
 
@@ -60,11 +64,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_object_store_access_keys**
-> delete_object_store_access_keys(names=names)
+> delete_object_store_access_keys(ids=ids, names=names)
 
 
 
-Delete an object store access key by name
+Delete an object store access key.
 
 ### Example 
 ```python
@@ -81,14 +85,15 @@ if res:
         # delete an access key with name myobjaccesskey
         fb.object_store_access_keys.delete_object_store_access_keys(names=["myobjaccesskey"])
     except rest.ApiException as e:
-        print("Exception when deleting object store user: %s\n" % e)
+        print("Exception when deleting object store access keys: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -106,11 +111,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_object_store_access_keys**
-> ObjectStoreAccessKeyResponse list_object_store_access_keys(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> ObjectStoreAccessKeyResponse list_object_store_access_keys(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List object store access keys
+List object store access keys.
 
 ### Example 
 ```python
@@ -142,11 +147,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -165,11 +171,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_object_store_access_keys**
-> ObjectStoreAccessKeyResponse update_object_store_access_keys(names=names, object_store_access_key=object_store_access_key)
+> ObjectStoreAccessKeyResponse update_object_store_access_keys(ids=ids, names=names, object_store_access_key=object_store_access_key)
 
 
 
-Update an existing object store access key
+Update an existing object store access key.
 
 ### Example 
 ```python
@@ -194,8 +200,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **object_store_access_key** | [**ObjectStoreAccessKey**](ObjectStoreAccessKey.md)| the attribute map used to update the object store access key | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **object_store_access_key** | [**ObjectStoreAccessKey**](ObjectStoreAccessKey.md)| The attribute map used to update the object store access key. | [optional] 
 
 ### Return type
 

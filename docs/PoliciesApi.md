@@ -1,18 +1,18 @@
-# purity_fb_1dot7.PoliciesApi
+# purity_fb_1dot8.PoliciesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.7/policies | 
-[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.7/policies/file-systems | 
-[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.7/policies | 
-[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.7/policies/file-systems | 
-[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.7/policies | 
-[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.7/policies/file-system-snapshots | 
-[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.7/policies/file-systems | 
-[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.7/policies/members | 
-[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.7/policies | 
+[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.8/policies | 
+[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.8/policies/file-systems | 
+[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.8/policies | 
+[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.8/policies/file-systems | 
+[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.8/policies | 
+[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.8/policies/file-system-snapshots | 
+[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.8/policies/file-systems | 
+[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.8/policies/members | 
+[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.8/policies | 
 
 
 # **create_policies**
@@ -20,7 +20,7 @@ Method | HTTP request | Description
 
 
 
-Create a new policy
+Create a new policy.
 
 ### Example 
 ```python
@@ -46,8 +46,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy** | [**Policy**](Policy.md)| The attribute map used to create the policy | 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **policy** | [**Policy**](Policy.md)| The attribute map used to create the policy. | 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -65,11 +65,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **create_policy_filesystems**
-> PolicyObjectsResponse create_policy_filesystems(policy_names=policy_names, member_names=member_names)
+> PolicyObjectsResponse create_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
-Create a connection between a file system and a policy
+Create a connection between a file system and a policy.
 
 ### Example 
 ```python
@@ -96,8 +96,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -115,11 +117,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_policies**
-> delete_policies(names=names)
+> delete_policies(ids=ids, names=names)
 
 
 
-Delete a policy by name
+Delete a policy.
 
 ### Example 
 ```python
@@ -144,7 +146,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -162,11 +165,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_policy_filesystems**
-> delete_policy_filesystems(policy_names=policy_names, member_names=member_names)
+> delete_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
-Delete a connection betwwen a file system and a policy
+Delete a connection betwwen a file system and a policy.
 
 ### Example 
 ```python
@@ -193,8 +196,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -212,11 +217,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policies**
-> PolicyResponse list_policies(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyResponse list_policies(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List policies
+List policies.
 
 ### Example 
 ```python
@@ -250,11 +255,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -273,7 +279,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policy_filesystem_snapshots**
-> PolicyObjectsResponse list_policy_filesystem_snapshots(policy_names=policy_names, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyObjectsResponse list_policy_filesystem_snapshots(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -298,6 +304,11 @@ if res:
         res = fb.policies.list_policy_filesystem_snapshots(policy_names=["p1"],
                                                            member_names=["myfs.1"])
         print(res)
+        # assume we have a policy with id "10314f42-020d-7080-8013-000ddt400090",
+        # and a file system snapshot with name "myfs.2"
+        res = fb.policies.list_policy_filesystem_snapshots(policy_ids=["10314f42-020d-7080-8013-000ddt400090"],
+                                                           member_names=["myfs.2"])
+        print(res)
         # list and sort by name in descendant order
         res = fb.policies.list_policy_filesystem_snapshots(limit=5, sort="policy.name-")
         print(res)
@@ -316,8 +327,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
@@ -340,11 +353,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policy_filesystems**
-> PolicyObjectsResponse list_policy_filesystems(policy_names=policy_names, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyObjectsResponse list_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
-List policy attached to filesystems
+List policy attached to filesystems.
 
 ### Example 
 ```python
@@ -382,8 +395,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
@@ -406,11 +421,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policy_members**
-> PolicyObjectsResponse list_policy_members(policy_names=policy_names, member_names=member_names, member_types=member_types, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyObjectsResponse list_policy_members(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, member_types=member_types, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
-List policy attached to filesystems and filesystem snapshots
+List policy attached to filesystems and filesystem snapshots.
 
 ### Example 
 ```python
@@ -452,8 +467,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **member_types** | [**list[str]**](str.md)| A list of member types. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
@@ -481,7 +498,7 @@ Name | Type | Description  | Notes
 
 
 
-Update an existing policy
+Update an existing policy.
 
 ### Example 
 ```python
@@ -506,8 +523,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_patch** | [**PolicyPatch**](PolicyPatch.md)| the attribute map used to update the policy | 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **policy_patch** | [**PolicyPatch**](PolicyPatch.md)| The attribute map used to update the policy. | 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 

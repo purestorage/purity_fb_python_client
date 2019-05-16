@@ -19,7 +19,10 @@ pages:
         - Array Spaces: ArraysApi.md
         - Blades: BladeApi.md
         - Buckets: BucketsApi.md
+        - Bucket Performances: BucketsApi.md
+        - Bucket S3 Performances: BucketsApi.md
         - Certificates: CertificatesApi.md
+        - Certificate Groups: CertificateGroupsApi.md
         - Directory Services: DirectoryServicesApi.md
         - Dns: DnsApi.md
         - File Systems: FileSystemsApi.md
@@ -27,14 +30,15 @@ pages:
         - File System Snapshots: FileSystemSnapshotsApi.md
         - Hardware: HardwareApi.md
         - Hardware Connectors: HardwareConnectorsApi.md
-        - Link Aggregation Group: LinkAggregationGroupsApi.md
+        - Link Aggregation Groups: LinkAggregationGroupsApi.md
         - Logs: LogsApi.md
-        - Network Interface: NetworkInterfacesApi.md
+        - Network Interfaces: NetworkInterfacesApi.md
         - Object Store Access Keys: ObjectStoreAccessKeysApi.md
         - Object Store Accounts: ObjectStoreAccountsApi.md
         - Object Store Users: ObjectStoreUsersApi.md
         - Policies: PoliciesApi.md
         - Quotas for Groups: QuotasGroupsApi.md
+        - Quota Notification Settings: QuotasSettingsApi.md
         - Quotas for Users: QuotasUsersApi.md
         - Smtp: SmtpApi.md
         - Subnets: SubnetsApi.md
@@ -54,11 +58,18 @@ pages:
         - Alert Watcher: AlertWatcherResponse.md
         - Alert Watcher Test: AlertWatcherTestResponse.md
         - Array: ArrayResponse.md
+        - Array Http Performance: ArrayHttpPerformanceResponse.md
         - Array Performance: ArrayPerformanceResponse.md
+        - Array S3 Performance: ArrayS3PerformanceResponse.md
         - Array Space: ArraySpaceResponse.md
         - Blade: BladeResponse.md
         - Bucket: BucketResponse.md
+        - Bucket Performance: BucketPerformanceResponse.md
+        - Bucket S3 Performance: BucketS3PerformanceResponse.md
         - Certificate: CertificateResponse.md
+        - Certificate Group: CertificateGroupResponse.md
+        - Certificate Group Use: CertificateGroupUseResponse.md
+        - Certificate Use: CertificateUseResponse.md
         - Client Performance: ClientPerformanceResponse.md
         - Directory Service: DirectoryServiceResponse.md
         - Directory Service Roles: DirectoryServiceRolesResponse.md
@@ -69,6 +80,7 @@ pages:
         - Hardware: HardwareResponse.md
         - Hardware Connector: HardwareConnectorResponse.md
         - Link Aggregation Group: LinkAggregationGroupResponse.md
+        - Member: MemberResponse.md
         - Network Interface: NetworkInterfaceResponse.md
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
@@ -76,6 +88,7 @@ pages:
         - Policy: PolicyResponse.md
         - Policy Objects: PolicyObjectsResponse.md
         - Quotas or Usages for Groups: QuotasGroupResponse.md
+        - Quota Notification Settings: QuotasSettingResponse.md
         - Quotas or Usages for Users: QuotasUserResponse.md
         - Smtp: SmtpResponse.md
         - Subnet: SubnetResponse.md
@@ -103,12 +116,19 @@ pages:
     - Bucket:
         - Bucket: Bucket.md
         - Bucket Patch: BucketPatch.md
+        - Bucket Performance: BucketPerformance.md
         - Bucket Post: BucketPost.md
+        - Bucket S3 Performance: BucketS3Performance.md
     - Certificate:
         - Certificate: Certificate.md
+        - Certificate Use: CertificateUse.md
+    - Certificate Group:
+        - Certificate Group: CertificateGroup.md
+        - Certificate Group Use: CertificateGroupUse.md
     - Directory Service:
         - Directory Service: DirectoryService.md
         - Directory Service Role: DirectoryServiceRole.md
+        - Directory Service NFS Specific Attributes: DirectoryserviceNfs.md
         - Directory Service SMB Specific Attributes: DirectoryserviceSmb.md
         - Test Result: TestResult.md
     - Dns:
@@ -130,6 +150,8 @@ pages:
         - Hardware Connector: HardwareConnector.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
+    - Member:
+        - Member: Member.md
     - Network Interface:
         - Network Interface: NetworkInterface.md
     - Object Store:
@@ -147,6 +169,9 @@ pages:
         - Quota or Usage for Group: QuotasGroup.md
         - Quota or Usage for User: QuotasUser.md
         - User of Quota or Usage: QuotasuserUser.md
+        - Quota Notification Settings: QuotasSetting.md
+    - Reference:
+        - Reference: Reference.md
     - Smtp:
         - Smtp: Smtp.md
     - Subnet:

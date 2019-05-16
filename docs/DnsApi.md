@@ -1,11 +1,11 @@
-# purity_fb_1dot7.DnsApi
+# purity_fb_1dot8.DnsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_dns**](DnsApi.md#list_dns) | **GET** /1.7/dns | 
-[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.7/dns | 
+[**list_dns**](DnsApi.md#list_dns) | **GET** /1.8/dns | 
+[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.8/dns | 
 
 
 # **list_dns**

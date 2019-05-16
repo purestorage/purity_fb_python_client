@@ -1,13 +1,13 @@
-# purity_fb_1dot7.QuotasGroupsApi
+# purity_fb_1dot8.QuotasGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_group_quotas**](QuotasGroupsApi.md#create_group_quotas) | **POST** /1.7/quotas/groups | 
-[**delete_group_quotas**](QuotasGroupsApi.md#delete_group_quotas) | **DELETE** /1.7/quotas/groups | 
-[**list_group_quotas**](QuotasGroupsApi.md#list_group_quotas) | **GET** /1.7/quotas/groups | 
-[**update_group_quotas**](QuotasGroupsApi.md#update_group_quotas) | **PATCH** /1.7/quotas/groups | 
+[**create_group_quotas**](QuotasGroupsApi.md#create_group_quotas) | **POST** /1.8/quotas/groups | 
+[**delete_group_quotas**](QuotasGroupsApi.md#delete_group_quotas) | **DELETE** /1.8/quotas/groups | 
+[**list_group_quotas**](QuotasGroupsApi.md#list_group_quotas) | **GET** /1.8/quotas/groups | 
+[**update_group_quotas**](QuotasGroupsApi.md#update_group_quotas) | **PATCH** /1.8/quotas/groups | 
 
 
 # **create_group_quotas**
@@ -111,7 +111,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
  **gids** | [**list[str]**](str.md)| A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter. | [optional] 
  **group_names** | [**list[str]**](str.md)| A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter. | [optional] 
@@ -176,7 +176,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
@@ -259,7 +259,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
  **gids** | [**list[str]**](str.md)| A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter. | [optional] 
  **group_names** | [**list[str]**](str.md)| A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter. | [optional] 

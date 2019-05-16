@@ -3,7 +3,7 @@
 """
     Purity//FB REST Client
 
-    Client for Purity//FB REST API (1.0 - 1.7), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.3
     Contact: info@purestorage.com
@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "purity-fb"
-VERSION = "1.7.0"
+VERSION = "1.8.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -36,6 +36,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    Client for Purity//FB REST API (1.0 - 1.7), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
     """
 )

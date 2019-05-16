@@ -1,12 +1,12 @@
-# purity_fb_1dot7.ObjectStoreUsersApi
+# purity_fb_1dot8.ObjectStoreUsersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_users**](ObjectStoreUsersApi.md#create_object_store_users) | **POST** /1.7/object-store-users | 
-[**delete_object_store_users**](ObjectStoreUsersApi.md#delete_object_store_users) | **DELETE** /1.7/object-store-users | 
-[**list_object_store_users**](ObjectStoreUsersApi.md#list_object_store_users) | **GET** /1.7/object-store-users | 
+[**create_object_store_users**](ObjectStoreUsersApi.md#create_object_store_users) | **POST** /1.8/object-store-users | 
+[**delete_object_store_users**](ObjectStoreUsersApi.md#delete_object_store_users) | **DELETE** /1.8/object-store-users | 
+[**list_object_store_users**](ObjectStoreUsersApi.md#list_object_store_users) | **GET** /1.8/object-store-users | 
 
 
 # **create_object_store_users**
@@ -14,7 +14,7 @@ Method | HTTP request | Description
 
 
 
-Create a new object store user
+Create a new object store user.
 
 ### Example 
 ```python
@@ -39,7 +39,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -57,11 +57,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_object_store_users**
-> delete_object_store_users(names=names)
+> delete_object_store_users(ids=ids, names=names)
 
 
 
-Delete an object store user by name
+Delete an object store user.
 
 ### Example 
 ```python
@@ -85,7 +85,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -103,11 +104,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_object_store_users**
-> ObjectStoreUserResponse list_object_store_users(filter=filter, sort=sort, start=start, limit=limit, token=token, names=names)
+> ObjectStoreUserResponse list_object_store_users(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List object store users
+List object store users.
 
 ### Example 
 ```python
@@ -140,11 +141,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type
 

@@ -1,21 +1,21 @@
-# purity_fb_1dot7.LinkAggregationGroupsApi
+# purity_fb_1dot8.LinkAggregationGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.7/link-aggregation-groups | 
-[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.7/link-aggregation-groups | 
-[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.7/link-aggregation-groups | 
-[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.7/link-aggregation-groups | 
+[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.8/link-aggregation-groups | 
+[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.8/link-aggregation-groups | 
+[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.8/link-aggregation-groups | 
+[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.8/link-aggregation-groups | 
 
 
 # **create_link_aggregation_groups**
-> LinkAggregationGroupResponse create_link_aggregation_groups(link_aggregation_group=link_aggregation_group, names=names)
+> LinkAggregationGroupResponse create_link_aggregation_groups(link_aggregation_group=link_aggregation_group)
 
 
 
-Create a new link aggregation group
+Create a new link aggregation group.
 
 ### Example 
 ```python
@@ -32,7 +32,8 @@ if res:
         # create lag named "mylag" with ports 'CH1.FM1.ETH4' and 'CH1.FM2.ETH4'
         res = fb.link_aggregation_groups.create_link_aggregation_groups(
             names=["mylag"],
-            link_aggregation_group=LinkAggregationGroup(ports=[{'name': 'CH1.FM1.ETH4'}, {'name': 'CH1.FM2.ETH4'}]))
+            link_aggregation_group=LinkAggregationGroup(ports=[{'name': 'CH1.FM1.ETH4'},
+                                                               {'name': 'CH1.FM2.ETH4'}]))
         print(res)
     except rest.ApiException as e:
         print("Exception when creating link aggregation group: %s\n" % e)
@@ -42,8 +43,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **link_aggregation_group** | [**LinkAggregationGroup**](LinkAggregationGroup.md)| The attribute map used to create the link aggregation group | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **link_aggregation_group** | [**LinkAggregationGroup**](LinkAggregationGroup.md)| The attribute map used to create the link aggregation group. | [optional] 
 
 ### Return type
 
@@ -61,11 +61,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_link_aggregation_groups**
-> delete_link_aggregation_groups(names=names)
+> delete_link_aggregation_groups(ids=ids, names=names)
 
 
 
-Delete a link aggregation group by name
+Delete a link aggregation group.
 
 ### Example 
 ```python
@@ -89,7 +89,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -107,11 +108,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_link_aggregation_groups**
-> LinkAggregationGroupResponse list_link_aggregation_groups(filter=filter, sort=sort, start=start, limit=limit, token=token, names=names)
+> LinkAggregationGroupResponse list_link_aggregation_groups(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List link aggregation groups
+List link aggregation groups.
 
 ### Example 
 ```python
@@ -144,11 +145,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type
 
@@ -166,11 +168,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_link_aggregation_groups**
-> LinkAggregationGroupResponse update_link_aggregation_groups(names=names, link_aggregation_group=link_aggregation_group)
+> LinkAggregationGroupResponse update_link_aggregation_groups(ids=ids, names=names, link_aggregation_group=link_aggregation_group)
 
 
 
-Update an existing link aggregation group
+Update an existing link aggregation group.
 
 ### Example 
 ```python
@@ -196,8 +198,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **link_aggregation_group** | [**Linkaggregationgroup**](Linkaggregationgroup.md)| the attribute map used to update the link aggregation group | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **link_aggregation_group** | [**Linkaggregationgroup**](Linkaggregationgroup.md)| The attribute map used to update the link aggregation group. | [optional] 
 
 ### Return type
 

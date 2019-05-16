@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**id** | **str** | A non-modifiable, globally unique ID chosen by the system. | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot). | [optional] 
 **bytes_per_op** | **float** | Average operation size (read bytes+write bytes/read ops+write ops). | [optional] 
 **bytes_per_read** | **float** | Average read size in bytes per read operation. | [optional] 
 **bytes_per_write** | **float** | Average write size in bytes per write operation. | [optional] 

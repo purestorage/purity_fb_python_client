@@ -53,7 +53,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param NetworkInterface network_interface: The attribute map used to create the network interface
         :return: NetworkInterfaceResponse
                  If the method is called asynchronously,
@@ -79,7 +79,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param NetworkInterface network_interface: The attribute map used to create the network interface
         :return: NetworkInterfaceResponse
                  If the method is called asynchronously,
@@ -148,7 +148,7 @@ class NetworkInterfacesApi(object):
 
     def delete_network_interfaces(self, **kwargs):
         """
-        Delete a network interface by name
+        Delete a network interface
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -159,7 +159,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -173,7 +173,7 @@ class NetworkInterfacesApi(object):
 
     def delete_network_interfaces_with_http_info(self, **kwargs):
         """
-        Delete a network interface by name
+        Delete a network interface
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -184,7 +184,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -261,7 +261,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -291,7 +291,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -383,7 +383,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param NetworkInterface network_interface: the attribute map used to update the network interface
         :return: NetworkInterfaceResponse
                  If the method is called asynchronously,
@@ -409,7 +409,7 @@ class NetworkInterfacesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param NetworkInterface network_interface: the attribute map used to update the network interface
         :return: NetworkInterfaceResponse
                  If the method is called asynchronously,

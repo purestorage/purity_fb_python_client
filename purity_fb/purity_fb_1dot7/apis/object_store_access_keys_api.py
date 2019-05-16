@@ -143,7 +143,7 @@ class ObjectStoreAccessKeysApi(object):
 
     def delete_object_store_access_keys(self, **kwargs):
         """
-        Delete an object store access key by name
+        Delete an object store access key
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -154,7 +154,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class ObjectStoreAccessKeysApi(object):
 
     def delete_object_store_access_keys_with_http_info(self, **kwargs):
         """
-        Delete an object store access key by name
+        Delete an object store access key
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -179,7 +179,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -256,7 +256,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -286,7 +286,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -378,7 +378,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param ObjectStoreAccessKey object_store_access_key: the attribute map used to update the object store access key
         :return: ObjectStoreAccessKeyResponse
                  If the method is called asynchronously,
@@ -404,7 +404,7 @@ class ObjectStoreAccessKeysApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param ObjectStoreAccessKey object_store_access_key: the attribute map used to update the object store access key
         :return: ObjectStoreAccessKeyResponse
                  If the method is called asynchronously,

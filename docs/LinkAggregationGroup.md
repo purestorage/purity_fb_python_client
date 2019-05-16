@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**id** | **str** | A non-modifiable, globally unique ID chosen by the system. | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot). | [optional] 
 **lag_speed** | **int** | Combined speed of all ports in the LAG in bits-per-second. | [optional] 
 **mac_address** | **str** | Unique MAC address assigned to the LAG | [optional] 
 **ports** | [**list[Reference]**](Reference.md) | Ports associated with the LAG | [optional] 

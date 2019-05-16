@@ -1,14 +1,14 @@
-# purity_fb_1dot7.FileSystemSnapshotsApi
+# purity_fb_1dot8.FileSystemSnapshotsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.7/file-system-snapshots | 
-[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.7/file-system-snapshots | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.7/file-system-snapshots | 
-[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.7/file-system-snapshots/policies | 
-[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.7/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.8/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.8/file-system-snapshots | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.8/file-system-snapshots | 
+[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.8/file-system-snapshots/policies | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.8/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Create snapshots for the specified source file systems
+Create snapshots for the specified source file systems.
 
 ### Example 
 ```python
@@ -34,7 +34,8 @@ if res:
         res = fb.file_system_snapshots.create_file_system_snapshots(sources=["myfs"])
         print(res)
         # create a snapshot with suffix mysnap for the file system named myfs
-        res = fb.file_system_snapshots.create_file_system_snapshots(sources=["myfs"], suffix=SnapshotSuffix("mysnap"))
+        res = fb.file_system_snapshots.create_file_system_snapshots(sources=["myfs"],
+                                                                    suffix=SnapshotSuffix("mysnap"))
         print(res)
     except rest.ApiException as e:
         print("Exception when creating file system snapshots: %s\n" % e)
@@ -63,11 +64,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_file_system_snapshots**
-> delete_file_system_snapshots(name)
+> delete_file_system_snapshots(name, ids=ids)
 
 
 
-Delete a file system snapshot by name
+Delete a file system snapshot.
 
 ### Example 
 ```python
@@ -92,7 +93,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| name of the file system snapshot to be deleted | 
+ **name** | **str**| The name of the file system or snapshot to be updated. | 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
 
 ### Return type
 
@@ -110,11 +112,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_system_snapshots**
-> FileSystemSnapshotResponse list_file_system_snapshots(filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only, names_or_sources=names_or_sources)
+> FileSystemSnapshotResponse list_file_system_snapshots(filter=filter, ids=ids, sort=sort, start=start, limit=limit, names_or_sources=names_or_sources, token=token, total=total, total_only=total_only)
 
 
 
-List file system snapshots
+List file system snapshots.
 
 ### Example 
 ```python
@@ -148,13 +150,14 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names_or_sources** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the source. | [optional] 
  **token** | **str**| token | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
- **names_or_sources** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the source. | [optional] 
 
 ### Return type
 
@@ -172,11 +175,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_filesystem_snapshot_policies**
-> PolicyObjectsResponse list_filesystem_snapshot_policies(policy_names=policy_names, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyObjectsResponse list_filesystem_snapshot_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
-List policy attached to filesystem snapshots
+List policies attached to filesystem snapshots.
 
 ### Example 
 ```python
@@ -215,8 +218,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
@@ -239,11 +244,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_system_snapshots**
-> FileSystemSnapshotResponse update_file_system_snapshots(name, attributes)
+> FileSystemSnapshotResponse update_file_system_snapshots(name, attributes, ids=ids)
 
 
 
-Update an existing file system snapshot
+Update an existing file system snapshot.
 
 ### Example 
 ```python
@@ -270,8 +275,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system snapshot to be updated. | 
- **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| the new attributes, only modifiable fields could be used. | 
+ **name** | **str**| The name of the file system or snapshot to be updated. | 
+ **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| The new attributes, only modifiable fields may be specified. | 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
 
 ### Return type
 

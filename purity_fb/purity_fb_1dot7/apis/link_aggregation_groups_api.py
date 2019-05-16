@@ -54,7 +54,7 @@ class LinkAggregationGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class LinkAggregationGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -148,7 +148,7 @@ class LinkAggregationGroupsApi(object):
 
     def delete_link_aggregation_groups(self, **kwargs):
         """
-        Delete a link aggregation group by name
+        Delete a link aggregation group
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -159,7 +159,7 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -173,7 +173,7 @@ class LinkAggregationGroupsApi(object):
 
     def delete_link_aggregation_groups_with_http_info(self, **kwargs):
         """
-        Delete a link aggregation group by name
+        Delete a link aggregation group
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -184,7 +184,7 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -266,7 +266,7 @@ class LinkAggregationGroupsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -296,7 +296,7 @@ class LinkAggregationGroupsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -383,7 +383,7 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param Linkaggregationgroup link_aggregation_group: the attribute map used to update the link aggregation group
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
@@ -409,7 +409,7 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param Linkaggregationgroup link_aggregation_group: the attribute map used to update the link aggregation group
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
