@@ -3,7 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**id** | **str** | A non-modifiable, globally unique ID chosen by the system. | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot). | [optional] 
 **enabled** | **bool** | Indicates if subnet is enabled (true) or disabled (false). Enabled by default. | [optional] 
 **gateway** | **str** | The IPv4 or IPv6 address of the gateway through which the specified subnet is to communicate with the network. | [optional] 
 **interfaces** | [**list[Reference]**](Reference.md) | List of network interfaces associated with this subnet. | [optional] 

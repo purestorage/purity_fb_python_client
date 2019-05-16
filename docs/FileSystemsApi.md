@@ -1,17 +1,17 @@
-# purity_fb_1dot7.FileSystemsApi
+# purity_fb_1dot8.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.7/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.7/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.7/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.7/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.7/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.7/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.7/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.7/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.8/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.8/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.8/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.8/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.8/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.8/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.8/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.8/file-systems | 
 
 
 # **create_file_systems**
@@ -19,11 +19,11 @@ Method | HTTP request | Description
 
 
 
-Create a new file system
+Create a new file system.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, NfsRule, rest
+from purity_fb import PurityFb, FileSystem, Reference, NfsRule, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -46,13 +46,22 @@ if res:
         print(res)
     except rest.ApiException as e:
         print("Exception when creating file system: %s\n" % e)
+
+    # copy snapshot 'myfs.mysnap' to file system 'myfs'
+    myfs = FileSystem(name="myfs", source=Reference(name='myfs.mysnap'))
+    try:
+        # post the file system object myfs on the array
+        res = fb.file_systems.create_file_systems(overwrite=True, file_system=myfs)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when restoring file system: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_system** | [**FileSystem**](FileSystem.md)| the attribute map used to create the file system | 
+ **file_system** | [**FileSystem**](FileSystem.md)| The attribute map used to create the file system. | 
 
 ### Return type
 
@@ -70,11 +79,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **create_filesystem_policies**
-> PolicyObjectsResponse create_filesystem_policies(policy_names=policy_names, member_names=member_names)
+> PolicyObjectsResponse create_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
-Create a connection between a file system and a policy
+Create a connection between a file system and a policy.
 
 ### Example 
 ```python
@@ -89,9 +98,10 @@ except rest.ApiException as e:
 if res:
     try:
         # attach policy to a file system
-        # assume we have a policy named "p1", and a file system named "myfs"
+        # assume we have a policy named "p1", and a file system with id
+        # "100abf42-0000-4000-8023-000det400090"
         res = fb.file_systems.create_filesystem_policies(policy_names=["p1"],
-                                                         member_names=["myfs"])
+                                                         member_ids=["100abf42-0000-4000-8023-000det400090"])
         print(res)
     except rest.ApiException as e:
         print("Exception when attaching policy to a file system: %s\n" % e)
@@ -101,8 +111,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -120,11 +132,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_file_systems**
-> delete_file_systems(name)
+> delete_file_systems(name, ids=ids)
 
 
 
-Delete a file system by name
+Delete a file system.
 
 ### Example 
 ```python
@@ -148,7 +160,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| name of the file system to be deleted | 
+ **name** | **str**| The name of the file system or snapshot to be updated. | 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
 
 ### Return type
 
@@ -166,11 +179,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_filesystem_policies**
-> delete_filesystem_policies(policy_names=policy_names, member_names=member_names)
+> delete_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
-Delete a connection betwwen a file system and a policy
+Delete a connection betwwen a file system and a policy.
 
 ### Example 
 ```python
@@ -197,8 +210,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -216,11 +231,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_systems**
-> FileSystemResponse list_file_systems(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only)
+> FileSystemResponse list_file_systems(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token, total=total, total_only=total_only)
 
 
 
-List file systems
+List file systems.
 
 ### Example 
 ```python
@@ -238,12 +253,15 @@ if res:
         fb.file_systems.list_file_systems()
         # list first five filesystems using default sort
         res = fb.file_systems.list_file_systems(limit=5)
+        print(res)
         # list first five filesystems and sort by provisioned in descendant order
         res = fb.file_systems.list_file_systems(limit=5, sort="provisioned-")
+        print(res)
         # list all remaining file systems
         res = fb.file_systems.list_file_systems(token=res.pagination_info.continuation_token)
         # list with filter to see only file systems with at least one type of nfs enabled
         res = fb.file_systems.list_file_systems(filter='nfs.v3_enabled or nfs.v4_1_enabled')
+        print(res)
     except rest.ApiException as e:
         print("Exception when listing file systems: %s\n" % e)
 ```
@@ -252,11 +270,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
@@ -277,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_systems_performance**
-> FileSystemPerformanceResponse list_file_systems_performance(resolution=resolution, protocol=protocol, end_time=end_time, filter=filter, limit=limit, names=names, sort=sort, start_time=start_time, start=start, token=token, total_only=total_only)
+> FileSystemPerformanceResponse list_file_systems_performance(resolution=resolution, protocol=protocol, end_time=end_time, filter=filter, ids=ids, limit=limit, names=names, sort=sort, start_time=start_time, start=start, token=token, total_only=total_only)
 
 
 
@@ -301,6 +320,11 @@ if res:
 
         # list instantaneous nfs performance for file systems 'fs1' and 'fs2'
         res = fb.file_systems.list_file_systems_performance(names=['fs1', 'fs2'], protocol='nfs')
+        print(res)
+
+        # list instantaneous nfs performance for file system with id '10314f42-020d-7080-8013-000ddt400090'
+        res = fb.file_systems.list_file_systems_performance(names=['10314f42-020d-7080-8013-000ddt400090'],
+                                                            protocol='nfs')
         print(res)
 
         # list historical file systems nfs performance for all file systems between some
@@ -338,8 +362,9 @@ Name | Type | Description  | Notes
  **protocol** | **str**| to sample performance of a certain protocol | [optional] 
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
  **start** | **int**| start | [optional] 
@@ -362,11 +387,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_filesystem_policies**
-> PolicyObjectsResponse list_filesystem_policies(policy_names=policy_names, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyObjectsResponse list_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
-List policy attached to filesystems
+List policies attached to filesystems.
 
 ### Example 
 ```python
@@ -397,15 +422,17 @@ if res:
         res = fb.file_systems.list_filesystem_policies(token=res.pagination_info.continuation_token)
         print(res)
     except rest.ApiException as e:
-        print("Exception when listing policy file system: %s\n" % e)
+        print("Exception when listing file system policies: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_names** | [**list[str]**](str.md)| A list of policy names. | [optional] 
- **member_names** | [**list[str]**](str.md)| A list of member names. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
@@ -428,11 +455,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_systems**
-> FileSystemResponse update_file_systems(name, attributes, ignore_usage=ignore_usage)
+> FileSystemResponse update_file_systems(name, attributes, ids=ids, ignore_usage=ignore_usage)
 
 
 
-Update an existing file system
+Update an existing file system.
 
 ### Example 
 ```python
@@ -456,6 +483,11 @@ if res:
         # update the file system named myfs on the array
         res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True, attributes=new_attr)
         print(res)
+
+        # update the file system with id '10314f42-020d-7080-8013-000ddt400090' on the array
+        res = fb.file_systems.update_file_systems(ids=['10314f42-020d-7080-8013-000ddt400090'],
+                                                  ignore_usage=True, attributes=new_attr)
+        print(res)
     except rest.ApiException as e:
         print("Exception when updating file system: %s\n" % e)
 ```
@@ -464,8 +496,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| the name of the file system to be updated | 
- **attributes** | [**FileSystem**](FileSystem.md)| the new attributes, only modifiable fields could be used. | 
+ **name** | **str**| The name of the file system or snapshot to be updated. | 
+ **attributes** | [**FileSystem**](FileSystem.md)| The new attributes, only modifiable fields may be specified. | 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **ignore_usage** | **bool**| Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True. | [optional] 
 
 ### Return type

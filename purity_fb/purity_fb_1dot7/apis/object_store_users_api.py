@@ -53,7 +53,7 @@ class ObjectStoreUsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -78,7 +78,7 @@ class ObjectStoreUsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -144,7 +144,7 @@ class ObjectStoreUsersApi(object):
 
     def delete_object_store_users(self, **kwargs):
         """
-        Delete an object store user by name
+        Delete an object store user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -155,7 +155,7 @@ class ObjectStoreUsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -169,7 +169,7 @@ class ObjectStoreUsersApi(object):
 
     def delete_object_store_users_with_http_info(self, **kwargs):
         """
-        Delete an object store user by name
+        Delete an object store user
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -180,7 +180,7 @@ class ObjectStoreUsersApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -262,7 +262,7 @@ class ObjectStoreUsersApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -292,7 +292,7 @@ class ObjectStoreUsersApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
                  returns the request thread.

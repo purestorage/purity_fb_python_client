@@ -169,7 +169,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.
@@ -197,7 +197,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.
@@ -278,7 +278,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
         :param str sort: The way to order the results.
@@ -311,7 +311,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
         :param str sort: The way to order the results.
@@ -411,7 +411,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.
@@ -440,7 +440,7 @@ class QuotasGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.

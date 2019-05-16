@@ -54,7 +54,7 @@ class BucketsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param BucketPost account: bucket create parameters
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class BucketsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param BucketPost account: bucket create parameters
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -148,7 +148,7 @@ class BucketsApi(object):
 
     def delete_buckets(self, **kwargs):
         """
-        Delete buckets by name(s)
+        Delete buckets
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -159,7 +159,7 @@ class BucketsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -173,7 +173,7 @@ class BucketsApi(object):
 
     def delete_buckets_with_http_info(self, **kwargs):
         """
-        Delete buckets by name(s)
+        Delete buckets
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -184,7 +184,7 @@ class BucketsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -267,7 +267,7 @@ class BucketsApi(object):
         :param int limit: limit, should be >= 0
         :param str token: token
         :param bool total_only: Return only the total object.
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -298,7 +298,7 @@ class BucketsApi(object):
         :param int limit: limit, should be >= 0
         :param str token: token
         :param bool total_only: Return only the total object.
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -388,7 +388,7 @@ class BucketsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param BucketPatch destroyed: bucket update parameters
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -414,7 +414,7 @@ class BucketsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param BucketPatch destroyed: bucket update parameters
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: BucketResponse
                  If the method is called asynchronously,
                  returns the request thread.

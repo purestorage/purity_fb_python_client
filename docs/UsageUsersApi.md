@@ -1,10 +1,10 @@
-# purity_fb_1dot7.UsageUsersApi
+# purity_fb_1dot8.UsageUsersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_user_usage**](UsageUsersApi.md#list_user_usage) | **GET** /1.7/usage/users | 
+[**list_user_usage**](UsageUsersApi.md#list_user_usage) | **GET** /1.8/usage/users | 
 
 
 # **list_user_usage**
@@ -43,7 +43,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 

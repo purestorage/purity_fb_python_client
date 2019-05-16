@@ -151,7 +151,7 @@ class FileSystemSnapshotsApi(object):
 
     def delete_file_system_snapshots(self, name, **kwargs):
         """
-        Delete a file system snapshot by name
+        Delete a file system snapshot
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -176,7 +176,7 @@ class FileSystemSnapshotsApi(object):
 
     def delete_file_system_snapshots_with_http_info(self, name, **kwargs):
         """
-        Delete a file system snapshot by name
+        Delete a file system snapshot
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -396,8 +396,8 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -427,8 +427,8 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -523,7 +523,7 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system snapshot to be updated. (required)
+        :param str name: The name of the file system or snapshot to be updated. (required)
         :param SnapshotSuffix attributes: the new attributes, only modifiable fields could be used. (required)
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
@@ -549,7 +549,7 @@ class FileSystemSnapshotsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system snapshot to be updated. (required)
+        :param str name: The name of the file system or snapshot to be updated. (required)
         :param SnapshotSuffix attributes: the new attributes, only modifiable fields could be used. (required)
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,

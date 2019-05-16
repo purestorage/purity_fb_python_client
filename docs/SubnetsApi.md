@@ -1,13 +1,13 @@
-# purity_fb_1dot7.SubnetsApi
+# purity_fb_1dot8.SubnetsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.7/subnets | 
-[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.7/subnets | 
-[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.7/subnets | 
-[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.7/subnets | 
+[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.8/subnets | 
+[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.8/subnets | 
+[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.8/subnets | 
+[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.8/subnets | 
 
 
 # **create_subnets**
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-Create a new subnet
+Create a new subnet.
 
 ### Example 
 ```python
@@ -41,8 +41,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **subnet** | [**Subnet**](Subnet.md)| The attribute map used to create the subnet | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **subnet** | [**Subnet**](Subnet.md)| The attribute map used to create the subnet. | [optional] 
 
 ### Return type
 
@@ -60,11 +60,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_subnets**
-> delete_subnets(names=names)
+> delete_subnets(ids=ids, names=names)
 
 
 
-Delete a subnet by name
+Delete a subnet.
 
 ### Example 
 ```python
@@ -88,7 +88,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -106,11 +107,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_subnets**
-> SubnetResponse list_subnets(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> SubnetResponse list_subnets(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List subnets
+List subnets.
 
 ### Example 
 ```python
@@ -142,11 +143,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -165,11 +167,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_subnets**
-> SubnetResponse update_subnets(names=names, subnet=subnet)
+> SubnetResponse update_subnets(ids=ids, names=names, subnet=subnet)
 
 
 
-Update an existing subnet
+Update an existing subnet.
 
 ### Example 
 ```python
@@ -183,6 +185,7 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
+        # update a subnet's gateway by name
         res = fb.subnets.update_subnets(
             names=['myobjsubnet'], subnet=Subnet(gateway='1.2.3.1'))
         print(res)
@@ -194,8 +197,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **subnet** | [**Subnet**](Subnet.md)| the attribute map used to update the subnet | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **subnet** | [**Subnet**](Subnet.md)| The attribute map used to update the subnet. | [optional] 
 
 ### Return type
 

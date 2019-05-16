@@ -58,7 +58,7 @@ class HardwareConnectorsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: HardwareConnectorResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -88,7 +88,7 @@ class HardwareConnectorsApi(object):
         :param int start: start
         :param int limit: limit, should be >= 0
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: HardwareConnectorResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -175,7 +175,7 @@ class HardwareConnectorsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param HardwareConnector hardware_connector: the attribute map used to update the hardware connector
         :return: HardwareConnectorResponse
                  If the method is called asynchronously,
@@ -201,7 +201,7 @@ class HardwareConnectorsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param HardwareConnector hardware_connector: the attribute map used to update the hardware connector
         :return: HardwareConnectorResponse
                  If the method is called asynchronously,

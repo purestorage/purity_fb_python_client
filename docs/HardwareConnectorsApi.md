@@ -1,19 +1,19 @@
-# purity_fb_1dot7.HardwareConnectorsApi
+# purity_fb_1dot8.HardwareConnectorsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.7/hardware-connectors | 
-[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.7/hardware-connectors | 
+[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.8/hardware-connectors | 
+[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.8/hardware-connectors | 
 
 
 # **list_hardware_connectors**
-> HardwareConnectorResponse list_hardware_connectors(filter=filter, sort=sort, start=start, limit=limit, token=token, names=names)
+> HardwareConnectorResponse list_hardware_connectors(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List hardware connectors
+List hardware connectors.
 
 ### Example 
 ```python
@@ -46,11 +46,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
 
 ### Return type
 
@@ -68,11 +69,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_hardware_connectors**
-> HardwareConnectorResponse update_hardware_connectors(names=names, hardware_connector=hardware_connector)
+> HardwareConnectorResponse update_hardware_connectors(ids=ids, names=names, hardware_connector=hardware_connector)
 
 
 
-Update an existing hardware connector
+Update an existing hardware connector.
 
 ### Example 
 ```python
@@ -98,8 +99,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **hardware_connector** | [**HardwareConnector**](HardwareConnector.md)| the attribute map used to update the hardware connector | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **hardware_connector** | [**HardwareConnector**](HardwareConnector.md)| The attribute map used to update the hardware connector. | [optional] 
 
 ### Return type
 

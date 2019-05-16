@@ -54,7 +54,7 @@ class AdminsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param bool expose: display the unmasked API token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: AdminResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class AdminsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param bool expose: display the unmasked API token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: AdminResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -160,7 +160,7 @@ class AdminsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Admin admin: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: AdminResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -186,7 +186,7 @@ class AdminsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Admin admin: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: AdminResponse
                  If the method is called asynchronously,
                  returns the request thread.

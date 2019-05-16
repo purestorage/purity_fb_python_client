@@ -1,14 +1,14 @@
-# purity_fb_1dot7.AlertWatchersApi
+# purity_fb_1dot8.AlertWatchersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.7/alert-watchers | 
-[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.7/alert-watchers | 
-[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.7/alert-watchers | 
-[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.7/alert-watchers/test | 
-[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.7/alert-watchers | 
+[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.8/alert-watchers | 
+[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.8/alert-watchers | 
+[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.8/alert-watchers | 
+[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.8/alert-watchers/test | 
+[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.8/alert-watchers | 
 
 
 # **create_alert_watchers**
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 
 
-Create alert watchers
+Create alert watchers.
 
 ### Example 
 ```python
@@ -41,7 +41,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -63,7 +63,7 @@ Name | Type | Description  | Notes
 
 
 
-Delete alert watchers
+Delete alert watchers.
 
 ### Example 
 ```python
@@ -81,14 +81,14 @@ if res:
         res = fb.alert_watchers.delete_alert_watchers(names=['test@example.com'])
         print(res)
     except rest.ApiException as e:
-        print("Exception when creating alert watchers: %s\n" % e)
+        print("Exception when deleting alert watchers: %s\n" % e)
 ```
 
 ### Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -106,11 +106,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_alert_watchers**
-> AlertWatcherResponse list_alert_watchers(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> AlertWatcherResponse list_alert_watchers(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List alert watchers
+List alert watchers.
 
 ### Example 
 ```python
@@ -136,11 +136,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -189,7 +190,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -207,11 +208,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_alert_watchers**
-> AlertWatcherResponse update_alert_watchers(watcher_settings, names=names)
+> AlertWatcherResponse update_alert_watchers(watcher_settings, ids=ids, names=names)
 
 
 
-Update alert watchers
+Update alert watchers.
 
 ### Example 
 ```python
@@ -239,7 +240,8 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **watcher_settings** | [**AlertWatcher**](AlertWatcher.md)|  | 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 

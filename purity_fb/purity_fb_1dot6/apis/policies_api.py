@@ -54,7 +54,7 @@ class PoliciesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Policy policy: The attribute map used to create the policy (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -80,7 +80,7 @@ class PoliciesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Policy policy: The attribute map used to create the policy (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -162,8 +162,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: PolicyObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -188,8 +188,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: PolicyObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -258,7 +258,7 @@ class PoliciesApi(object):
 
     def delete_policies(self, **kwargs):
         """
-        Delete a policy by name
+        Delete a policy
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -269,7 +269,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -283,7 +283,7 @@ class PoliciesApi(object):
 
     def delete_policies_with_http_info(self, **kwargs):
         """
-        Delete a policy by name
+        Delete a policy
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -294,7 +294,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -371,8 +371,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -397,8 +397,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -478,7 +478,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -508,7 +508,7 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -600,8 +600,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -631,8 +631,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -727,8 +727,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -758,8 +758,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -854,8 +854,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param list[str] member_types: A list of member types.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
@@ -886,8 +886,8 @@ class PoliciesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param list[str] member_types: A list of member types.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
@@ -987,7 +987,7 @@ class PoliciesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PolicyPatch policy_patch: the attribute map used to update the policy (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1013,7 +1013,7 @@ class PoliciesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param PolicyPatch policy_patch: the attribute map used to update the policy (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.

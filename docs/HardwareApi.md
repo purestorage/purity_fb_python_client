@@ -1,19 +1,19 @@
-# purity_fb_1dot7.HardwareApi
+# purity_fb_1dot8.HardwareApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.7/hardware | 
-[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.7/hardware | 
+[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.8/hardware | 
+[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.8/hardware | 
 
 
 # **list_hardware**
-> HardwareResponse list_hardware(names=names, filter=filter, limit=limit, sort=sort, start=start, token=token)
+> HardwareResponse list_hardware(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List hardware components
+List hardware components.
 
 ### Example 
 ```python
@@ -39,9 +39,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **token** | **str**| token | [optional] 
@@ -62,11 +63,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_hardware**
-> HardwareResponse update_hardware(names, hardware)
+> HardwareResponse update_hardware(hardware, ids=ids, names=names)
 
 
 
-Update an existing hardware component
+Update an existing hardware component.
 
 ### Example 
 ```python
@@ -92,8 +93,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)|  | 
  **hardware** | [**Hardware**](Hardware.md)|  | 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 

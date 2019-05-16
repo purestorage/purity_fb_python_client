@@ -1,13 +1,13 @@
-# purity_fb_1dot7.NetworkInterfacesApi
+# purity_fb_1dot8.NetworkInterfacesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.7/network-interfaces | 
-[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.7/network-interfaces | 
-[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.7/network-interfaces | 
-[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.7/network-interfaces | 
+[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.8/network-interfaces | 
+[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.8/network-interfaces | 
+[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.8/network-interfaces | 
+[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.8/network-interfaces | 
 
 
 # **create_network_interfaces**
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 
 
-Create a new network interface
+Create a new network interface.
 
 ### Example 
 ```python
@@ -44,8 +44,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **network_interface** | [**NetworkInterface**](NetworkInterface.md)| The attribute map used to create the network interface | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **network_interface** | [**NetworkInterface**](NetworkInterface.md)| The attribute map used to create the network interface. | [optional] 
 
 ### Return type
 
@@ -63,11 +63,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_network_interfaces**
-> delete_network_interfaces(names=names)
+> delete_network_interfaces(ids=ids, names=names)
 
 
 
-Delete a network interface by name
+Delete a network interface.
 
 ### Example 
 ```python
@@ -91,7 +91,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -109,11 +110,11 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_network_interfaces**
-> NetworkInterfaceResponse list_network_interfaces(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> NetworkInterfaceResponse list_network_interfaces(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List network interfaces
+List network interfaces.
 
 ### Example 
 ```python
@@ -145,11 +146,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -168,11 +170,11 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_network_interfaces**
-> NetworkInterfaceResponse update_network_interfaces(names=names, network_interface=network_interface)
+> NetworkInterfaceResponse update_network_interfaces(ids=ids, names=names, network_interface=network_interface)
 
 
 
-Update an existing network interface
+Update an existing network interface.
 
 ### Example 
 ```python
@@ -197,8 +199,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
- **network_interface** | [**NetworkInterface**](NetworkInterface.md)| the attribute map used to update the network interface | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **network_interface** | [**NetworkInterface**](NetworkInterface.md)| The attribute map used to update the network interface. | [optional] 
 
 ### Return type
 

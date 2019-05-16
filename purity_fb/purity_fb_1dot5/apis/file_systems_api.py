@@ -157,8 +157,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: PolicyObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -183,8 +183,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: PolicyObjectsResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -253,7 +253,7 @@ class FileSystemsApi(object):
 
     def delete_file_systems(self, name, **kwargs):
         """
-        Delete a file system by name
+        Delete a file system
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -278,7 +278,7 @@ class FileSystemsApi(object):
 
     def delete_file_systems_with_http_info(self, name, **kwargs):
         """
-        Delete a file system by name
+        Delete a file system
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -368,8 +368,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -394,8 +394,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
@@ -475,7 +475,7 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -507,7 +507,7 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -610,7 +610,7 @@ class FileSystemsApi(object):
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str sort: The way to order the results.
         :param int start_time: Time to start sample in milliseconds since epoch.
         :param int start: start
@@ -645,7 +645,7 @@ class FileSystemsApi(object):
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str sort: The way to order the results.
         :param int start_time: Time to start sample in milliseconds since epoch.
         :param int start: start
@@ -747,8 +747,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start
@@ -778,8 +778,8 @@ class FileSystemsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] policy_names: A list of policy names.
-        :param list[str] member_names: A list of member names.
+        :param list[str] policy_names: A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters.
+        :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
         :param str sort: The way to order the results.
         :param int start: start

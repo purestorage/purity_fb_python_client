@@ -1,19 +1,19 @@
-# purity_fb_1dot7.AlertsApi
+# purity_fb_1dot8.AlertsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.7/alerts | 
-[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.7/alerts | 
+[**list_alerts**](AlertsApi.md#list_alerts) | **GET** /1.8/alerts | 
+[**update_alerts**](AlertsApi.md#update_alerts) | **PATCH** /1.8/alerts | 
 
 
 # **list_alerts**
-> AlertResponse list_alerts(names=names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> AlertResponse list_alerts(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List all alerts
+List all alerts.
 
 ### Example 
 ```python
@@ -39,11 +39,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
 
 ### Return type
@@ -66,7 +67,7 @@ Name | Type | Description  | Notes
 
 
 
-Update alerts
+Update alerts.
 
 ### Example 
 ```python
@@ -94,7 +95,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **alert_settings** | [**Alert**](Alert.md)|  | 
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 

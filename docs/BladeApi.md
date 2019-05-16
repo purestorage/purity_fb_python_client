@@ -1,18 +1,18 @@
-# purity_fb_1dot7.BladeApi
+# purity_fb_1dot8.BladeApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_blades**](BladeApi.md#list_blades) | **GET** /1.7/blades | 
+[**list_blades**](BladeApi.md#list_blades) | **GET** /1.8/blades | 
 
 
 # **list_blades**
-> BladeResponse list_blades(names=names, filter=filter, limit=limit, sort=sort, start=start, token=token)
+> BladeResponse list_blades(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
-List blades
+List blades.
 
 ### Example 
 ```python
@@ -30,6 +30,9 @@ if res:
         res = fb.blade.list_blades()
         # list a subset of blades by name
         res = fb.blade.list_blades(names=['CH1.FB1', 'CH1.FB2'])
+        # list a subset of blades by id
+        res = fb.blade.list_blades(names=['100abf42-0000-4000-8023-000det400090',
+                                          '10314f42-020d-7080-8013-000ddt400090'])
         # list all healthy blades
         res = fb.blade.list_blades(filter='status=\'healthy\'')
     except rest.ApiException as e:
@@ -40,9 +43,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A list of names. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **token** | **str**| token | [optional] 

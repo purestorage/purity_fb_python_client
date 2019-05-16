@@ -1,4 +1,4 @@
-# purity_fb_1dot7.AuthenticationApi
+# purity_fb_1dot8.AuthenticationApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
@@ -20,6 +20,8 @@ Log in to the server
 from purity_fb import PurityFb, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+# this is required for versions before Purity//FB 2.1.3 because they only supports self-signed
+# certificates. in later versions, this may be unnecessary if you have imported a certificate.
 fb.disable_verify_ssl()
 my_ca_certificate_file = '/net/ssl/fb_ca_certificate.pem'
 try:

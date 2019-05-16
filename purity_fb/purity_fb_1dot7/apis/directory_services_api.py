@@ -58,7 +58,7 @@ class DirectoryServicesApi(object):
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -88,7 +88,7 @@ class DirectoryServicesApi(object):
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -171,7 +171,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceRolesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -196,7 +196,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceRolesResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -269,7 +269,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: TestResultResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -294,7 +294,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: TestResultResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -372,7 +372,7 @@ class DirectoryServicesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param DirectoryService directory_service: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -398,7 +398,7 @@ class DirectoryServicesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param DirectoryService directory_service: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: DirectoryServiceResponse
                  If the method is called asynchronously,
                  returns the request thread.

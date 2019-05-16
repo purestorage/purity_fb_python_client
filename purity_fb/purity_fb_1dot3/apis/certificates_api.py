@@ -142,7 +142,7 @@ class CertificatesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Certificate certificate: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: CertificateResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -168,7 +168,7 @@ class CertificatesApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Certificate certificate: (required)
-        :param list[str] names: A list of names.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: CertificateResponse
                  If the method is called asynchronously,
                  returns the request thread.

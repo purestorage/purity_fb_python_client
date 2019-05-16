@@ -393,7 +393,7 @@ class FileSystem(object):
     def space(self):
         """
         Gets the space of this FileSystem.
-        The space specification of the file system.
+        the space specification of the file system
 
         :return: The space of this FileSystem.
         :rtype: Space
@@ -404,7 +404,7 @@ class FileSystem(object):
     def space(self, space):
         """
         Sets the space of this FileSystem.
-        The space specification of the file system.
+        the space specification of the file system
 
         :param space: The space of this FileSystem.
         :type: Space

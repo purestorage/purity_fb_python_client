@@ -16,8 +16,9 @@ from . import purity_fb_1dot4
 from . import purity_fb_1dot5
 from . import purity_fb_1dot6
 from . import purity_fb_1dot7
+from . import purity_fb_1dot8
 
-SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8']
 
 version_module_dict = {
     '1.0': purity_fb_1dot0,
@@ -27,7 +28,8 @@ version_module_dict = {
     '1.4': purity_fb_1dot4,
     '1.5': purity_fb_1dot5,
     '1.6': purity_fb_1dot6,
-    '1.7': purity_fb_1dot7
+    '1.7': purity_fb_1dot7,
+    '1.8': purity_fb_1dot8,
 }
 
 
@@ -107,9 +109,7 @@ class PurityFb:
         self._api_client.rest_client.pool_manager.connection_pool_kw['cert_reqs'] = ssl.CERT_OPTIONAL
 
     def disable_verify_ssl(self):
-        """ Change our certificate requirements so that a certificate is validated if provided,
-        but a certificate is not required.
-        """
+        """ Change our certificate requirements so that a certificate is not validated. """
         self._api_client.rest_client.pool_manager.connection_pool_kw['cert_reqs'] = ssl.CERT_NONE
 
     def enable_verify_ssl(self, ca_certs_file_path=None):
