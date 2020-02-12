@@ -30,7 +30,7 @@ pages:
         - Certificates: CertificatesApi.md
         - Certificate Uses: CertificatesApi.md
         - Certificate Groups: CertificateGroupsApi.md
-        - Certificate Group Uses: CertififcateGroupsApi.md
+        - Certificate Group Uses: CertificateGroupsApi.md
         - Directory Services: DirectoryServicesApi.md
         - Directory Services Roles: DirectoryServicesApi.md
         - Directory Services Tests: DirectoryServicesApi.md
