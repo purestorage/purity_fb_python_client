@@ -1,13 +1,13 @@
-# purity_fb_1dot8.SubnetsApi
+# purity_fb_1dot9.SubnetsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.8/subnets | 
-[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.8/subnets | 
-[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.8/subnets | 
-[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.8/subnets | 
+[**create_subnets**](SubnetsApi.md#create_subnets) | **POST** /1.9/subnets | 
+[**delete_subnets**](SubnetsApi.md#delete_subnets) | **DELETE** /1.9/subnets | 
+[**list_subnets**](SubnetsApi.md#list_subnets) | **GET** /1.9/subnets | 
+[**update_subnets**](SubnetsApi.md#update_subnets) | **PATCH** /1.9/subnets | 
 
 
 # **create_subnets**
@@ -134,7 +134,7 @@ if res:
         # list all remaining subnets
         res = fb.subnets.list_subnets(token=res.pagination_info.continuation_token)
         # list with filter
-        res = fb.subnets.list_subnets(filter='vlan=8')
+        res = fb.subnets.list_subnets(filter='contains(services, \'replication\')')
     except rest.ApiException as e:
         print("Exception when listing subnets: %s\n" % e)
 ```

@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.8 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.8 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.8
     Contact: info@purestorage.com
@@ -35,8 +35,9 @@ class PureArray(object):
         'id': 'str',
         'ntp_servers': 'list[str]',
         'os': 'str',
-        'version': 'str',
-        'revision': 'str'
+        'revision': 'str',
+        'time_zone': 'str',
+        'version': 'str'
     }
 
     attribute_map = {
@@ -44,11 +45,12 @@ class PureArray(object):
         'id': 'id',
         'ntp_servers': 'ntp_servers',
         'os': 'os',
-        'version': 'version',
-        'revision': 'revision'
+        'revision': 'revision',
+        'time_zone': 'time_zone',
+        'version': 'version'
     }
 
-    def __init__(self, name=None, id=None, ntp_servers=None, os=None, version=None, revision=None):
+    def __init__(self, name=None, id=None, ntp_servers=None, os=None, revision=None, time_zone=None, version=None):
         """
         PureArray - a model defined in Swagger
         """
@@ -57,8 +59,9 @@ class PureArray(object):
         self._id = None
         self._ntp_servers = None
         self._os = None
-        self._version = None
         self._revision = None
+        self._time_zone = None
+        self._version = None
 
         if name is not None:
           self.name = name
@@ -68,10 +71,12 @@ class PureArray(object):
           self.ntp_servers = ntp_servers
         if os is not None:
           self.os = os
-        if version is not None:
-          self.version = version
         if revision is not None:
           self.revision = revision
+        if time_zone is not None:
+          self.time_zone = time_zone
+        if version is not None:
+          self.version = version
 
     @property
     def name(self):
@@ -164,27 +169,6 @@ class PureArray(object):
         self._os = os
 
     @property
-    def version(self):
-        """
-        Gets the version of this PureArray.
-
-        :return: The version of this PureArray.
-        :rtype: str
-        """
-        return self._version
-
-    @version.setter
-    def version(self, version):
-        """
-        Sets the version of this PureArray.
-
-        :param version: The version of this PureArray.
-        :type: str
-        """
-
-        self._version = version
-
-    @property
     def revision(self):
         """
         Gets the revision of this PureArray.
@@ -204,6 +188,48 @@ class PureArray(object):
         """
 
         self._revision = revision
+
+    @property
+    def time_zone(self):
+        """
+        Gets the time_zone of this PureArray.
+
+        :return: The time_zone of this PureArray.
+        :rtype: str
+        """
+        return self._time_zone
+
+    @time_zone.setter
+    def time_zone(self, time_zone):
+        """
+        Sets the time_zone of this PureArray.
+
+        :param time_zone: The time_zone of this PureArray.
+        :type: str
+        """
+
+        self._time_zone = time_zone
+
+    @property
+    def version(self):
+        """
+        Gets the version of this PureArray.
+
+        :return: The version of this PureArray.
+        :rtype: str
+        """
+        return self._version
+
+    @version.setter
+    def version(self, version):
+        """
+        Sets the version of this PureArray.
+
+        :param version: The version of this PureArray.
+        :type: str
+        """
+
+        self._version = version
 
     def to_dict(self):
         """

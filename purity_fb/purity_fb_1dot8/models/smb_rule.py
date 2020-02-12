@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.8 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.8 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.8
     Contact: info@purestorage.com
@@ -37,7 +37,7 @@ class SmbRule(object):
 
     attribute_map = {
         'enabled': 'enabled',
-        'acl_mode': 'acl-mode'
+        'acl_mode': 'acl_mode'
     }
 
     def __init__(self, enabled=None, acl_mode=None):

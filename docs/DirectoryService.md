@@ -11,10 +11,11 @@ Name | Type | Description | Notes
 **ca_certificate** | [**Reference**](Reference.md) | CA certificate used to validate the authenticity of the configured servers. | [optional] 
 **ca_certificate_group** | [**Reference**](Reference.md) | Certificate group containing CA certificates that can be used to validate the authenticity of the configured servers. | [optional] 
 **enabled** | **bool** | Is the directory service enabled or not? | [optional] 
-**services** | **list[str]** | Services that the directory service configuration is used for. | [optional] 
-**uris** | **list[str]** | List of URIs for the configured directory servers. | [optional] 
-**smb** | [**DirectoryserviceSmb**](DirectoryserviceSmb.md) |  | [optional] 
+**management** | [**DirectoryserviceManagement**](DirectoryserviceManagement.md) |  | [optional] 
 **nfs** | [**DirectoryserviceNfs**](DirectoryserviceNfs.md) |  | [optional] 
+**services** | **list[str]** | Services that the directory service configuration is used for. | [optional] 
+**smb** | [**DirectoryserviceSmb**](DirectoryserviceSmb.md) |  | [optional] 
+**uris** | **list[str]** | List of URIs for the configured directory servers. | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

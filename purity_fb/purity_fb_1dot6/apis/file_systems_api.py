@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.6 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.6), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.X Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.6
     Contact: info@purestorage.com
@@ -357,7 +357,7 @@ class FileSystemsApi(object):
 
     def delete_filesystem_policies(self, **kwargs):
         """
-        Delete a connection betwwen a file system and a policy
+        Delete a connection between a file system and a policy.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -383,7 +383,7 @@ class FileSystemsApi(object):
 
     def delete_filesystem_policies_with_http_info(self, **kwargs):
         """
-        Delete a connection betwwen a file system and a policy
+        Delete a connection between a file system and a policy.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -736,7 +736,7 @@ class FileSystemsApi(object):
 
     def list_filesystem_policies(self, **kwargs):
         """
-        List policy attached to filesystems
+        List policies attached to filesystems.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -767,7 +767,7 @@ class FileSystemsApi(object):
 
     def list_filesystem_policies_with_http_info(self, **kwargs):
         """
-        List policy attached to filesystems
+        List policies attached to filesystems.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

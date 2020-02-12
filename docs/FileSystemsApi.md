@@ -1,21 +1,21 @@
-# purity_fb_1dot8.FileSystemsApi
+# purity_fb_1dot9.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.8/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.8/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.8/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.8/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.8/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.8/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.8/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.8/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.9/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.9/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.9/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.9/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.9/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.9/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.9/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.9/file-systems | 
 
 
 # **create_file_systems**
-> FileSystemResponse create_file_systems(file_system)
+> FileSystemResponse create_file_systems(file_system, overwrite=overwrite, discard_non_snapshotted_data=discard_non_snapshotted_data)
 
 
 
@@ -51,7 +51,7 @@ if res:
     myfs = FileSystem(name="myfs", source=Reference(name='myfs.mysnap'))
     try:
         # post the file system object myfs on the array
-        res = fb.file_systems.create_file_systems(overwrite=True, file_system=myfs)
+        res = fb.file_systems.create_file_systems(overwrite=True, discard_non_snapshotted_data=True, file_system=myfs)
         print(res)
     except rest.ApiException as e:
         print("Exception when restoring file system: %s\n" % e)
@@ -62,6 +62,8 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **file_system** | [**FileSystem**](FileSystem.md)| The attribute map used to create the file system. | 
+ **overwrite** | **bool**| Should we overwrites an existing file system? True if so. | [optional] 
+ **discard_non_snapshotted_data** | **bool**| discard (true) the non-snapshotted data. | [optional] 
 
 ### Return type
 
@@ -79,7 +81,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **create_filesystem_policies**
-> PolicyObjectsResponse create_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
+> PolicyMemberResponse create_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
@@ -118,7 +120,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 
@@ -183,7 +185,7 @@ void (empty response body)
 
 
 
-Delete a connection betwwen a file system and a policy.
+Delete a connection between a file system and a policy.
 
 ### Example 
 ```python
@@ -231,7 +233,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_systems**
-> FileSystemResponse list_file_systems(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token, total=total, total_only=total_only)
+> FileSystemResponse list_file_systems(ids=ids, names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only)
 
 
 
@@ -270,12 +272,12 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **filter** | **str**| The filter to be used for query. | [optional] 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| token | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
@@ -387,7 +389,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_filesystem_policies**
-> PolicyObjectsResponse list_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyMemberResponse list_filesystem_policies(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -441,7 +443,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 
@@ -455,7 +457,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_systems**
-> FileSystemResponse update_file_systems(name, attributes, ids=ids, ignore_usage=ignore_usage)
+> FileSystemResponse update_file_systems(name, attributes, ids=ids, discard_non_snapshotted_data=discard_non_snapshotted_data, delete_link_on_eradication=delete_link_on_eradication, ignore_usage=ignore_usage)
 
 
 
@@ -499,6 +501,8 @@ Name | Type | Description  | Notes
  **name** | **str**| The name of the file system or snapshot to be updated. | 
  **attributes** | [**FileSystem**](FileSystem.md)| The new attributes, only modifiable fields may be specified. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **discard_non_snapshotted_data** | **bool**| This parameter must be set to &#x60;true&#x60; in order to restore a file system from a snapshot or to demote a file system (which restores the file system from the common baseline snapshot). Setting this parameter to &#x60;true&#x60; is acknowledgement that any non-snapshotted data currently in the file system will be irretrievably lost. | [optional] 
+ **delete_link_on_eradication** | **bool**| If set to &#x60;true&#x60;, the file system can be destroyed, even if it has a replica link. If set to &#x60;false&#x60;, the file system cannot be destroyed if it has a replica link. Defaults to &#x60;false&#x60;. | [optional] 
  **ignore_usage** | **bool**| Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True. | [optional] 
 
 ### Return type

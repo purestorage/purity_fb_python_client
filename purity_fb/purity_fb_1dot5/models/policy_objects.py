@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.5 Python SDK
 
-    Client for Purity//FB REST API (1.0), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.5 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.5
     Contact: info@purestorage.com
@@ -31,83 +31,27 @@ class PolicyObjects(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'str',
         'policy': 'PolicyReference',
         'member': 'PolicyReference'
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
         'policy': 'policy',
         'member': 'member'
     }
 
-    def __init__(self, name=None, id=None, policy=None, member=None):
+    def __init__(self, policy=None, member=None):
         """
         PolicyObjects - a model defined in Swagger
         """
 
-        self._name = None
-        self._id = None
         self._policy = None
         self._member = None
 
-        if name is not None:
-          self.name = name
-        if id is not None:
-          self.id = id
         if policy is not None:
           self.policy = policy
         if member is not None:
           self.member = member
-
-    @property
-    def name(self):
-        """
-        Gets the name of this PolicyObjects.
-        name of the object (e.g., a file system or snapshot)
-
-        :return: The name of this PolicyObjects.
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """
-        Sets the name of this PolicyObjects.
-        name of the object (e.g., a file system or snapshot)
-
-        :param name: The name of this PolicyObjects.
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def id(self):
-        """
-        Gets the id of this PolicyObjects.
-        A unique ID chosen by the system. Cannot change.
-
-        :return: The id of this PolicyObjects.
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """
-        Sets the id of this PolicyObjects.
-        A unique ID chosen by the system. Cannot change.
-
-        :param id: The id of this PolicyObjects.
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def policy(self):

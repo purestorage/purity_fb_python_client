@@ -4,8 +4,8 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
-**component_address** | **str** | Address of the component runinng the test | [optional] 
-**component_name** | **str** | Name of the component runing the test | [optional] 
+**component_address** | **str** | Address of the component running the test | [optional] 
+**component_name** | **str** | Name of the component running the test | [optional] 
 **description** | **str** | What the test is doing | [optional] 
 **destination** | **str** | The URI of the target server being tested | [optional] 
 **enabled** | **bool** | Is the service enabled? | [optional] 

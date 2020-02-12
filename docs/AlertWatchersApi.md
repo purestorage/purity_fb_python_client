@@ -1,18 +1,18 @@
-# purity_fb_1dot8.AlertWatchersApi
+# purity_fb_1dot9.AlertWatchersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.8/alert-watchers | 
-[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.8/alert-watchers | 
-[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.8/alert-watchers | 
-[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.8/alert-watchers/test | 
-[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.8/alert-watchers | 
+[**create_alert_watchers**](AlertWatchersApi.md#create_alert_watchers) | **POST** /1.9/alert-watchers | 
+[**delete_alert_watchers**](AlertWatchersApi.md#delete_alert_watchers) | **DELETE** /1.9/alert-watchers | 
+[**list_alert_watchers**](AlertWatchersApi.md#list_alert_watchers) | **GET** /1.9/alert-watchers | 
+[**test_alert_watchers**](AlertWatchersApi.md#test_alert_watchers) | **GET** /1.9/alert-watchers/test | 
+[**update_alert_watchers**](AlertWatchersApi.md#update_alert_watchers) | **PATCH** /1.9/alert-watchers | 
 
 
 # **create_alert_watchers**
-> AlertWatcherResponse create_alert_watchers(names=names)
+> AlertWatcherResponse create_alert_watchers(names=names, watcher_settings=watcher_settings)
 
 
 
@@ -20,7 +20,7 @@ Create alert watchers.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest
+from purity_fb import PurityFb, AlertWatcherPost, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -30,8 +30,16 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # create an alert watcher with a given email address
-        res = fb.alert_watchers.create_alert_watchers(names=['test@example.com'])
+        # create an alert watcher with a given email address such that they'll receive emails
+        # about all system alerts
+        res = fb.alert_watchers.create_alert_watchers(names=['i_get_everything@example.com'])
+        print(res)
+
+        # create an alert watcher with a given email address such that they'll only receive emails
+        # about alerts of severity 'warning' and above
+        watcher_create_settings = AlertWatcherPost(minimum_notification_severity='warning')
+        res = fb.alert_watchers.create_alert_watchers(names=['rack_monitor@example.com'],
+                                                      watcher_settings=watcher_create_settings)
         print(res)
     except rest.ApiException as e:
         print("Exception when creating alert watchers: %s\n" % e)
@@ -42,6 +50,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **watcher_settings** | [**AlertWatcherPost**](AlertWatcherPost.md)|  | [optional] 
 
 ### Return type
 
@@ -77,8 +86,9 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # delete an alert watcher with a given email address
-        res = fb.alert_watchers.delete_alert_watchers(names=['test@example.com'])
+        # delete an alert watcher with a given email address. this address will no longer receive
+        # any emails about any alerts, new or updated, from the system
+        res = fb.alert_watchers.delete_alert_watchers(names=['moved_teams@mydomain.com'])
         print(res)
     except rest.ApiException as e:
         print("Exception when deleting alert watchers: %s\n" % e)
@@ -124,9 +134,11 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # create an alert watcher with a given email address
+        # list alert watchers with email address matching the below wildcard patterns. the first
+        # pattern includes all emails with "on_call" in them, and second pattern includes all
+        # emails ending with "@dc1.domain.com"
         res = fb.alert_watchers.list_alert_watchers(
-            names=['*@example.com', '*@test.com'], sort='name-')
+            names=['*on_call*', '*@dc1.domain.com'], sort='name-')
         print(res)
     except rest.ApiException as e:
         print("Exception when listing alert watchers: %s\n" % e)
@@ -225,11 +237,21 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    watcher_settings = AlertWatcher(enabled=False)
     try:
-        # disable an alert watcher with a given email address
+        # An example of how to disable an alert watcher, so they stop receiving all emails about
+        # alerts
+        watcher_settings = AlertWatcher(enabled=False)
         res = fb.alert_watchers.update_alert_watchers(
-            names=['test@example.com'], watcher_settings=watcher_settings)
+            names=['person_on_vacation@mydomain.com'], watcher_settings=watcher_settings)
+        print(res)
+
+        # An example of how to set an alert watcher to only receive emails about alerts of severity
+        # 'critical'. This can be useful if there's an email alias tied directly into an on-call
+        # paging system or if there's an email alias of people who should be contacted about issues
+        # that need to be escalated quickly
+        watcher_settings = AlertWatcher(minimum_notification_severity='critical')
+        res = fb.alert_watchers.update_alert_watchers(
+            names=['storage_admins_on_call@mydomain.com'], watcher_settings=watcher_settings)
         print(res)
     except rest.ApiException as e:
         print("Exception when updating alert watchers: %s\n" % e)

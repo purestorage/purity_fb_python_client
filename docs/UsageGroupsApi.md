@@ -1,10 +1,10 @@
-# purity_fb_1dot8.UsageGroupsApi
+# purity_fb_1dot9.UsageGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_group_usage**](UsageGroupsApi.md#list_group_usage) | **GET** /1.8/usage/groups | 
+[**list_group_usage**](UsageGroupsApi.md#list_group_usage) | **GET** /1.9/usage/groups | 
 
 
 # **list_group_usage**

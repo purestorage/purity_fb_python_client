@@ -1,11 +1,11 @@
-# purity_fb_1dot8.DnsApi
+# purity_fb_1dot9.DnsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_dns**](DnsApi.md#list_dns) | **GET** /1.8/dns | 
-[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.8/dns | 
+[**list_dns**](DnsApi.md#list_dns) | **GET** /1.9/dns | 
+[**update_dns**](DnsApi.md#update_dns) | **PATCH** /1.9/dns | 
 
 
 # **list_dns**
@@ -80,11 +80,8 @@ if res:
         # empty nameservers
         res = fb.dns.update_dns(dns_settings=Dns(nameservers=[]))
         print(res)
-        # update search
-        res = fb.dns.update_dns(dns_settings=Dns(search=['dev.test.com', 'test.com']))
-        print(res)
     except rest.ApiException as e:
-        print("Exception when updating alert watchers: %s\n" % e)
+        print("Exception when updating DNS configuration: %s\n" % e)
 ```
 
 ### Parameters

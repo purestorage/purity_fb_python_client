@@ -1,19 +1,19 @@
-# purity_fb_1dot8.BucketsApi
+# purity_fb_1dot9.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.8/buckets | 
-[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.8/buckets | 
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.8/buckets | 
-[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.8/buckets/performance | 
-[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.8/buckets/s3-specific-performance | 
-[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.8/buckets | 
+[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.9/buckets | 
+[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.9/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.9/buckets | 
+[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.9/buckets/performance | 
+[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.9/buckets/s3-specific-performance | 
+[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.9/buckets | 
 
 
 # **create_buckets**
-> BucketResponse create_buckets(names=names, account=account)
+> BucketResponse create_buckets(names=names, bucket=bucket)
 
 
 
@@ -21,7 +21,7 @@ Create new buckets.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, Bucket, Reference
+from purity_fb import PurityFb, rest, BucketPost, Reference
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -32,14 +32,14 @@ except rest.ApiException as e:
 if res:
     try:
         # post the bucket object mybucket on the array
-        attr = Bucket()
+        attr = BucketPost()
         attr.account = Reference(name='myaccount')
-        res = fb.buckets.create_buckets(names=["mybucket"], account=attr)
+        res = fb.buckets.create_buckets(names=["mybucket"], bucket=attr)
 
         # make another bucket in the account with id '10314f42-020d-7080-8013-000ddt400090'
-        id_attr = Bucket()
+        id_attr = BucketPost()
         id_attr.account = Reference(id='10314f42-020d-7080-8013-000ddt400090')
-        res = fb.buckets.create_buckets(names=["mybucket"], account=id_attr)
+        res = fb.buckets.create_buckets(names=["mybucket"], bucket=id_attr)
         print(res)
     except rest.ApiException as e:
         print("Exception when creating bucket: %s\n" % e)
@@ -50,7 +50,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **account** | [**BucketPost**](BucketPost.md)| Bucket create parameters. | [optional] 
+ **bucket** | [**BucketPost**](BucketPost.md)| Bucket create parameters. | [optional] 
 
 ### Return type
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_buckets**
-> BucketResponse update_buckets(ids=ids, names=names, destroyed=destroyed)
+> BucketResponse update_buckets(ids=ids, names=names, bucket=bucket)
 
 
 
@@ -344,7 +344,7 @@ Update buckets.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, Bucket
+from purity_fb import PurityFb, rest, BucketPatch
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -355,7 +355,8 @@ except rest.ApiException as e:
 if res:
     try:
         # update the bucket object mybucket on the array
-        res = fb.buckets.update_buckets(names=["mybucket"], destroyed=Bucket(destroyed=True))
+        res = fb.buckets.update_buckets(names=["mybucket"],
+                                        bucket=BucketPatch(destroyed=True, versioning="enabled"))
         print(res)
     except rest.ApiException as e:
         print("Exception when updating bucket: %s\n" % e)
@@ -367,7 +368,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **destroyed** | [**BucketPatch**](BucketPatch.md)| Bucket update parameters. | [optional] 
+ **bucket** | [**BucketPatch**](BucketPatch.md)| Bucket update parameters. | [optional] 
 
 ### Return type
 

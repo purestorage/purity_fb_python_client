@@ -1,11 +1,11 @@
-# purity_fb_1dot8.HardwareApi
+# purity_fb_1dot9.HardwareApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.8/hardware | 
-[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.8/hardware | 
+[**list_hardware**](HardwareApi.md#list_hardware) | **GET** /1.9/hardware | 
+[**update_hardware**](HardwareApi.md#update_hardware) | **PATCH** /1.9/hardware | 
 
 
 # **list_hardware**

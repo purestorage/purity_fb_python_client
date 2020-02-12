@@ -1,7 +1,6 @@
-site_name: Purity//FB REST API
+site_name: Pure Storage FlashBlade REST 1.9 Python SDK
 pages:
-- Overview:
-    - Get started: index.md
+- About:
     - License: about/license.md
 - Endpoints:
     - Authentication: AuthenticationApi.md
@@ -13,36 +12,68 @@ pages:
         - Alert Watchers: AlertWatchersApi.md
         - Alert Watchers Tests: AlertWatcherTest.md
         - Arrays: ArraysApi.md
+        - Array Connections: ArrayConnectionsApi.md
+        - Array Connection Keys: ArrayConnectionsApi.md
+        - Array Connection Paths: ArrayConnectionsApi.md
+        - Array Connection Performance Replication: ArrayConnectionsApi.md
         - Array Http Performances: ArraysApi.md
+        - Array Nfs Performances: ArraysApi.md
         - Array Performances: ArraysApi.md
+        - Array Performance Replication: ArraysApi.md
         - Array S3 Performances: ArraysApi.md
         - Array Spaces: ArraysApi.md
         - Blades: BladeApi.md
         - Buckets: BucketsApi.md
         - Bucket Performances: BucketsApi.md
         - Bucket S3 Performances: BucketsApi.md
+        - Bucket Replica Links: BucketReplicaLinksApi.md
         - Certificates: CertificatesApi.md
+        - Certificate Uses: CertificatesApi.md
         - Certificate Groups: CertificateGroupsApi.md
+        - Certificate Group Uses: CertififcateGroupsApi.md
         - Directory Services: DirectoryServicesApi.md
+        - Directory Services Roles: DirectoryServicesApi.md
+        - Directory Services Tests: DirectoryServicesApi.md
         - Dns: DnsApi.md
         - File Systems: FileSystemsApi.md
         - File System Performances: FileSystemsApi.md
+        - File System Policies: FileSystemsApi.md
+        - File System Replica Links: FileSystemReplicaLinksApi.md
+        - File System Replica Link Policies: FileSystemReplicaLinksApi.md
+        - File System Replica Link Transfers: FileSystemReplicaLinksApi.md
         - File System Snapshots: FileSystemSnapshotsApi.md
+        - File System Snapshot Policies: FileSystemSnapshotsApi.md
+        - File System Snapshot Transfers: FileSystemSnapshotsApi.md
         - Hardware: HardwareApi.md
         - Hardware Connectors: HardwareConnectorsApi.md
+        - Keytabs: KeytabsApi.md
+        - Keytab Download: KeytabsApi.md
+        - Keytab Upload: KeytabsApi.md
         - Link Aggregation Groups: LinkAggregationGroupsApi.md
         - Logs: LogsApi.md
         - Network Interfaces: NetworkInterfacesApi.md
         - Object Store Access Keys: ObjectStoreAccessKeysApi.md
         - Object Store Accounts: ObjectStoreAccountsApi.md
+        - Object Store Remote Credentials: ObjectStoreRemoteCredentialsApi.md
         - Object Store Users: ObjectStoreUsersApi.md
         - Policies: PoliciesApi.md
+        - Policies for File Systems: PoliciesApi.md
+        - Policies for File System Replica Links: PoliciesApi.md
+        - Policies for File System Snapshots: PoliciesApi.md
+        - Policy Members: PoliciesApi.md
         - Quotas for Groups: QuotasGroupsApi.md
         - Quota Notification Settings: QuotasSettingsApi.md
         - Quotas for Users: QuotasUsersApi.md
         - Smtp: SmtpApi.md
+        - Snmp Agents: SnmpAgentsApi.md
+        - Snmp Agents Mib: SnmpAgentsApi.md
+        - Snmp Managers: SnmpManagersApi.md
+        - Snmp Managers Test: SnmpManagersApi.md
         - Subnets: SubnetsApi.md
         - Support: SupportApi.md
+        - Support Tests: SupportApi.md
+        - Targets: TargetsApi.md
+        - Target Performance Replication: TargetsApi.md
         - Usage for Groups: UsageGroupsApi.md
         - Usage for Users: UsageUsersApi.md
 
@@ -58,14 +89,20 @@ pages:
         - Alert Watcher: AlertWatcherResponse.md
         - Alert Watcher Test: AlertWatcherTestResponse.md
         - Array: ArrayResponse.md
+        - Array Connection: ArrayConnectionResponse.md
+        - Array Connection Key: ArrayConnectionKeyResponse.md
+        - Array Connection Path: ArrayConnectionPathResponse.md
         - Array Http Performance: ArrayHttpPerformanceResponse.md
+        - Array Nfs Performance: ArrayNfsPerformanceResponse.md
         - Array Performance: ArrayPerformanceResponse.md
+        - Array Performance Replication: ArrayPerformanceReplicationResponse.md
         - Array S3 Performance: ArrayS3PerformanceResponse.md
         - Array Space: ArraySpaceResponse.md
         - Blade: BladeResponse.md
         - Bucket: BucketResponse.md
         - Bucket Performance: BucketPerformanceResponse.md
         - Bucket S3 Performance: BucketS3PerformanceResponse.md
+        - Bucket Replica Link: BucketReplicaLinkResponse.md
         - Certificate: CertificateResponse.md
         - Certificate Group: CertificateGroupResponse.md
         - Certificate Group Use: CertificateGroupUseResponse.md
@@ -76,23 +113,36 @@ pages:
         - Dns: DnsResponse.md
         - File System: FileSystemResponse.md
         - File System Performance: FileSystemPerformanceResponse.md
+        - File System Replica Links: FileSystemReplicaLinkResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
+        - File System Snapshot Transfers: FileSystemSnapshotTransferResponse.md
         - Hardware: HardwareResponse.md
         - Hardware Connector: HardwareConnectorResponse.md
+        - Keytab: KeytabResponse.md
+        - Keytab Download Response: KeytabDownloadUploadResponse.md
+        - Keytab Upload Response: KeytabDownloadUploadResponse.md
         - Link Aggregation Group: LinkAggregationGroupResponse.md
         - Member: MemberResponse.md
         - Network Interface: NetworkInterfaceResponse.md
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
+        - Object Store Remote Credentials: ObjectStoreRemoteCredentialsResponse.md
         - Object Store User: ObjectStoreUserResponse.md
+        - Performance Replication: PerformanceReplicationResponse.md
         - Policy: PolicyResponse.md
+        - Policy Members: PolicyMemberResponse.md
         - Policy Objects: PolicyObjectsResponse.md
         - Quotas or Usages for Groups: QuotasGroupResponse.md
         - Quota Notification Settings: QuotasSettingResponse.md
         - Quotas or Usages for Users: QuotasUserResponse.md
         - Smtp: SmtpResponse.md
+        - Snmp Agents: SnmpAgentResponse.md
+        - Snmp Agent MIB: SnmpAgentMibResponse.md
+        - Snmp Managers: SnmpManagerResponse.md
+        - Snmp Manager Test: SnmpManagerTestResponse.md
         - Subnet: SubnetResponse.md
         - Support: SupportResponse.md
+        - Target: TargetResponse.md
         - Test Result: TestResultResponse.md
     - Error: PureError.md
     - Space: Space.md
@@ -107,10 +157,17 @@ pages:
     - Arrays:
         - Array Space: ArraySpace.md
         - Array Performance: ArrayPerformance.md
+        - Array Performance Replication: ArrayPerformanceReplication.md
         - Array S3 Performance: ArrayS3Performance.md
         - Array Http Performance: ArrayHttpPerformance.md
+        - Array Nfs Performance: ArrayNfsPerformance.md
         - Pure Array: PureArray.md
         - Client Performance: ClientPerformance.md
+    - Array Connections:
+        - Array Connection: ArrayConnection.md
+        - Array Connection Key: ArrayConnectionKey.md
+        - Array Connection Path: ArrayConnectionPath.md
+        - Array Connection Performance Replication: PerformanceReplication.md
     - Blade:
         - Blade: Blade.md
     - Bucket:
@@ -119,6 +176,9 @@ pages:
         - Bucket Performance: BucketPerformance.md
         - Bucket Post: BucketPost.md
         - Bucket S3 Performance: BucketS3Performance.md
+    - Bucket Replica Link:
+        - Bucket Replica Link: BucketReplicaLink.md
+        - Bucket Replica Link Post: BucketReplicaLinkPost.md
     - Certificate:
         - Certificate: Certificate.md
         - Certificate Use: CertificateUse.md
@@ -128,6 +188,7 @@ pages:
     - Directory Service:
         - Directory Service: DirectoryService.md
         - Directory Service Role: DirectoryServiceRole.md
+        - Directory Service Management Specific Attributes: DirectoryserviceManagement.md
         - Directory Service NFS Specific Attributes: DirectoryserviceNfs.md
         - Directory Service SMB Specific Attributes: DirectoryserviceSmb.md
         - Test Result: TestResult.md
@@ -138,9 +199,12 @@ pages:
         - File System Performance: FileSystemPerformance.md
         - NFS Protocol: NfsRule.md
         - Protocol Rule: ProtocolRule.md
+    - File System Replica Link:
+        - File System Replica Link: FileSystemReplicaLink.md
     - File System Snapshot:
         - File System Snapshot: FileSystemSnapshot.md
         - Snapshot Suffix: SnapshotSuffix.md
+        - Snapshot Transfer: FileSystemSnapshotsTransfer.md
     - Fixed Reference:
         - Fixed Reference: FixedReference.md
         - Resource Type: ResourceType.md
@@ -148,6 +212,10 @@ pages:
         - Hardware: Hardware.md
     - Hardware Connector:
         - Hardware Connector: HardwareConnector.md
+    - Keytab:
+        - Keytab: Keytab.md
+        - Keytab File (Base64 Encoded): KeytabFileBase64.md
+        - Keytab File (Binary Encoded): KeytabFileBinary.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
     - Member:
@@ -157,9 +225,11 @@ pages:
     - Object Store:
         - Object Store Access Key: ObjectStoreAccessKey.md
         - Object Store Account: ObjectStoreAccount.md
+        - Object Store Remote Credentials: ObjectStoreRemoteCredentials.md
         - Object Store User: ObjectStoreUser.md
     - Policy:
         - Policy: Policy.md
+        - Policy Member: PolicyMember.md
         - Policy Objects: PolicyObjects.md
         - Policy Patch: PolicyPatch.md
         - Policy Reference: PolicyReference.md
@@ -174,9 +244,17 @@ pages:
         - Reference: Reference.md
     - Smtp:
         - Smtp: Smtp.md
+    - Snmp:
+        - Snmp Agent: SnmpAgent.md
+        - Snmp Agent MIB: SnmpAgentMib.md
+        - Snmp Manager: SnmpManager.md
+        - Snmp Manager Test: SnmpManagerTest.md
     - Subnet:
         - Subnet: Subnet.md
     - Support:
         - Support: Support.md
         - Support Remote Assist Paths: SupportRemoteAssistPaths.md
+    - Target:
+        - Target: Target.md
+        - Target Performance Replication: PerformanceReplication.md
 theme: readthedocs
