@@ -1,6 +1,7 @@
 site_name: Pure Storage FlashBlade REST 1.9 Python SDK
 pages:
-- About:
+- Overview:
+    - Get Started: index.md
     - License: about/license.md
 - Endpoints:
     - Authentication: AuthenticationApi.md
