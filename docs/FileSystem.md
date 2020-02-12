@@ -14,10 +14,14 @@ Name | Type | Description | Notes
 **http** | [**ProtocolRule**](ProtocolRule.md) | HTTP configuration. Modifiable. | [optional] 
 **nfs** | [**NfsRule**](NfsRule.md) | NFS configuration. Modifiable. | [optional] 
 **provisioned** | **int** | The provisioned size of the file system in bytes. Modifiable. Default is 0 when creating a new file-system. | [optional] 
-**snapshot_directory_enabled** | **bool** | Is snapshot directory enabled? Modifiable. Default false when creating a new file-system. | [optional] 
+**promotion_status** | **str** | Possible values are &#x60;promoted&#x60; and &#x60;demoted&#x60;. The current status of the file system with respect to replication. Changes via &#x60;requested_promotion_state&#x60;. The default for new file systems is &#x60;promoted&#x60;. | [optional] 
+**requested_promotion_state** | **str** | Possible values are &#x60;promoted&#x60; and &#x60;demoted&#x60;. The &#x60;demoted&#x60; state is used for replication targets and is only allowed to be set if the file system is in a replica-link relationship. The additional query param &#x60;discard-non-snapshotted-data&#x60; must be set to &#x60;true&#x60; when demoting a file system. The default for new file systems is &#x60;promoted&#x60;. | [optional] 
 **smb** | [**SmbRule**](SmbRule.md) | SMB configuration. Modifiable. | [optional] 
-**space** | [**Space**](Space.md) | the space specification of the file system | [optional] 
+**snapshot_directory_enabled** | **bool** | Is snapshot directory enabled? Modifiable. Default false when creating a new file-system. | [optional] 
+**source** | [**LocationReference**](LocationReference.md) | The source snapshot whose data is copied to the file system specified. | [optional] 
+**space** | [**Space**](Space.md) | The space specification of the file system. | [optional] 
 **time_remaining** | **int** | Time in milliseconds before the file system is eradicated. Null if not destroyed. | [optional] 
+**writable** | **bool** | -&gt; Is the file system writable? True by default. Can not be True when active is False. | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

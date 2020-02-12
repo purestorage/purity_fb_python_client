@@ -1,18 +1,22 @@
-# purity_fb_1dot8.PoliciesApi
+# purity_fb_1dot9.PoliciesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.8/policies | 
-[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.8/policies/file-systems | 
-[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.8/policies | 
-[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.8/policies/file-systems | 
-[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.8/policies | 
-[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.8/policies/file-system-snapshots | 
-[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.8/policies/file-systems | 
-[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.8/policies/members | 
-[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.8/policies | 
+[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.9/policies | 
+[**create_policy_file_system_replica_links**](PoliciesApi.md#create_policy_file_system_replica_links) | **POST** /1.9/policies/file-system-replica-links | 
+[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.9/policies/file-systems | 
+[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.9/policies | 
+[**delete_policy_file_system_replica_links**](PoliciesApi.md#delete_policy_file_system_replica_links) | **DELETE** /1.9/policies/file-system-replica-links | 
+[**delete_policy_filesystem_snapshots**](PoliciesApi.md#delete_policy_filesystem_snapshots) | **DELETE** /1.9/policies/file-system-snapshots | 
+[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.9/policies/file-systems | 
+[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.9/policies | 
+[**list_policy_file_system_replica_links**](PoliciesApi.md#list_policy_file_system_replica_links) | **GET** /1.9/policies/file-system-replica-links | 
+[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.9/policies/file-system-snapshots | 
+[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.9/policies/file-systems | 
+[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.9/policies/members | 
+[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.9/policies | 
 
 
 # **create_policies**
@@ -35,7 +39,11 @@ except rest.ApiException as e:
 if res:
     try:
         # post a policy object p1 on the array
-        attr = Policy()
+        attr = Policy(enabled=True,
+                      rules=[
+                          # Take a snapshot every 5m and keep for 1h
+                          PolicyRule(every=1000*60*5, keep_for=1000*60*60)
+                      ])
         res = fb.policies.create_policies(names=["p1"], policy=attr)
         print(res)
     except rest.ApiException as e:
@@ -64,8 +72,64 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **create_policy_file_system_replica_links**
+> PolicyMemberWithRemoteResponse create_policy_file_system_replica_links(local_file_system_names=local_file_system_names, local_file_system_ids=local_file_system_ids, policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, remote_ids=remote_ids, remote_names=remote_names)
+
+
+
+Create a connection between a file system replica link and a policy.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+from settings import ARRAY, REMOTE_ARRAY, API_TOKEN, VERSION
+
+fb = PurityFb(ARRAY, version=VERSION)
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        res = fb.policies.create_policy_filesystem_replica_links(
+                policy_names=['policy_1'],
+                local_file_system_names=['local_fs'],
+                remote_names=[REMOTE_ARRAY])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when adding file system replica link to policy: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+
+### Return type
+
+[**PolicyMemberWithRemoteResponse**](PolicyMemberWithRemoteResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **create_policy_filesystems**
-> PolicyObjectsResponse create_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
+> PolicyMemberResponse create_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
 
 
 
@@ -103,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 
@@ -148,6 +212,114 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **delete_policy_file_system_replica_links**
+> delete_policy_file_system_replica_links(local_file_system_names=local_file_system_names, local_file_system_ids=local_file_system_ids, policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, remote_ids=remote_ids, remote_names=remote_names)
+
+
+
+Delete a connection betwwen a file system replica link and a policy.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+from settings import ARRAY, REMOTE_ARRAY, API_TOKEN, VERSION
+
+fb = PurityFb(ARRAY, version=VERSION)
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        res = fb.policies.delete_policy_filesystem_replica_links(
+                policy_names=['policy_1'],
+                member_names=['local_fs'],
+                remote_names=[REMOTE_ARRAY])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when adding file system replica link to policy: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+
+### Return type
+
+void (empty response body)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **delete_policy_filesystem_snapshots**
+> delete_policy_filesystem_snapshots(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names)
+
+
+
+Delete a connection betwwen a file system snapshot and a policy.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN)  # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # attach policy to a file system snapshot
+        # assume we have a policy named "p1", and a file system snapshot named "myfs.suffix"
+        res = fb.policies.delete_policy_filesystem_snapshots(policy_names=["p1"],
+                                                    member_names=["myfs.suffix"])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when deleting policy against a file system snapshot: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -278,8 +450,83 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **list_policy_file_system_replica_links**
+> PolicyMemberWithRemoteResponse list_policy_file_system_replica_links(local_file_system_names=local_file_system_names, local_file_system_ids=local_file_system_ids, policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, remote_ids=remote_ids, remote_names=remote_names, remote_file_system_names=remote_file_system_names, remote_file_system_ids=remote_file_system_ids, filter=filter, sort=sort, start=start, limit=limit, token=token)
+
+
+
+List policy attached to file system replica links.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+from settings import ARRAY, REMOTE_ARRAY, API_TOKEN, VERSION
+
+
+fb = PurityFb(ARRAY, version=VERSION)
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list all replica link and policy connections
+        res = fb.policies.list_policy_filesystem_replica_links()
+        print(res)
+        # list first five replica link and policy connections and sort by policy name
+        res = fb.policies.list_policy_filesystem_replica_links(limit=5, sort='policy.name')
+        print(res)
+        # list remaining replica link and policies connections
+        res = fb.policies.list_policy_filesystem_replica_links(
+                token=res.pagination_info.continuation_token)
+        print(res)
+        # list a specific replica link and policy connection
+        res = fb.policies.list_policy_filesystem_replica_links(
+                policy_names=['policy_1'],
+                member_names=['local_fs'],
+                remote_names=[REMOTE_ARRAY])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing replica links: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_names** | [**list[str]**](str.md)| A comma-separated list of remote file system names. This cannot be provided together with &#x60;remote_file_system_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of remote file system IDs. This cannot be provided together with &#x60;remote_file_system_names&#x60; query parameter. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **sort** | **str**| The way to order the results. | [optional] 
+ **start** | **int**| start | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **token** | **str**| token | [optional] 
+
+### Return type
+
+[**PolicyMemberWithRemoteResponse**](PolicyMemberWithRemoteResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **list_policy_filesystem_snapshots**
-> PolicyObjectsResponse list_policy_filesystem_snapshots(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyMemberResponse list_policy_filesystem_snapshots(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -339,7 +586,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 
@@ -353,7 +600,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policy_filesystems**
-> PolicyObjectsResponse list_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyMemberResponse list_policy_filesystems(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -407,7 +654,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 
@@ -421,7 +668,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_policy_members**
-> PolicyObjectsResponse list_policy_members(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, member_types=member_types, filter=filter, sort=sort, start=start, limit=limit, token=token)
+> PolicyMemberResponse list_policy_members(policy_ids=policy_ids, policy_names=policy_names, member_ids=member_ids, member_names=member_names, member_types=member_types, filter=filter, sort=sort, start=start, limit=limit, token=token)
 
 
 
@@ -430,8 +677,9 @@ List policy attached to filesystems and filesystem snapshots.
 ### Example 
 ```python
 from purity_fb import PurityFb, rest
+from settings import ARRAY, REMOTE_ARRAY, API_TOKEN, VERSION
 
-fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb = PurityFb(ARRAY, version=VERSION)
 fb.disable_verify_ssl()
 try:
     res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
@@ -445,6 +693,10 @@ if res:
         # assume we have a policy named "p1", and a file system named "myfs"
         res = fb.policies.list_policy_members(policy_names=["p1"],
                                               member_names=["myfs"])
+        print(res)
+        res = fb.policies.list_policy_members(policy_names=["p1"],
+                                              member_names=["myfs"],
+                                              remote_names=[REMOTE_ARRAY])
         print(res)
         # assume we have a policy named "p1", and a file system snapshot named "myfs.1"
         res = fb.policies.list_policy_members(policy_names=["p1"],
@@ -480,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**PolicyObjectsResponse**](PolicyObjectsResponse.md)
+[**PolicyMemberResponse**](PolicyMemberResponse.md)
 
 ### Authorization
 

@@ -1,13 +1,13 @@
-# purity_fb_1dot8.NetworkInterfacesApi
+# purity_fb_1dot9.NetworkInterfacesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.8/network-interfaces | 
-[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.8/network-interfaces | 
-[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.8/network-interfaces | 
-[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.8/network-interfaces | 
+[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.9/network-interfaces | 
+[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.9/network-interfaces | 
+[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.9/network-interfaces | 
+[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.9/network-interfaces | 
 
 
 # **create_network_interfaces**
@@ -34,6 +34,17 @@ if res:
             names=["myvip"],
             network_interface=NetworkInterface(address='1.2.3.101',
                                                services=["data"],
+                                               type="vip"))
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when creating network interface: %s\n" % e)
+
+    try:
+        # create a replication vip named replvip on the array
+        res = fb.network_interfaces.create_network_interfaces(
+            names=["replvip"],
+            network_interface=NetworkInterface(address='1.2.3.101',
+                                               services=["replication"],
                                                type="vip"))
         print(res)
     except rest.ApiException as e:
@@ -137,7 +148,7 @@ if res:
         # list all remaining network interfaces
         res = fb.network_interfaces.list_network_interfaces(token=res.pagination_info.continuation_token)
         # list with filter
-        res = fb.network_interfaces.list_network_interfaces(filter='vlan=8')
+        res = fb.network_interfaces.list_network_interfaces(filter='contains(services, \'replication\')')
     except rest.ApiException as e:
         print("Exception when listing network interfaces: %s\n" % e)
 ```
@@ -178,7 +189,7 @@ Update an existing network interface.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest
+from purity_fb import PurityFb, NetworkInterface, rest
 
 fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -189,7 +200,7 @@ except rest.ApiException as e:
 if res:
     try:
         res = fb.network_interfaces.update_network_interfaces(
-            names=['myvip'], network_interface=NetworkInterface(address='1.2.3.201'))
+            names=['myvip'], network_interface=NetworkInterface(address='1.2.3.201', services=['replication']))
         print(res)
     except rest.ApiException as e:
         print("Exception when updating network interface: %s\n" % e)

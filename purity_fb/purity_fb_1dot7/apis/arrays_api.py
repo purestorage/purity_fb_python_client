@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.7 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.7), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.7 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.7
     Contact: info@purestorage.com
@@ -479,7 +479,7 @@ class ArraysApi(object):
         :param int start_time: Time to start sample in milliseconds since epoch.
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
-        :param str type: to sample space of either file systems or object store
+        :param str type: to sample space of either file systems, object store, or all
         :return: ArraySpaceResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -507,7 +507,7 @@ class ArraysApi(object):
         :param int start_time: Time to start sample in milliseconds since epoch.
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param int resolution: sample frequency in milliseconds
-        :param str type: to sample space of either file systems or object store
+        :param str type: to sample space of either file systems, object store, or all
         :return: ArraySpaceResponse
                  If the method is called asynchronously,
                  returns the request thread.

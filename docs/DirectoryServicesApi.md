@@ -1,15 +1,15 @@
-# purity_fb_1dot8.DirectoryServicesApi
+# purity_fb_1dot9.DirectoryServicesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.8/directory-services | 
-[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.8/directory-services/roles | 
-[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.8/directory-services/test | 
-[**test_directory_services_with_changes**](DirectoryServicesApi.md#test_directory_services_with_changes) | **PATCH** /1.8/directory-services/test | 
-[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.8/directory-services | 
-[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.8/directory-services/roles | 
+[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.9/directory-services | 
+[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.9/directory-services/roles | 
+[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.9/directory-services/test | 
+[**test_directory_services_with_changes**](DirectoryServicesApi.md#test_directory_services_with_changes) | **PATCH** /1.9/directory-services/test | 
+[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.9/directory-services | 
+[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.9/directory-services/roles | 
 
 
 # **list_directory_services**
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **test_directory_services**
-> TestResultResponse test_directory_services(names=names)
+> TestResultResponse test_directory_services(ids=ids, names=names)
 
 
 
@@ -147,6 +147,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
@@ -165,7 +166,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **test_directory_services_with_changes**
-> TestResultResponse test_directory_services_with_changes(names=names, directory_service=directory_service)
+> TestResultResponse test_directory_services_with_changes(ids=ids, names=names, directory_service=directory_service)
 
 
 
@@ -202,6 +203,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **directory_service** | [**DirectoryService**](DirectoryService.md)| An optional directory service configuration which, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests. | [optional] 
 
@@ -244,7 +246,7 @@ if res:
         URI = 'ldaps://ad1.mycompany.com'
         BASE_DN = 'DC=mycompany,DC=com'
         BIND_USER = 'CN=John,OU=Users,DC=mycompany,DC=com'
-        BIND_PW = '****'
+        BIND_PW = 'johnldappassword'
 
         SMB_JOIN_OU = 'OU=PureStorage,OU=StorageArrays,OU=ServiceMachines'
         SMB_ATTRS = {'join_ou': SMB_JOIN_OU}
@@ -271,26 +273,22 @@ if res:
                                                               directory_service=directory_service)
         print(res)
 
-        # Change the nfs directory service to use a specified ca certificate, specified by
-        # id, to establish LDAP communications over TLS with server certificate verification, and
-        # enable the service
-        name = 'nfs'
-        ca_certificate_id = '10314f42-020d-7080-8013-000ddt400090'
-        ca_cert_reference = Reference(id=ca_certificate_id)
-        directory_service = DirectoryService(ca_certificate=ca_cert_reference,
-                                             enabled=True)
-        res = fb.directory_services.update_directory_services(names=[name],
-                                                              directory_service=directory_service)
-        print(res)
-
-        # Change the management directory service to use a specified group of CA certificates to
-        # establish LDAP communications over TLS with server certificate verification, and enable
-        # the service
+        # update the management directory service to use an Oracle Unified Directory server,
+        # specifying our user object class as "inetOrgPerson" and our login attribute as
+        # "givenName"
         name = 'management'
-        ad_certificate_group_name = 'all-active-directory-certificates'
-        ca_cert_group_reference = Reference(name=ad_certificate_group_name)
-        directory_service = DirectoryService(ca_certificate_group=ca_cert_group_reference,
-                                             enabled=True)
+        OUD_URI = 'ldap://my-oud-leader.example.com'
+        OUD_BASE_DN = 'DC=example,DC=com'
+        OUD_BIND_USER = 'CN=ServiceAcct,OU=Users,DC=example,DC=com'
+        OUD_BIND_PW = 'something-absurdly-complex'
+
+        USER_LOGIN_ATTR = 'givenName'
+        USER_OBJ_CLASS = 'inetOrgPerson'
+        MGMT_ATTRS = {'user_login_attribute': USER_LOGIN_ATTR,
+                      'user_object_class': USER_OBJ_CLASS}
+        directory_service = DirectoryService(base_dn=OUD_BASE_DN, bind_password=OUD_BIND_PW,
+                                             bind_user=OUD_BIND_USER, uris=[OUD_URI],
+                                             enabled=True, management=MGMT_ATTRS)
         res = fb.directory_services.update_directory_services(names=[name],
                                                               directory_service=directory_service)
         print(res)

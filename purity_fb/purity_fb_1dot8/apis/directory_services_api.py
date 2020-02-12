@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.8 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.8 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.8
     Contact: info@purestorage.com
@@ -279,6 +279,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: TestResultResponse
                  If the method is called asynchronously,
@@ -304,13 +305,14 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: TestResultResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['names']
+        all_params = ['ids', 'names']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -332,6 +334,9 @@ class DirectoryServicesApi(object):
         path_params = {}
 
         query_params = []
+        if 'ids' in params:
+            query_params.append(('ids', params['ids']))
+            collection_formats['ids'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
@@ -381,6 +386,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param DirectoryService directory_service: An optional directory service configuration which, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests.
         :return: TestResultResponse
@@ -407,6 +413,7 @@ class DirectoryServicesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param DirectoryService directory_service: An optional directory service configuration which, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests.
         :return: TestResultResponse
@@ -414,7 +421,7 @@ class DirectoryServicesApi(object):
                  returns the request thread.
         """
 
-        all_params = ['names', 'directory_service']
+        all_params = ['ids', 'names', 'directory_service']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -436,6 +443,9 @@ class DirectoryServicesApi(object):
         path_params = {}
 
         query_params = []
+        if 'ids' in params:
+            query_params.append(('ids', params['ids']))
+            collection_formats['ids'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'

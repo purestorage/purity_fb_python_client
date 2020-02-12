@@ -1,16 +1,18 @@
-# purity_fb_1dot8.ArraysApi
+# purity_fb_1dot9.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.8/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.8/arrays/http-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.8/arrays/performance | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.8/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.8/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.8/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.8/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.9/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.9/arrays/http-specific-performance | 
+[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.9/arrays/nfs-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.9/arrays/performance | 
+[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.9/arrays/performance/replication | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.9/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.9/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.9/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.9/arrays | 
 
 
 # **list_arrays**
@@ -111,6 +113,61 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **list_arrays_nfs_specific_performance**
+> ArrayNfsPerformanceResponse list_arrays_nfs_specific_performance(start_time=start_time, end_time=end_time, resolution=resolution)
+
+
+
+List instant or historical nfs specific performance
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28") # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        res = fb.arrays.list_arrays_nfs_specific_performance()
+        print(res)
+        # list nfs specific performance and sort by sample time (latest first)
+        res = fb.arrays.list_arrays_nfs_specific_performance(sort='time-')
+        # list historical nfs performance
+        res = fb.arrays.list_arrays_nfs_specific_performance(
+            start_time=START_TIME,
+            end_time=END_TIME,
+            resolution=30000)
+    except rest.ApiException as e:
+        print("Exception when listing nfs performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
+ **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
+
+### Return type
+
+[**ArrayNfsPerformanceResponse**](ArrayNfsPerformanceResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **list_arrays_performance**
 > ArrayPerformanceResponse list_arrays_performance(start_time=start_time, end_time=end_time, resolution=resolution, protocol=protocol)
 
@@ -159,6 +216,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ArrayPerformanceResponse**](ArrayPerformanceResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_arrays_performance_replication**
+> ArrayPerformanceReplicationResponse list_arrays_performance_replication(end_time=end_time, resolution=resolution, start_time=start_time, type=type)
+
+
+
+List instant or historical array replication performance.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list instantaneous replication performance for array
+        res = fb.arrays.list_arrays_performance_replication()
+        print(res)
+
+        # list instantaneous file-replication performance for array
+        res = fb.arrays.list_arrays_performance_replication(type='file-system')
+        print(res)
+
+        # list historical object-replication performance for array between some
+        # start time and end time
+        res = fb.arrays.list_arrays_performance_replication(
+            start_time=START_TIME,
+            end_time=END_TIME,
+            type='object-store',
+            resolution=30000)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing array replication performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
+ **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
+ **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
+ **type** | **str**| to sample space of either file systems, object store, or all | [optional] 
+
+### Return type
+
+[**ArrayPerformanceReplicationResponse**](ArrayPerformanceReplicationResponse.md)
 
 ### Authorization
 
@@ -268,7 +388,7 @@ Name | Type | Description  | Notes
  **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
- **type** | **str**| to sample space of either file systems or object store | [optional] 
+ **type** | **str**| to sample space of either file systems, object store, or all | [optional] 
 
 ### Return type
 
@@ -355,7 +475,8 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        array_settings = PureArray(name="example-name", ntp_servers=["0.example.ntp.server"])
+        array_settings = PureArray(name="example-name", ntp_servers=["0.example.ntp.server"],
+                                   time_zone="America/Los_Angeles")
         res = fb.arrays.update_arrays(array_settings=array_settings)
         print(res)
     except rest.ApiException as e:

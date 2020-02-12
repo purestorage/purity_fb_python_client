@@ -238,6 +238,8 @@ class ApiClient(object):
             data = json.loads(response.data)
         except ValueError:
             data = response.data
+        except TypeError:
+            data = response.data
 
         return self.__deserialize(data, response_type)
 
@@ -471,11 +473,7 @@ class ApiClient(object):
             return
 
         accepts = [x.lower() for x in accepts]
-
-        if 'application/json' in accepts:
-            return 'application/json'
-        else:
-            return ', '.join(accepts)
+        return ', '.join(accepts)
 
     def select_header_content_type(self, content_types):
         """

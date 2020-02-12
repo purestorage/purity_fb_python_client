@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.3 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.3), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.3 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.3
     Contact: info@purestorage.com
@@ -52,7 +52,7 @@ class Reference(object):
     def name(self):
         """
         Gets the name of this Reference.
-        name of the object being referenced
+        The name of the object being referenced.
 
         :return: The name of this Reference.
         :rtype: str
@@ -63,7 +63,7 @@ class Reference(object):
     def name(self, name):
         """
         Sets the name of this Reference.
-        name of the object being referenced
+        The name of the object being referenced.
 
         :param name: The name of this Reference.
         :type: str

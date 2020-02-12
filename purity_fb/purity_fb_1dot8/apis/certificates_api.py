@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.8 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.8), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.8 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.8
     Contact: info@purestorage.com
@@ -40,7 +40,7 @@ class CertificatesApi(object):
                 config.api_client = ApiClient()
             self.api_client = config.api_client
 
-    def add_certificate_certificate_groups(self, certificate_group_ids, certificate_group_names, certificate_names, **kwargs):
+    def add_certificate_certificate_groups(self, **kwargs):
         """
         Add certificates to certificate groups.
         This method makes a synchronous HTTP request by default. To make an
@@ -49,25 +49,26 @@ class CertificatesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_certificate_certificate_groups(certificate_group_ids, certificate_group_names, certificate_names, callback=callback_function)
+        >>> thread = api.add_certificate_certificate_groups(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of certificate group ids, then an error is returned. This cannot be provided together with the certificate group names query parameters. (required)
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of certificate group names, then an error is returned. This cannot be provided together with the certificate group ids query parameters. (required)
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of certificate names, then an error is returned. This cannot be provided together with the certificate ids query parameters. (required)
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters.
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters.
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters.
+        :param list[str] certificate_names: A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters.
         :return: MemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.add_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, **kwargs)
+            return self.add_certificate_certificate_groups_with_http_info(**kwargs)
         else:
-            (data) = self.add_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, **kwargs)
+            (data) = self.add_certificate_certificate_groups_with_http_info(**kwargs)
             return data
 
-    def add_certificate_certificate_groups_with_http_info(self, certificate_group_ids, certificate_group_names, certificate_names, **kwargs):
+    def add_certificate_certificate_groups_with_http_info(self, **kwargs):
         """
         Add certificates to certificate groups.
         This method makes a synchronous HTTP request by default. To make an
@@ -76,19 +77,20 @@ class CertificatesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.add_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, callback=callback_function)
+        >>> thread = api.add_certificate_certificate_groups_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of certificate group ids, then an error is returned. This cannot be provided together with the certificate group names query parameters. (required)
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of certificate group names, then an error is returned. This cannot be provided together with the certificate group ids query parameters. (required)
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of certificate names, then an error is returned. This cannot be provided together with the certificate ids query parameters. (required)
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters.
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters.
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters.
+        :param list[str] certificate_names: A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters.
         :return: MemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['certificate_group_ids', 'certificate_group_names', 'certificate_names']
+        all_params = ['certificate_group_ids', 'certificate_group_names', 'certificate_ids', 'certificate_names']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -103,15 +105,6 @@ class CertificatesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'certificate_group_ids' is set
-        if ('certificate_group_ids' not in params) or (params['certificate_group_ids'] is None):
-            raise ValueError("Missing the required parameter `certificate_group_ids` when calling `add_certificate_certificate_groups`")
-        # verify the required parameter 'certificate_group_names' is set
-        if ('certificate_group_names' not in params) or (params['certificate_group_names'] is None):
-            raise ValueError("Missing the required parameter `certificate_group_names` when calling `add_certificate_certificate_groups`")
-        # verify the required parameter 'certificate_names' is set
-        if ('certificate_names' not in params) or (params['certificate_names'] is None):
-            raise ValueError("Missing the required parameter `certificate_names` when calling `add_certificate_certificate_groups`")
 
 
         collection_formats = {}
@@ -125,6 +118,9 @@ class CertificatesApi(object):
         if 'certificate_group_names' in params:
             query_params.append(('certificate_group_names', params['certificate_group_names']))
             collection_formats['certificate_group_names'] = 'csv'
+        if 'certificate_ids' in params:
+            query_params.append(('certificate_ids', params['certificate_ids']))
+            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_names' in params:
             query_params.append(('certificate_names', params['certificate_names']))
             collection_formats['certificate_names'] = 'csv'
@@ -499,8 +495,13 @@ class CertificatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param int limit: limit, should be >= 0
+        :param str sort: The way to order the results.
+        :param int start: start
+        :param str token: token
         :return: CertificateUseResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -525,14 +526,19 @@ class CertificatesApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param int limit: limit, should be >= 0
+        :param str sort: The way to order the results.
+        :param int start: start
+        :param str token: token
         :return: CertificateUseResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ids', 'names']
+        all_params = ['filter', 'ids', 'names', 'limit', 'sort', 'start', 'token']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -554,12 +560,22 @@ class CertificatesApi(object):
         path_params = {}
 
         query_params = []
+        if 'filter' in params:
+            query_params.append(('filter', params['filter']))
         if 'ids' in params:
             query_params.append(('ids', params['ids']))
             collection_formats['ids'] = 'csv'
         if 'names' in params:
             query_params.append(('names', params['names']))
             collection_formats['names'] = 'csv'
+        if 'limit' in params:
+            query_params.append(('limit', params['limit']))
+        if 'sort' in params:
+            query_params.append(('sort', params['sort']))
+        if 'start' in params:
+            query_params.append(('start', params['start']))
+        if 'token' in params:
+            query_params.append(('token', params['token']))
 
         header_params = {}
 
@@ -704,7 +720,7 @@ class CertificatesApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def remove_certificate_certificate_groups(self, certificate_group_ids, certificate_group_names, certificate_names, **kwargs):
+    def remove_certificate_certificate_groups(self, **kwargs):
         """
         Remove certificates from certificate groups.
         This method makes a synchronous HTTP request by default. To make an
@@ -713,25 +729,26 @@ class CertificatesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_certificate_certificate_groups(certificate_group_ids, certificate_group_names, certificate_names, callback=callback_function)
+        >>> thread = api.remove_certificate_certificate_groups(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of certificate group ids, then an error is returned. This cannot be provided together with the certificate group names query parameters. (required)
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of certificate group names, then an error is returned. This cannot be provided together with the certificate group ids query parameters. (required)
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of certificate names, then an error is returned. This cannot be provided together with the certificate ids query parameters. (required)
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters.
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters.
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters.
+        :param list[str] certificate_names: A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.remove_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, **kwargs)
+            return self.remove_certificate_certificate_groups_with_http_info(**kwargs)
         else:
-            (data) = self.remove_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, **kwargs)
+            (data) = self.remove_certificate_certificate_groups_with_http_info(**kwargs)
             return data
 
-    def remove_certificate_certificate_groups_with_http_info(self, certificate_group_ids, certificate_group_names, certificate_names, **kwargs):
+    def remove_certificate_certificate_groups_with_http_info(self, **kwargs):
         """
         Remove certificates from certificate groups.
         This method makes a synchronous HTTP request by default. To make an
@@ -740,19 +757,20 @@ class CertificatesApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.remove_certificate_certificate_groups_with_http_info(certificate_group_ids, certificate_group_names, certificate_names, callback=callback_function)
+        >>> thread = api.remove_certificate_certificate_groups_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. If there is not at least one resource that matches each of the elements of certificate group ids, then an error is returned. This cannot be provided together with the certificate group names query parameters. (required)
-        :param list[str] certificate_group_names: A comma-separated list of certificate group names. If there is not at least one resource that matches each of the elements of certificate group names, then an error is returned. This cannot be provided together with the certificate group ids query parameters. (required)
-        :param list[str] certificate_names: A comma-separated list of certificate names. If there is not at least one resource that matches each of the elements of certificate names, then an error is returned. This cannot be provided together with the certificate ids query parameters. (required)
+        :param list[str] certificate_group_ids: A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters.
+        :param list[str] certificate_group_names: A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters.
+        :param list[str] certificate_ids: A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters.
+        :param list[str] certificate_names: A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['certificate_group_ids', 'certificate_group_names', 'certificate_names']
+        all_params = ['certificate_group_ids', 'certificate_group_names', 'certificate_ids', 'certificate_names']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -767,15 +785,6 @@ class CertificatesApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'certificate_group_ids' is set
-        if ('certificate_group_ids' not in params) or (params['certificate_group_ids'] is None):
-            raise ValueError("Missing the required parameter `certificate_group_ids` when calling `remove_certificate_certificate_groups`")
-        # verify the required parameter 'certificate_group_names' is set
-        if ('certificate_group_names' not in params) or (params['certificate_group_names'] is None):
-            raise ValueError("Missing the required parameter `certificate_group_names` when calling `remove_certificate_certificate_groups`")
-        # verify the required parameter 'certificate_names' is set
-        if ('certificate_names' not in params) or (params['certificate_names'] is None):
-            raise ValueError("Missing the required parameter `certificate_names` when calling `remove_certificate_certificate_groups`")
 
 
         collection_formats = {}
@@ -789,6 +798,9 @@ class CertificatesApi(object):
         if 'certificate_group_names' in params:
             query_params.append(('certificate_group_names', params['certificate_group_names']))
             collection_formats['certificate_group_names'] = 'csv'
+        if 'certificate_ids' in params:
+            query_params.append(('certificate_ids', params['certificate_ids']))
+            collection_formats['certificate_ids'] = 'csv'
         if 'certificate_names' in params:
             query_params.append(('certificate_names', params['certificate_names']))
             collection_formats['certificate_names'] = 'csv'

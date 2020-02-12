@@ -1,10 +1,10 @@
-# purity_fb_1dot8.BladeApi
+# purity_fb_1dot9.BladeApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_blades**](BladeApi.md#list_blades) | **GET** /1.8/blades | 
+[**list_blades**](BladeApi.md#list_blades) | **GET** /1.9/blades | 
 
 
 # **list_blades**

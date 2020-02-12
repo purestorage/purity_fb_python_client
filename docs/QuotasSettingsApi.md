@@ -1,11 +1,11 @@
-# purity_fb_1dot8.QuotasSettingsApi
+# purity_fb_1dot9.QuotasSettingsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_quotas_settings**](QuotasSettingsApi.md#list_quotas_settings) | **GET** /1.8/quotas/settings | 
-[**update_quotas_settings**](QuotasSettingsApi.md#update_quotas_settings) | **PATCH** /1.8/quotas/settings | 
+[**list_quotas_settings**](QuotasSettingsApi.md#list_quotas_settings) | **GET** /1.9/quotas/settings | 
+[**update_quotas_settings**](QuotasSettingsApi.md#update_quotas_settings) | **PATCH** /1.9/quotas/settings | 
 
 
 # **list_quotas_settings**

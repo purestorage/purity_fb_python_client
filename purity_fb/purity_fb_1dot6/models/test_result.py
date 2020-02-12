@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.6 Python SDK
 
-    Client for Purity//FB REST API (1.0 - 1.6), developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.X Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.6
     Contact: info@purestorage.com
@@ -120,7 +120,7 @@ class TestResult(object):
     def component_address(self):
         """
         Gets the component_address of this TestResult.
-        Address of the component runinng the test
+        Address of the component running the test
 
         :return: The component_address of this TestResult.
         :rtype: str
@@ -131,7 +131,7 @@ class TestResult(object):
     def component_address(self, component_address):
         """
         Sets the component_address of this TestResult.
-        Address of the component runinng the test
+        Address of the component running the test
 
         :param component_address: The component_address of this TestResult.
         :type: str
@@ -143,7 +143,7 @@ class TestResult(object):
     def component_name(self):
         """
         Gets the component_name of this TestResult.
-        Name of the component runing the test
+        Name of the component running the test
 
         :return: The component_name of this TestResult.
         :rtype: str
@@ -154,7 +154,7 @@ class TestResult(object):
     def component_name(self, component_name):
         """
         Sets the component_name of this TestResult.
-        Name of the component runing the test
+        Name of the component running the test
 
         :param component_name: The component_name of this TestResult.
         :type: str

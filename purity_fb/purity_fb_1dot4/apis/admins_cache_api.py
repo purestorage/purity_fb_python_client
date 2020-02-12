@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Purity//FB REST Client
+    Pure Storage FlashBlade REST 1.4 Python SDK
 
-    Client for Purity//FB REST API, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.4 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.4
     Contact: info@purestorage.com
@@ -42,7 +42,7 @@ class AdminsCacheApi(object):
 
     def delete_admin_cache(self, **kwargs):
         """
-        Delete
+        Delete specified admin cache entries, or clear the cache.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -67,7 +67,7 @@ class AdminsCacheApi(object):
 
     def delete_admin_cache_with_http_info(self, **kwargs):
         """
-        Delete
+        Delete specified admin cache entries, or clear the cache.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -144,7 +144,7 @@ class AdminsCacheApi(object):
 
     def list_admin_cache(self, names, **kwargs):
         """
-        A list of admin cache entries
+        List admin cache entries.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
@@ -175,7 +175,7 @@ class AdminsCacheApi(object):
 
     def list_admin_cache_with_http_info(self, names, **kwargs):
         """
-        A list of admin cache entries
+        List admin cache entries.
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.

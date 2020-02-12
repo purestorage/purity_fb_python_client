@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **link_aggregation_group** | [**Reference**](Reference.md) | reference of the associated LAG. | [optional] 
 **mtu** | **int** | Maximum message transfer unit (packet) size for the subnet in bytes. MTU setting cannot exceed the MTU of the corresponding physical interface. 1500 by default. | [optional] 
 **prefix** | **str** | The IPv4 or IPv6 address to be associated with the specified subnet. | [optional] 
-**services** | **list[str]** | The services provided by this subnet, as inherited from all of its interfaces | [optional] 
+**services** | **list[str]** | The services provided by this subnet, as inherited from all of its interfaces. | [optional] 
 **vlan** | **int** | VLAN ID | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)

@@ -1,5 +1,5 @@
-Metadata-Version: 1.8.0
+Metadata-Version: 1.9.0
 Name: purity_fb
-Version: 1.8.0
-Summary: A python client for Purity//FB REST API.
+Version: 1.9.0
+Summary: Pure Storage FlashBlade REST 1.9 Python SDK.
 License: Apache 2.0
