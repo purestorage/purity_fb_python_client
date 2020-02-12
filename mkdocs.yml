@@ -157,7 +157,6 @@ pages:
     - Arrays:
         - Array Space: ArraySpace.md
         - Array Performance: ArrayPerformance.md
-        - Array Performance Replication: ArrayPerformanceReplication.md
         - Array S3 Performance: ArrayS3Performance.md
         - Array Http Performance: ArrayHttpPerformance.md
         - Array Nfs Performance: ArrayNfsPerformance.md
@@ -214,8 +213,6 @@ pages:
         - Hardware Connector: HardwareConnector.md
     - Keytab:
         - Keytab: Keytab.md
-        - Keytab File (Base64 Encoded): KeytabFileBase64.md
-        - Keytab File (Binary Encoded): KeytabFileBinary.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
     - Member:
