@@ -1,7 +1,7 @@
 site_name: Pure Storage FlashBlade REST 1.9 Python SDK
 pages:
 - Overview:
-    - Get Started: index.md
+    - Get started: index.md
     - License: about/license.md
 - Endpoints:
     - Authentication: AuthenticationApi.md
@@ -93,6 +93,7 @@ pages:
         - Array Connection: ArrayConnectionResponse.md
         - Array Connection Key: ArrayConnectionKeyResponse.md
         - Array Connection Path: ArrayConnectionPathResponse.md
+        - Array Connection Performance Replication: RelationshipPerformanceReplicationResponse.md
         - Array Http Performance: ArrayHttpPerformanceResponse.md
         - Array Nfs Performance: ArrayNfsPerformanceResponse.md
         - Array Performance: ArrayPerformanceResponse.md
@@ -125,6 +126,7 @@ pages:
         - Link Aggregation Group: LinkAggregationGroupResponse.md
         - Member: MemberResponse.md
         - Network Interface: NetworkInterfaceResponse.md
+        - Object: ObjectResponse.md
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentialsResponse.md
@@ -132,6 +134,7 @@ pages:
         - Performance Replication: PerformanceReplicationResponse.md
         - Policy: PolicyResponse.md
         - Policy Members: PolicyMemberResponse.md
+        - Policy Members with Remote: PolicyMemberWithRemoteResponse.md
         - Policy Objects: PolicyObjectsResponse.md
         - Quotas or Usages for Groups: QuotasGroupResponse.md
         - Quota Notification Settings: QuotasSettingResponse.md
@@ -149,11 +152,13 @@ pages:
     - Space: Space.md
     - Admin:
         - Admin: Admin.md
+        - Admin API Token: AdminApiToken.md
         - Admin Cache: AdminCache.md
     - Alert:
         - Alert: Alert.md
     - Alert Watcher:
         - Alert Watcher: AlertWatcher.md
+        - Alert Watcher Post: AlertWatcherPost.md
         - Alert Watcher Test: AlertWatcherTest.md
     - Arrays:
         - Array Space: ArraySpace.md
@@ -167,7 +172,8 @@ pages:
         - Array Connection: ArrayConnection.md
         - Array Connection Key: ArrayConnectionKey.md
         - Array Connection Path: ArrayConnectionPath.md
-        - Array Connection Performance Replication: PerformanceReplication.md
+        - Array Connection Post: ArrayConnectionPost.md
+        - Array Connection Performance Replication: RelationshipPerformanceReplication.md
     - Blade:
         - Blade: Blade.md
     - Bucket:
@@ -179,8 +185,12 @@ pages:
     - Bucket Replica Link:
         - Bucket Replica Link: BucketReplicaLink.md
         - Bucket Replica Link Post: BucketReplicaLinkPost.md
+    - BuiltIn:
+        - BuiltIn: BuiltIn.md
+        - BuiltIn With Id: BuiltInWithId.md
     - Certificate:
         - Certificate: Certificate.md
+        - Certificate Post: CertificatePost.md
         - Certificate Use: CertificateUse.md
     - Certificate Group:
         - Certificate Group: CertificateGroup.md
@@ -199,14 +209,21 @@ pages:
         - File System Performance: FileSystemPerformance.md
         - NFS Protocol: NfsRule.md
         - Protocol Rule: ProtocolRule.md
+        - SMB Rule: SmbRule.md
     - File System Replica Link:
+        - Direction: Direction.md
         - File System Replica Link: FileSystemReplicaLink.md
+        - Replica Link Built In: ReplicaLinkBuiltIn.md
+        - Replication Performance: ReplicationPerformance.md
     - File System Snapshot:
         - File System Snapshot: FileSystemSnapshot.md
         - Snapshot Suffix: SnapshotSuffix.md
         - Snapshot Transfer: FileSystemSnapshotsTransfer.md
     - Fixed Reference:
         - Fixed Reference: FixedReference.md
+        - Fixed Reference No Resource Type: FixedReferenceNoResourceType.md
+        - Fixed Reference With Id: FixedReferenceWithId.md
+        - Fixed Reference With Remote: FixedReferenceWithRemote.md
         - Resource Type: ResourceType.md
     - Hardware:
         - Hardware: Hardware.md
@@ -216,8 +233,11 @@ pages:
         - Keytab: Keytab.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
+    - Location Reference:
+        - Location Reference: LocationReference.md
     - Member:
         - Member: Member.md
+        - Member Link: MemberLink.md
     - Network Interface:
         - Network Interface: NetworkInterface.md
     - Object Store:
@@ -228,10 +248,15 @@ pages:
     - Policy:
         - Policy: Policy.md
         - Policy Member: PolicyMember.md
+        - Policy Member With Remote: PolicyMemberWithRemote.md
         - Policy Objects: PolicyObjects.md
         - Policy Patch: PolicyPatch.md
         - Policy Reference: PolicyReference.md
+        - Policy Reference With Id: PolicyReferenceWithId.md
+        - Policy Rule: PolicyRule.md
         - Resource Rule: ResourceRule.md
+    - Pure Object:
+        - Pure Object: PureObject.md
     - Quotas:
         - Group of Quota or Usage: QuotasgroupGroup.md
         - Quota or Usage for Group: QuotasGroup.md
@@ -240,13 +265,21 @@ pages:
         - Quota Notification Settings: QuotasSetting.md
     - Reference:
         - Reference: Reference.md
+        - Reference Name: ReferenceName.md
+    - Resource:
+        - Resource: Resource.md
+    - Replication Performance:
+        - Replication Performance: ReplicationPerformance.md
     - Smtp:
         - Smtp: Smtp.md
     - Snmp:
         - Snmp Agent: SnmpAgent.md
         - Snmp Agent MIB: SnmpAgentMib.md
         - Snmp Manager: SnmpManager.md
+        - Snmp Manager Post: SnmpManagerPost.md
         - Snmp Manager Test: SnmpManagerTest.md
+        - Snmp V2c Configuration: SnmpV2c.md
+        - Snmp V3 Configuration: SnmpV3.md
     - Subnet:
         - Subnet: Subnet.md
     - Support:
@@ -254,5 +287,6 @@ pages:
         - Support Remote Assist Paths: SupportRemoteAssistPaths.md
     - Target:
         - Target: Target.md
+        - Target Post: TargetPost.md
         - Target Performance Replication: PerformanceReplication.md
 theme: readthedocs

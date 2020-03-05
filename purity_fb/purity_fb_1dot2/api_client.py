@@ -1,6 +1,6 @@
 # coding: utf-8
 """
-    Pure Storage FlashBlade REST 1.X Python SDK
+    Pure Storage FlashBlade REST 1.2 Python SDK
 
     Pure Storage FlashBlade REST 1.2 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
@@ -73,7 +73,7 @@ class ApiClient(object):
             self.host = host
         self.cookie = cookie
         # Set default User-Agent.
-        self.user_agent = 'Swagger-Codegen/1.0.0/python'
+        self.user_agent = 'Swagger-Codegen/1.2.0/python'
 
     @property
     def user_agent(self):

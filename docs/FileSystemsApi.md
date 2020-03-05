@@ -23,7 +23,7 @@ Create a new file system.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, Reference, NfsRule, rest
+from purity_fb import PurityFb, FileSystemPost, Reference, NfsRule, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -36,9 +36,10 @@ if res:
     # and NFSv4.1 enabled.
     default_user_space_quota = 1024000
     default_group_space_quota = 1024000000
-    myfs = FileSystem(name="myfs", provisioned=5000, hard_limit_enabled=True,
-                      nfs=NfsRule(v4_1_enabled=True), default_user_quota=default_user_space_quota,
-                      default_group_quota=default_group_space_quota)
+    myfs = FileSystemPost(name="myfs", provisioned=5000, hard_limit_enabled=True,
+                          nfs=NfsRule(v4_1_enabled=True),
+                          default_user_quota=default_user_space_quota,
+                          default_group_quota=default_group_space_quota)
     try:
         # post the file system object myfs on the array with the specific default user and group
         # quotas
@@ -48,7 +49,7 @@ if res:
         print("Exception when creating file system: %s\n" % e)
 
     # copy snapshot 'myfs.mysnap' to file system 'myfs'
-    myfs = FileSystem(name="myfs", source=Reference(name='myfs.mysnap'))
+    myfs = FileSystemPost(name="myfs", source=Reference(name='myfs.mysnap'))
     try:
         # post the file system object myfs on the array
         res = fb.file_systems.create_file_systems(overwrite=True, discard_non_snapshotted_data=True, file_system=myfs)

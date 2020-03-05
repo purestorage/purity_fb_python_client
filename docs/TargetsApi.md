@@ -20,7 +20,7 @@ Create a new target.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, Target, rest
+from purity_fb import PurityFb, TargetPost, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -32,7 +32,7 @@ if res:
     # create a target by hostname name
     name = "target"
     hostname = "my.target.com"
-    target = Target(address=hostname)
+    target = TargetPost(address=hostname)
     try:
         # post the target object on the array
         res = fb.targets.create_targets(names=[name], target=target)
@@ -43,7 +43,7 @@ if res:
     # create a target by ip address
     name = "target2"
     address = "1.1.1.1"
-    target = Target(address=address)
+    target = TargetPost(address=address)
     try:
         # post the target object on the array
         res = fb.targets.create_targets(names=[name], target=target)
