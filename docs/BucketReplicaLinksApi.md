@@ -206,7 +206,7 @@ Update bucket replica links.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, BucketReplicaLink, ObjectStoreRemoteCredentials, rest
+from purity_fb import PurityFb, BucketReplicaLinkPost, ObjectStoreRemoteCredentials, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -216,7 +216,7 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     # Update the paused status and remote credentials of a replica link
-    new_attr = BucketReplicaLink(paused=True, remote_credentials=ObjectStoreRemoteCredentials(name="remote/name"))
+    new_attr = BucketReplicaLinkPost(paused=True, remote_credentials=ObjectStoreRemoteCredentials(name="remote/name"))
     try:
         # update the the replica link on the specified local bucket, to the specified remote bucket on the remote
         res = fb.bucket_replica_links.update_bucket_replica_links(local_bucket_names=['localbucket'],

@@ -754,7 +754,7 @@ Update an existing policy.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, Policy
+from purity_fb import PurityFb, rest, PolicyPatch
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -765,7 +765,7 @@ except rest.ApiException as e:
 if res:
     try:
         res = fb.policies.update_policies(
-            names=["p1"], policy_patch=Policy(enabled=False))
+            names=["p1"], policy_patch=PolicyPatch(enabled=False))
         print(res)
     except rest.ApiException as e:
         print("Exception when updating policy: %s\n" % e)

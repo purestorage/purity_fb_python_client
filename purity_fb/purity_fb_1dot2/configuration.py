@@ -1,7 +1,7 @@
 # coding: utf-8
 
 """
-    Pure Storage FlashBlade REST 1.X Python SDK
+    Pure Storage FlashBlade REST 1.2 Python SDK
 
     Pure Storage FlashBlade REST 1.2 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
@@ -234,5 +234,5 @@ class Configuration(object):
                "OS: {env}\n"\
                "Python Version: {pyversion}\n"\
                "Version of the API: 1.2\n"\
-               "SDK Package Version: 1.0.0".\
+               "SDK Package Version: 1.2.0".\
                format(env=sys.platform, pyversion=sys.version)

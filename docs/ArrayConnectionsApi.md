@@ -23,7 +23,7 @@ Create a new array connection.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, ArrayConnection, rest
+from purity_fb import PurityFb, ArrayConnectionPost, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -35,7 +35,7 @@ if res:
     # connect to an array with specified hostname, using a provided connection key
     hostname = "https://my.array.com"
     connection_key = "6207d123-d123-0b5c-5fa1-95fabc5c7123"
-    myAC = ArrayConnection(management_address=hostname, connection_key=connection_key)
+    myAC = ArrayConnectionPost(management_address=hostname, connection_key=connection_key)
     try:
         # post the array connection object on the array we're connection from
         res = fb.array_connections.create_array_connections(array_connection=myAC)
@@ -47,7 +47,7 @@ if res:
     mgmt_addr = "10.202.101.78"
     repl_addr = ["10.202.101.70"]
     connection_key = "6207d123-d123-0b5c-5fa1-95fabc5c7123"
-    myAC = ArrayConnection(management_address=mgmt_addr, replication_addresses=repl_addr, connection_key=connection_key)
+    myAC = ArrayConnectionPost(management_address=mgmt_addr, replication_addresses=repl_addr, connection_key=connection_key)
     try:
         # post the array connection object on the array we're connection from
         res = fb.array_connections.create_array_connections(array_connection=myAC)

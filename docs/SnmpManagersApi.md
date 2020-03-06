@@ -20,7 +20,7 @@ Create SNMP managers.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, SnmpManager, SnmpV2c, SnmpV3
+from purity_fb import PurityFb, rest, SnmpManagerPost, SnmpV2c, SnmpV3
 
 fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -36,8 +36,8 @@ if res:
         v3_attrs = SnmpV3(auth_protocol='SHA', auth_passphrase='my-password-1!',
                           privacy_protocol='AES', privacy_passphrase='min8chars',
                           user='service-account-1')
-        new_v3_manager = SnmpManager(host=snmp_host, notification='trap',
-                                     version='v3', v3=v3_attrs)
+        new_v3_manager = SnmpManagerPost(host=snmp_host, notification='trap',
+                                         version='v3', v3=v3_attrs)
         v3_manager_name = 'my-v3-manager'
         res = fb.snmp_managers.create_snmp_managers(names=[v3_manager_name],
                                                     snmp_manager=new_v3_manager)
@@ -46,8 +46,8 @@ if res:
         # create an snmp inform manager using snmpv2c with the name 'my-v2c-manager' and appropriate
         # v2c attributes
         v2_attrs = SnmpV2c(community='some-community-for-informs')
-        new_v2c_manager = SnmpManager(host=snmp_host, notification='inform',
-                                      version='v2c', v2c=v2_attrs)
+        new_v2c_manager = SnmpManagerPost(host=snmp_host, notification='inform',
+                                          version='v2c', v2c=v2_attrs)
         v2c_manager_name = 'my-v2c-manager'
         res = fb.snmp_managers.create_snmp_managers(names=[v2c_manager_name],
                                                     snmp_manager=new_v2c_manager)
