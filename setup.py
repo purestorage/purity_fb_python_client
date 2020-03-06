@@ -33,6 +33,7 @@ setup(
     url="",
     keywords=["Swagger", "Purity//FB REST Client"],
     install_requires=REQUIRES,
+    python_requires=">=2.7, <3.7",
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
