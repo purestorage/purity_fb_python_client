@@ -10,7 +10,7 @@ For more information, please visit [http://www.purestorage.com](http://www.pures
 
 ## Requirements.
 
-Python 2.7 and 3.4+
+Python 2.7 or Python 3.4 - 3.6
 
 ## Installation & Usage
 ### pip install
