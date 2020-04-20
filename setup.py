@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Pure Storage FlashBlade REST 1.9 Python SDK
+    Pure Storage FlashBlade REST 1.9.2 Python SDK
 
-    Pure Storage FlashBlade REST 1.9 Python SDK. Compatible with REST API versions 1.0 - 1.9. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.9.2 Python SDK. Compatible with REST API versions 1.0 - 1.10. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.3
     Contact: info@purestorage.com
@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "purity-fb"
-VERSION = "1.9.1"
+VERSION = "1.9.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -23,20 +23,22 @@ VERSION = "1.9.1"
 # prerequisite: setuptools
 # http://pypi.python.org/pypi/setuptools
 
+# If any of these requirements are changed, we also need to update `requirements.md`
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
+PYTHON_REQUIRES = ">=2.7, <3.7"
 
 setup(
     name=NAME,
     version=VERSION,
-    description="Pure Storage FlashBlade REST 1.9 Python SDK",
+    description="Pure Storage FlashBlade REST 1.9.2 Python SDK",
     author_email="info@purestorage.com",
     url="",
     keywords=["Swagger", "Purity//FB REST Client"],
     install_requires=REQUIRES,
-    python_requires=">=2.7, <3.7",
+    python_requires=PYTHON_REQUIRES,
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    Pure Storage FlashBlade REST 1.9 Python SDK. Compatible with REST API versions 1.0 - 1.9. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.9.2 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
     """
 )

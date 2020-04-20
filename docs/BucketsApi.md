@@ -1,15 +1,15 @@
-# purity_fb_1dot9.BucketsApi
+# purity_fb_1dot11.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.9/buckets | 
-[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.9/buckets | 
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.9/buckets | 
-[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.9/buckets/performance | 
-[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.9/buckets/s3-specific-performance | 
-[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.9/buckets | 
+[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.11/buckets | 
+[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.11/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.11/buckets | 
+[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.11/buckets/performance | 
+[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.11/buckets/s3-specific-performance | 
+[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.11/buckets | 
 
 
 # **create_buckets**

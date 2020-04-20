@@ -1,12 +1,12 @@
-# purity_fb_1dot9.SupportApi
+# purity_fb_1dot11.SupportApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_support**](SupportApi.md#list_support) | **GET** /1.9/support | 
-[**test_support**](SupportApi.md#test_support) | **GET** /1.9/support/test | 
-[**update_support**](SupportApi.md#update_support) | **PATCH** /1.9/support | 
+[**list_support**](SupportApi.md#list_support) | **GET** /1.11/support | 
+[**test_support**](SupportApi.md#test_support) | **GET** /1.11/support/test | 
+[**update_support**](SupportApi.md#update_support) | **PATCH** /1.11/support | 
 
 
 # **list_support**

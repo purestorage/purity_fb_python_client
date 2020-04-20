@@ -1,7 +1,7 @@
-site_name: Pure Storage FlashBlade REST 1.9 Python SDK
+site_name: Pure Storage FlashBlade REST 1.11 Python SDK
 pages:
 - Overview:
-    - Get Started: index.md
+    - Get started: index.md
     - License: about/license.md
 - Endpoints:
     - Authentication: AuthenticationApi.md
@@ -12,6 +12,7 @@ pages:
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
         - Alert Watchers Tests: AlertWatcherTest.md
+        - Api Clients: ApiClientsApi.md
         - Arrays: ArraysApi.md
         - Array Connections: ArrayConnectionsApi.md
         - Array Connection Keys: ArrayConnectionsApi.md
@@ -65,6 +66,7 @@ pages:
         - Quotas for Groups: QuotasGroupsApi.md
         - Quota Notification Settings: QuotasSettingsApi.md
         - Quotas for Users: QuotasUsersApi.md
+        - Roles: RolesApi.md
         - Smtp: SmtpApi.md
         - Snmp Agents: SnmpAgentsApi.md
         - Snmp Agents Mib: SnmpAgentsApi.md
@@ -73,6 +75,9 @@ pages:
         - Subnets: SubnetsApi.md
         - Support: SupportApi.md
         - Support Tests: SupportApi.md
+        - Syslog Servers: SyslogApi.md
+        - Syslog Servers Settings: SyslogApi.md
+        - Syslog Servers Test: SyslogApi.md
         - Targets: TargetsApi.md
         - Target Performance Replication: TargetsApi.md
         - Usage for Groups: UsageGroupsApi.md
@@ -139,6 +144,7 @@ pages:
         - Quotas or Usages for Groups: QuotasGroupResponse.md
         - Quota Notification Settings: QuotasSettingResponse.md
         - Quotas or Usages for Users: QuotasUserResponse.md
+        - Roles: RoleResponse.md
         - Smtp: SmtpResponse.md
         - Snmp Agents: SnmpAgentResponse.md
         - Snmp Agent MIB: SnmpAgentMibResponse.md
@@ -146,6 +152,9 @@ pages:
         - Snmp Manager Test: SnmpManagerTestResponse.md
         - Subnet: SubnetResponse.md
         - Support: SupportResponse.md
+        - Syslog Servers Response: SyslogServerResponse.md
+        - Syslog Servers Settings Response: SyslogServerSettingResponse.md
+        - Syslog Servers Test Response: SyslogServerTestResponse.md
         - Target: TargetResponse.md
         - Test Result: TestResultResponse.md
     - Error: PureError.md
@@ -245,6 +254,8 @@ pages:
         - Object Store Account: ObjectStoreAccount.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentials.md
         - Object Store User: ObjectStoreUser.md
+    - Permission:
+        - Permission: Permission.md
     - Policy:
         - Policy: Policy.md
         - Policy Member: PolicyMember.md
@@ -266,10 +277,12 @@ pages:
     - Reference:
         - Reference: Reference.md
         - Reference Name: ReferenceName.md
-    - Resource:
-        - Resource: Resource.md
     - Replication Performance:
         - Replication Performance: ReplicationPerformance.md
+    - Resource:
+        - Resource: Resource.md
+    - Roles:
+        - Role: Role.md
     - Smtp:
         - Smtp: Smtp.md
     - Snmp:
@@ -285,6 +298,12 @@ pages:
     - Support:
         - Support: Support.md
         - Support Remote Assist Paths: SupportRemoteAssistPaths.md
+    - Syslog:
+        - Syslog Server: SyslogServer.md
+        - Syslog Server Post or Patch: SyslogServerPostOrPatch.md
+        - Syslog Server Settings: SyslogServerSetting.md
+        - Syslog Server Settings Patch: SyslogServerSettingPatch.md
+        - Syslog Server Test: SyslogServerTest.md
     - Target:
         - Target: Target.md
         - Target Post: TargetPost.md

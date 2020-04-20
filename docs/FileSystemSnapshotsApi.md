@@ -1,17 +1,17 @@
-# purity_fb_1dot9.FileSystemSnapshotsApi
+# purity_fb_1dot11.FileSystemSnapshotsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.9/file-system-snapshots | 
-[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.9/file-system-snapshots | 
-[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.9/file-system-snapshots/transfer | 
-[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.9/file-system-snapshots/policies | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.9/file-system-snapshots | 
-[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.9/file-system-snapshots/transfer | 
-[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.9/file-system-snapshots/policies | 
-[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.9/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.11/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.11/file-system-snapshots | 
+[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.11/file-system-snapshots/transfer | 
+[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.11/file-system-snapshots/policies | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.11/file-system-snapshots | 
+[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.11/file-system-snapshots/transfer | 
+[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.11/file-system-snapshots/policies | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.11/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**

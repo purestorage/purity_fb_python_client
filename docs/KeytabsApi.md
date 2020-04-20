@@ -1,13 +1,13 @@
-# purity_fb_1dot9.KeytabsApi
+# purity_fb_1dot11.KeytabsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.9/keytabs | 
-[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.9/keytabs/download | 
-[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.9/keytabs | 
-[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.9/keytabs/upload | 
+[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.11/keytabs | 
+[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.11/keytabs/download | 
+[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.11/keytabs | 
+[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.11/keytabs/upload | 
 
 
 # **delete_keytabs**

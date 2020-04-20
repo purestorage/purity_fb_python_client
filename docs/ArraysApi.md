@@ -1,18 +1,18 @@
-# purity_fb_1dot9.ArraysApi
+# purity_fb_1dot11.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.9/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.9/arrays/http-specific-performance | 
-[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.9/arrays/nfs-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.9/arrays/performance | 
-[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.9/arrays/performance/replication | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.9/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.9/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.9/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.9/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.11/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.11/arrays/http-specific-performance | 
+[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.11/arrays/nfs-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.11/arrays/performance | 
+[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.11/arrays/performance/replication | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.11/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.11/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.11/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.11/arrays | 
 
 
 # **list_arrays**

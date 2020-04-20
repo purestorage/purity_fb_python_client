@@ -1,17 +1,17 @@
-# purity_fb_1dot9.ArrayConnectionsApi
+# purity_fb_1dot11.ArrayConnectionsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.9/array-connections | 
-[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.9/array-connections/connection-key | 
-[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.9/array-connections | 
-[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.9/array-connections | 
-[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.9/array-connections/connection-key | 
-[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.9/array-connections/path | 
-[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.9/array-connections/performance/replication | 
-[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.9/array-connections | 
+[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.11/array-connections | 
+[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.11/array-connections/connection-key | 
+[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.11/array-connections | 
+[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.11/array-connections | 
+[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.11/array-connections/connection-key | 
+[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.11/array-connections/path | 
+[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.11/array-connections/performance/replication | 
+[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.11/array-connections | 
 
 
 # **create_array_connections**
@@ -122,7 +122,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_array_connections**
-> delete_array_connections(name, ids=ids)
+> delete_array_connections(ids=ids, remote_ids=remote_ids, remote_names=remote_names)
 
 
 
@@ -140,8 +140,8 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # delete the keytab with the name 'my-connected-array'
-        fb.array_connections.delete_array_connections(names=['my-connected-array'])
+        # delete the array connection with the name 'my-connected-array'
+        fb.array_connections.delete_array_connections(remote_names=['my-connected-array'])
 
         # delete the array connection with id '10314f42-020d-7080-8013-000ddt400090'
         fb.array_connections.delete_array_connections(ids=['10314f42-020d-7080-8013-000ddt400090'])
@@ -153,8 +153,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -172,7 +173,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_array_connections**
-> ArrayConnectionResponse list_array_connections(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
+> ArrayConnectionResponse list_array_connections(filter=filter, ids=ids, limit=limit, remote_ids=remote_ids, remote_names=remote_names, sort=sort, start=start, token=token)
 
 
 
@@ -214,7 +215,8 @@ Name | Type | Description  | Notes
  **filter** | **str**| The filter to be used for query. | [optional] 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **token** | **str**| token | [optional] 
@@ -279,7 +281,7 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_array_connections_paths**
-> ArrayConnectionPathResponse list_array_connections_paths(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
+> ArrayConnectionPathResponse list_array_connections_paths(filter=filter, ids=ids, limit=limit, remote_ids=remote_ids, remote_names=remote_names, sort=sort, start=start, token=token)
 
 
 
@@ -321,7 +323,8 @@ Name | Type | Description  | Notes
  **filter** | **str**| The filter to be used for query. | [optional] 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
  **token** | **str**| token | [optional] 
@@ -342,7 +345,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_array_connections_performance_replication**
-> RelationshipPerformanceReplicationResponse list_array_connections_performance_replication(end_time=end_time, filter=filter, ids=ids, limit=limit, names=names, resolution=resolution, sort=sort, start=start, start_time=start_time, token=token, total_only=total_only, type=type)
+> RelationshipPerformanceReplicationResponse list_array_connections_performance_replication(end_time=end_time, filter=filter, ids=ids, limit=limit, remote_ids=remote_ids, remote_names=remote_names, resolution=resolution, sort=sort, start=start, start_time=start_time, token=token, total_only=total_only, type=type)
 
 
 
@@ -403,7 +406,8 @@ Name | Type | Description  | Notes
  **filter** | **str**| The filter to be used for query. | [optional] 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **sort** | **str**| The way to order the results. | [optional] 
  **start** | **int**| start | [optional] 
@@ -428,7 +432,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_array_connections**
-> ArrayConnectionResponse update_array_connections(name, array_connection, ids=ids)
+> ArrayConnectionResponse update_array_connections(array_connection, ids=ids, remote_ids=remote_ids, remote_names=remote_names)
 
 
 
@@ -450,7 +454,7 @@ if res:
                                replication_addresses=["10.202.101.71", "10.202.101.72"])
     try:
         # update the array connection named otherarray
-        res = fb.array_connections.update_array_connections(names=["otherarray"], array_connection=new_attr)
+        res = fb.array_connections.update_array_connections(remote_names=["otherarray"], array_connection=new_attr)
         print(res)
 
         # update the array connection with id '10314f42-020d-7080-8013-000ddt400090'
@@ -465,9 +469,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **array_connection** | [**ArrayConnection**](ArrayConnection.md)| The attribute map used to update the array connection. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 

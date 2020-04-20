@@ -240,7 +240,7 @@ class ArrayConnectionsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def delete_array_connections(self, name, **kwargs):
+    def delete_array_connections(self, **kwargs):
         """
         Delete an array connection.
         This method makes a synchronous HTTP request by default. To make an
@@ -249,24 +249,25 @@ class ArrayConnectionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_array_connections(name, callback=callback_function)
+        >>> thread = api.delete_array_connections(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_array_connections_with_http_info(name, **kwargs)
+            return self.delete_array_connections_with_http_info(**kwargs)
         else:
-            (data) = self.delete_array_connections_with_http_info(name, **kwargs)
+            (data) = self.delete_array_connections_with_http_info(**kwargs)
             return data
 
-    def delete_array_connections_with_http_info(self, name, **kwargs):
+    def delete_array_connections_with_http_info(self, **kwargs):
         """
         Delete an array connection.
         This method makes a synchronous HTTP request by default. To make an
@@ -275,18 +276,19 @@ class ArrayConnectionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_array_connections_with_http_info(name, callback=callback_function)
+        >>> thread = api.delete_array_connections_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'ids']
+        all_params = ['ids', 'remote_ids', 'remote_names']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -301,9 +303,6 @@ class ArrayConnectionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_array_connections`")
 
 
         collection_formats = {}
@@ -314,8 +313,12 @@ class ArrayConnectionsApi(object):
         if 'ids' in params:
             query_params.append(('ids', params['ids']))
             collection_formats['ids'] = 'csv'
-        if 'name' in params:
-            query_params.append(('name', params['name']))
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
 
         header_params = {}
 
@@ -365,7 +368,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
@@ -396,7 +400,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
@@ -405,7 +410,7 @@ class ArrayConnectionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['filter', 'ids', 'limit', 'names', 'sort', 'start', 'token']
+        all_params = ['filter', 'ids', 'limit', 'remote_ids', 'remote_names', 'sort', 'start', 'token']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -434,9 +439,12 @@ class ArrayConnectionsApi(object):
             collection_formats['ids'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
         if 'start' in params:
@@ -588,7 +596,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
@@ -619,7 +628,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param str sort: The way to order the results.
         :param int start: start
         :param str token: token
@@ -628,7 +638,7 @@ class ArrayConnectionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['filter', 'ids', 'limit', 'names', 'sort', 'start', 'token']
+        all_params = ['filter', 'ids', 'limit', 'remote_ids', 'remote_names', 'sort', 'start', 'token']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -657,9 +667,12 @@ class ArrayConnectionsApi(object):
             collection_formats['ids'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
         if 'start' in params:
@@ -716,7 +729,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param int resolution: sample frequency in milliseconds
         :param str sort: The way to order the results.
         :param int start: start
@@ -752,7 +766,8 @@ class ArrayConnectionsApi(object):
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param int resolution: sample frequency in milliseconds
         :param str sort: The way to order the results.
         :param int start: start
@@ -765,7 +780,7 @@ class ArrayConnectionsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['end_time', 'filter', 'ids', 'limit', 'names', 'resolution', 'sort', 'start', 'start_time', 'token', 'total_only', 'type']
+        all_params = ['end_time', 'filter', 'ids', 'limit', 'remote_ids', 'remote_names', 'resolution', 'sort', 'start', 'start_time', 'token', 'total_only', 'type']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -796,9 +811,12 @@ class ArrayConnectionsApi(object):
             collection_formats['ids'] = 'csv'
         if 'limit' in params:
             query_params.append(('limit', params['limit']))
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
         if 'resolution' in params:
             query_params.append(('resolution', params['resolution']))
         if 'sort' in params:
@@ -846,7 +864,7 @@ class ArrayConnectionsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_array_connections(self, name, array_connection, **kwargs):
+    def update_array_connections(self, array_connection, **kwargs):
         """
         Update an existing array connection.
         This method makes a synchronous HTTP request by default. To make an
@@ -855,25 +873,26 @@ class ArrayConnectionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_array_connections(name, array_connection, callback=callback_function)
+        >>> thread = api.update_array_connections(array_connection, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param ArrayConnection array_connection: The attribute map used to update the array connection. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :return: ArrayConnectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_array_connections_with_http_info(name, array_connection, **kwargs)
+            return self.update_array_connections_with_http_info(array_connection, **kwargs)
         else:
-            (data) = self.update_array_connections_with_http_info(name, array_connection, **kwargs)
+            (data) = self.update_array_connections_with_http_info(array_connection, **kwargs)
             return data
 
-    def update_array_connections_with_http_info(self, name, array_connection, **kwargs):
+    def update_array_connections_with_http_info(self, array_connection, **kwargs):
         """
         Update an existing array connection.
         This method makes a synchronous HTTP request by default. To make an
@@ -882,19 +901,20 @@ class ArrayConnectionsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_array_connections_with_http_info(name, array_connection, callback=callback_function)
+        >>> thread = api.update_array_connections_with_http_info(array_connection, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param ArrayConnection array_connection: The attribute map used to update the array connection. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
+        :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :return: ArrayConnectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'array_connection', 'ids']
+        all_params = ['array_connection', 'ids', 'remote_ids', 'remote_names']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -909,9 +929,6 @@ class ArrayConnectionsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `update_array_connections`")
         # verify the required parameter 'array_connection' is set
         if ('array_connection' not in params) or (params['array_connection'] is None):
             raise ValueError("Missing the required parameter `array_connection` when calling `update_array_connections`")
@@ -925,8 +942,12 @@ class ArrayConnectionsApi(object):
         if 'ids' in params:
             query_params.append(('ids', params['ids']))
             collection_formats['ids'] = 'csv'
-        if 'name' in params:
-            query_params.append(('name', params['name']))
+        if 'remote_ids' in params:
+            query_params.append(('remote_ids', params['remote_ids']))
+            collection_formats['remote_ids'] = 'csv'
+        if 'remote_names' in params:
+            query_params.append(('remote_names', params['remote_names']))
+            collection_formats['remote_names'] = 'csv'
 
         header_params = {}
 

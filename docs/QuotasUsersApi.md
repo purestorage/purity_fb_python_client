@@ -1,13 +1,13 @@
-# purity_fb_1dot9.QuotasUsersApi
+# purity_fb_1dot11.QuotasUsersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_user_quotas**](QuotasUsersApi.md#create_user_quotas) | **POST** /1.9/quotas/users | 
-[**delete_user_quotas**](QuotasUsersApi.md#delete_user_quotas) | **DELETE** /1.9/quotas/users | 
-[**list_user_quotas**](QuotasUsersApi.md#list_user_quotas) | **GET** /1.9/quotas/users | 
-[**update_user_quotas**](QuotasUsersApi.md#update_user_quotas) | **PATCH** /1.9/quotas/users | 
+[**create_user_quotas**](QuotasUsersApi.md#create_user_quotas) | **POST** /1.11/quotas/users | 
+[**delete_user_quotas**](QuotasUsersApi.md#delete_user_quotas) | **DELETE** /1.11/quotas/users | 
+[**list_user_quotas**](QuotasUsersApi.md#list_user_quotas) | **GET** /1.11/quotas/users | 
+[**update_user_quotas**](QuotasUsersApi.md#update_user_quotas) | **PATCH** /1.11/quotas/users | 
 
 
 # **create_user_quotas**
