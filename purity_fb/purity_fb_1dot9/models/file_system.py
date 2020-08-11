@@ -556,7 +556,7 @@ class FileSystem(object):
     def writable(self):
         """
         Gets the writable of this FileSystem.
-        -> Is the file system writable? True by default. Can not be True when active is False.
+        -> Is the file system writable? True by default. Cannot be True when `promoted` is False.
 
         :return: The writable of this FileSystem.
         :rtype: bool
@@ -567,7 +567,7 @@ class FileSystem(object):
     def writable(self, writable):
         """
         Sets the writable of this FileSystem.
-        -> Is the file system writable? True by default. Can not be True when active is False.
+        -> Is the file system writable? True by default. Cannot be True when `promoted` is False.
 
         :param writable: The writable of this FileSystem.
         :type: bool

@@ -354,9 +354,14 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # update the bucket object mybucket on the array
+        # Destroy the bucket named "mybucket", and also suspend versioning
         res = fb.buckets.update_buckets(names=["mybucket"],
-                                        bucket=BucketPatch(destroyed=True, versioning="enabled"))
+                                        bucket=BucketPatch(destroyed=True, versioning="suspended"))
+
+        # Recover the bucket "mybucket", and also enable versioning
+        res = fb.buckets.update_buckets(names=["mybucket"],
+                                        bucket=BucketPatch(destroyed=False, versioning="enabled"))
+
         print(res)
     except rest.ApiException as e:
         print("Exception when updating bucket: %s\n" % e)

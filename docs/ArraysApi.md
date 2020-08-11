@@ -475,6 +475,9 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
+        # Rename the array to "example-name"
+        # Set the NTP server to "0.example.ntp.server"
+        # Change the array time zone to "America/Los_Angeles"
         array_settings = PureArray(name="example-name", ntp_servers=["0.example.ntp.server"],
                                    time_zone="America/Los_Angeles")
         res = fb.arrays.update_arrays(array_settings=array_settings)

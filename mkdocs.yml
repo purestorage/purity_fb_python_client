@@ -23,6 +23,7 @@ pages:
         - Array Performance Replication: ArraysApi.md
         - Array S3 Performances: ArraysApi.md
         - Array Spaces: ArraysApi.md
+        - Audits: AuditsApi.md
         - Blades: BladeApi.md
         - Buckets: BucketsApi.md
         - Bucket Performances: BucketsApi.md
@@ -100,6 +101,7 @@ pages:
         - Array Performance Replication: ArrayPerformanceReplicationResponse.md
         - Array S3 Performance: ArrayS3PerformanceResponse.md
         - Array Space: ArraySpaceResponse.md
+        - Audit: AuditResponse.md
         - Blade: BladeResponse.md
         - Bucket: BucketResponse.md
         - Bucket Performance: BucketPerformanceResponse.md
@@ -174,6 +176,8 @@ pages:
         - Array Connection Path: ArrayConnectionPath.md
         - Array Connection Post: ArrayConnectionPost.md
         - Array Connection Performance Replication: RelationshipPerformanceReplication.md
+    - Audits:
+        - Audit: Audit.md
     - Blade:
         - Blade: Blade.md
     - Bucket:

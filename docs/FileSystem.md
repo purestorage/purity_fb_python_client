@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 **source** | [**LocationReference**](LocationReference.md) | The source snapshot whose data is copied to the file system specified. | [optional] 
 **space** | [**Space**](Space.md) | The space specification of the file system. | [optional] 
 **time_remaining** | **int** | Time in milliseconds before the file system is eradicated. Null if not destroyed. | [optional] 
-**writable** | **bool** | -&gt; Is the file system writable? True by default. Can not be True when active is False. | [optional] 
+**writable** | **bool** | -&gt; Is the file system writable? True by default. Cannot be True when &#x60;promoted&#x60; is False. | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

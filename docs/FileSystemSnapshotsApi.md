@@ -77,7 +77,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_file_system_snapshots**
-> delete_file_system_snapshots(name, ids=ids)
+> delete_file_system_snapshots(ids=ids, name=name)
 
 
 
@@ -107,8 +107,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
 
 ### Return type
 
@@ -425,7 +425,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_system_snapshots**
-> FileSystemSnapshotResponse update_file_system_snapshots(name, attributes, ids=ids, latest_replica=latest_replica)
+> FileSystemSnapshotResponse update_file_system_snapshots(attributes, ids=ids, name=name, latest_replica=latest_replica)
 
 
 
@@ -443,10 +443,10 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    # create a local file system snapshot object with destroyed field being true
+    # Destroy an existing snapshot
     new_attr = FileSystemSnapshot(destroyed=True)
     try:
-        # destroying the file system snapshot myfs.mysnap
+        # Update the file system snapshot myfs.mysnap with our new attributes, in this case destroying it
         res = fb.file_system_snapshots.update_file_system_snapshots(name="myfs.mysnap", attributes=new_attr)
         print(res)
         # destroying the latest replicated snapshot should specify "latest_replica=True"
@@ -462,9 +462,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| The new attributes, only modifiable fields may be specified. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
  **latest_replica** | **bool**| Used when destroying a snapshot. If not present or false, and the snapshot is the latest replicated snapshot, then destroy will fail. If true or the snapshot is not the latest replicated snapshot, then destroy will be successful. | [optional] [default to false]
 
 ### Return type

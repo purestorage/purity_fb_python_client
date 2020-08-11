@@ -297,15 +297,16 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    # Update the name, address of the target
+    # Change the name of an existing target to "remote2"
+    # Change the address of an existing target to "1.1.1.1"
     new_attr = Target(name='remote2',
                       address='1.1.1.1')
     try:
-        # update the the target with the name 'remote1'
+        # Update the existing target that's named 'remote1' with our new attributes
         res = fb.targets.update_targets(names=['remote1'], target=new_attr)
         print(res)
 
-        # update the the target with the id '10314f42-020d-7080-8013-000ddt400090'
+        # Update the existing target that has the id '10314f42-020d-7080-8013-000ddt400090' with our new attributes
         res = fb.targets.update_targets(ids=['10314f42-020d-7080-8013-000ddt400090'], target=new_attr)
         print(res)
     except rest.ApiException as e:

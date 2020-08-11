@@ -7,6 +7,7 @@ from .alert_watchers_api import AlertWatchersApi
 from .alerts_api import AlertsApi
 from .array_connections_api import ArrayConnectionsApi
 from .arrays_api import ArraysApi
+from .audits_api import AuditsApi
 from .authentication_api import AuthenticationApi
 from .blade_api import BladeApi
 from .bucket_replica_links_api import BucketReplicaLinksApi
