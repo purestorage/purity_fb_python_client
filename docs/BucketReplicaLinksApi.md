@@ -206,7 +206,7 @@ Update bucket replica links.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, BucketReplicaLinkPost, ObjectStoreRemoteCredentials, rest
+from purity_fb import PurityFb, BucketReplicaLink, ObjectStoreRemoteCredentials, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -215,17 +215,20 @@ try:
 except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
-    # Update the paused status and remote credentials of a replica link
-    new_attr = BucketReplicaLinkPost(paused=True, remote_credentials=ObjectStoreRemoteCredentials(name="remote/name"))
+    # Pause an existing bucket replica link
+    # Also change the remote credentials we're using for replication to the credentials named "remote/name"
+    new_attr = BucketReplicaLink(paused=True, remote_credentials=ObjectStoreRemoteCredentials(name="remote/name"))
     try:
-        # update the the replica link on the specified local bucket, to the specified remote bucket on the remote
+        # Update the existing replica link on the specified local bucket, to the specified remote bucket on the remote
+        # Use the attribute map from before to pause the link and change credentials
         res = fb.bucket_replica_links.update_bucket_replica_links(local_bucket_names=['localbucket'],
                                                                   remote_names=['remote'],
                                                                   remote_bucket_names=['remotebucket'],
                                                                   bucket_replica_link=new_attr)
         print(res)
 
-        # update the the replica link on the specified local bucket, to the specified remote bucket on the remote (by ids)
+        # Update the existing replica link on the specified local bucket, to the specified remote bucket on the remote (by ids)
+        # Use the attribute map from before to pause the link and change credentials
         res = fb.bucket_replica_links.update_bucket_replica_links(local_bucket_ids=['10314f42-020d-7080-8013-000ddt400090'],
                                                                   remote_ids=['10314f42-020d-7080-8013-000ddt400045'],
                                                                   remote_bucket_names=['remotebucket'],

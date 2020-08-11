@@ -28,7 +28,7 @@ Create a new policy.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, Policy
+from purity_fb import PurityFb, rest, Policy, PolicyRule
 
 fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -764,6 +764,7 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
+        # Update the policy "p1", and set the "enabled" field to "False"
         res = fb.policies.update_policies(
             names=["p1"], policy_patch=PolicyPatch(enabled=False))
         print(res)

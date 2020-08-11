@@ -383,7 +383,7 @@ class FileSystemSnapshotsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_file_system_snapshots(self, name, attributes, **kwargs):
+    def update_file_system_snapshots(self, attributes, **kwargs):
         """
         Update an existing file system snapshot
         This method makes a synchronous HTTP request by default. To make an
@@ -392,24 +392,24 @@ class FileSystemSnapshotsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_file_system_snapshots(name, attributes, callback=callback_function)
+        >>> thread = api.update_file_system_snapshots(attributes, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param SnapshotSuffix attributes: the new attributes, only modifiable fields could be used. (required)
+        :param str name: The name of the file system or snapshot to be updated.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_file_system_snapshots_with_http_info(name, attributes, **kwargs)
+            return self.update_file_system_snapshots_with_http_info(attributes, **kwargs)
         else:
-            (data) = self.update_file_system_snapshots_with_http_info(name, attributes, **kwargs)
+            (data) = self.update_file_system_snapshots_with_http_info(attributes, **kwargs)
             return data
 
-    def update_file_system_snapshots_with_http_info(self, name, attributes, **kwargs):
+    def update_file_system_snapshots_with_http_info(self, attributes, **kwargs):
         """
         Update an existing file system snapshot
         This method makes a synchronous HTTP request by default. To make an
@@ -418,18 +418,18 @@ class FileSystemSnapshotsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_file_system_snapshots_with_http_info(name, attributes, callback=callback_function)
+        >>> thread = api.update_file_system_snapshots_with_http_info(attributes, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param SnapshotSuffix attributes: the new attributes, only modifiable fields could be used. (required)
+        :param str name: The name of the file system or snapshot to be updated.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'attributes']
+        all_params = ['attributes', 'name']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -444,9 +444,6 @@ class FileSystemSnapshotsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `update_file_system_snapshots`")
         # verify the required parameter 'attributes' is set
         if ('attributes' not in params) or (params['attributes'] is None):
             raise ValueError("Missing the required parameter `attributes` when calling `update_file_system_snapshots`")

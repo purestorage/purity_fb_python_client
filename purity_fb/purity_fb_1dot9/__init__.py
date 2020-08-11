@@ -45,6 +45,8 @@ from .models.array_s3_performance import ArrayS3Performance
 from .models.array_s3_performance_response import ArrayS3PerformanceResponse
 from .models.array_space import ArraySpace
 from .models.array_space_response import ArraySpaceResponse
+from .models.audit import Audit
+from .models.audit_response import AuditResponse
 from .models.blade import Blade
 from .models.blade_response import BladeResponse
 from .models.bucket import Bucket
@@ -191,6 +193,7 @@ from .apis.alert_watchers_api import AlertWatchersApi
 from .apis.alerts_api import AlertsApi
 from .apis.array_connections_api import ArrayConnectionsApi
 from .apis.arrays_api import ArraysApi
+from .apis.audits_api import AuditsApi
 from .apis.authentication_api import AuthenticationApi
 from .apis.blade_api import BladeApi
 from .apis.bucket_replica_links_api import BucketReplicaLinksApi

@@ -199,6 +199,9 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
+        # Update the existing network interface "myvip"
+        # Change the address to "1.2.3.201"
+        # Change the service type to "replication"
         res = fb.network_interfaces.update_network_interfaces(
             names=['myvip'], network_interface=NetworkInterface(address='1.2.3.201', services=['replication']))
         print(res)

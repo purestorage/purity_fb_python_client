@@ -23,7 +23,7 @@ Create a new file system.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystemPost, Reference, NfsRule, rest
+from purity_fb import PurityFb, FileSystem, Reference, NfsRule, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -36,10 +36,10 @@ if res:
     # and NFSv4.1 enabled.
     default_user_space_quota = 1024000
     default_group_space_quota = 1024000000
-    myfs = FileSystemPost(name="myfs", provisioned=5000, hard_limit_enabled=True,
-                          nfs=NfsRule(v4_1_enabled=True),
-                          default_user_quota=default_user_space_quota,
-                          default_group_quota=default_group_space_quota)
+    myfs = FileSystem(name="myfs", provisioned=5000, hard_limit_enabled=True,
+                      nfs=NfsRule(v4_1_enabled=True),
+                      default_user_quota=default_user_space_quota,
+                      default_group_quota=default_group_space_quota)
     try:
         # post the file system object myfs on the array with the specific default user and group
         # quotas
@@ -49,7 +49,7 @@ if res:
         print("Exception when creating file system: %s\n" % e)
 
     # copy snapshot 'myfs.mysnap' to file system 'myfs'
-    myfs = FileSystemPost(name="myfs", source=Reference(name='myfs.mysnap'))
+    myfs = FileSystem(name="myfs", source=Reference(name='myfs.mysnap'))
     try:
         # post the file system object myfs on the array
         res = fb.file_systems.create_file_systems(overwrite=True, discard_non_snapshotted_data=True, file_system=myfs)
@@ -135,7 +135,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_file_systems**
-> delete_file_systems(name, ids=ids)
+> delete_file_systems(ids=ids, name=name)
 
 
 
@@ -163,8 +163,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
 
 ### Return type
 
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_systems**
-> FileSystemResponse update_file_systems(name, attributes, ids=ids, discard_non_snapshotted_data=discard_non_snapshotted_data, delete_link_on_eradication=delete_link_on_eradication, ignore_usage=ignore_usage)
+> FileSystemResponse update_file_systems(attributes, ids=ids, name=name, discard_non_snapshotted_data=discard_non_snapshotted_data, delete_link_on_eradication=delete_link_on_eradication, ignore_usage=ignore_usage)
 
 
 
@@ -499,9 +499,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **name** | **str**| The name of the file system or snapshot to be updated. | 
  **attributes** | [**FileSystem**](FileSystem.md)| The new attributes, only modifiable fields may be specified. | 
  **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
  **discard_non_snapshotted_data** | **bool**| This parameter must be set to &#x60;true&#x60; in order to restore a file system from a snapshot or to demote a file system (which restores the file system from the common baseline snapshot). Setting this parameter to &#x60;true&#x60; is acknowledgement that any non-snapshotted data currently in the file system will be irretrievably lost. | [optional] 
  **delete_link_on_eradication** | **bool**| If set to &#x60;true&#x60;, the file system can be destroyed, even if it has a replica link. If set to &#x60;false&#x60;, the file system cannot be destroyed if it has a replica link. Defaults to &#x60;false&#x60;. | [optional] 
  **ignore_usage** | **bool**| Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True. | [optional] 

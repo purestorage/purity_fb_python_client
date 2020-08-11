@@ -261,7 +261,7 @@ class FileSystemsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def delete_file_systems(self, name, **kwargs):
+    def delete_file_systems(self, **kwargs):
         """
         Delete a file system.
         This method makes a synchronous HTTP request by default. To make an
@@ -270,24 +270,24 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_file_systems(name, callback=callback_function)
+        >>> thread = api.delete_file_systems(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param str name: The name of the file system or snapshot to be updated.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.delete_file_systems_with_http_info(name, **kwargs)
+            return self.delete_file_systems_with_http_info(**kwargs)
         else:
-            (data) = self.delete_file_systems_with_http_info(name, **kwargs)
+            (data) = self.delete_file_systems_with_http_info(**kwargs)
             return data
 
-    def delete_file_systems_with_http_info(self, name, **kwargs):
+    def delete_file_systems_with_http_info(self, **kwargs):
         """
         Delete a file system.
         This method makes a synchronous HTTP request by default. To make an
@@ -296,18 +296,18 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.delete_file_systems_with_http_info(name, callback=callback_function)
+        >>> thread = api.delete_file_systems_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param str name: The name of the file system or snapshot to be updated.
         :return: None
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'ids']
+        all_params = ['ids', 'name']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -322,9 +322,6 @@ class FileSystemsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `delete_file_systems`")
 
 
         collection_formats = {}
@@ -906,7 +903,7 @@ class FileSystemsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def update_file_systems(self, name, attributes, **kwargs):
+    def update_file_systems(self, attributes, **kwargs):
         """
         Update an existing file system.
         This method makes a synchronous HTTP request by default. To make an
@@ -915,13 +912,13 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_file_systems(name, attributes, callback=callback_function)
+        >>> thread = api.update_file_systems(attributes, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param FileSystem attributes: The new attributes, only modifiable fields may be specified. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param str name: The name of the file system or snapshot to be updated.
         :param bool ignore_usage: Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True.
         :return: FileSystemResponse
                  If the method is called asynchronously,
@@ -929,12 +926,12 @@ class FileSystemsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.update_file_systems_with_http_info(name, attributes, **kwargs)
+            return self.update_file_systems_with_http_info(attributes, **kwargs)
         else:
-            (data) = self.update_file_systems_with_http_info(name, attributes, **kwargs)
+            (data) = self.update_file_systems_with_http_info(attributes, **kwargs)
             return data
 
-    def update_file_systems_with_http_info(self, name, attributes, **kwargs):
+    def update_file_systems_with_http_info(self, attributes, **kwargs):
         """
         Update an existing file system.
         This method makes a synchronous HTTP request by default. To make an
@@ -943,20 +940,20 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.update_file_systems_with_http_info(name, attributes, callback=callback_function)
+        >>> thread = api.update_file_systems_with_http_info(attributes, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param str name: The name of the file system or snapshot to be updated. (required)
         :param FileSystem attributes: The new attributes, only modifiable fields may be specified. (required)
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
+        :param str name: The name of the file system or snapshot to be updated.
         :param bool ignore_usage: Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['name', 'attributes', 'ids', 'ignore_usage']
+        all_params = ['attributes', 'ids', 'name', 'ignore_usage']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -971,9 +968,6 @@ class FileSystemsApi(object):
                 )
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'name' is set
-        if ('name' not in params) or (params['name'] is None):
-            raise ValueError("Missing the required parameter `name` when calling `update_file_systems`")
         # verify the required parameter 'attributes' is set
         if ('attributes' not in params) or (params['attributes'] is None):
             raise ValueError("Missing the required parameter `attributes` when calling `update_file_systems`")

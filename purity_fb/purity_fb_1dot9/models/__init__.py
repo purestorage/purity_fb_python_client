@@ -45,6 +45,8 @@ from .array_s3_performance import ArrayS3Performance
 from .array_s3_performance_response import ArrayS3PerformanceResponse
 from .array_space import ArraySpace
 from .array_space_response import ArraySpaceResponse
+from .audit import Audit
+from .audit_response import AuditResponse
 from .blade import Blade
 from .blade_response import BladeResponse
 from .bucket import Bucket

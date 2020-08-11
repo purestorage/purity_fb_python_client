@@ -34,6 +34,8 @@ class Policy(object):
         'name': 'str',
         'id': 'str',
         'enabled': 'bool',
+        'is_local': 'bool',
+        'location': 'FixedReferenceWithId',
         'rules': 'list[PolicyRule]'
     }
 
@@ -41,10 +43,12 @@ class Policy(object):
         'name': 'name',
         'id': 'id',
         'enabled': 'enabled',
+        'is_local': 'is_local',
+        'location': 'location',
         'rules': 'rules'
     }
 
-    def __init__(self, name=None, id=None, enabled=None, rules=None):
+    def __init__(self, name=None, id=None, enabled=None, is_local=None, location=None, rules=None):
         """
         Policy - a model defined in Swagger
         """
@@ -52,6 +56,8 @@ class Policy(object):
         self._name = None
         self._id = None
         self._enabled = None
+        self._is_local = None
+        self._location = None
         self._rules = None
 
         if name is not None:
@@ -60,6 +66,10 @@ class Policy(object):
           self.id = id
         if enabled is not None:
           self.enabled = enabled
+        if is_local is not None:
+          self.is_local = is_local
+        if location is not None:
+          self.location = location
         if rules is not None:
           self.rules = rules
 
@@ -131,6 +141,52 @@ class Policy(object):
         """
 
         self._enabled = enabled
+
+    @property
+    def is_local(self):
+        """
+        Gets the is_local of this Policy.
+        -> Returns a value of `true` if the policy is defined on the local array. Returns a value of `false` if the policy is defined on the remote array.
+
+        :return: The is_local of this Policy.
+        :rtype: bool
+        """
+        return self._is_local
+
+    @is_local.setter
+    def is_local(self, is_local):
+        """
+        Sets the is_local of this Policy.
+        -> Returns a value of `true` if the policy is defined on the local array. Returns a value of `false` if the policy is defined on the remote array.
+
+        :param is_local: The is_local of this Policy.
+        :type: bool
+        """
+
+        self._is_local = is_local
+
+    @property
+    def location(self):
+        """
+        Gets the location of this Policy.
+        Reference to the array where the policy is defined.
+
+        :return: The location of this Policy.
+        :rtype: FixedReferenceWithId
+        """
+        return self._location
+
+    @location.setter
+    def location(self, location):
+        """
+        Sets the location of this Policy.
+        Reference to the array where the policy is defined.
+
+        :param location: The location of this Policy.
+        :type: FixedReferenceWithId
+        """
+
+        self._location = location
 
     @property
     def rules(self):
