@@ -10,25 +10,54 @@ For more information, please visit [http://www.purestorage.com](http://www.pures
 
 ## Release Notes
 
-- Package version: 1.9.2
-    - Starting with package version 1.9.0, this SDK is incompatible with Python 3.7 or higher.
-    - Starting with package version 1.9.0, the `account` parameter in the `create_buckets` function
-      has been renamed to `bucket`. This is only applicable for API version 1.9+, and previous API
-      versions still use `account`. 
-      - Using API version 1.9:
-        ```
-        fb = PurityFb("10.255.9.28", version="1.9")
-        attr = BucketPost()
-        attr.account = Reference(name='myaccount')
-        res = fb.buckets.create_buckets(names=["mybucket"], bucket=attr)
-        ```
-      - Using API version 1.8:
-        ```
-        fb = PurityFb("10.255.9.28", version="1.8")
-        attr = BucketPost()
-        attr.account = Reference(name='myaccount')
-        res = fb.buckets.create_buckets(names=["mybucket"], account=attr)
-        ```
+### Package version: 1.9.2
+- Package version 1.9.2 of this SDK contains changes which may **break** the functionality of code written against previous versions of the SDK. These changes have been made to fix issues where operations in the SDK did not properly align with the corresponding endpoint operations of version 1.9 of FlashBlade's REST API.
+
+- The parameters for list/update/delete functions in `array_connections_api.py` have changed. The `name` parameter, which was a part of the REST API, has been removed and replaced by `remote_names` and `remote_ids`.
+
+```python
+fb = PurityFb("10.255.9.28", version="1.9")
+# list array connections with 'remote_names'
+res = fb.array_connections.list_array_connections(remote_names=['my-connected-array'])
+# list array connections with 'remote_ids'
+res = fb.array_connections.list_array_connections(
+    remote_ids=['10314f42-020d-7080-8013-000ddd400090'])
+```
+
+- The update/delete functions in `file_systems_api.py` and `file_system_snapshots_api.py` no longer require the `name` parameter. This is to support the option of performing these operations by guid using the `ids` parameter.
+
+```python
+# update a file system object with a new provisioned size. enable hard limits.
+# enable NFSv4.1, and disable NFSv3. enable SMB in native ACL mode. disable HTTP
+# adjust the default user quota to a new value
+# note that name field should be None
+new_attr = FileSystem(provisioned=1024, hard_limit_enabled=True, nfs=NfsRule(v3_enabled=False,
+                        v4_1_enabled=True), http=ProtocolRule(enabled=False),
+                        smb=SmbRule(enabled=True, acl_mode="native"), default_user_quota=4096)
+# update the file system with id '10314f42-020d-7080-8013-000ddt400090' on the array
+res = fb.file_systems.update_file_systems(ids=['10314f42-020d-7080-8013-000ddt400090'],
+                                        ignore_usage=True, attributes=new_attr)
+```
+
+### Package version: 1.9.0
+- Starting with package version 1.9.0, this SDK is **incompatible** with Python 3.7 or higher.
+- Starting with package version 1.9.0, the `account` parameter in the `create_buckets` function
+has been renamed to `bucket`. This is only applicable for API version 1.9+, and previous API
+versions still use `account`:
+
+```python
+# Using API version 1.9
+fb = PurityFb("10.255.9.28", version="1.9")
+attr = BucketPost()
+attr.account = Reference(name='myaccount')
+res = fb.buckets.create_buckets(names=["mybucket"], bucket=attr)
+
+# Using API version 1.8
+fb = PurityFb("10.255.9.28", version="1.8")
+attr = BucketPost()
+attr.account = Reference(name='myaccount')
+res = fb.buckets.create_buckets(names=["mybucket"], account=attr)
+```
 
 
 ## Requirements
