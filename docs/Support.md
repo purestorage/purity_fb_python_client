@@ -3,8 +3,8 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
-**created** | **int** | creation timestamp of the object | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
+**created** | **int** | Creation timestamp of the object | [optional] 
 **phonehome_enabled** | **bool** | Is phonehome of logs enabled? | [optional] 
 **proxy** | **str** | Server to use as the HTTP or HTTPS proxy. Specify the server name, including the scheme and proxy port number. | [optional] 
 **remote_assist_active** | **bool** | The switch to open all remote-assist sessions. Modifiable. | [optional] 

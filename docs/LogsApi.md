@@ -1,14 +1,14 @@
-# purity_fb_1dot9.LogsApi
+# purity_fb_1dot10.LogsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_logs**](LogsApi.md#list_logs) | **GET** /1.9/logs | 
+[**list_logs**](LogsApi.md#list_logs) | **GET** /1.10/logs | 
 
 
 # **list_logs**
-> file list_logs(end_time=end_time, start_time=start_time)
+> LogDownloadResponse list_logs(end_time=end_time, start_time=start_time)
 
 
 
@@ -41,7 +41,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**file**](file.md)
+[**LogDownloadResponse**](LogDownloadResponse.md)
 
 ### Authorization
 
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/octet-stream
+ - **Content-Type**: Not defined
+ - **Accept**: application/octet-stream, text/plain, application/json
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 

@@ -508,10 +508,10 @@ class FileSystemsApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
@@ -541,10 +541,10 @@ class FileSystemsApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
@@ -647,10 +647,10 @@ class FileSystemsApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
-        :param str sort: The way to order the results.
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :param int start: start
-        :param str token: token
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total_only: Return only the total object.
         :return: FileSystemPerformanceResponse
                  If the method is called asynchronously,
@@ -683,10 +683,10 @@ class FileSystemsApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
-        :param str sort: The way to order the results.
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :param int start: start
-        :param str token: token
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total_only: Return only the total object.
         :return: FileSystemPerformanceResponse
                  If the method is called asynchronously,
@@ -792,10 +792,10 @@ class FileSystemsApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -825,10 +825,10 @@ class FileSystemsApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.

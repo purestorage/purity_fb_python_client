@@ -1,13 +1,13 @@
-# purity_fb_1dot9.BucketReplicaLinksApi
+# purity_fb_1dot10.BucketReplicaLinksApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bucket_replica_links**](BucketReplicaLinksApi.md#create_bucket_replica_links) | **POST** /1.9/bucket-replica-links | 
-[**delete_bucket_replica_links**](BucketReplicaLinksApi.md#delete_bucket_replica_links) | **DELETE** /1.9/bucket-replica-links | 
-[**list_bucket_replica_links**](BucketReplicaLinksApi.md#list_bucket_replica_links) | **GET** /1.9/bucket-replica-links | 
-[**update_bucket_replica_links**](BucketReplicaLinksApi.md#update_bucket_replica_links) | **PATCH** /1.9/bucket-replica-links | 
+[**create_bucket_replica_links**](BucketReplicaLinksApi.md#create_bucket_replica_links) | **POST** /1.10/bucket-replica-links | 
+[**delete_bucket_replica_links**](BucketReplicaLinksApi.md#delete_bucket_replica_links) | **DELETE** /1.10/bucket-replica-links | 
+[**list_bucket_replica_links**](BucketReplicaLinksApi.md#list_bucket_replica_links) | **GET** /1.10/bucket-replica-links | 
+[**update_bucket_replica_links**](BucketReplicaLinksApi.md#update_bucket_replica_links) | **PATCH** /1.10/bucket-replica-links | 
 
 
 # **create_bucket_replica_links**
@@ -50,9 +50,9 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket_replica_link** | [**BucketReplicaLinkPost**](BucketReplicaLinkPost.md)| Bucket replica link create parameters. | 
- **local_bucket_names** | [**list[str]**](str.md)| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
- **remote_bucket_names** | [**list[str]**](str.md)| A comma-separated list of remote bucket names. | [optional] 
- **remote_credentials_names** | [**list[str]**](str.md)| A comma-separated list of remote credentials names. | [optional] 
+ **local_bucket_names** | **list[str]**| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
+ **remote_bucket_names** | **list[str]**| A comma-separated list of remote bucket names. | [optional] 
+ **remote_credentials_names** | **list[str]**| A comma-separated list of remote credentials names. | [optional] 
 
 ### Return type
 
@@ -105,11 +105,11 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **local_bucket_ids** | [**list[str]**](str.md)| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
- **local_bucket_names** | [**list[str]**](str.md)| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
- **remote_bucket_names** | [**list[str]**](str.md)| A comma-separated list of remote bucket names. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **local_bucket_ids** | **list[str]**| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
+ **local_bucket_names** | **list[str]**| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
+ **remote_bucket_names** | **list[str]**| A comma-separated list of remote bucket names. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -170,17 +170,17 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **local_bucket_ids** | [**list[str]**](str.md)| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
- **local_bucket_names** | [**list[str]**](str.md)| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
- **remote_bucket_names** | [**list[str]**](str.md)| A comma-separated list of remote bucket names. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **local_bucket_ids** | **list[str]**| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
+ **local_bucket_names** | **list[str]**| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
+ **remote_bucket_names** | **list[str]**| A comma-separated list of remote bucket names. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -243,11 +243,11 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **bucket_replica_link** | [**BucketReplicaLink**](BucketReplicaLink.md)| The attribute map used to update the bucket replica link. | 
- **local_bucket_ids** | [**list[str]**](str.md)| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
- **local_bucket_names** | [**list[str]**](str.md)| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
- **remote_bucket_names** | [**list[str]**](str.md)| A comma-separated list of remote bucket names. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **local_bucket_ids** | **list[str]**| A comma-separated list of local bucket IDs. This cannot be provided together with the &#x60;local_bucket_names&#x60; query parameter. | [optional] 
+ **local_bucket_names** | **list[str]**| A comma-separated list of local bucket names. This cannot be provided together with &#x60;local_bucket_ids&#x60; query parameter. | [optional] 
+ **remote_bucket_names** | **list[str]**| A comma-separated list of remote bucket names. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 

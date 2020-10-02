@@ -1,13 +1,13 @@
-# purity_fb_1dot9.LinkAggregationGroupsApi
+# purity_fb_1dot10.LinkAggregationGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.9/link-aggregation-groups | 
-[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.9/link-aggregation-groups | 
-[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.9/link-aggregation-groups | 
-[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.9/link-aggregation-groups | 
+[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.10/link-aggregation-groups | 
+[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.10/link-aggregation-groups | 
+[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.10/link-aggregation-groups | 
+[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.10/link-aggregation-groups | 
 
 
 # **create_link_aggregation_groups**
@@ -89,8 +89,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -145,12 +145,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -198,9 +198,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **link_aggregation_group** | [**Linkaggregationgroup**](Linkaggregationgroup.md)| The attribute map used to update the link aggregation group. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **link_aggregation_group** | [**LinkAggregationGroupPatch**](LinkAggregationGroupPatch.md)| The attribute map used to update the link aggregation group. | [optional] 
 
 ### Return type
 

@@ -1,12 +1,12 @@
-# purity_fb_1dot9.SupportApi
+# purity_fb_1dot10.SupportApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_support**](SupportApi.md#list_support) | **GET** /1.9/support | 
-[**test_support**](SupportApi.md#test_support) | **GET** /1.9/support/test | 
-[**update_support**](SupportApi.md#update_support) | **PATCH** /1.9/support | 
+[**list_support**](SupportApi.md#list_support) | **GET** /1.10/support | 
+[**test_support**](SupportApi.md#test_support) | **GET** /1.10/support/test | 
+[**update_support**](SupportApi.md#update_support) | **PATCH** /1.10/support | 
 
 
 # **list_support**
@@ -93,7 +93,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
  **test_type** | **str**| Specify the type of test, either \&quot;phonehome\&quot; or \&quot;remote-assist\&quot;. | [optional] 
 
 ### Return type

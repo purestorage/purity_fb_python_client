@@ -61,6 +61,7 @@ from .models.hardware_response import HardwareResponse
 from .models.link_aggregation_group import LinkAggregationGroup
 from .models.link_aggregation_group_response import LinkAggregationGroupResponse
 from .models.linkaggregationgroup import Linkaggregationgroup
+from .models.log_download_response import LogDownloadResponse
 from .models.login_response import LoginResponse
 from .models.network_interface import NetworkInterface
 from .models.network_interface_response import NetworkInterfaceResponse

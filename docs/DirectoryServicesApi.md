@@ -1,15 +1,15 @@
-# purity_fb_1dot9.DirectoryServicesApi
+# purity_fb_1dot10.DirectoryServicesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.9/directory-services | 
-[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.9/directory-services/roles | 
-[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.9/directory-services/test | 
-[**test_directory_services_with_changes**](DirectoryServicesApi.md#test_directory_services_with_changes) | **PATCH** /1.9/directory-services/test | 
-[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.9/directory-services | 
-[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.9/directory-services/roles | 
+[**list_directory_services**](DirectoryServicesApi.md#list_directory_services) | **GET** /1.10/directory-services | 
+[**list_directory_services_roles**](DirectoryServicesApi.md#list_directory_services_roles) | **GET** /1.10/directory-services/roles | 
+[**test_directory_services**](DirectoryServicesApi.md#test_directory_services) | **GET** /1.10/directory-services/test | 
+[**test_directory_services_with_changes**](DirectoryServicesApi.md#test_directory_services_with_changes) | **PATCH** /1.10/directory-services/test | 
+[**update_directory_services**](DirectoryServicesApi.md#update_directory_services) | **PATCH** /1.10/directory-services | 
+[**update_directory_services_roles**](DirectoryServicesApi.md#update_directory_services_roles) | **PATCH** /1.10/directory-services/roles | 
 
 
 # **list_directory_services**
@@ -43,12 +43,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -99,8 +99,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -147,8 +147,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -203,8 +203,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **directory_service** | [**DirectoryService**](DirectoryService.md)| An optional directory service configuration which, if provided, will be used to overwrite aspects of the existing directory service objects when performing tests. | [optional] 
 
 ### Return type
@@ -302,8 +302,8 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **directory_service** | [**DirectoryService**](DirectoryService.md)|  | 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -356,9 +356,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A required list of names. | 
+ **names** | **list[str]**| A required list of names. | 
  **directory_service_role** | [**DirectoryServiceRole**](DirectoryServiceRole.md)|  | 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
 
 ### Return type
 

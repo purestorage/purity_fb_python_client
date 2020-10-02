@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object | [optional] 
+**name** | **str** | The name of the object | [optional] 
 **id** | **str** | A unique ID chosen by the system. Cannot change. | [optional] 
 **host** | **str** | DNS hostname or IP address of a computer that hosts an SNMP manager to which Purity is to send trap messages when it generates alerts. | [optional] 
 **notification** | **str** | The type of notification the agent will send. Valid values are &#x60;inform&#x60; and &#x60;trap&#x60;. | [optional] 

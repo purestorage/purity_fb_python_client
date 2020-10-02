@@ -1,13 +1,13 @@
-# purity_fb_1dot9.KeytabsApi
+# purity_fb_1dot10.KeytabsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.9/keytabs | 
-[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.9/keytabs/download | 
-[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.9/keytabs | 
-[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.9/keytabs/upload | 
+[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.10/keytabs | 
+[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.10/keytabs/download | 
+[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.10/keytabs | 
+[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.10/keytabs/upload | 
 
 
 # **delete_keytabs**
@@ -49,8 +49,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -117,8 +117,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **keytab_ids** | [**list[str]**](str.md)| A comma-separated list of keytab ids. This cannot be provided together with the keytab names query parameters. | [optional] 
- **keytab_names** | [**list[str]**](str.md)| A comma-separated list of keytab names. This cannot be provided together with the keytab ids query parameters. | [optional] 
+ **keytab_ids** | **list[str]**| A comma-separated list of keytab ids. This cannot be provided together with the keytab names query parameters. | [optional] 
+ **keytab_names** | **list[str]**| A comma-separated list of keytab names. This cannot be provided together with the keytab ids query parameters. | [optional] 
 
 ### Return type
 
@@ -178,12 +178,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
 
@@ -252,7 +252,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **keytab_file** | **str**| The attribute map containing the data of the file of keytabs being imported. | 
- **name_prefixes** | [**list[str]**](str.md)| The prefix to use for the names of all kerberos keytab entry objects that are being created. | [optional] 
+ **name_prefixes** | **list[str]**| The prefix to use for the names of all kerberos keytab entry objects that are being created. | [optional] 
 
 ### Return type
 

@@ -106,9 +106,10 @@ from .models.keytab import Keytab
 from .models.keytab_download_upload_response import KeytabDownloadUploadResponse
 from .models.keytab_response import KeytabResponse
 from .models.link_aggregation_group import LinkAggregationGroup
+from .models.link_aggregation_group_patch import LinkAggregationGroupPatch
 from .models.link_aggregation_group_response import LinkAggregationGroupResponse
-from .models.linkaggregationgroup import Linkaggregationgroup
 from .models._location_reference import LocationReference
+from .models.log_download_response import LogDownloadResponse
 from .models.login_response import LoginResponse
 from .models.member import Member
 from .models._member_link import MemberLink

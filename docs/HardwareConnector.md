@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **connector_type** | **str** | Form-factor of the interface. Valid values include QSFP and RJ-45. | [optional] 
 **lane_speed** | **int** | Configured speed of each lane in the connector in bits-per-second | [optional] 
 **port_count** | **int** | Configured number of ports in the connector. (1/2/4 for QSFP) | [optional] 

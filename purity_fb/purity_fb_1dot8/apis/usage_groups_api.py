@@ -56,9 +56,9 @@ class UsageGroupsApi(object):
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.
@@ -89,9 +89,9 @@ class UsageGroupsApi(object):
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param list[str] file_system_names: A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned.
         :param list[str] gids: A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter.
         :param list[str] group_names: A comma-separated list of group names. If after filtering, there is not at least one resource that matches each of the elements of group names, then an error is returned. This cannot be provided together with gids query parameter.

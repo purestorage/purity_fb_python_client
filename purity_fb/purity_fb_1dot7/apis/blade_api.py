@@ -56,9 +56,9 @@ class BladeApi(object):
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: BladeResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -86,9 +86,9 @@ class BladeApi(object):
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: BladeResponse
                  If the method is called asynchronously,
                  returns the request thread.

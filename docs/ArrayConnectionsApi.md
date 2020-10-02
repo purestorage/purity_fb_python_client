@@ -1,17 +1,17 @@
-# purity_fb_1dot9.ArrayConnectionsApi
+# purity_fb_1dot10.ArrayConnectionsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.9/array-connections | 
-[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.9/array-connections/connection-key | 
-[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.9/array-connections | 
-[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.9/array-connections | 
-[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.9/array-connections/connection-key | 
-[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.9/array-connections/path | 
-[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.9/array-connections/performance/replication | 
-[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.9/array-connections | 
+[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.10/array-connections | 
+[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.10/array-connections/connection-key | 
+[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.10/array-connections | 
+[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.10/array-connections | 
+[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.10/array-connections/connection-key | 
+[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.10/array-connections/path | 
+[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.10/array-connections/performance/replication | 
+[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.10/array-connections | 
 
 
 # **create_array_connections**
@@ -153,9 +153,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -213,13 +213,13 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -321,13 +321,13 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -404,15 +404,15 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **type** | **str**| to sample space of either file systems, object store, or all | [optional] 
 
@@ -470,9 +470,9 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **array_connection** | [**ArrayConnection**](ArrayConnection.md)| The attribute map used to update the array connection. | 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 

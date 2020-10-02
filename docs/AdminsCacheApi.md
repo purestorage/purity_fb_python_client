@@ -1,11 +1,11 @@
-# purity_fb_1dot9.AdminsCacheApi
+# purity_fb_1dot10.AdminsCacheApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_admin_cache**](AdminsCacheApi.md#delete_admin_cache) | **DELETE** /1.9/admins/cache | 
-[**list_admin_cache**](AdminsCacheApi.md#list_admin_cache) | **GET** /1.9/admins/cache | 
+[**delete_admin_cache**](AdminsCacheApi.md#delete_admin_cache) | **DELETE** /1.10/admins/cache | 
+[**list_admin_cache**](AdminsCacheApi.md#list_admin_cache) | **GET** /1.10/admins/cache | 
 
 
 # **delete_admin_cache**
@@ -40,8 +40,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -92,12 +92,12 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **refresh** | **bool**| Whether to refresh the user info from directory service | [optional] [default to false]
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 

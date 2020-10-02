@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **bytes_per_op** | **int** | Average operation size (read bytes+write bytes/read ops+write ops) | [optional] 
 **bytes_per_read** | **int** | Average read size in bytes per read operation | [optional] 
 **bytes_per_write** | **int** | Average write size in bytes per write operation | [optional] 

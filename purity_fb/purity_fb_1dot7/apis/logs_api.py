@@ -55,7 +55,7 @@ class LogsApi(object):
             for asynchronous request. (optional)
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :return: file
+        :return: LogDownloadResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -81,7 +81,7 @@ class LogsApi(object):
             for asynchronous request. (optional)
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :return: file
+        :return: LogDownloadResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -121,11 +121,7 @@ class LogsApi(object):
         body_params = None
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.\
-            select_header_accept(['application/octet-stream'])
-
-        # HTTP header `Content-Type`
-        header_params['Content-Type'] = self.api_client.\
-            select_header_content_type(['application/json'])
+            select_header_accept(['application/octet-stream', 'text/plain', 'application/json'])
 
         # Authentication setting
         auth_settings = ['AuthTokenHeader']
@@ -137,7 +133,7 @@ class LogsApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='file',
+                                        response_type='LogDownloadResponse',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),

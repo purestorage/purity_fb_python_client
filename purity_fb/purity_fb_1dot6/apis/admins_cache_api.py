@@ -159,9 +159,9 @@ class AdminsCacheApi(object):
         :param bool refresh: Whether to refresh the user info from directory service
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: AdminCacheResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -190,9 +190,9 @@ class AdminsCacheApi(object):
         :param bool refresh: Whether to refresh the user info from directory service
         :param str filter: The filter to be used for query.
         :param int limit: limit, should be >= 0
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: AdminCacheResponse
                  If the method is called asynchronously,
                  returns the request thread.

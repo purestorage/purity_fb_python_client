@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **component_address** | **str** | Address of the component running the test | [optional] 
 **component_name** | **str** | Name of the component running the test | [optional] 
 **description** | **str** | What the test is doing | [optional] 

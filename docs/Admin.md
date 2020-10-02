@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **api_token** | [**AdminApiToken**](AdminApiToken.md) |  | [optional] 
 **create_api_token** | **bool** | Create a new API token | [optional] 
 **api_token_timeout** | **int** | Expire api-token after this period (in milliseconds). | [optional] 

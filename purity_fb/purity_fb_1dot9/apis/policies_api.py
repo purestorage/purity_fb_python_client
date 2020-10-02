@@ -888,9 +888,9 @@ class PoliciesApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -919,9 +919,9 @@ class PoliciesApi(object):
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
         :param int limit: limit, should be >= 0
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1021,10 +1021,10 @@ class PoliciesApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names. This cannot be provided together with `remote_file_system_ids` query parameter.
         :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. This cannot be provided together with `remote_file_system_names` query parameter.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberWithRemoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1059,10 +1059,10 @@ class PoliciesApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names. This cannot be provided together with `remote_file_system_ids` query parameter.
         :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. This cannot be provided together with `remote_file_system_names` query parameter.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberWithRemoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1178,10 +1178,10 @@ class PoliciesApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1211,10 +1211,10 @@ class PoliciesApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1315,10 +1315,10 @@ class PoliciesApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1348,10 +1348,10 @@ class PoliciesApi(object):
         :param list[str] member_ids: A comma-separated list of member ids. This cannot be provided together with the member names query parameters.
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1453,10 +1453,10 @@ class PoliciesApi(object):
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param list[str] member_types: A list of member types.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -1487,10 +1487,10 @@ class PoliciesApi(object):
         :param list[str] member_names: A comma-separated list of member names. This cannot be provided together with the member ids query parameters.
         :param list[str] member_types: A list of member types.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberResponse
                  If the method is called asynchronously,
                  returns the request thread.

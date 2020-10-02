@@ -80,8 +80,9 @@ from .hardware_connector import HardwareConnector
 from .hardware_connector_response import HardwareConnectorResponse
 from .hardware_response import HardwareResponse
 from .link_aggregation_group import LinkAggregationGroup
+from .link_aggregation_group_patch import LinkAggregationGroupPatch
 from .link_aggregation_group_response import LinkAggregationGroupResponse
-from .linkaggregationgroup import Linkaggregationgroup
+from .log_download_response import LogDownloadResponse
 from .login_response import LoginResponse
 from .member import Member
 from .member_response import MemberResponse
