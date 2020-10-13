@@ -370,9 +370,9 @@ class ArrayConnectionsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: ArrayConnectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -402,9 +402,9 @@ class ArrayConnectionsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: ArrayConnectionResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -598,9 +598,9 @@ class ArrayConnectionsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: ArrayConnectionPathResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -630,9 +630,9 @@ class ArrayConnectionsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: ArrayConnectionPathResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -732,10 +732,10 @@ class ArrayConnectionsApi(object):
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param int resolution: sample frequency in milliseconds
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total_only: Return only the total object.
         :param str type: to sample space of either file systems, object store, or all
         :return: RelationshipPerformanceReplicationResponse
@@ -769,10 +769,10 @@ class ArrayConnectionsApi(object):
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param int resolution: sample frequency in milliseconds
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int start_time: Time to start sample in milliseconds since epoch.
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total_only: Return only the total object.
         :param str type: to sample space of either file systems, object store, or all
         :return: RelationshipPerformanceReplicationResponse

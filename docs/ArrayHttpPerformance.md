@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **read_dirs_per_sec** | **int** | Read directories requests processed per second | [optional] 
 **write_dirs_per_sec** | **int** | Write directories requests processed per second | [optional] 
 **read_files_per_sec** | **int** | Read files requests processed per second | [optional] 

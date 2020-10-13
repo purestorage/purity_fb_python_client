@@ -1,12 +1,12 @@
-# purity_fb_1dot9.ObjectStoreAccountsApi
+# purity_fb_1dot10.ObjectStoreAccountsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.9/object-store-accounts | 
-[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.9/object-store-accounts | 
-[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.9/object-store-accounts | 
+[**create_object_store_accounts**](ObjectStoreAccountsApi.md#create_object_store_accounts) | **POST** /1.10/object-store-accounts | 
+[**delete_object_store_accounts**](ObjectStoreAccountsApi.md#delete_object_store_accounts) | **DELETE** /1.10/object-store-accounts | 
+[**list_object_store_accounts**](ObjectStoreAccountsApi.md#list_object_store_accounts) | **GET** /1.10/object-store-accounts | 
 
 
 # **create_object_store_accounts**
@@ -39,7 +39,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -85,8 +85,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -141,12 +141,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type

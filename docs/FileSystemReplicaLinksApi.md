@@ -1,15 +1,15 @@
-# purity_fb_1dot9.FileSystemReplicaLinksApi
+# purity_fb_1dot10.FileSystemReplicaLinksApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.9/file-system-replica-links/policies | 
-[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.9/file-system-replica-links | 
-[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.9/file-system-replica-links/policies | 
-[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.9/file-system-replica-links/policies | 
-[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.9/file-system-replica-links/transfer | 
-[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.9/file-system-replica-links | 
+[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.10/file-system-replica-links/policies | 
+[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.10/file-system-replica-links | 
+[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.10/file-system-replica-links/policies | 
+[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.10/file-system-replica-links/policies | 
+[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.10/file-system-replica-links/transfer | 
+[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.10/file-system-replica-links | 
 
 
 # **create_file_system_replica_link_policies**
@@ -45,13 +45,13 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
- **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
- **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
- **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
- **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **local_file_system_names** | **list[str]**| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | **list[str]**| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | **list[str]**| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | **list[str]**| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | **list[str]**| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -102,11 +102,11 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
- **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **remote_file_system_names** | [**list[str]**](str.md)| A comma-separated list of remote file system names. | [optional] 
+ **local_file_system_ids** | **list[str]**| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **local_file_system_names** | **list[str]**| A comma-separated list of local file system names. This cannot be provided together with &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_names** | **list[str]**| A comma-separated list of remote file system names. | [optional] 
  **file_system_replica_link** | [**FileSystemReplicaLink**](FileSystemReplicaLink.md)| The attribute map used to create the file system replica link. | [optional] 
 
 ### Return type
@@ -157,13 +157,13 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
- **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
- **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
- **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
- **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **local_file_system_names** | **list[str]**| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | **list[str]**| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | **list[str]**| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | **list[str]**| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | **list[str]**| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -225,20 +225,20 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
- **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
- **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
- **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
- **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **remote_file_system_names** | [**list[str]**](str.md)| A comma-separated list of remote file system names. This cannot be provided together with &#x60;remote_file_system_ids&#x60; query parameter. | [optional] 
- **remote_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of remote file system IDs. This cannot be provided together with &#x60;remote_file_system_names&#x60; query parameter. | [optional] 
+ **local_file_system_names** | **list[str]**| A comma-separated list of local file system names. This cannot be provided together with the &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **local_file_system_ids** | **list[str]**| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **policy_ids** | **list[str]**| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | **list[str]**| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | **list[str]**| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_names** | **list[str]**| A comma-separated list of remote file system names. This cannot be provided together with &#x60;remote_file_system_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_ids** | **list[str]**| A comma-separated list of remote file system IDs. This cannot be provided together with &#x60;remote_file_system_names&#x60; query parameter. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -289,15 +289,15 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **names_or_owner_names** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **names_or_owner_names** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
@@ -359,17 +359,17 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **local_file_system_ids** | [**list[str]**](str.md)| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
- **local_file_system_names** | [**list[str]**](str.md)| A comma-separated list of local file system names. This cannot be provided together with &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
- **remote_file_system_names** | [**list[str]**](str.md)| A comma-separated list of remote file system names. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **local_file_system_ids** | **list[str]**| A comma-separated list of local file system IDs. This cannot be provided together with the &#x60;local_file_system_names&#x60; query parameter. | [optional] 
+ **local_file_system_names** | **list[str]**| A comma-separated list of local file system names. This cannot be provided together with &#x60;local_file_system_ids&#x60; query parameter. | [optional] 
+ **remote_file_system_names** | **list[str]**| A comma-separated list of remote file system names. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 

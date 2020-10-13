@@ -1,15 +1,15 @@
-# purity_fb_1dot9.BucketsApi
+# purity_fb_1dot10.BucketsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.9/buckets | 
-[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.9/buckets | 
-[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.9/buckets | 
-[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.9/buckets/performance | 
-[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.9/buckets/s3-specific-performance | 
-[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.9/buckets | 
+[**create_buckets**](BucketsApi.md#create_buckets) | **POST** /1.10/buckets | 
+[**delete_buckets**](BucketsApi.md#delete_buckets) | **DELETE** /1.10/buckets | 
+[**list_buckets**](BucketsApi.md#list_buckets) | **GET** /1.10/buckets | 
+[**list_buckets_performance**](BucketsApi.md#list_buckets_performance) | **GET** /1.10/buckets/performance | 
+[**list_buckets_s3_specific_performance**](BucketsApi.md#list_buckets_s3_specific_performance) | **GET** /1.10/buckets/s3-specific-performance | 
+[**update_buckets**](BucketsApi.md#update_buckets) | **PATCH** /1.10/buckets | 
 
 
 # **create_buckets**
@@ -49,7 +49,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **bucket** | [**BucketPost**](BucketPost.md)| Bucket create parameters. | [optional] 
 
 ### Return type
@@ -97,8 +97,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -158,12 +158,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
@@ -234,13 +234,13 @@ Name | Type | Description  | Notes
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
  **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
@@ -311,13 +311,13 @@ Name | Type | Description  | Notes
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
  **start_time** | **int**| Time to start sample in milliseconds since epoch. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
@@ -371,8 +371,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **bucket** | [**BucketPatch**](BucketPatch.md)| Bucket update parameters. | [optional] 
 
 ### Return type

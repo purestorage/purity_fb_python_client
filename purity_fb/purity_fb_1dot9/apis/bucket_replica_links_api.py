@@ -302,9 +302,9 @@ class BucketReplicaLinksApi(object):
         :param list[str] remote_bucket_names: A comma-separated list of remote bucket names.
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: BucketReplicaLinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -337,9 +337,9 @@ class BucketReplicaLinksApi(object):
         :param list[str] remote_bucket_names: A comma-separated list of remote bucket names.
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: BucketReplicaLinkResponse
                  If the method is called asynchronously,
                  returns the request thread.

@@ -79,8 +79,9 @@ from .models.hardware_connector import HardwareConnector
 from .models.hardware_connector_response import HardwareConnectorResponse
 from .models.hardware_response import HardwareResponse
 from .models.link_aggregation_group import LinkAggregationGroup
+from .models.link_aggregation_group_patch import LinkAggregationGroupPatch
 from .models.link_aggregation_group_response import LinkAggregationGroupResponse
-from .models.linkaggregationgroup import Linkaggregationgroup
+from .models.log_download_response import LogDownloadResponse
 from .models.login_response import LoginResponse
 from .models.member import Member
 from .models.member_response import MemberResponse

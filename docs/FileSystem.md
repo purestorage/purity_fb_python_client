@@ -4,7 +4,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The name of the object (e.g., a file system or snapshot). | [optional] 
-**created** | **int** | creation timestamp of the object | [optional] 
+**created** | **int** | Creation timestamp of the object | [optional] 
 **id** | **str** | A non-modifiable, globally unique ID chosen by the system. | [optional] 
 **default_user_quota** | **int** | Default quota for a user under this file system. Modifiable. Default is 0, meaning no quota, when creating a new file-system. | [optional] 
 **default_group_quota** | **int** | Default quota for a group under this file system. Modifiable. Default is 0, meaning no quota, when creating a new file-system. | [optional] 

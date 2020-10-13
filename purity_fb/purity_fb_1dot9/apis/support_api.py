@@ -150,7 +150,7 @@ class SupportApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param str test_type: Specify the type of test, either \"phonehome\" or \"remote-assist\".
         :return: TestResultResponse
                  If the method is called asynchronously,
@@ -177,7 +177,7 @@ class SupportApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param str test_type: Specify the type of test, either \"phonehome\" or \"remote-assist\".
         :return: TestResultResponse
                  If the method is called asynchronously,

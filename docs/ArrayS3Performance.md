@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **read_buckets_per_sec** | **int** | Read bucket requests processed per second | [optional] 
 **write_buckets_per_sec** | **int** | Write bucket requests processed per second | [optional] 
 **read_objects_per_sec** | **int** | Read object requests processed per second | [optional] 

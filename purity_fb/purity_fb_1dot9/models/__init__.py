@@ -106,9 +106,10 @@ from .keytab import Keytab
 from .keytab_download_upload_response import KeytabDownloadUploadResponse
 from .keytab_response import KeytabResponse
 from .link_aggregation_group import LinkAggregationGroup
+from .link_aggregation_group_patch import LinkAggregationGroupPatch
 from .link_aggregation_group_response import LinkAggregationGroupResponse
-from .linkaggregationgroup import Linkaggregationgroup
 from ._location_reference import LocationReference
+from .log_download_response import LogDownloadResponse
 from .login_response import LoginResponse
 from .member import Member
 from ._member_link import MemberLink

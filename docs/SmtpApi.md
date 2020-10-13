@@ -1,11 +1,11 @@
-# purity_fb_1dot9.SmtpApi
+# purity_fb_1dot10.SmtpApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_smtp**](SmtpApi.md#list_smtp) | **GET** /1.9/smtp | 
-[**update_smtp**](SmtpApi.md#update_smtp) | **PATCH** /1.9/smtp | 
+[**list_smtp**](SmtpApi.md#list_smtp) | **GET** /1.10/smtp | 
+[**update_smtp**](SmtpApi.md#update_smtp) | **PATCH** /1.10/smtp | 
 
 
 # **list_smtp**

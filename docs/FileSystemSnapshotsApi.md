@@ -1,17 +1,17 @@
-# purity_fb_1dot9.FileSystemSnapshotsApi
+# purity_fb_1dot10.FileSystemSnapshotsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.9/file-system-snapshots | 
-[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.9/file-system-snapshots | 
-[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.9/file-system-snapshots/transfer | 
-[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.9/file-system-snapshots/policies | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.9/file-system-snapshots | 
-[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.9/file-system-snapshots/transfer | 
-[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.9/file-system-snapshots/policies | 
-[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.9/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.10/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.10/file-system-snapshots | 
+[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.10/file-system-snapshots/transfer | 
+[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.10/file-system-snapshots/policies | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.10/file-system-snapshots | 
+[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.10/file-system-snapshots/transfer | 
+[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.10/file-system-snapshots/policies | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.10/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**
@@ -55,10 +55,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **sources** | [**list[str]**](str.md)| A comma-separated list of names of source file systems. | [optional] 
- **source_ids** | [**list[str]**](str.md)| A comma-separated list of IDs of source file systems. | [optional] 
+ **sources** | **list[str]**| A comma-separated list of names of source file systems. | [optional] 
+ **source_ids** | **list[str]**| A comma-separated list of IDs of source file systems. | [optional] 
  **send** | **bool**| Whether to replicate created snapshots immediately to other arrays. If it&#39;s false, created snapshots may still be replicated to other arrays according to policy. | [optional] 
- **targets** | [**list[str]**](str.md)| A comma-separated list of targets arrays to replicate created snapshots to. Only valid when send is true. | [optional] 
+ **targets** | **list[str]**| A comma-separated list of targets arrays to replicate created snapshots to. Only valid when send is true. | [optional] 
  **suffix** | [**SnapshotSuffix**](SnapshotSuffix.md)| the suffix of the snapshot | [optional] 
 
 ### Return type
@@ -107,7 +107,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
 
 ### Return type
@@ -157,10 +157,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **remote_ids** | [**list[str]**](str.md)| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
- **remote_names** | [**list[str]**](str.md)| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **remote_ids** | **list[str]**| A comma-separated list of remote array IDs. This cannot be provided together with the &#x60;remote_names&#x60; query parameter. | [optional] 
+ **remote_names** | **list[str]**| A comma-separated list of remote array names. This cannot be provided together with &#x60;remote_ids&#x60; query parameter. | [optional] 
 
 ### Return type
 
@@ -209,10 +209,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
- **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
- **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
- **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
+ **policy_ids** | **list[str]**| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | **list[str]**| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | **list[str]**| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | **list[str]**| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
 
 ### Return type
 
@@ -269,17 +269,17 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
- **names_or_sources** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the source file system. | [optional] 
- **names_or_owner_names** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
- **source_ids** | [**list[str]**](str.md)| A comma-separated list of IDs of source file systems. | [optional] 
- **owner_ids** | [**list[str]**](str.md)| A comma-separated list of IDs of owning file systems. | [optional] 
+ **names_or_sources** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the source file system. | [optional] 
+ **names_or_owner_names** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
+ **source_ids** | **list[str]**| A comma-separated list of IDs of source file systems. | [optional] 
+ **owner_ids** | **list[str]**| A comma-separated list of IDs of owning file systems. | [optional] 
 
 ### Return type
 
@@ -330,15 +330,15 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
  **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
- **names_or_owner_names** | [**list[str]**](str.md)| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
+ **names_or_owner_names** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
 
 ### Return type
 
@@ -399,15 +399,15 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **policy_ids** | [**list[str]**](str.md)| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
- **policy_names** | [**list[str]**](str.md)| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
- **member_ids** | [**list[str]**](str.md)| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
- **member_names** | [**list[str]**](str.md)| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
+ **policy_ids** | **list[str]**| A comma-separated list of policy IDs. This cannot be provided together with the policy names query parameters. | [optional] 
+ **policy_names** | **list[str]**| A comma-separated list of policy names. This cannot be provided together with the policy ids query parameters. | [optional] 
+ **member_ids** | **list[str]**| A comma-separated list of member ids. This cannot be provided together with the member names query parameters. | [optional] 
+ **member_names** | **list[str]**| A comma-separated list of member names. This cannot be provided together with the member ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **token** | **str**| token | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -463,7 +463,7 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **attributes** | [**SnapshotSuffix**](SnapshotSuffix.md)| The new attributes, only modifiable fields may be specified. | 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
  **latest_replica** | **bool**| Used when destroying a snapshot. If not present or false, and the snapshot is the latest replicated snapshot, then destroy will fail. If true or the snapshot is not the latest replicated snapshot, then destroy will be successful. | [optional] [default to false]
 

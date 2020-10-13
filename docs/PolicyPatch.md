@@ -3,7 +3,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**name** | **str** | name of the object (e.g., a file system or snapshot) | [optional] 
+**name** | **str** | The name of the object (e.g., a file system or snapshot) | [optional] 
 **id** | **str** | A unique ID chosen by the system. Cannot change. | [optional] 
 **enabled** | **bool** | Indicates if policy is enabled (true) or disabled (false). Enabled by default. | [optional] 
 **add_rules** | [**list[PolicyRule]**](PolicyRule.md) |  | [optional] 

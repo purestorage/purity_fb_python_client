@@ -453,10 +453,10 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names. This cannot be provided together with `remote_file_system_ids` query parameter.
         :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. This cannot be provided together with `remote_file_system_names` query parameter.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberWithRemoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -491,10 +491,10 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names. This cannot be provided together with `remote_file_system_ids` query parameter.
         :param list[str] remote_file_system_ids: A comma-separated list of remote file system IDs. This cannot be provided together with `remote_file_system_names` query parameter.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: PolicyMemberWithRemoteResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -610,10 +610,10 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the name of the snapshot or the owning file system.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemSnapshotTransferResponse
@@ -645,10 +645,10 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
         :param list[str] names_or_owner_names: A comma-separated list of resource names. Either the name of the snapshot or the owning file system.
         :param str filter: The filter to be used for query.
-        :param str sort: The way to order the results.
-        :param int start: start
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
-        :param str token: token
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemSnapshotTransferResponse
@@ -758,9 +758,9 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names.
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: FileSystemReplicaLinkResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -793,9 +793,9 @@ class FileSystemReplicaLinksApi(object):
         :param list[str] remote_file_system_names: A comma-separated list of remote file system names.
         :param list[str] remote_ids: A comma-separated list of remote array IDs. This cannot be provided together with the `remote_names` query parameter.
         :param list[str] remote_names: A comma-separated list of remote array names. This cannot be provided together with `remote_ids` query parameter.
-        :param str sort: The way to order the results.
-        :param int start: start
-        :param str token: token
+        :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
+        :param int start: The offset of the first resource to return from a collection.
+        :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
         :return: FileSystemReplicaLinkResponse
                  If the method is called asynchronously,
                  returns the request thread.

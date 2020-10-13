@@ -61,6 +61,7 @@ from .hardware_response import HardwareResponse
 from .link_aggregation_group import LinkAggregationGroup
 from .link_aggregation_group_response import LinkAggregationGroupResponse
 from .linkaggregationgroup import Linkaggregationgroup
+from .log_download_response import LogDownloadResponse
 from .login_response import LoginResponse
 from .network_interface import NetworkInterface
 from .network_interface_response import NetworkInterfaceResponse

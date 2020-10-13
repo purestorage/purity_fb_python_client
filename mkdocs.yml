@@ -1,4 +1,4 @@
-site_name: Pure Storage FlashBlade REST 1.9 Python SDK
+site_name: Pure Storage FlashBlade REST 1.10 Python SDK
 pages:
 - Overview:
     - Get Started: index.md
@@ -6,6 +6,7 @@ pages:
 - Endpoints:
     - Authentication: AuthenticationApi.md
     - API Version: VersionApi.md
+    - Login Banner: LoginBannerApi.md
     - APIs:
         - Admins: AdminsApi.md
         - Admins Cache: AdminsCacheApi.md
@@ -51,6 +52,7 @@ pages:
         - Keytabs: KeytabsApi.md
         - Keytab Download: KeytabsApi.md
         - Keytab Upload: KeytabsApi.md
+        - Lifecycle Rules: LifecycleRulesApi.md
         - Link Aggregation Groups: LinkAggregationGroupsApi.md
         - Logs: LogsApi.md
         - Network Interfaces: NetworkInterfacesApi.md
@@ -66,6 +68,7 @@ pages:
         - Quotas for Groups: QuotasGroupsApi.md
         - Quota Notification Settings: QuotasSettingsApi.md
         - Quotas for Users: QuotasUsersApi.md
+        - Roles: RolesApi.md
         - Smtp: SmtpApi.md
         - Snmp Agents: SnmpAgentsApi.md
         - Snmp Agents Mib: SnmpAgentsApi.md
@@ -74,6 +77,9 @@ pages:
         - Subnets: SubnetsApi.md
         - Support: SupportApi.md
         - Support Tests: SupportApi.md
+        - Syslog Servers: SyslogApi.md
+        - Syslog Servers Settings: SyslogApi.md
+        - Syslog Servers Test: SyslogApi.md
         - Targets: TargetsApi.md
         - Target Performance Replication: TargetsApi.md
         - Usage for Groups: UsageGroupsApi.md
@@ -125,7 +131,10 @@ pages:
         - Keytab: KeytabResponse.md
         - Keytab Download Response: KeytabDownloadUploadResponse.md
         - Keytab Upload Response: KeytabDownloadUploadResponse.md
+        - Lifecycle Rules Response: LifecycleRuleResponse.md
         - Link Aggregation Group: LinkAggregationGroupResponse.md
+        - Login Banner Response: LoginBannerResponse.md
+        - Logs: LogDownloadResponse.md
         - Member: MemberResponse.md
         - Network Interface: NetworkInterfaceResponse.md
         - Object: ObjectResponse.md
@@ -141,6 +150,7 @@ pages:
         - Quotas or Usages for Groups: QuotasGroupResponse.md
         - Quota Notification Settings: QuotasSettingResponse.md
         - Quotas or Usages for Users: QuotasUserResponse.md
+        - Roles: RoleResponse.md
         - Smtp: SmtpResponse.md
         - Snmp Agents: SnmpAgentResponse.md
         - Snmp Agent MIB: SnmpAgentMibResponse.md
@@ -148,6 +158,9 @@ pages:
         - Snmp Manager Test: SnmpManagerTestResponse.md
         - Subnet: SubnetResponse.md
         - Support: SupportResponse.md
+        - Syslog Servers Response: SyslogServerResponse.md
+        - Syslog Servers Settings Response: SyslogServerSettingResponse.md
+        - Syslog Servers Test Response: SyslogServerTestResponse.md
         - Target: TargetResponse.md
         - Test Result: TestResultResponse.md
     - Error: PureError.md
@@ -186,6 +199,9 @@ pages:
         - Bucket Performance: BucketPerformance.md
         - Bucket Post: BucketPost.md
         - Bucket S3 Performance: BucketS3Performance.md
+        - Lifecycle Rule: LifecycleRule.md
+        - Lifecycle Rule Post: LifecycleRulePost.md
+        - Lifecycle Rule Patch: LifecycleRulePatch.md
     - Bucket Replica Link:
         - Bucket Replica Link: BucketReplicaLink.md
         - Bucket Replica Link Post: BucketReplicaLinkPost.md
@@ -237,6 +253,7 @@ pages:
         - Keytab: Keytab.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
+        - Link Aggregation Group Patch: LinkAggregationGroupPatch.md
     - Location Reference:
         - Location Reference: LocationReference.md
     - Member:
@@ -246,9 +263,12 @@ pages:
         - Network Interface: NetworkInterface.md
     - Object Store:
         - Object Store Access Key: ObjectStoreAccessKey.md
+        - Object Store Access Key Post: ObjectStoreAccessKeyPost.md
         - Object Store Account: ObjectStoreAccount.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentials.md
         - Object Store User: ObjectStoreUser.md
+    - Permission:
+        - Permission: Permission.md
     - Policy:
         - Policy: Policy.md
         - Policy Member: PolicyMember.md
@@ -270,10 +290,12 @@ pages:
     - Reference:
         - Reference: Reference.md
         - Reference Name: ReferenceName.md
-    - Resource:
-        - Resource: Resource.md
     - Replication Performance:
         - Replication Performance: ReplicationPerformance.md
+    - Resource:
+        - Resource: Resource.md
+    - Roles:
+        - Role: Role.md
     - Smtp:
         - Smtp: Smtp.md
     - Snmp:
@@ -289,6 +311,12 @@ pages:
     - Support:
         - Support: Support.md
         - Support Remote Assist Paths: SupportRemoteAssistPaths.md
+    - Syslog:
+        - Syslog Server: SyslogServer.md
+        - Syslog Server Post or Patch: SyslogServerPostOrPatch.md
+        - Syslog Server Settings: SyslogServerSetting.md
+        - Syslog Server Settings Patch: SyslogServerSettingPatch.md
+        - Syslog Server Test: SyslogServerTest.md
     - Target:
         - Target: Target.md
         - Target Post: TargetPost.md

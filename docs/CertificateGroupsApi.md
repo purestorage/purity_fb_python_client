@@ -1,16 +1,16 @@
-# purity_fb_1dot9.CertificateGroupsApi
+# purity_fb_1dot10.CertificateGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_certificate_group_certificates**](CertificateGroupsApi.md#add_certificate_group_certificates) | **POST** /1.9/certificate-groups/certificates | 
-[**create_certificate_groups**](CertificateGroupsApi.md#create_certificate_groups) | **POST** /1.9/certificate-groups | 
-[**delete_certificate_groups**](CertificateGroupsApi.md#delete_certificate_groups) | **DELETE** /1.9/certificate-groups | 
-[**list_certificate_group_certificates**](CertificateGroupsApi.md#list_certificate_group_certificates) | **GET** /1.9/certificate-groups/certificates | 
-[**list_certificate_group_uses**](CertificateGroupsApi.md#list_certificate_group_uses) | **GET** /1.9/certificate-groups/uses | 
-[**list_certificate_groups**](CertificateGroupsApi.md#list_certificate_groups) | **GET** /1.9/certificate-groups | 
-[**remove_certificate_group_certificates**](CertificateGroupsApi.md#remove_certificate_group_certificates) | **DELETE** /1.9/certificate-groups/certificates | 
+[**add_certificate_group_certificates**](CertificateGroupsApi.md#add_certificate_group_certificates) | **POST** /1.10/certificate-groups/certificates | 
+[**create_certificate_groups**](CertificateGroupsApi.md#create_certificate_groups) | **POST** /1.10/certificate-groups | 
+[**delete_certificate_groups**](CertificateGroupsApi.md#delete_certificate_groups) | **DELETE** /1.10/certificate-groups | 
+[**list_certificate_group_certificates**](CertificateGroupsApi.md#list_certificate_group_certificates) | **GET** /1.10/certificate-groups/certificates | 
+[**list_certificate_group_uses**](CertificateGroupsApi.md#list_certificate_group_uses) | **GET** /1.10/certificate-groups/uses | 
+[**list_certificate_groups**](CertificateGroupsApi.md#list_certificate_groups) | **GET** /1.10/certificate-groups | 
+[**remove_certificate_group_certificates**](CertificateGroupsApi.md#remove_certificate_group_certificates) | **DELETE** /1.10/certificate-groups/certificates | 
 
 
 # **add_certificate_group_certificates**
@@ -55,10 +55,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate_group_ids** | [**list[str]**](str.md)| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
- **certificate_group_names** | [**list[str]**](str.md)| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
- **certificate_ids** | [**list[str]**](str.md)| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
- **certificate_names** | [**list[str]**](str.md)| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
+ **certificate_group_ids** | **list[str]**| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
+ **certificate_group_names** | **list[str]**| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
+ **certificate_ids** | **list[str]**| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
+ **certificate_names** | **list[str]**| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
 
 ### Return type
 
@@ -109,7 +109,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -158,8 +158,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
 
 ### Return type
 
@@ -213,15 +213,15 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate_group_ids** | [**list[str]**](str.md)| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
- **certificate_group_names** | [**list[str]**](str.md)| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
- **certificate_ids** | [**list[str]**](str.md)| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
- **certificate_names** | [**list[str]**](str.md)| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
+ **certificate_group_ids** | **list[str]**| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
+ **certificate_group_names** | **list[str]**| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
+ **certificate_ids** | **list[str]**| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
+ **certificate_names** | **list[str]**| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -274,12 +274,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -332,12 +332,12 @@ if res:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **filter** | **str**| The filter to be used for query. | [optional] 
- **ids** | [**list[str]**](str.md)| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
+ **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
 
 ### Return type
 
@@ -396,10 +396,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **certificate_group_ids** | [**list[str]**](str.md)| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
- **certificate_group_names** | [**list[str]**](str.md)| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
- **certificate_ids** | [**list[str]**](str.md)| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
- **certificate_names** | [**list[str]**](str.md)| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
+ **certificate_group_ids** | **list[str]**| A comma-separated list of certificate group ids. This cannot be provided together with the certificate group names query parameters. | [optional] 
+ **certificate_group_names** | **list[str]**| A comma-separated list of certificate group names. This cannot be provided together with the certificate group ids query parameters. | [optional] 
+ **certificate_ids** | **list[str]**| A comma-separated list of certificate ids. This cannot be provided together with the certificate names query parameters. | [optional] 
+ **certificate_names** | **list[str]**| A comma-separated list of certificate names. This cannot be provided together with the certificate ids query parameters. | [optional] 
 
 ### Return type
 

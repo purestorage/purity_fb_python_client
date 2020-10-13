@@ -1,13 +1,13 @@
-# purity_fb_1dot9.QuotasUsersApi
+# purity_fb_1dot10.QuotasUsersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_user_quotas**](QuotasUsersApi.md#create_user_quotas) | **POST** /1.9/quotas/users | 
-[**delete_user_quotas**](QuotasUsersApi.md#delete_user_quotas) | **DELETE** /1.9/quotas/users | 
-[**list_user_quotas**](QuotasUsersApi.md#list_user_quotas) | **GET** /1.9/quotas/users | 
-[**update_user_quotas**](QuotasUsersApi.md#update_user_quotas) | **PATCH** /1.9/quotas/users | 
+[**create_user_quotas**](QuotasUsersApi.md#create_user_quotas) | **POST** /1.10/quotas/users | 
+[**delete_user_quotas**](QuotasUsersApi.md#delete_user_quotas) | **DELETE** /1.10/quotas/users | 
+[**list_user_quotas**](QuotasUsersApi.md#list_user_quotas) | **GET** /1.10/quotas/users | 
+[**update_user_quotas**](QuotasUsersApi.md#update_user_quotas) | **PATCH** /1.10/quotas/users | 
 
 
 # **create_user_quotas**
@@ -55,9 +55,9 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
- **uids** | [**list[str]**](str.md)| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
- **user_names** | [**list[str]**](str.md)| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **uids** | **list[str]**| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
+ **user_names** | **list[str]**| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
  **quota** | [**QuotasUser**](QuotasUser.md)|  | [optional] 
 
 ### Return type
@@ -111,10 +111,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
- **uids** | [**list[str]**](str.md)| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
- **user_names** | [**list[str]**](str.md)| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **uids** | **list[str]**| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
+ **user_names** | **list[str]**| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
 
 ### Return type
 
@@ -176,14 +176,14 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
- **sort** | **str**| The way to order the results. | [optional] 
- **start** | **int**| start | [optional] 
- **token** | **str**| token | [optional] 
- **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
- **uids** | [**list[str]**](str.md)| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **uids** | **list[str]**| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
 
 ### Return type
 
@@ -258,10 +258,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | [**list[str]**](str.md)| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
- **file_system_names** | [**list[str]**](str.md)| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
- **uids** | [**list[str]**](str.md)| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
- **user_names** | [**list[str]**](str.md)| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **uids** | **list[str]**| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
+ **user_names** | **list[str]**| A comma-separated list of user names. If after filtering, there is not at least one resource that matches each of the elements of user names, then an error is returned. This cannot be provided together with uids query parameter. | [optional] 
  **quota** | [**QuotasUser**](QuotasUser.md)|  | [optional] 
 
 ### Return type
