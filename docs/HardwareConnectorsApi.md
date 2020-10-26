@@ -1,11 +1,11 @@
-# purity_fb_1dot10.HardwareConnectorsApi
+# purity_fb_1dot11.HardwareConnectorsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.10/hardware-connectors | 
-[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.10/hardware-connectors | 
+[**list_hardware_connectors**](HardwareConnectorsApi.md#list_hardware_connectors) | **GET** /1.11/hardware-connectors | 
+[**update_hardware_connectors**](HardwareConnectorsApi.md#update_hardware_connectors) | **PATCH** /1.11/hardware-connectors | 
 
 
 # **list_hardware_connectors**

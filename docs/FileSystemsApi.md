@@ -1,17 +1,17 @@
-# purity_fb_1dot10.FileSystemsApi
+# purity_fb_1dot11.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.10/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.10/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.10/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.10/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.10/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.10/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.10/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.10/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.11/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.11/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.11/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.11/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.11/file-systems | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.11/file-systems/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.11/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.11/file-systems | 
 
 
 # **create_file_systems**
@@ -458,7 +458,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_file_systems**
-> FileSystemResponse update_file_systems(attributes, ids=ids, name=name, discard_non_snapshotted_data=discard_non_snapshotted_data, delete_link_on_eradication=delete_link_on_eradication, ignore_usage=ignore_usage)
+> FileSystemResponse update_file_systems(attributes, ids=ids, name=name, discard_detailed_permissions=discard_detailed_permissions, discard_non_snapshotted_data=discard_non_snapshotted_data, delete_link_on_eradication=delete_link_on_eradication, ignore_usage=ignore_usage)
 
 
 
@@ -466,7 +466,7 @@ Update an existing file system.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, FileSystem, NfsRule, ProtocolRule, SmbRule, rest
+from purity_fb import PurityFb, FileSystemPatch, MultiProtocolRule, NfsRulePatch, ProtocolRule, SmbRule, rest
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -479,12 +479,20 @@ if res:
     # enable NFSv4.1, and disable NFSv3. enable SMB in native ACL mode. disable HTTP
     # adjust the default user quota to a new value
     # note that name field should be None
-    new_attr = FileSystem(provisioned=1024, hard_limit_enabled=True, nfs=NfsRule(v3_enabled=False, v4_1_enabled=True),
-                          http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"),
-                          default_user_quota=4096)
+    new_attr = FileSystemPatch(provisioned=1024, hard_limit_enabled=True,
+                               nfs=NfsRulePatch(v3_enabled=False,
+                                                v4_1_enabled=True,
+                                                add_rules="1.1.1.1(rw,no_root_squash)"),
+                               http=ProtocolRule(enabled=False),
+                               smb=SmbRule(enabled=True, acl_mode="native"),
+                               default_user_quota=4096,
+                               multi_protocol=MultiProtocolRule(safeguard_acls=False,
+                                                                access_control_style="independent"))
     try:
         # update the file system named myfs on the array
-        res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True, attributes=new_attr)
+        res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True,
+                                                  discard_detailed_permissions=True,
+                                                  attributes=new_attr)
         print(res)
 
         # update the file system with id '10314f42-020d-7080-8013-000ddt400090' on the array
@@ -499,9 +507,10 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **attributes** | [**FileSystem**](FileSystem.md)| The new attributes, only modifiable fields may be specified. | 
+ **attributes** | [**FileSystemPatch**](FileSystemPatch.md)| The new attributes, only modifiable fields may be specified. | 
  **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 
  **name** | **str**| The name of the file system or snapshot to be updated. | [optional] 
+ **discard_detailed_permissions** | **bool**| This parameter must be set to &#x60;true&#x60; in order to change a file system&#39;s &#x60;access_control_style&#x60; from a style that supports more detailed access control lists to a style that only supports less detailed mode bits as a form of permission control. This parameter may not be set to &#x60;true&#x60; any other time. Setting this parameter to &#x60;true&#x60; is acknowledgement that any more detailed access control lists currently set within the file system will be lost, and NFS permission controls will only be enforced at the granularity level of NFS mode bits. | [optional] 
  **discard_non_snapshotted_data** | **bool**| This parameter must be set to &#x60;true&#x60; in order to restore a file system from a snapshot or to demote a file system (which restores the file system from the common baseline snapshot). Setting this parameter to &#x60;true&#x60; is acknowledgement that any non-snapshotted data currently in the file system will be irretrievably lost. | [optional] 
  **delete_link_on_eradication** | **bool**| If set to &#x60;true&#x60;, the file system can be destroyed, even if it has a replica link. If set to &#x60;false&#x60;, the file system cannot be destroyed if it has a replica link. Defaults to &#x60;false&#x60;. | [optional] 
  **ignore_usage** | **bool**| Allow update operations that lead to a hard_limit_enabled file system with usage over its provisioned size. The update can be either setting hard_limit_enabled when usage is higher than provisioned size, or resize provisioned size to a value under usage when hard_limit_enabled is True. | [optional] 

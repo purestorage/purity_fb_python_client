@@ -1,10 +1,10 @@
-# purity_fb_1dot10.LogsApi
+# purity_fb_1dot11.LogsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_logs**](LogsApi.md#list_logs) | **GET** /1.10/logs | 
+[**list_logs**](LogsApi.md#list_logs) | **GET** /1.11/logs | 
 
 
 # **list_logs**

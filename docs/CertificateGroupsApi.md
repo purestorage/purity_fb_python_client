@@ -1,16 +1,16 @@
-# purity_fb_1dot10.CertificateGroupsApi
+# purity_fb_1dot11.CertificateGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_certificate_group_certificates**](CertificateGroupsApi.md#add_certificate_group_certificates) | **POST** /1.10/certificate-groups/certificates | 
-[**create_certificate_groups**](CertificateGroupsApi.md#create_certificate_groups) | **POST** /1.10/certificate-groups | 
-[**delete_certificate_groups**](CertificateGroupsApi.md#delete_certificate_groups) | **DELETE** /1.10/certificate-groups | 
-[**list_certificate_group_certificates**](CertificateGroupsApi.md#list_certificate_group_certificates) | **GET** /1.10/certificate-groups/certificates | 
-[**list_certificate_group_uses**](CertificateGroupsApi.md#list_certificate_group_uses) | **GET** /1.10/certificate-groups/uses | 
-[**list_certificate_groups**](CertificateGroupsApi.md#list_certificate_groups) | **GET** /1.10/certificate-groups | 
-[**remove_certificate_group_certificates**](CertificateGroupsApi.md#remove_certificate_group_certificates) | **DELETE** /1.10/certificate-groups/certificates | 
+[**add_certificate_group_certificates**](CertificateGroupsApi.md#add_certificate_group_certificates) | **POST** /1.11/certificate-groups/certificates | 
+[**create_certificate_groups**](CertificateGroupsApi.md#create_certificate_groups) | **POST** /1.11/certificate-groups | 
+[**delete_certificate_groups**](CertificateGroupsApi.md#delete_certificate_groups) | **DELETE** /1.11/certificate-groups | 
+[**list_certificate_group_certificates**](CertificateGroupsApi.md#list_certificate_group_certificates) | **GET** /1.11/certificate-groups/certificates | 
+[**list_certificate_group_uses**](CertificateGroupsApi.md#list_certificate_group_uses) | **GET** /1.11/certificate-groups/uses | 
+[**list_certificate_groups**](CertificateGroupsApi.md#list_certificate_groups) | **GET** /1.11/certificate-groups | 
+[**remove_certificate_group_certificates**](CertificateGroupsApi.md#remove_certificate_group_certificates) | **DELETE** /1.11/certificate-groups/certificates | 
 
 
 # **add_certificate_group_certificates**

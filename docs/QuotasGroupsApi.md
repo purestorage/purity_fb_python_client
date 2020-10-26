@@ -1,13 +1,13 @@
-# purity_fb_1dot10.QuotasGroupsApi
+# purity_fb_1dot11.QuotasGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_group_quotas**](QuotasGroupsApi.md#create_group_quotas) | **POST** /1.10/quotas/groups | 
-[**delete_group_quotas**](QuotasGroupsApi.md#delete_group_quotas) | **DELETE** /1.10/quotas/groups | 
-[**list_group_quotas**](QuotasGroupsApi.md#list_group_quotas) | **GET** /1.10/quotas/groups | 
-[**update_group_quotas**](QuotasGroupsApi.md#update_group_quotas) | **PATCH** /1.10/quotas/groups | 
+[**create_group_quotas**](QuotasGroupsApi.md#create_group_quotas) | **POST** /1.11/quotas/groups | 
+[**delete_group_quotas**](QuotasGroupsApi.md#delete_group_quotas) | **DELETE** /1.11/quotas/groups | 
+[**list_group_quotas**](QuotasGroupsApi.md#list_group_quotas) | **GET** /1.11/quotas/groups | 
+[**update_group_quotas**](QuotasGroupsApi.md#update_group_quotas) | **PATCH** /1.11/quotas/groups | 
 
 
 # **create_group_quotas**

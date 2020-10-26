@@ -1,10 +1,10 @@
-# purity_fb_1dot10.AuditsApi
+# purity_fb_1dot11.AuditsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_audits**](AuditsApi.md#list_audits) | **GET** /1.10/audits | 
+[**list_audits**](AuditsApi.md#list_audits) | **GET** /1.11/audits | 
 
 
 # **list_audits**

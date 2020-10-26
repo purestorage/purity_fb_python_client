@@ -39,6 +39,7 @@ class PolicyPatch(object):
         'name': 'str',
         'id': 'str',
         'enabled': 'bool',
+        'rules': 'list[PolicyRule]',
         'add_rules': 'list[PolicyRule]',
         'remove_rules': 'list[PolicyRule]'
     }
@@ -47,16 +48,18 @@ class PolicyPatch(object):
         'name': 'name',
         'id': 'id',
         'enabled': 'enabled',
+        'rules': 'rules',
         'add_rules': 'add_rules',
         'remove_rules': 'remove_rules'
     }
 
-    def __init__(self, name=None, id=None, enabled=None, add_rules=None, remove_rules=None):  # noqa: E501
+    def __init__(self, name=None, id=None, enabled=None, rules=None, add_rules=None, remove_rules=None):  # noqa: E501
         """PolicyPatch - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
         self._id = None
         self._enabled = None
+        self._rules = None
         self._add_rules = None
         self._remove_rules = None
         self.discriminator = None
@@ -67,6 +70,8 @@ class PolicyPatch(object):
             self.id = id
         if enabled is not None:
             self.enabled = enabled
+        if rules is not None:
+            self.rules = rules
         if add_rules is not None:
             self.add_rules = add_rules
         if remove_rules is not None:
@@ -140,6 +145,27 @@ class PolicyPatch(object):
         """
 
         self._enabled = enabled
+
+    @property
+    def rules(self):
+        """Gets the rules of this PolicyPatch.  # noqa: E501
+
+
+        :return: The rules of this PolicyPatch.  # noqa: E501
+        :rtype: list[PolicyRule]
+        """
+        return self._rules
+
+    @rules.setter
+    def rules(self, rules):
+        """Sets the rules of this PolicyPatch.
+
+
+        :param rules: The rules of this PolicyPatch.  # noqa: E501
+        :type: list[PolicyRule]
+        """
+
+        self._rules = rules
 
     @property
     def add_rules(self):

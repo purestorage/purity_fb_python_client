@@ -1,11 +1,11 @@
-# purity_fb_1dot10.AdminsApi
+# purity_fb_1dot11.AdminsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.10/admins | 
-[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.10/admins | 
+[**list_admins**](AdminsApi.md#list_admins) | **GET** /1.11/admins | 
+[**update_admins**](AdminsApi.md#update_admins) | **PATCH** /1.11/admins | 
 
 
 # **list_admins**
@@ -85,13 +85,19 @@ except rest.ApiException as e:
 if res:
     try:
         # change password
-        myAdmin = Admin()
-        myAdmin.old_password = "pureuser"
-        myAdmin.password = "fakepass"
+        myAdmin = Admin(old_password='thisWASanOLDpasSwOrD', password='FAKEnewpaSsword')
+        res = fb.admins.update_admins(names=['pureuser'], admin=myAdmin)
+
+        # Set a public key for login via SSH
+        myAdmin = Admin(public_key='ssh-rsa EXAMPLEzaC1yc2EAAAADAQABAAABAQDN1fshdvABLD/f2mkAUqkcUMKPsS+Os3omYFwe3G2Adxc'
+                                   'enBY+kLmbPXjiC9t4UDob3RiYu6HkDC2xvu8yLhlQTtsjCac2BkePJa/OTxttwY5G6OyYqWjmSmX9D6GZ13'
+                                   'CRr/rSxjXYo/2GE/0xyv27/Z+ikxjs6rzXXOhdxJ6hY1jD1D8+fHVxhr8+n6Zbod8and0rlgmarfRoRYlLh'
+                                   'GoRSCxNyOi6bG5ugrlIEXi8JZr8CpztGp/8WTa82XCSClFJPteC/5vLvwPGxwOraZ/BJngBPbmeeloN5lBl'
+                                   'W0KAndRqwNZcDBt8JnGioPd0Kv+SNufwR4nHCv8NgEXAMPLE')
         res = fb.admins.update_admins(names=['pureuser'], admin=myAdmin)
 
     except rest.ApiException as e:
-        print("Exception when changing password: %s\n" % e)
+        print("Exception when changing password or public key: %s\n" % e)
 ```
 
 ### Parameters

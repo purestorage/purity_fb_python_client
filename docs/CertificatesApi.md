@@ -1,17 +1,17 @@
-# purity_fb_1dot10.CertificatesApi
+# purity_fb_1dot11.CertificatesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**add_certificate_certificate_groups**](CertificatesApi.md#add_certificate_certificate_groups) | **POST** /1.10/certificates/certificate-groups | 
-[**create_certificates**](CertificatesApi.md#create_certificates) | **POST** /1.10/certificates | 
-[**delete_certificates**](CertificatesApi.md#delete_certificates) | **DELETE** /1.10/certificates | 
-[**list_certificate_certificate_groups**](CertificatesApi.md#list_certificate_certificate_groups) | **GET** /1.10/certificates/certificate-groups | 
-[**list_certificate_uses**](CertificatesApi.md#list_certificate_uses) | **GET** /1.10/certificates/uses | 
-[**list_certificates**](CertificatesApi.md#list_certificates) | **GET** /1.10/certificates | 
-[**remove_certificate_certificate_groups**](CertificatesApi.md#remove_certificate_certificate_groups) | **DELETE** /1.10/certificates/certificate-groups | 
-[**update_certificates**](CertificatesApi.md#update_certificates) | **PATCH** /1.10/certificates | 
+[**add_certificate_certificate_groups**](CertificatesApi.md#add_certificate_certificate_groups) | **POST** /1.11/certificates/certificate-groups | 
+[**create_certificates**](CertificatesApi.md#create_certificates) | **POST** /1.11/certificates | 
+[**delete_certificates**](CertificatesApi.md#delete_certificates) | **DELETE** /1.11/certificates | 
+[**list_certificate_certificate_groups**](CertificatesApi.md#list_certificate_certificate_groups) | **GET** /1.11/certificates/certificate-groups | 
+[**list_certificate_uses**](CertificatesApi.md#list_certificate_uses) | **GET** /1.11/certificates/uses | 
+[**list_certificates**](CertificatesApi.md#list_certificates) | **GET** /1.11/certificates | 
+[**remove_certificate_certificate_groups**](CertificatesApi.md#remove_certificate_certificate_groups) | **DELETE** /1.11/certificates/certificate-groups | 
+[**update_certificates**](CertificatesApi.md#update_certificates) | **PATCH** /1.11/certificates | 
 
 
 # **add_certificate_certificate_groups**
