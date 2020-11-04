@@ -1,22 +1,22 @@
-# purity_fb_1dot10.PoliciesApi
+# purity_fb_1dot11.PoliciesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.10/policies | 
-[**create_policy_file_system_replica_links**](PoliciesApi.md#create_policy_file_system_replica_links) | **POST** /1.10/policies/file-system-replica-links | 
-[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.10/policies/file-systems | 
-[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.10/policies | 
-[**delete_policy_file_system_replica_links**](PoliciesApi.md#delete_policy_file_system_replica_links) | **DELETE** /1.10/policies/file-system-replica-links | 
-[**delete_policy_filesystem_snapshots**](PoliciesApi.md#delete_policy_filesystem_snapshots) | **DELETE** /1.10/policies/file-system-snapshots | 
-[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.10/policies/file-systems | 
-[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.10/policies | 
-[**list_policy_file_system_replica_links**](PoliciesApi.md#list_policy_file_system_replica_links) | **GET** /1.10/policies/file-system-replica-links | 
-[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.10/policies/file-system-snapshots | 
-[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.10/policies/file-systems | 
-[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.10/policies/members | 
-[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.10/policies | 
+[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.11/policies | 
+[**create_policy_file_system_replica_links**](PoliciesApi.md#create_policy_file_system_replica_links) | **POST** /1.11/policies/file-system-replica-links | 
+[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.11/policies/file-systems | 
+[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.11/policies | 
+[**delete_policy_file_system_replica_links**](PoliciesApi.md#delete_policy_file_system_replica_links) | **DELETE** /1.11/policies/file-system-replica-links | 
+[**delete_policy_filesystem_snapshots**](PoliciesApi.md#delete_policy_filesystem_snapshots) | **DELETE** /1.11/policies/file-system-snapshots | 
+[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.11/policies/file-systems | 
+[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.11/policies | 
+[**list_policy_file_system_replica_links**](PoliciesApi.md#list_policy_file_system_replica_links) | **GET** /1.11/policies/file-system-replica-links | 
+[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.11/policies/file-system-snapshots | 
+[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.11/policies/file-systems | 
+[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.11/policies/members | 
+[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.11/policies | 
 
 
 # **create_policies**
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **update_policies**
-> PolicyResponse update_policies(policy_patch, names=names)
+> PolicyResponse update_policies(policy_patch, names=names, destroy_snapshots=destroy_snapshots)
 
 
 
@@ -754,7 +754,7 @@ Update an existing policy.
 
 ### Example 
 ```python
-from purity_fb import PurityFb, rest, PolicyPatch
+from purity_fb import PurityFb, rest, PolicyPatch, PolicyRule
 
 fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
 fb.disable_verify_ssl()
@@ -764,9 +764,15 @@ except rest.ApiException as e:
     print("Exception when logging in to the array: %s\n" % e)
 if res:
     try:
-        # Update the policy "p1", and set the "enabled" field to "False"
+        # Update the policy "p1", and set the "enabled" field to "False", also remove the rule
+        # By passing destroy_snapshots=True, we accept that snapshots created by the
+        # removed rule will be destroyed.
+        rule_to_be_removed = PolicyRule(keep_for=172800000)
         res = fb.policies.update_policies(
-            names=["p1"], policy_patch=PolicyPatch(enabled=False))
+            names=["p1"],
+            destroy_snapshots=True,
+            policy_patch=PolicyPatch(enabled=False,
+                                     remove_rules=[rule_to_be_removed]))
         print(res)
     except rest.ApiException as e:
         print("Exception when updating policy: %s\n" % e)
@@ -778,6 +784,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_patch** | [**PolicyPatch**](PolicyPatch.md)| The attribute map used to update the policy. | 
  **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **destroy_snapshots** | **bool**| This parameter must be set to &#x60;true&#x60; in order to remove rules that have snapshots created. Setting this parameter to &#x60;true&#x60; is an acknowledgement that some of the snapshots managed by this policy will be destroyed. | [optional] 
 
 ### Return type
 

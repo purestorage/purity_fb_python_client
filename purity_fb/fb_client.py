@@ -20,8 +20,9 @@ from . import purity_fb_1dot8
 from . import purity_fb_1dot8dot1
 from . import purity_fb_1dot9
 from . import purity_fb_1dot10
+from . import purity_fb_1dot11
 
-SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.8.1', '1.9', '1.10']
+SUPPORTED_VERSIONS = ['1.0', '1.1', '1.2', '1.3', '1.4', '1.5', '1.6', '1.7', '1.8', '1.8.1', '1.9', '1.10', '1.11']
 
 version_module_dict = {
     '1.0': purity_fb_1dot0,
@@ -36,6 +37,7 @@ version_module_dict = {
     '1.8.1': purity_fb_1dot8dot1,
     '1.9': purity_fb_1dot9,
     '1.10': purity_fb_1dot10,
+    '1.11': purity_fb_1dot11,
 }
 
 

@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **fast_remove_directory_enabled** | **bool** | Is fast remove directory enabled? Modifiable. Default false when creating a new file-system. | [optional] 
 **hard_limit_enabled** | **bool** | Is the file system&#39;s size a hard limit quota. Modifiable. Default is false. | [optional] 
 **http** | [**ProtocolRule**](ProtocolRule.md) | HTTP configuration. Modifiable. | [optional] 
+**multi_protocol** | [**MultiProtocolRule**](MultiProtocolRule.md) | Configuration options governing the interactions of different protocols when multiple are enabled on the file system. | [optional] 
 **nfs** | [**NfsRule**](NfsRule.md) | NFS configuration. Modifiable. | [optional] 
 **provisioned** | **int** | The provisioned size of the file system in bytes. Modifiable. Default is 0 when creating a new file-system. | [optional] 
 **promotion_status** | **str** | Possible values are &#x60;promoted&#x60; and &#x60;demoted&#x60;. The current status of the file system with respect to replication. Changes via &#x60;requested_promotion_state&#x60;. The default for new file systems is &#x60;promoted&#x60;. | [optional] 

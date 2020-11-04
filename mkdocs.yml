@@ -1,4 +1,4 @@
-site_name: Pure Storage FlashBlade REST 1.10 Python SDK
+site_name: Pure Storage FlashBlade REST 1.11 Python SDK
 pages:
 - Overview:
     - Get Started: index.md
@@ -226,8 +226,11 @@ pages:
         - Dns: Dns.md
     - File System:
         - File System: FileSystem.md
+        - File System Patch: FileSystemPatch.md
         - File System Performance: FileSystemPerformance.md
+        - Multi Protocol Rule: MultiProtocolRule.md
         - NFS Protocol: NfsRule.md
+        - NFS Rule Patch: NfsRulePatch.md
         - Protocol Rule: ProtocolRule.md
         - SMB Rule: SmbRule.md
     - File System Replica Link:

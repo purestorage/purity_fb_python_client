@@ -1,13 +1,13 @@
-# purity_fb_1dot10.LifecycleRulesApi
+# purity_fb_1dot11.LifecycleRulesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_lifecycle_rules**](LifecycleRulesApi.md#create_lifecycle_rules) | **POST** /1.10/lifecycle-rules | 
-[**delete_lifecycle_rules**](LifecycleRulesApi.md#delete_lifecycle_rules) | **DELETE** /1.10/lifecycle-rules | 
-[**list_lifecycle_rules**](LifecycleRulesApi.md#list_lifecycle_rules) | **GET** /1.10/lifecycle-rules | 
-[**update_lifecycle_rules**](LifecycleRulesApi.md#update_lifecycle_rules) | **PATCH** /1.10/lifecycle-rules | 
+[**create_lifecycle_rules**](LifecycleRulesApi.md#create_lifecycle_rules) | **POST** /1.11/lifecycle-rules | 
+[**delete_lifecycle_rules**](LifecycleRulesApi.md#delete_lifecycle_rules) | **DELETE** /1.11/lifecycle-rules | 
+[**list_lifecycle_rules**](LifecycleRulesApi.md#list_lifecycle_rules) | **GET** /1.11/lifecycle-rules | 
+[**update_lifecycle_rules**](LifecycleRulesApi.md#update_lifecycle_rules) | **PATCH** /1.11/lifecycle-rules | 
 
 
 # **create_lifecycle_rules**

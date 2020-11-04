@@ -1,18 +1,18 @@
-# purity_fb_1dot10.ArraysApi
+# purity_fb_1dot11.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.10/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.10/arrays/http-specific-performance | 
-[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.10/arrays/nfs-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.10/arrays/performance | 
-[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.10/arrays/performance/replication | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.10/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.10/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.10/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.10/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.11/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.11/arrays/http-specific-performance | 
+[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.11/arrays/nfs-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.11/arrays/performance | 
+[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.11/arrays/performance/replication | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.11/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.11/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.11/arrays/clients/performance | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.11/arrays | 
 
 
 # **list_arrays**
@@ -406,7 +406,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_clients_performance**
-> ClientPerformanceResponse list_clients_performance(names=names, filter=filter, sort=sort, limit=limit)
+> ClientPerformanceResponse list_clients_performance(names=names, filter=filter, sort=sort, limit=limit, total_only=total_only)
 
 
 
@@ -440,6 +440,7 @@ Name | Type | Description  | Notes
  **filter** | **str**| The filter to be used for query. | [optional] 
  **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
 

@@ -1,15 +1,15 @@
-# purity_fb_1dot10.FileSystemReplicaLinksApi
+# purity_fb_1dot11.FileSystemReplicaLinksApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.10/file-system-replica-links/policies | 
-[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.10/file-system-replica-links | 
-[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.10/file-system-replica-links/policies | 
-[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.10/file-system-replica-links/policies | 
-[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.10/file-system-replica-links/transfer | 
-[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.10/file-system-replica-links | 
+[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.11/file-system-replica-links/policies | 
+[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.11/file-system-replica-links | 
+[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.11/file-system-replica-links/policies | 
+[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.11/file-system-replica-links/policies | 
+[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.11/file-system-replica-links/transfer | 
+[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.11/file-system-replica-links | 
 
 
 # **create_file_system_replica_link_policies**

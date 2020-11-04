@@ -1,13 +1,13 @@
-# purity_fb_1dot10.ObjectStoreRemoteCredentialsApi
+# purity_fb_1dot11.ObjectStoreRemoteCredentialsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#create_object_store_remote_credentials) | **POST** /1.10/object-store-remote-credentials | 
-[**delete_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#delete_object_store_remote_credentials) | **DELETE** /1.10/object-store-remote-credentials | 
-[**list_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#list_object_store_remote_credentials) | **GET** /1.10/object-store-remote-credentials | 
-[**update_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#update_object_store_remote_credentials) | **PATCH** /1.10/object-store-remote-credentials | 
+[**create_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#create_object_store_remote_credentials) | **POST** /1.11/object-store-remote-credentials | 
+[**delete_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#delete_object_store_remote_credentials) | **DELETE** /1.11/object-store-remote-credentials | 
+[**list_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#list_object_store_remote_credentials) | **GET** /1.11/object-store-remote-credentials | 
+[**update_object_store_remote_credentials**](ObjectStoreRemoteCredentialsApi.md#update_object_store_remote_credentials) | **PATCH** /1.11/object-store-remote-credentials | 
 
 
 # **create_object_store_remote_credentials**
