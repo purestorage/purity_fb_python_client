@@ -1,4 +1,4 @@
-site_name: Pure Storage FlashBlade REST 1.11 Python SDK
+site_name: Pure Storage FlashBlade REST 1.12 Python SDK
 pages:
 - Overview:
     - Get Started: index.md
@@ -8,11 +8,14 @@ pages:
     - API Version: VersionApi.md
     - Login Banner: LoginBannerApi.md
     - APIs:
+        - Active Directory: ActiveDirectoryApi.md
+        - Active Directory Tests: ActiveDirectoryApi.md
         - Admins: AdminsApi.md
         - Admins Cache: AdminsCacheApi.md
         - Alerts: AlertsApi.md
         - Alert Watchers: AlertWatchersApi.md
         - Alert Watchers Tests: AlertWatcherTest.md
+        - Api Clients: ApiClientsApi.md
         - Arrays: ArraysApi.md
         - Array Connections: ArrayConnectionsApi.md
         - Array Connection Keys: ArrayConnectionsApi.md
@@ -38,7 +41,9 @@ pages:
         - Directory Services Roles: DirectoryServicesApi.md
         - Directory Services Tests: DirectoryServicesApi.md
         - Dns: DnsApi.md
+        - Eulas: ArraysApi.md
         - File Systems: FileSystemsApi.md
+        - File System Group Performances: FileSystemsApi.md
         - File System Performances: FileSystemsApi.md
         - File System Policies: FileSystemsApi.md
         - File System Replica Links: FileSystemReplicaLinksApi.md
@@ -47,6 +52,7 @@ pages:
         - File System Snapshots: FileSystemSnapshotsApi.md
         - File System Snapshot Policies: FileSystemSnapshotsApi.md
         - File System Snapshot Transfers: FileSystemSnapshotsApi.md
+        - File System User Performances: FileSystemsApi.md
         - Hardware: HardwareApi.md
         - Hardware Connectors: HardwareConnectorsApi.md
         - Keytabs: KeytabsApi.md
@@ -57,9 +63,12 @@ pages:
         - Logs: LogsApi.md
         - Network Interfaces: NetworkInterfacesApi.md
         - Object Store Access Keys: ObjectStoreAccessKeysApi.md
+        - Object Store Access Policies: ObjectStoreAccessPoliciesApi.md
+        - Object Store Access Policies Object Store Users: ObjectStoreAccessPoliciesApi.md
         - Object Store Accounts: ObjectStoreAccountsApi.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentialsApi.md
         - Object Store Users: ObjectStoreUsersApi.md
+        - Object Store Virtual Hosts: ObjectStoreVirtualHostsApi.md
         - Policies: PoliciesApi.md
         - Policies for File Systems: PoliciesApi.md
         - Policies for File System Replica Links: PoliciesApi.md
@@ -77,6 +86,7 @@ pages:
         - Subnets: SubnetsApi.md
         - Support: SupportApi.md
         - Support Tests: SupportApi.md
+        - Supported Time Zones: ArraysApi.md
         - Syslog Servers: SyslogApi.md
         - Syslog Servers Settings: SyslogApi.md
         - Syslog Servers Test: SyslogApi.md
@@ -89,6 +99,8 @@ pages:
     - Response:
         - Pagination Information: PaginationInfo.md
         - Error: ErrorResponse.md
+        - Active Directory Response: ActiveDirectoryResponse.md
+        - Api Clients Responses: ApiClientsResponse.md
         - API Version: VersionResponse.md
         - Login: LoginResponse.md
         - Admin: AdminResponse.md
@@ -121,11 +133,16 @@ pages:
         - Directory Service: DirectoryServiceResponse.md
         - Directory Service Roles: DirectoryServiceRolesResponse.md
         - Dns: DnsResponse.md
+        - Eula: EulaResponse.md
         - File System: FileSystemResponse.md
+        - File System Group Performance: FileSystemGroupPerformanceResponse.md
+        - File System Group Performance Group: FilesystemgroupperformanceGroup.md
         - File System Performance: FileSystemPerformanceResponse.md
         - File System Replica Links: FileSystemReplicaLinkResponse.md
         - File System Snapshot: FileSystemSnapshotResponse.md
         - File System Snapshot Transfers: FileSystemSnapshotTransferResponse.md
+        - File System User Performance: FileSystemUserPerformanceResponse.md
+        - File System User Performance User: FilesystemuserperformanceUser.md
         - Hardware: HardwareResponse.md
         - Hardware Connector: HardwareConnectorResponse.md
         - Keytab: KeytabResponse.md
@@ -139,9 +156,13 @@ pages:
         - Network Interface: NetworkInterfaceResponse.md
         - Object: ObjectResponse.md
         - Object Store Access Key: ObjectStoreAccessKeyResponse.md
+        - Object Store Access Policy: ObjectStoreAccessPolicyResponse.md
+        - Object Store Access Policy Object Store User: ObjectStoreAccessPolicyObjectStoreUserResponse.md
         - Object Store Account: ObjectStoreAccountResponse.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentialsResponse.md
         - Object Store User: ObjectStoreUserResponse.md
+        - Object Store User Object Store Access Policy: ObjectStoreUserObjectStoreAccessPolicyResponse.md
+        - Object Store Virtual Host: ObjectStoreVirtualHostResponse.md
         - Performance Replication: PerformanceReplicationResponse.md
         - Policy: PolicyResponse.md
         - Policy Members: PolicyMemberResponse.md
@@ -158,6 +179,7 @@ pages:
         - Snmp Manager Test: SnmpManagerTestResponse.md
         - Subnet: SubnetResponse.md
         - Support: SupportResponse.md
+        - Supported Time Zones: SupportedTimeZoneResponse.md
         - Syslog Servers Response: SyslogServerResponse.md
         - Syslog Servers Settings Response: SyslogServerSettingResponse.md
         - Syslog Servers Test Response: SyslogServerTestResponse.md
@@ -165,6 +187,10 @@ pages:
         - Test Result: TestResultResponse.md
     - Error: PureError.md
     - Space: Space.md
+    - Active Directory:
+        - Active Directory: ActiveDirectory.md
+        - Active Directory Patch: ActiveDirectoryPatch.md
+        - Active Directory Post: ActiveDirectoryPost.md
     - Admin:
         - Admin: Admin.md
         - Admin API Token: AdminApiToken.md
@@ -175,6 +201,10 @@ pages:
         - Alert Watcher: AlertWatcher.md
         - Alert Watcher Post: AlertWatcherPost.md
         - Alert Watcher Test: AlertWatcherTest.md
+    - Api Client:
+        - Api Client: ApiClientResp.md
+        - Api Client Patch: ApiClientPatch.md
+        - Api Client Post: ApiClientPost.md
     - Arrays:
         - Array Space: ArraySpace.md
         - Array Performance: ArrayPerformance.md
@@ -191,6 +221,7 @@ pages:
         - Array Connection Performance Replication: RelationshipPerformanceReplication.md
     - Audits:
         - Audit: Audit.md
+    - Base ObjectType: BaseObjectType.md
     - Blade:
         - Blade: Blade.md
     - Bucket:
@@ -199,9 +230,6 @@ pages:
         - Bucket Performance: BucketPerformance.md
         - Bucket Post: BucketPost.md
         - Bucket S3 Performance: BucketS3Performance.md
-        - Lifecycle Rule: LifecycleRule.md
-        - Lifecycle Rule Post: LifecycleRulePost.md
-        - Lifecycle Rule Patch: LifecycleRulePatch.md
     - Bucket Replica Link:
         - Bucket Replica Link: BucketReplicaLink.md
         - Bucket Replica Link Post: BucketReplicaLinkPost.md
@@ -224,10 +252,16 @@ pages:
         - Test Result: TestResult.md
     - Dns:
         - Dns: Dns.md
+    - Eula:
+        - Eula: Eula.md
+    - Eula Signature:
+        - Eula Signature: EulaSignature.md
     - File System:
         - File System: FileSystem.md
+        - File System Group Performance: FileSystemGroupPerformance.md
         - File System Patch: FileSystemPatch.md
         - File System Performance: FileSystemPerformance.md
+        - File System User Performance: FileSystemUserPerformance.md
         - Multi Protocol Rule: MultiProtocolRule.md
         - NFS Protocol: NfsRule.md
         - NFS Rule Patch: NfsRulePatch.md
@@ -254,6 +288,11 @@ pages:
         - Hardware Connector: HardwareConnector.md
     - Keytab:
         - Keytab: Keytab.md
+        - Keytab Post: KeytabPost.md
+    - Lifecycle Rule:
+        - Lifecycle Rule: LifecycleRule.md
+        - Lifecycle Rule Post: LifecycleRulePost.md
+        - Lifecycle Rule Patch: LifecycleRulePatch.md
     - Link Aggregation Group:
         - Link Aggregation Group: LinkAggregationGroup.md
         - Link Aggregation Group Patch: LinkAggregationGroupPatch.md
@@ -267,9 +306,13 @@ pages:
     - Object Store:
         - Object Store Access Key: ObjectStoreAccessKey.md
         - Object Store Access Key Post: ObjectStoreAccessKeyPost.md
+        - Object Store Access Policy: ObjectStoreAccessPolicy.md
+        - Object Store Access Policy Object Store User: ObjectStoreAccessPolicyObjectStoreUser.md
         - Object Store Account: ObjectStoreAccount.md
         - Object Store Remote Credentials: ObjectStoreRemoteCredentials.md
         - Object Store User: ObjectStoreUser.md
+        - Object Store Users Object Store Access Policies: ObjectStoreUserObjectStoreAccessPolicy.md
+        - Object Store Virtual Host: ObjectStoreVirtualHost.md
     - Permission:
         - Permission: Permission.md
     - Policy:
@@ -314,6 +357,8 @@ pages:
     - Support:
         - Support: Support.md
         - Support Remote Assist Paths: SupportRemoteAssistPaths.md
+    - Supported Time Zone:
+          - Supported Time Zone: SupportedTimeZone.md
     - Syslog:
         - Syslog Server: SyslogServer.md
         - Syslog Server Post or Patch: SyslogServerPostOrPatch.md

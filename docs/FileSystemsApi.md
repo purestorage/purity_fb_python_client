@@ -1,17 +1,19 @@
-# purity_fb_1dot11.FileSystemsApi
+# purity_fb_1dot12.FileSystemsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.11/file-systems | 
-[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.11/file-systems/policies | 
-[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.11/file-systems | 
-[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.11/file-systems/policies | 
-[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.11/file-systems | 
-[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.11/file-systems/performance | 
-[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.11/file-systems/policies | 
-[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.11/file-systems | 
+[**create_file_systems**](FileSystemsApi.md#create_file_systems) | **POST** /1.12/file-systems | 
+[**create_filesystem_policies**](FileSystemsApi.md#create_filesystem_policies) | **POST** /1.12/file-systems/policies | 
+[**delete_file_systems**](FileSystemsApi.md#delete_file_systems) | **DELETE** /1.12/file-systems | 
+[**delete_filesystem_policies**](FileSystemsApi.md#delete_filesystem_policies) | **DELETE** /1.12/file-systems/policies | 
+[**list_file_systems**](FileSystemsApi.md#list_file_systems) | **GET** /1.12/file-systems | 
+[**list_file_systems_groups_performance**](FileSystemsApi.md#list_file_systems_groups_performance) | **GET** /1.12/file-systems/groups/performance | 
+[**list_file_systems_performance**](FileSystemsApi.md#list_file_systems_performance) | **GET** /1.12/file-systems/performance | 
+[**list_file_systems_users_performance**](FileSystemsApi.md#list_file_systems_users_performance) | **GET** /1.12/file-systems/users/performance | 
+[**list_filesystem_policies**](FileSystemsApi.md#list_filesystem_policies) | **GET** /1.12/file-systems/policies | 
+[**update_file_systems**](FileSystemsApi.md#update_file_systems) | **PATCH** /1.12/file-systems | 
 
 
 # **create_file_systems**
@@ -234,7 +236,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_systems**
-> FileSystemResponse list_file_systems(ids=ids, names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only)
+> FileSystemResponse list_file_systems(ids=ids, names=names, filter=filter, sort=sort, start=start, limit=limit, token=token, total_only=total_only)
 
 
 
@@ -280,12 +282,74 @@ Name | Type | Description  | Notes
  **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
- **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type
 
 [**FileSystemResponse**](FileSystemResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_file_systems_groups_performance**
+> FileSystemGroupPerformanceResponse list_file_systems_groups_performance(names=names, filter=filter, limit=limit, sort=sort, start=start, token=token, file_system_names=file_system_names, gids=gids)
+
+
+
+List instant file system groups performance.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list performance for all groups
+        res = fb.file_systems.list_file_systems_groups_performance(file_system_names=["fs1"])
+        print(res)
+
+        # list performance for one group
+        res = fb.file_systems.list_file_systems_groups_performance(file_system_names=["fs1"],
+                                                                   gids=[100])
+        print(res)
+
+        # list performance by name
+        res = fb.file_systems.list_file_systems_groups_performance(names=["fs1/100"])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing file system group performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **gids** | **list[str]**| A comma-separated list of group IDs. If after filtering, there is not at least one resource that matches each of the elements of group IDs, then an error is returned. This cannot be provided together with group_names query parameter. | [optional] 
+
+### Return type
+
+[**FileSystemGroupPerformanceResponse**](FileSystemGroupPerformanceResponse.md)
 
 ### Authorization
 
@@ -377,6 +441,69 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**FileSystemPerformanceResponse**](FileSystemPerformanceResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_file_systems_users_performance**
+> FileSystemUserPerformanceResponse list_file_systems_users_performance(names=names, filter=filter, limit=limit, sort=sort, start=start, token=token, file_system_names=file_system_names, uids=uids)
+
+
+
+List instant file system users performance.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # list performance for all users
+        res = fb.file_systems.list_file_systems_users_performance(file_system_names=["fs1"])
+        print(res)
+
+        # list performance for one user
+        res = fb.file_systems.list_file_systems_users_performance(file_system_names=["fs1"],
+                                                                  uids=[100])
+        print(res)
+
+        # list performance by name
+        res = fb.file_systems.list_file_systems_users_performance(names=["fs1/100"])
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing file system user performance: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
+ **file_system_names** | **list[str]**| A comma-separated list of file system names. If after filtering, there is not at least one resource that matches each of the elements of names, then an error is returned. | [optional] 
+ **uids** | **list[str]**| A comma-separated list of user IDs. If after filtering, there is not at least one resource that matches each of the elements of user IDs, then an error is returned. This cannot be provided together with user_names query parameter. | [optional] 
+
+### Return type
+
+[**FileSystemUserPerformanceResponse**](FileSystemUserPerformanceResponse.md)
 
 ### Authorization
 
@@ -483,16 +610,13 @@ if res:
                                nfs=NfsRulePatch(v3_enabled=False,
                                                 v4_1_enabled=True,
                                                 add_rules="1.1.1.1(rw,no_root_squash)"),
-                               http=ProtocolRule(enabled=False),
-                               smb=SmbRule(enabled=True, acl_mode="native"),
+                               http=ProtocolRule(enabled=False), smb=SmbRule(enabled=True, acl_mode="native"),
                                default_user_quota=4096,
                                multi_protocol=MultiProtocolRule(safeguard_acls=False,
                                                                 access_control_style="independent"))
     try:
         # update the file system named myfs on the array
-        res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True,
-                                                  discard_detailed_permissions=True,
-                                                  attributes=new_attr)
+        res = fb.file_systems.update_file_systems(name="myfs", ignore_usage=True, attributes=new_attr)
         print(res)
 
         # update the file system with id '10314f42-020d-7080-8013-000ddt400090' on the array

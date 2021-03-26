@@ -1,9 +1,9 @@
 # coding: utf-8
 
 """
-    Pure Storage FlashBlade REST 1.11 Python SDK
+    Pure Storage FlashBlade REST 1.12 Python SDK
 
-    Pure Storage FlashBlade REST 1.11 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.12 Python SDK. Compatible with REST API versions 1.0 - 1.12. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.3
     Contact: info@purestorage.com
@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "purity-fb"
-VERSION = "1.11.0"
+VERSION = "1.12.0"
 # To install the library, run the following
 #
 # python setup.py install
@@ -30,7 +30,7 @@ PYTHON_REQUIRES = ">=2.7, <3.7"
 setup(
     name=NAME,
     version=VERSION,
-    description="Pure Storage FlashBlade REST 1.11 Python SDK",
+    description="Pure Storage FlashBlade REST 1.12 Python SDK",
     author_email="info@purestorage.com",
     url="",
     keywords=["Swagger", "Purity//FB REST Client"],
@@ -39,6 +39,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     long_description="""\
-    Pure Storage FlashBlade REST 1.11 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.12 Python SDK. Compatible with REST API versions 1.0 - 1.12. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
     """
 )

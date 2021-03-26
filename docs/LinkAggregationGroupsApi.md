@@ -1,17 +1,17 @@
-# purity_fb_1dot11.LinkAggregationGroupsApi
+# purity_fb_1dot12.LinkAggregationGroupsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.11/link-aggregation-groups | 
-[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.11/link-aggregation-groups | 
-[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.11/link-aggregation-groups | 
-[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.11/link-aggregation-groups | 
+[**create_link_aggregation_groups**](LinkAggregationGroupsApi.md#create_link_aggregation_groups) | **POST** /1.12/link-aggregation-groups | 
+[**delete_link_aggregation_groups**](LinkAggregationGroupsApi.md#delete_link_aggregation_groups) | **DELETE** /1.12/link-aggregation-groups | 
+[**list_link_aggregation_groups**](LinkAggregationGroupsApi.md#list_link_aggregation_groups) | **GET** /1.12/link-aggregation-groups | 
+[**update_link_aggregation_groups**](LinkAggregationGroupsApi.md#update_link_aggregation_groups) | **PATCH** /1.12/link-aggregation-groups | 
 
 
 # **create_link_aggregation_groups**
-> LinkAggregationGroupResponse create_link_aggregation_groups(link_aggregation_group=link_aggregation_group)
+> LinkAggregationGroupResponse create_link_aggregation_groups(names=names, link_aggregation_group=link_aggregation_group)
 
 
 
@@ -43,6 +43,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
  **link_aggregation_group** | [**LinkAggregationGroup**](LinkAggregationGroup.md)| The attribute map used to create the link aggregation group. | [optional] 
 
 ### Return type

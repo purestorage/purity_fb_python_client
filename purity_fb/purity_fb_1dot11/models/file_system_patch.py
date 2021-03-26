@@ -3,7 +3,7 @@
 """
     Pure Storage FlashBlade REST 1.11 Python SDK
 
-    Pure Storage FlashBlade REST 1.11 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.11 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.11
     Contact: info@purestorage.com
@@ -36,9 +36,6 @@ class FileSystemPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'created': 'int',
-        'id': 'str',
         'default_user_quota': 'int',
         'default_group_quota': 'int',
         'destroyed': 'bool',
@@ -48,20 +45,13 @@ class FileSystemPatch(object):
         'multi_protocol': 'MultiProtocolRule',
         'nfs': 'NfsRulePatch',
         'provisioned': 'int',
-        'promotion_status': 'str',
         'requested_promotion_state': 'str',
         'smb': 'SmbRule',
         'snapshot_directory_enabled': 'bool',
-        'source': 'LocationReference',
-        'space': 'Space',
-        'time_remaining': 'int',
         'writable': 'bool'
     }
 
     attribute_map = {
-        'name': 'name',
-        'created': 'created',
-        'id': 'id',
         'default_user_quota': 'default_user_quota',
         'default_group_quota': 'default_group_quota',
         'destroyed': 'destroyed',
@@ -71,22 +61,15 @@ class FileSystemPatch(object):
         'multi_protocol': 'multi_protocol',
         'nfs': 'nfs',
         'provisioned': 'provisioned',
-        'promotion_status': 'promotion_status',
         'requested_promotion_state': 'requested_promotion_state',
         'smb': 'smb',
         'snapshot_directory_enabled': 'snapshot_directory_enabled',
-        'source': 'source',
-        'space': 'space',
-        'time_remaining': 'time_remaining',
         'writable': 'writable'
     }
 
-    def __init__(self, name=None, created=None, id=None, default_user_quota=None, default_group_quota=None, destroyed=None, fast_remove_directory_enabled=None, hard_limit_enabled=None, http=None, multi_protocol=None, nfs=None, provisioned=None, promotion_status=None, requested_promotion_state=None, smb=None, snapshot_directory_enabled=None, source=None, space=None, time_remaining=None, writable=None):  # noqa: E501
+    def __init__(self, default_user_quota=None, default_group_quota=None, destroyed=None, fast_remove_directory_enabled=None, hard_limit_enabled=None, http=None, multi_protocol=None, nfs=None, provisioned=None, requested_promotion_state=None, smb=None, snapshot_directory_enabled=None, writable=None):  # noqa: E501
         """FileSystemPatch - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._created = None
-        self._id = None
         self._default_user_quota = None
         self._default_group_quota = None
         self._destroyed = None
@@ -96,22 +79,12 @@ class FileSystemPatch(object):
         self._multi_protocol = None
         self._nfs = None
         self._provisioned = None
-        self._promotion_status = None
         self._requested_promotion_state = None
         self._smb = None
         self._snapshot_directory_enabled = None
-        self._source = None
-        self._space = None
-        self._time_remaining = None
         self._writable = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if created is not None:
-            self.created = created
-        if id is not None:
-            self.id = id
         if default_user_quota is not None:
             self.default_user_quota = default_user_quota
         if default_group_quota is not None:
@@ -130,91 +103,14 @@ class FileSystemPatch(object):
             self.nfs = nfs
         if provisioned is not None:
             self.provisioned = provisioned
-        if promotion_status is not None:
-            self.promotion_status = promotion_status
         if requested_promotion_state is not None:
             self.requested_promotion_state = requested_promotion_state
         if smb is not None:
             self.smb = smb
         if snapshot_directory_enabled is not None:
             self.snapshot_directory_enabled = snapshot_directory_enabled
-        if source is not None:
-            self.source = source
-        if space is not None:
-            self.space = space
-        if time_remaining is not None:
-            self.time_remaining = time_remaining
         if writable is not None:
             self.writable = writable
-
-    @property
-    def name(self):
-        """Gets the name of this FileSystemPatch.  # noqa: E501
-
-        The name of the object (e.g., a file system or snapshot).  # noqa: E501
-
-        :return: The name of this FileSystemPatch.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this FileSystemPatch.
-
-        The name of the object (e.g., a file system or snapshot).  # noqa: E501
-
-        :param name: The name of this FileSystemPatch.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def created(self):
-        """Gets the created of this FileSystemPatch.  # noqa: E501
-
-        Creation timestamp of the object  # noqa: E501
-
-        :return: The created of this FileSystemPatch.  # noqa: E501
-        :rtype: int
-        """
-        return self._created
-
-    @created.setter
-    def created(self, created):
-        """Sets the created of this FileSystemPatch.
-
-        Creation timestamp of the object  # noqa: E501
-
-        :param created: The created of this FileSystemPatch.  # noqa: E501
-        :type: int
-        """
-
-        self._created = created
-
-    @property
-    def id(self):
-        """Gets the id of this FileSystemPatch.  # noqa: E501
-
-        A non-modifiable, globally unique ID chosen by the system.  # noqa: E501
-
-        :return: The id of this FileSystemPatch.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this FileSystemPatch.
-
-        A non-modifiable, globally unique ID chosen by the system.  # noqa: E501
-
-        :param id: The id of this FileSystemPatch.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def default_user_quota(self):
@@ -424,29 +320,6 @@ class FileSystemPatch(object):
         self._provisioned = provisioned
 
     @property
-    def promotion_status(self):
-        """Gets the promotion_status of this FileSystemPatch.  # noqa: E501
-
-        Possible values are `promoted` and `demoted`. The current status of the file system with respect to replication. Changes via `requested_promotion_state`. The default for new file systems is `promoted`.  # noqa: E501
-
-        :return: The promotion_status of this FileSystemPatch.  # noqa: E501
-        :rtype: str
-        """
-        return self._promotion_status
-
-    @promotion_status.setter
-    def promotion_status(self, promotion_status):
-        """Sets the promotion_status of this FileSystemPatch.
-
-        Possible values are `promoted` and `demoted`. The current status of the file system with respect to replication. Changes via `requested_promotion_state`. The default for new file systems is `promoted`.  # noqa: E501
-
-        :param promotion_status: The promotion_status of this FileSystemPatch.  # noqa: E501
-        :type: str
-        """
-
-        self._promotion_status = promotion_status
-
-    @property
     def requested_promotion_state(self):
         """Gets the requested_promotion_state of this FileSystemPatch.  # noqa: E501
 
@@ -514,75 +387,6 @@ class FileSystemPatch(object):
         """
 
         self._snapshot_directory_enabled = snapshot_directory_enabled
-
-    @property
-    def source(self):
-        """Gets the source of this FileSystemPatch.  # noqa: E501
-
-        The source snapshot whose data is copied to the file system specified.  # noqa: E501
-
-        :return: The source of this FileSystemPatch.  # noqa: E501
-        :rtype: LocationReference
-        """
-        return self._source
-
-    @source.setter
-    def source(self, source):
-        """Sets the source of this FileSystemPatch.
-
-        The source snapshot whose data is copied to the file system specified.  # noqa: E501
-
-        :param source: The source of this FileSystemPatch.  # noqa: E501
-        :type: LocationReference
-        """
-
-        self._source = source
-
-    @property
-    def space(self):
-        """Gets the space of this FileSystemPatch.  # noqa: E501
-
-        The space specification of the file system.  # noqa: E501
-
-        :return: The space of this FileSystemPatch.  # noqa: E501
-        :rtype: Space
-        """
-        return self._space
-
-    @space.setter
-    def space(self, space):
-        """Sets the space of this FileSystemPatch.
-
-        The space specification of the file system.  # noqa: E501
-
-        :param space: The space of this FileSystemPatch.  # noqa: E501
-        :type: Space
-        """
-
-        self._space = space
-
-    @property
-    def time_remaining(self):
-        """Gets the time_remaining of this FileSystemPatch.  # noqa: E501
-
-        Time in milliseconds before the file system is eradicated. Null if not destroyed.  # noqa: E501
-
-        :return: The time_remaining of this FileSystemPatch.  # noqa: E501
-        :rtype: int
-        """
-        return self._time_remaining
-
-    @time_remaining.setter
-    def time_remaining(self, time_remaining):
-        """Sets the time_remaining of this FileSystemPatch.
-
-        Time in milliseconds before the file system is eradicated. Null if not destroyed.  # noqa: E501
-
-        :param time_remaining: The time_remaining of this FileSystemPatch.  # noqa: E501
-        :type: int
-        """
-
-        self._time_remaining = time_remaining
 
     @property
     def writable(self):

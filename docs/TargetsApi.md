@@ -1,14 +1,14 @@
-# purity_fb_1dot11.TargetsApi
+# purity_fb_1dot12.TargetsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_targets**](TargetsApi.md#create_targets) | **POST** /1.11/targets | 
-[**delete_targets**](TargetsApi.md#delete_targets) | **DELETE** /1.11/targets | 
-[**list_targets**](TargetsApi.md#list_targets) | **GET** /1.11/targets | 
-[**list_targets_performance_replication**](TargetsApi.md#list_targets_performance_replication) | **GET** /1.11/targets/performance/replication | 
-[**update_targets**](TargetsApi.md#update_targets) | **PATCH** /1.11/targets | 
+[**create_targets**](TargetsApi.md#create_targets) | **POST** /1.12/targets | 
+[**delete_targets**](TargetsApi.md#delete_targets) | **DELETE** /1.12/targets | 
+[**list_targets**](TargetsApi.md#list_targets) | **GET** /1.12/targets | 
+[**list_targets_performance_replication**](TargetsApi.md#list_targets_performance_replication) | **GET** /1.12/targets/performance/replication | 
+[**update_targets**](TargetsApi.md#update_targets) | **PATCH** /1.12/targets | 
 
 
 # **create_targets**

@@ -1,13 +1,13 @@
-# purity_fb_1dot11.NetworkInterfacesApi
+# purity_fb_1dot12.NetworkInterfacesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.11/network-interfaces | 
-[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.11/network-interfaces | 
-[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.11/network-interfaces | 
-[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.11/network-interfaces | 
+[**create_network_interfaces**](NetworkInterfacesApi.md#create_network_interfaces) | **POST** /1.12/network-interfaces | 
+[**delete_network_interfaces**](NetworkInterfacesApi.md#delete_network_interfaces) | **DELETE** /1.12/network-interfaces | 
+[**list_network_interfaces**](NetworkInterfacesApi.md#list_network_interfaces) | **GET** /1.12/network-interfaces | 
+[**update_network_interfaces**](NetworkInterfacesApi.md#update_network_interfaces) | **PATCH** /1.12/network-interfaces | 
 
 
 # **create_network_interfaces**

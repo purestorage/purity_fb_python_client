@@ -504,7 +504,6 @@ class FileSystemsApi(object):
         :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start: The offset of the first resource to return from a collection.
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
@@ -537,14 +536,13 @@ class FileSystemsApi(object):
         :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start: The offset of the first resource to return from a collection.
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'ids', 'limit', 'names', 'sort', 'start', 'token', 'total', 'total_only']
+        all_params = ['filter', 'ids', 'limit', 'names', 'sort', 'start', 'token', 'total_only']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -582,8 +580,6 @@ class FileSystemsApi(object):
             query_params.append(('start', params['start']))
         if 'token' in params:
             query_params.append(('token', params['token']))
-        if 'total' in params:
-            query_params.append(('total', params['total']))
         if 'total_only' in params:
             query_params.append(('total_only', params['total_only']))
 

@@ -3,7 +3,7 @@
 """
     Pure Storage FlashBlade REST 1.11 Python SDK
 
-    Pure Storage FlashBlade REST 1.11 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.11 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.11
     Contact: info@purestorage.com
@@ -36,8 +36,6 @@ class PolicyPatch(object):
                             and the value is json key in definition.
     """
     swagger_types = {
-        'name': 'str',
-        'id': 'str',
         'enabled': 'bool',
         'rules': 'list[PolicyRule]',
         'add_rules': 'list[PolicyRule]',
@@ -45,29 +43,21 @@ class PolicyPatch(object):
     }
 
     attribute_map = {
-        'name': 'name',
-        'id': 'id',
         'enabled': 'enabled',
         'rules': 'rules',
         'add_rules': 'add_rules',
         'remove_rules': 'remove_rules'
     }
 
-    def __init__(self, name=None, id=None, enabled=None, rules=None, add_rules=None, remove_rules=None):  # noqa: E501
+    def __init__(self, enabled=None, rules=None, add_rules=None, remove_rules=None):  # noqa: E501
         """PolicyPatch - a model defined in Swagger"""  # noqa: E501
 
-        self._name = None
-        self._id = None
         self._enabled = None
         self._rules = None
         self._add_rules = None
         self._remove_rules = None
         self.discriminator = None
 
-        if name is not None:
-            self.name = name
-        if id is not None:
-            self.id = id
         if enabled is not None:
             self.enabled = enabled
         if rules is not None:
@@ -76,52 +66,6 @@ class PolicyPatch(object):
             self.add_rules = add_rules
         if remove_rules is not None:
             self.remove_rules = remove_rules
-
-    @property
-    def name(self):
-        """Gets the name of this PolicyPatch.  # noqa: E501
-
-        The name of the object (e.g., a file system or snapshot)  # noqa: E501
-
-        :return: The name of this PolicyPatch.  # noqa: E501
-        :rtype: str
-        """
-        return self._name
-
-    @name.setter
-    def name(self, name):
-        """Sets the name of this PolicyPatch.
-
-        The name of the object (e.g., a file system or snapshot)  # noqa: E501
-
-        :param name: The name of this PolicyPatch.  # noqa: E501
-        :type: str
-        """
-
-        self._name = name
-
-    @property
-    def id(self):
-        """Gets the id of this PolicyPatch.  # noqa: E501
-
-        A unique ID chosen by the system. Cannot change.  # noqa: E501
-
-        :return: The id of this PolicyPatch.  # noqa: E501
-        :rtype: str
-        """
-        return self._id
-
-    @id.setter
-    def id(self, id):
-        """Sets the id of this PolicyPatch.
-
-        A unique ID chosen by the system. Cannot change.  # noqa: E501
-
-        :param id: The id of this PolicyPatch.  # noqa: E501
-        :type: str
-        """
-
-        self._id = id
 
     @property
     def enabled(self):

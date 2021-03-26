@@ -53,8 +53,8 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -79,14 +79,14 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
         :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['link_aggregation_group', 'names']
+        all_params = ['names', 'link_aggregation_group']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -262,11 +262,11 @@ class LinkAggregationGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str filter: The filter to be used for query.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
@@ -292,17 +292,17 @@ class LinkAggregationGroupsApi(object):
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param str filter: The filter to be used for query.
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param str sort: Sort the response by the specified fields (in descending order if '-' is appended to the field name).
         :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'sort', 'start', 'limit', 'token', 'names']
+        all_params = ['filter', 'names', 'sort', 'start', 'limit', 'token']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -326,6 +326,9 @@ class LinkAggregationGroupsApi(object):
         query_params = []
         if 'filter' in params:
             query_params.append(('filter', params['filter']))
+        if 'names' in params:
+            query_params.append(('names', params['names']))
+            collection_formats['names'] = 'csv'
         if 'sort' in params:
             query_params.append(('sort', params['sort']))
         if 'start' in params:
@@ -334,9 +337,6 @@ class LinkAggregationGroupsApi(object):
             query_params.append(('limit', params['limit']))
         if 'token' in params:
             query_params.append(('token', params['token']))
-        if 'names' in params:
-            query_params.append(('names', params['names']))
-            collection_formats['names'] = 'csv'
 
         header_params = {}
 

@@ -1,18 +1,21 @@
-# purity_fb_1dot11.ArraysApi
+# purity_fb_1dot12.ArraysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.11/arrays | 
-[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.11/arrays/http-specific-performance | 
-[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.11/arrays/nfs-specific-performance | 
-[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.11/arrays/performance | 
-[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.11/arrays/performance/replication | 
-[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.11/arrays/s3-specific-performance | 
-[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.11/arrays/space | 
-[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.11/arrays/clients/performance | 
-[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.11/arrays | 
+[**list_arrays**](ArraysApi.md#list_arrays) | **GET** /1.12/arrays | 
+[**list_arrays_http_specific_performance**](ArraysApi.md#list_arrays_http_specific_performance) | **GET** /1.12/arrays/http-specific-performance | 
+[**list_arrays_nfs_specific_performance**](ArraysApi.md#list_arrays_nfs_specific_performance) | **GET** /1.12/arrays/nfs-specific-performance | 
+[**list_arrays_performance**](ArraysApi.md#list_arrays_performance) | **GET** /1.12/arrays/performance | 
+[**list_arrays_performance_replication**](ArraysApi.md#list_arrays_performance_replication) | **GET** /1.12/arrays/performance/replication | 
+[**list_arrays_s3_specific_performance**](ArraysApi.md#list_arrays_s3_specific_performance) | **GET** /1.12/arrays/s3-specific-performance | 
+[**list_arrays_space**](ArraysApi.md#list_arrays_space) | **GET** /1.12/arrays/space | 
+[**list_clients_performance**](ArraysApi.md#list_clients_performance) | **GET** /1.12/arrays/clients/performance | 
+[**list_eulas**](ArraysApi.md#list_eulas) | **GET** /1.12/arrays/eula | 
+[**list_supported_time_zones**](ArraysApi.md#list_supported_time_zones) | **GET** /1.12/arrays/supported-time-zones | 
+[**update_arrays**](ArraysApi.md#update_arrays) | **PATCH** /1.12/arrays | 
+[**update_eulas**](ArraysApi.md#update_eulas) | **PATCH** /1.12/arrays/eula | 
 
 
 # **list_arrays**
@@ -457,6 +460,116 @@ Name | Type | Description  | Notes
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
+# **list_eulas**
+> EulaResponse list_eulas(filter=filter, limit=limit, sort=sort, start=start, token=token)
+
+
+
+Displays the End User Agreement and signature.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        res = fb.arrays.list_eulas()
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when listing eulas: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
+
+### Return type
+
+[**EulaResponse**](EulaResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **list_supported_time_zones**
+> SupportedTimeZoneResponse list_supported_time_zones(filter=filter, limit=limit, names=names, sort=sort, start=start, token=token)
+
+
+
+Lists the time zones supported by the array.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest
+
+fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN)  # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # List all supported time zones.
+        res = fb.arrays.list_supported_time_zones()
+        print(res)
+
+        # List a specific time zone.
+        res = fb.arrays.list_supported_time_zones(names=['Africa/Djibouti'])
+        print(res)
+
+        # List the only five time zones starting with "Asia".
+        res = fb.arrays.list_supported_time_zones(limit=5, filter='name=\'Asia/*\'')
+        print(res)
+    except rest.ApiException as e:
+        print('Exception when listing supported time zones: %s\n' % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **filter** | **str**| The filter to be used for query. | [optional] 
+ **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
+ **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
+ **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
+
+### Return type
+
+[**SupportedTimeZoneResponse**](SupportedTimeZoneResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
 # **update_arrays**
 > ArrayResponse update_arrays(array_settings)
 
@@ -480,10 +593,12 @@ if res:
         # Rename the array to "example-name"
         # Set the NTP server to "0.example.ntp.server"
         # Change the array time zone to "America/Los_Angeles"
+        # Updating idle_timeout to 300000, in milliseconds
         array_settings = PureArray(banner="example-banner",
                                    name="example-name",
                                    ntp_servers=["0.example.ntp.server"],
-                                   time_zone="America/Los_Angeles")
+                                   time_zone="America/Los_Angeles",
+                                   idle_timeout=300000)
         res = fb.arrays.update_arrays(array_settings=array_settings)
         print(res)
     except rest.ApiException as e:
@@ -507,6 +622,55 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
+
+# **update_eulas**
+> EulaResponse update_eulas(eula)
+
+
+
+Modifies the signature on the End User Agreement.
+
+### Example 
+```python
+from purity_fb import PurityFb, rest, Eula, EulaSignature
+
+fb = PurityFb("10.255.9.28", version=__version__) # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # Update the Eula signature
+        signature = EulaSignature(name="example name", title="example", company="one company")
+        eula_body = Eula(signature=signature)
+        res = fb.arrays.update_eulas(eula=eula_body)
+        print(res)
+    except rest.ApiException as e:
+        print("Exception when updating eula: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **eula** | [**Eula**](Eula.md)|  | 
+
+### Return type
+
+[**EulaResponse**](EulaResponse.md)
+
+### Authorization
+
+[AuthTokenHeader](index.md#AuthTokenHeader)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)

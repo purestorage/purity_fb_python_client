@@ -1,13 +1,13 @@
-# purity_fb_1dot11.ObjectStoreAccessKeysApi
+# purity_fb_1dot12.ObjectStoreAccessKeysApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.11/object-store-access-keys | 
-[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.11/object-store-access-keys | 
-[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.11/object-store-access-keys | 
-[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.11/object-store-access-keys | 
+[**create_object_store_access_keys**](ObjectStoreAccessKeysApi.md#create_object_store_access_keys) | **POST** /1.12/object-store-access-keys | 
+[**delete_object_store_access_keys**](ObjectStoreAccessKeysApi.md#delete_object_store_access_keys) | **DELETE** /1.12/object-store-access-keys | 
+[**list_object_store_access_keys**](ObjectStoreAccessKeysApi.md#list_object_store_access_keys) | **GET** /1.12/object-store-access-keys | 
+[**update_object_store_access_keys**](ObjectStoreAccessKeysApi.md#update_object_store_access_keys) | **PATCH** /1.12/object-store-access-keys | 
 
 
 # **create_object_store_access_keys**
@@ -32,7 +32,7 @@ if res:
         # generate access key and secret key for object store user
         # note: you need to handle the secret key since you can't retrieve it from the array after create
         res = fb.object_store_access_keys.create_object_store_access_keys(
-            object_store_access_key=ObjectStoreAccessKeyPost(user={'name': 'myobjuser'}))
+            object_store_access_key=ObjectStoreAccessKeyPost(user={'name': 'acc1/myobjuser'}))
         print(res)
         # make another access key for the user with id '100abf42-0000-4000-8023-000det400090'
         res = fb.object_store_access_keys.create_object_store_access_keys(
@@ -42,7 +42,7 @@ if res:
         res = fb.object_store_access_keys.create_object_store_access_keys(
             names=['PSABSSZRHPMEDKHMAAJPJBONPJGGDDAOFABDGLBJLHO'],
             object_store_access_key=ObjectStoreAccessKeyPost(
-                user={'name': 'myaccount/myobjuser'}, secret_access_key='BAG61F63105e0d3669/e066+5C5DFBE2c127d395LBGG'
+                user={'name': 'acc1/myobjuser'}, secret_access_key='BAG61F63105e0d3669/e066+5C5DFBE2c127d395LBGG'
             )
         )
         print(res)
@@ -146,7 +146,7 @@ if res:
         # list all remaining object store access keys
         res = fb.object_store_access_keys.list_object_store_access_keys(token=res.pagination_info.continuation_token)
         # list with filter
-        res = fb.object_store_access_keys.list_object_store_access_keys(filter='user.name=\'myobjuser\'')
+        res = fb.object_store_access_keys.list_object_store_access_keys(filter='user.name=\'acc1/myobjuser\'')
     except rest.ApiException as e:
         print("Exception when listing object store access keys: %s\n" % e)
 ```

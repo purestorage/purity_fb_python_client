@@ -1,17 +1,17 @@
-# purity_fb_1dot11.FileSystemSnapshotsApi
+# purity_fb_1dot12.FileSystemSnapshotsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.11/file-system-snapshots | 
-[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.11/file-system-snapshots | 
-[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.11/file-system-snapshots/transfer | 
-[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.11/file-system-snapshots/policies | 
-[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.11/file-system-snapshots | 
-[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.11/file-system-snapshots/transfer | 
-[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.11/file-system-snapshots/policies | 
-[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.11/file-system-snapshots | 
+[**create_file_system_snapshots**](FileSystemSnapshotsApi.md#create_file_system_snapshots) | **POST** /1.12/file-system-snapshots | 
+[**delete_file_system_snapshots**](FileSystemSnapshotsApi.md#delete_file_system_snapshots) | **DELETE** /1.12/file-system-snapshots | 
+[**delete_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#delete_file_system_snapshots_transfer) | **DELETE** /1.12/file-system-snapshots/transfer | 
+[**delete_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#delete_filesystem_snapshot_policies) | **DELETE** /1.12/file-system-snapshots/policies | 
+[**list_file_system_snapshots**](FileSystemSnapshotsApi.md#list_file_system_snapshots) | **GET** /1.12/file-system-snapshots | 
+[**list_file_system_snapshots_transfer**](FileSystemSnapshotsApi.md#list_file_system_snapshots_transfer) | **GET** /1.12/file-system-snapshots/transfer | 
+[**list_filesystem_snapshot_policies**](FileSystemSnapshotsApi.md#list_filesystem_snapshot_policies) | **GET** /1.12/file-system-snapshots/policies | 
+[**update_file_system_snapshots**](FileSystemSnapshotsApi.md#update_file_system_snapshots) | **PATCH** /1.12/file-system-snapshots | 
 
 
 # **create_file_system_snapshots**
@@ -230,7 +230,7 @@ void (empty response body)
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_system_snapshots**
-> FileSystemSnapshotResponse list_file_system_snapshots(filter=filter, ids=ids, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only, names_or_sources=names_or_sources, names_or_owner_names=names_or_owner_names, source_ids=source_ids, owner_ids=owner_ids)
+> FileSystemSnapshotResponse list_file_system_snapshots(filter=filter, ids=ids, sort=sort, start=start, limit=limit, token=token, total_only=total_only, names_or_sources=names_or_sources, names_or_owner_names=names_or_owner_names, source_ids=source_ids, owner_ids=owner_ids)
 
 
 
@@ -274,7 +274,6 @@ Name | Type | Description  | Notes
  **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
- **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **names_or_sources** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the source file system. | [optional] 
  **names_or_owner_names** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
@@ -297,7 +296,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_system_snapshots_transfer**
-> FileSystemSnapshotTransferResponse list_file_system_snapshots_transfer(ids=ids, filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only, names_or_owner_names=names_or_owner_names)
+> FileSystemSnapshotTransferResponse list_file_system_snapshots_transfer(ids=ids, filter=filter, sort=sort, start=start, limit=limit, token=token, total_only=total_only, names_or_owner_names=names_or_owner_names)
 
 
 
@@ -336,7 +335,6 @@ Name | Type | Description  | Notes
  **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
- **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
  **names_or_owner_names** | **list[str]**| A comma-separated list of resource names. Either the name of the snapshot or the owning file system. | [optional] 
 

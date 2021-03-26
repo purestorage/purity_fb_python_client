@@ -1,10 +1,10 @@
-# purity_fb_1dot11.RolesApi
+# purity_fb_1dot12.RolesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_roles**](RolesApi.md#list_roles) | **GET** /1.11/roles | 
+[**list_roles**](RolesApi.md#list_roles) | **GET** /1.12/roles | 
 
 
 # **list_roles**

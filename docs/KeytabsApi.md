@@ -1,14 +1,75 @@
-# purity_fb_1dot11.KeytabsApi
+# purity_fb_1dot12.KeytabsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.11/keytabs | 
-[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.11/keytabs/download | 
-[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.11/keytabs | 
-[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.11/keytabs/upload | 
+[**create_keytabs**](KeytabsApi.md#create_keytabs) | **POST** /1.12/keytabs | 
+[**delete_keytabs**](KeytabsApi.md#delete_keytabs) | **DELETE** /1.12/keytabs | 
+[**download_keytab_file**](KeytabsApi.md#download_keytab_file) | **GET** /1.12/keytabs/download | 
+[**list_keytabs**](KeytabsApi.md#list_keytabs) | **GET** /1.12/keytabs | 
+[**upload_keytab_file**](KeytabsApi.md#upload_keytab_file) | **POST** /1.12/keytabs/upload | 
 
+
+# **create_keytabs**
+> KeytabResponse create_keytabs(keytab, name_prefixes=name_prefixes)
+
+
+
+Create new keytabs by non-disruptively rotating the current set of keytabs for the configured Active Directory account that has been specified.
+
+### Example 
+```python
+from purity_fb import PurityFb, KeytabPost, Reference, rest
+
+fb = PurityFb("10.255.9.28", version=__version__)  # assume the array IP is 10.255.9.28
+fb.disable_verify_ssl()
+try:
+    res = fb.login(API_TOKEN) # login to the array with your API_TOKEN
+except rest.ApiException as e:
+    print("Exception when logging in to the array: %s\n" % e)
+if res:
+    try:
+        # Non-disruptively rotate the Kerberos keytabs associated with an Active Directory
+        # account by generating a new set of keytabs based on the currently-configured
+        # Encryption Types and Service Principal Names on the account.
+        AD_ACCOUNT_NAME = "ad_test_account"
+        attr = KeytabPost(source=Reference(name=AD_ACCOUNT_NAME))
+        res = fb.keytabs.create_keytabs(attr)
+        print(res)
+
+        # The newly-generated keytabs will have a higher KVNO than the previously-existing set of
+        # keytabs. You can make them further distinguishable by providing a prefix which will be
+        # used to form the name of each new keytab that is created.
+        NEW_PREFIX = AD_ACCOUNT_NAME + "_rotated"
+        res = fb.keytabs.create_keytabs(attr, name_prefixes=[NEW_PREFIX])
+        print(res)
+
+    except rest.ApiException as e:
+        print("Exception when creating keytabs: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **keytab** | [**KeytabPost**](KeytabPost.md)|  | 
+ **name_prefixes** | **list[str]**| The prefix to use for the names of all kerberos keytab entry objects that are being created. | [optional] 
+
+### Return type
+
+[**KeytabResponse**](KeytabResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **delete_keytabs**
 > delete_keytabs(ids=ids, names=names)
@@ -136,7 +197,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_keytabs**
-> KeytabResponse list_keytabs(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token, total_only=total_only, total=total)
+> KeytabResponse list_keytabs(filter=filter, ids=ids, limit=limit, names=names, sort=sort, start=start, token=token)
 
 
 
@@ -184,8 +245,6 @@ Name | Type | Description  | Notes
  **sort** | **str**| Sort the response by the specified fields (in descending order if &#39;-&#39; is appended to the field name). | [optional] 
  **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
- **total_only** | **bool**| Return only the total object. | [optional] [default to false]
- **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
 
 ### Return type
 
