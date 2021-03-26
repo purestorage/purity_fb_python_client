@@ -15,7 +15,7 @@ import sys
 from setuptools import setup, find_packages
 
 NAME = "purity-fb"
-VERSION = "1.12.1"
+VERSION = "1.12.2"
 # To install the library, run the following
 #
 # python setup.py install
@@ -25,7 +25,7 @@ VERSION = "1.12.1"
 
 # If any of these requirements are changed, we also need to update `requirements.md`
 REQUIRES = ["urllib3 >= 1.15", "six >= 1.10", "certifi", "python-dateutil"]
-PYTHON_REQUIRES = ">=2.7, <3.7"
+PYTHON_REQUIRES = ">=2.7, >=3.4"
 
 setup(
     name=NAME,
