@@ -1,12 +1,12 @@
-# purity_fb_1dot11.SnmpAgentsApi
+# purity_fb_1dot12.SnmpAgentsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**list_snmp_agents**](SnmpAgentsApi.md#list_snmp_agents) | **GET** /1.11/snmp-agents | 
-[**list_snmp_agents_mib**](SnmpAgentsApi.md#list_snmp_agents_mib) | **GET** /1.11/snmp-agents/mib | 
-[**update_snmp_agents**](SnmpAgentsApi.md#update_snmp_agents) | **PATCH** /1.11/snmp-agents | 
+[**list_snmp_agents**](SnmpAgentsApi.md#list_snmp_agents) | **GET** /1.12/snmp-agents | 
+[**list_snmp_agents_mib**](SnmpAgentsApi.md#list_snmp_agents_mib) | **GET** /1.12/snmp-agents/mib | 
+[**update_snmp_agents**](SnmpAgentsApi.md#update_snmp_agents) | **PATCH** /1.12/snmp-agents | 
 
 
 # **list_snmp_agents**

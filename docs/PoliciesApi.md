@@ -1,22 +1,22 @@
-# purity_fb_1dot11.PoliciesApi
+# purity_fb_1dot12.PoliciesApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.11/policies | 
-[**create_policy_file_system_replica_links**](PoliciesApi.md#create_policy_file_system_replica_links) | **POST** /1.11/policies/file-system-replica-links | 
-[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.11/policies/file-systems | 
-[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.11/policies | 
-[**delete_policy_file_system_replica_links**](PoliciesApi.md#delete_policy_file_system_replica_links) | **DELETE** /1.11/policies/file-system-replica-links | 
-[**delete_policy_filesystem_snapshots**](PoliciesApi.md#delete_policy_filesystem_snapshots) | **DELETE** /1.11/policies/file-system-snapshots | 
-[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.11/policies/file-systems | 
-[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.11/policies | 
-[**list_policy_file_system_replica_links**](PoliciesApi.md#list_policy_file_system_replica_links) | **GET** /1.11/policies/file-system-replica-links | 
-[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.11/policies/file-system-snapshots | 
-[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.11/policies/file-systems | 
-[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.11/policies/members | 
-[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.11/policies | 
+[**create_policies**](PoliciesApi.md#create_policies) | **POST** /1.12/policies | 
+[**create_policy_file_system_replica_links**](PoliciesApi.md#create_policy_file_system_replica_links) | **POST** /1.12/policies/file-system-replica-links | 
+[**create_policy_filesystems**](PoliciesApi.md#create_policy_filesystems) | **POST** /1.12/policies/file-systems | 
+[**delete_policies**](PoliciesApi.md#delete_policies) | **DELETE** /1.12/policies | 
+[**delete_policy_file_system_replica_links**](PoliciesApi.md#delete_policy_file_system_replica_links) | **DELETE** /1.12/policies/file-system-replica-links | 
+[**delete_policy_filesystem_snapshots**](PoliciesApi.md#delete_policy_filesystem_snapshots) | **DELETE** /1.12/policies/file-system-snapshots | 
+[**delete_policy_filesystems**](PoliciesApi.md#delete_policy_filesystems) | **DELETE** /1.12/policies/file-systems | 
+[**list_policies**](PoliciesApi.md#list_policies) | **GET** /1.12/policies | 
+[**list_policy_file_system_replica_links**](PoliciesApi.md#list_policy_file_system_replica_links) | **GET** /1.12/policies/file-system-replica-links | 
+[**list_policy_filesystem_snapshots**](PoliciesApi.md#list_policy_filesystem_snapshots) | **GET** /1.12/policies/file-system-snapshots | 
+[**list_policy_filesystems**](PoliciesApi.md#list_policy_filesystems) | **GET** /1.12/policies/file-systems | 
+[**list_policy_members**](PoliciesApi.md#list_policy_members) | **GET** /1.12/policies/members | 
+[**update_policies**](PoliciesApi.md#update_policies) | **PATCH** /1.12/policies | 
 
 
 # **create_policies**

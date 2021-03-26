@@ -11,6 +11,7 @@ Name | Type | Description | Notes
 **time_zone** | **str** |  | [optional] 
 **version** | **str** |  | [optional] 
 **banner** | **str** | A string to be shown when logging in to the array. | [optional] 
+**idle_timeout** | **int** | Idle timeout in milliseconds. Valid values are in the range of 300000 and 10800000. Setting this value to 0 disables timeouts. | [optional] 
 
 [[Back to Model list]](index.md#documentation-for-models) [[Back to API list]](index.md#endpoint-properties) [[Back to Overview]](index.md)
 

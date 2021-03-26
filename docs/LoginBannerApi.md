@@ -1,4 +1,4 @@
-# purity_fb_1dot11.LoginBannerApi
+# purity_fb_1dot12.LoginBannerApi
 
 All URIs are relative to *https://purity_fb_server/api*
 

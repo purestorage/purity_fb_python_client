@@ -53,6 +53,7 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
@@ -78,13 +79,14 @@ class LinkAggregationGroupsApi(object):
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
         :param LinkAggregationGroup link_aggregation_group: The attribute map used to create the link aggregation group.
         :return: LinkAggregationGroupResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['link_aggregation_group']
+        all_params = ['names', 'link_aggregation_group']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -106,6 +108,9 @@ class LinkAggregationGroupsApi(object):
         path_params = {}
 
         query_params = []
+        if 'names' in params:
+            query_params.append(('names', params['names']))
+            collection_formats['names'] = 'csv'
 
         header_params = {}
 

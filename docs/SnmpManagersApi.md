@@ -1,14 +1,14 @@
-# purity_fb_1dot11.SnmpManagersApi
+# purity_fb_1dot12.SnmpManagersApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_snmp_managers**](SnmpManagersApi.md#create_snmp_managers) | **POST** /1.11/snmp-managers | 
-[**delete_snmp_managers**](SnmpManagersApi.md#delete_snmp_managers) | **DELETE** /1.11/snmp-managers | 
-[**list_snmp_managers**](SnmpManagersApi.md#list_snmp_managers) | **GET** /1.11/snmp-managers | 
-[**test_snmp_managers**](SnmpManagersApi.md#test_snmp_managers) | **GET** /1.11/snmp-managers/test | 
-[**update_snmp_managers**](SnmpManagersApi.md#update_snmp_managers) | **PATCH** /1.11/snmp-managers | 
+[**create_snmp_managers**](SnmpManagersApi.md#create_snmp_managers) | **POST** /1.12/snmp-managers | 
+[**delete_snmp_managers**](SnmpManagersApi.md#delete_snmp_managers) | **DELETE** /1.12/snmp-managers | 
+[**list_snmp_managers**](SnmpManagersApi.md#list_snmp_managers) | **GET** /1.12/snmp-managers | 
+[**test_snmp_managers**](SnmpManagersApi.md#test_snmp_managers) | **GET** /1.12/snmp-managers/test | 
+[**update_snmp_managers**](SnmpManagersApi.md#update_snmp_managers) | **PATCH** /1.12/snmp-managers | 
 
 
 # **create_snmp_managers**

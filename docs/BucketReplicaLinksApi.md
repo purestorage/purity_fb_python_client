@@ -1,13 +1,13 @@
-# purity_fb_1dot11.BucketReplicaLinksApi
+# purity_fb_1dot12.BucketReplicaLinksApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_bucket_replica_links**](BucketReplicaLinksApi.md#create_bucket_replica_links) | **POST** /1.11/bucket-replica-links | 
-[**delete_bucket_replica_links**](BucketReplicaLinksApi.md#delete_bucket_replica_links) | **DELETE** /1.11/bucket-replica-links | 
-[**list_bucket_replica_links**](BucketReplicaLinksApi.md#list_bucket_replica_links) | **GET** /1.11/bucket-replica-links | 
-[**update_bucket_replica_links**](BucketReplicaLinksApi.md#update_bucket_replica_links) | **PATCH** /1.11/bucket-replica-links | 
+[**create_bucket_replica_links**](BucketReplicaLinksApi.md#create_bucket_replica_links) | **POST** /1.12/bucket-replica-links | 
+[**delete_bucket_replica_links**](BucketReplicaLinksApi.md#delete_bucket_replica_links) | **DELETE** /1.12/bucket-replica-links | 
+[**list_bucket_replica_links**](BucketReplicaLinksApi.md#list_bucket_replica_links) | **GET** /1.12/bucket-replica-links | 
+[**update_bucket_replica_links**](BucketReplicaLinksApi.md#update_bucket_replica_links) | **PATCH** /1.12/bucket-replica-links | 
 
 
 # **create_bucket_replica_links**

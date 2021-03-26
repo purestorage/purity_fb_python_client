@@ -275,7 +275,6 @@ class FileSystemSnapshotsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] names_or_sources: A comma-separated list of resource names. Either the name of the snapshot or the source.
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
@@ -308,14 +307,13 @@ class FileSystemSnapshotsApi(object):
         :param int limit: limit, should be >= 0
         :param list[str] names_or_sources: A comma-separated list of resource names. Either the name of the snapshot or the source.
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemSnapshotResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['filter', 'ids', 'sort', 'start', 'limit', 'names_or_sources', 'token', 'total', 'total_only']
+        all_params = ['filter', 'ids', 'sort', 'start', 'limit', 'names_or_sources', 'token', 'total_only']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -353,8 +351,6 @@ class FileSystemSnapshotsApi(object):
             collection_formats['names_or_sources'] = 'csv'
         if 'token' in params:
             query_params.append(('token', params['token']))
-        if 'total' in params:
-            query_params.append(('total', params['total']))
         if 'total_only' in params:
             query_params.append(('total_only', params['total_only']))
 

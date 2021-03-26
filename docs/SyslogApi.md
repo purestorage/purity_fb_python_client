@@ -1,16 +1,16 @@
-# purity_fb_1dot11.SyslogApi
+# purity_fb_1dot12.SyslogApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_syslog_servers**](SyslogApi.md#create_syslog_servers) | **POST** /1.11/syslog-servers | 
-[**delete_syslog_servers**](SyslogApi.md#delete_syslog_servers) | **DELETE** /1.11/syslog-servers | 
-[**list_syslog_servers**](SyslogApi.md#list_syslog_servers) | **GET** /1.11/syslog-servers | 
-[**list_syslog_settings**](SyslogApi.md#list_syslog_settings) | **GET** /1.11/syslog-servers/settings | 
-[**test_syslog_config**](SyslogApi.md#test_syslog_config) | **GET** /1.11/syslog-servers/test | 
-[**update_syslog_servers**](SyslogApi.md#update_syslog_servers) | **PATCH** /1.11/syslog-servers | 
-[**update_syslog_settings**](SyslogApi.md#update_syslog_settings) | **PATCH** /1.11/syslog-servers/settings | 
+[**create_syslog_servers**](SyslogApi.md#create_syslog_servers) | **POST** /1.12/syslog-servers | 
+[**delete_syslog_servers**](SyslogApi.md#delete_syslog_servers) | **DELETE** /1.12/syslog-servers | 
+[**list_syslog_servers**](SyslogApi.md#list_syslog_servers) | **GET** /1.12/syslog-servers | 
+[**list_syslog_settings**](SyslogApi.md#list_syslog_settings) | **GET** /1.12/syslog-servers/settings | 
+[**test_syslog_config**](SyslogApi.md#test_syslog_config) | **GET** /1.12/syslog-servers/test | 
+[**update_syslog_servers**](SyslogApi.md#update_syslog_servers) | **PATCH** /1.12/syslog-servers | 
+[**update_syslog_settings**](SyslogApi.md#update_syslog_settings) | **PATCH** /1.12/syslog-servers/settings | 
 
 
 # **create_syslog_servers**

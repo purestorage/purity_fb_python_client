@@ -1,15 +1,15 @@
-# purity_fb_1dot11.FileSystemReplicaLinksApi
+# purity_fb_1dot12.FileSystemReplicaLinksApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.11/file-system-replica-links/policies | 
-[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.11/file-system-replica-links | 
-[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.11/file-system-replica-links/policies | 
-[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.11/file-system-replica-links/policies | 
-[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.11/file-system-replica-links/transfer | 
-[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.11/file-system-replica-links | 
+[**create_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#create_file_system_replica_link_policies) | **POST** /1.12/file-system-replica-links/policies | 
+[**create_file_system_replica_links**](FileSystemReplicaLinksApi.md#create_file_system_replica_links) | **POST** /1.12/file-system-replica-links | 
+[**delete_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#delete_file_system_replica_link_policies) | **DELETE** /1.12/file-system-replica-links/policies | 
+[**list_file_system_replica_link_policies**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_policies) | **GET** /1.12/file-system-replica-links/policies | 
+[**list_file_system_replica_link_transfer**](FileSystemReplicaLinksApi.md#list_file_system_replica_link_transfer) | **GET** /1.12/file-system-replica-links/transfer | 
+[**list_file_system_replica_links**](FileSystemReplicaLinksApi.md#list_file_system_replica_links) | **GET** /1.12/file-system-replica-links | 
 
 
 # **create_file_system_replica_link_policies**
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_system_replica_link_transfer**
-> FileSystemSnapshotTransferResponse list_file_system_replica_link_transfer(ids=ids, remote_ids=remote_ids, remote_names=remote_names, names_or_owner_names=names_or_owner_names, filter=filter, sort=sort, start=start, limit=limit, token=token, total=total, total_only=total_only)
+> FileSystemSnapshotTransferResponse list_file_system_replica_link_transfer(ids=ids, remote_ids=remote_ids, remote_names=remote_names, names_or_owner_names=names_or_owner_names, filter=filter, sort=sort, start=start, limit=limit, token=token, total_only=total_only)
 
 
 
@@ -298,7 +298,6 @@ Name | Type | Description  | Notes
  **start** | **int**| The offset of the first resource to return from a collection. | [optional] 
  **limit** | **int**| limit, should be &gt;&#x3D; 0 | [optional] 
  **token** | **str**| An opaque token used to iterate over a collection. The token to use on the next request is returned in the &#x60;continuation_token&#x60; field of the result. | [optional] 
- **total** | **bool**| Return a total object in addition to the other results. | [optional] [default to false]
  **total_only** | **bool**| Return only the total object. | [optional] [default to false]
 
 ### Return type

@@ -1,17 +1,17 @@
-# purity_fb_1dot11.ArrayConnectionsApi
+# purity_fb_1dot12.ArrayConnectionsApi
 
 All URIs are relative to *https://purity_fb_server/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.11/array-connections | 
-[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.11/array-connections/connection-key | 
-[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.11/array-connections | 
-[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.11/array-connections | 
-[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.11/array-connections/connection-key | 
-[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.11/array-connections/path | 
-[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.11/array-connections/performance/replication | 
-[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.11/array-connections | 
+[**create_array_connections**](ArrayConnectionsApi.md#create_array_connections) | **POST** /1.12/array-connections | 
+[**create_array_connections_connection_keys**](ArrayConnectionsApi.md#create_array_connections_connection_keys) | **POST** /1.12/array-connections/connection-key | 
+[**delete_array_connections**](ArrayConnectionsApi.md#delete_array_connections) | **DELETE** /1.12/array-connections | 
+[**list_array_connections**](ArrayConnectionsApi.md#list_array_connections) | **GET** /1.12/array-connections | 
+[**list_array_connections_connection_keys**](ArrayConnectionsApi.md#list_array_connections_connection_keys) | **GET** /1.12/array-connections/connection-key | 
+[**list_array_connections_paths**](ArrayConnectionsApi.md#list_array_connections_paths) | **GET** /1.12/array-connections/path | 
+[**list_array_connections_performance_replication**](ArrayConnectionsApi.md#list_array_connections_performance_replication) | **GET** /1.12/array-connections/performance/replication | 
+[**update_array_connections**](ArrayConnectionsApi.md#update_array_connections) | **PATCH** /1.12/array-connections | 
 
 
 # **create_array_connections**

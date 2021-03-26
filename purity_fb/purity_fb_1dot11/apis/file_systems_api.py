@@ -3,7 +3,7 @@
 """
     Pure Storage FlashBlade REST 1.11 Python SDK
 
-    Pure Storage FlashBlade REST 1.11 Python SDK, developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
+    Pure Storage FlashBlade REST 1.11 Python SDK. Compatible with REST API versions 1.0 - 1.11. Developed by [Pure Storage, Inc](http://www.purestorage.com/). Documentations can be found at [purity-fb.readthedocs.io](http://purity-fb.readthedocs.io/).
 
     OpenAPI spec version: 1.11
     Contact: info@purestorage.com
@@ -512,7 +512,6 @@ class FileSystemsApi(object):
         :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
@@ -545,14 +544,13 @@ class FileSystemsApi(object):
         :param int start: The offset of the first resource to return from a collection.
         :param int limit: limit, should be >= 0
         :param str token: An opaque token used to iterate over a collection. The token to use on the next request is returned in the `continuation_token` field of the result.
-        :param bool total: Return a total object in addition to the other results.
         :param bool total_only: Return only the total object.
         :return: FileSystemResponse
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['ids', 'names', 'filter', 'sort', 'start', 'limit', 'token', 'total', 'total_only']
+        all_params = ['ids', 'names', 'filter', 'sort', 'start', 'limit', 'token', 'total_only']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -590,8 +588,6 @@ class FileSystemsApi(object):
             query_params.append(('limit', params['limit']))
         if 'token' in params:
             query_params.append(('token', params['token']))
-        if 'total' in params:
-            query_params.append(('total', params['total']))
         if 'total_only' in params:
             query_params.append(('total_only', params['total_only']))
 
