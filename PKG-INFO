@@ -1,5 +1,5 @@
-Metadata-Version: 1.12.1
+Metadata-Version: 1.12.2
 Name: purity_fb
-Version: 1.12.1
+Version: 1.12.2
 Summary: Pure Storage FlashBlade REST 1.12 Python SDK.
 License: Apache 2.0

@@ -38,23 +38,23 @@ class PerformanceReplication(object):
     swagger_types = {
         'id': 'str',
         'name': 'str',
-        'async': 'ReplicationPerformance',
+        'periodic': 'ReplicationPerformance',
         'time': 'int'
     }
 
     attribute_map = {
         'id': 'id',
         'name': 'name',
-        'async': 'async',
+        'periodic': 'async',
         'time': 'time'
     }
 
-    def __init__(self, id=None, name=None, async=None, time=None):  # noqa: E501
+    def __init__(self, id=None, name=None, periodic=None, time=None):  # noqa: E501
         """PerformanceReplication - a model defined in Swagger"""  # noqa: E501
 
         self._id = None
         self._name = None
-        self._async = None
+        self._periodic = None
         self._time = None
         self.discriminator = None
 
@@ -62,8 +62,8 @@ class PerformanceReplication(object):
             self.id = id
         if name is not None:
             self.name = name
-        if async is not None:
-            self.async = async
+        if periodic is not None:
+            self.periodic = periodic
         if time is not None:
             self.time = time
 
@@ -114,27 +114,27 @@ class PerformanceReplication(object):
         self._name = name
 
     @property
-    def async(self):
-        """Gets the async of this PerformanceReplication.  # noqa: E501
+    def periodic(self):
+        """Gets the periodic of this PerformanceReplication.  # noqa: E501
 
         Total bytes transmitted or received per second for asynchronous replication.  # noqa: E501
 
-        :return: The async of this PerformanceReplication.  # noqa: E501
+        :return: The periodic of this PerformanceReplication.  # noqa: E501
         :rtype: ReplicationPerformance
         """
-        return self._async
+        return self._periodic
 
-    @async.setter
-    def async(self, async):
-        """Sets the async of this PerformanceReplication.
+    @periodic.setter
+    def periodic(self, periodic):
+        """Sets the periodic of this PerformanceReplication.
 
         Total bytes transmitted or received per second for asynchronous replication.  # noqa: E501
 
-        :param async: The async of this PerformanceReplication.  # noqa: E501
+        :param periodic: The periodic of this PerformanceReplication.  # noqa: E501
         :type: ReplicationPerformance
         """
 
-        self._async = async
+        self._periodic = periodic
 
     @property
     def time(self):
