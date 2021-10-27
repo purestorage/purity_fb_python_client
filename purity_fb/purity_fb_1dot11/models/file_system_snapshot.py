@@ -37,6 +37,7 @@ class FileSystemSnapshot(object):
     """
     swagger_types = {
         'name': 'str',
+        'created': 'int',
         'id': 'str',
         'destroyed': 'bool',
         'owner': 'Reference',
@@ -54,6 +55,7 @@ class FileSystemSnapshot(object):
 
     attribute_map = {
         'name': 'name',
+        'created': 'created',
         'id': 'id',
         'destroyed': 'destroyed',
         'owner': 'owner',
@@ -69,10 +71,11 @@ class FileSystemSnapshot(object):
         'time_remaining': 'time_remaining'
     }
 
-    def __init__(self, name=None, id=None, destroyed=None, owner=None, owner_destroyed=None, policy=None, source=None, source_destroyed=None, source_id=None, source_is_local=None, source_location=None, source_display_name=None, suffix=None, time_remaining=None):  # noqa: E501
+    def __init__(self, name=None, created=None, id=None, destroyed=None, owner=None, owner_destroyed=None, policy=None, source=None, source_destroyed=None, source_id=None, source_is_local=None, source_location=None, source_display_name=None, suffix=None, time_remaining=None):  # noqa: E501
         """FileSystemSnapshot - a model defined in Swagger"""  # noqa: E501
 
         self._name = None
+        self._created = None
         self._id = None
         self._destroyed = None
         self._owner = None
@@ -90,6 +93,8 @@ class FileSystemSnapshot(object):
 
         if name is not None:
             self.name = name
+        if created is not None:
+            self.created = created
         if id is not None:
             self.id = id
         if destroyed is not None:
@@ -139,6 +144,29 @@ class FileSystemSnapshot(object):
         """
 
         self._name = name
+
+    @property
+    def created(self):
+        """Gets the created of this FileSystemSnapshot.  # noqa: E501
+
+        Creation timestamp of the object  # noqa: E501
+
+        :return: The created of this FileSystemSnapshot.  # noqa: E501
+        :rtype: int
+        """
+        return self._created
+
+    @created.setter
+    def created(self, created):
+        """Sets the created of this FileSystemSnapshot.
+
+        Creation timestamp of the object  # noqa: E501
+
+        :param created: The created of this FileSystemSnapshot.  # noqa: E501
+        :type: int
+        """
+
+        self._created = created
 
     @property
     def id(self):
