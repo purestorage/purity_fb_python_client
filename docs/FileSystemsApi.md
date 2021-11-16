@@ -363,7 +363,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **list_file_systems_performance**
-> FileSystemPerformanceResponse list_file_systems_performance(resolution=resolution, protocol=protocol, end_time=end_time, filter=filter, ids=ids, limit=limit, names=names, sort=sort, start_time=start_time, start=start, token=token, total_only=total_only)
+> FileSystemPerformanceResponse list_file_systems_performance(protocol, resolution=resolution, end_time=end_time, filter=filter, ids=ids, limit=limit, names=names, sort=sort, start_time=start_time, start=start, token=token, total_only=total_only)
 
 
 
@@ -425,8 +425,8 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **protocol** | **str**| to sample performance of a certain protocol | 
  **resolution** | **int**| sample frequency in milliseconds | [optional] [default to 30000]
- **protocol** | **str**| to sample performance of a certain protocol | [optional] 
  **end_time** | **int**| Time to end sample in milliseconds since epoch. | [optional] 
  **filter** | **str**| The filter to be used for query. | [optional] 
  **ids** | **list[str]**| A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters. | [optional] 

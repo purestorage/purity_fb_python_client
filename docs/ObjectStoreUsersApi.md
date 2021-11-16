@@ -64,7 +64,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](index.md#endpoint-properties) [[Back to Model list]](index.md#documentation-for-models) [[Back to Overview]](index.md)
 
 # **create_object_store_users**
-> ObjectStoreUserResponse create_object_store_users(names=names, full_access=full_access)
+> ObjectStoreUserResponse create_object_store_users(names, full_access=full_access)
 
 
 
@@ -94,7 +94,7 @@ if res:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **names** | **list[str]**| A comma-separated list of resource names. This cannot be provided together with the ids query parameters. | [optional] 
+ **names** | **list[str]**| A comma-separated list of resource names to import. To create a user, the user must be specified in the format &lt;account-name&gt;/&lt;user-name&gt;. | 
  **full_access** | **bool**| specifies whether object store user will be created with full permissions | [optional] 
 
 ### Return type
