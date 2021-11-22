@@ -17,7 +17,7 @@ For more information, please visit [http://www.purestorage.com](http://www.pures
 - Updated the required version for `urllib` to >= 1.26.5.
 - Added the property `created` back to the FileSystemSnapshot model for REST 1.9 - 1.12.
 - Updated the parameter `protocol` in `list_file_systems_performance` to be required in this function.
-- Updated the documentation for the parameter `names` in `create_object_store_users`. This parameter needs to be in the format <account-name>/<user-name>.
+- Updated the documentation for the parameter `names` in `create_object_store_users`. This parameter needs to be in the format `<account-name>/<user-name>`.
 
 
 ### Package version 1.12.2
