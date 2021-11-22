@@ -5,6 +5,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **name** | **str** | The name of the object | [optional] 
 **id** | **str** | A unique ID chosen by the system. Cannot change. | [optional] 
+**created** | **int** | Creation timestamp of the object | [optional] 
 **destroyed** | **bool** | Is the file system snapshot destroyed? False by default. | [optional] 
 **owner** | [**Reference**](Reference.md) | A reference to the file system that owns this snapshot. If the owner is destroyed, this will be destroyed. | [optional] 
 **owner_destroyed** | **bool** | Is the owning file system destroyed? | [optional] 

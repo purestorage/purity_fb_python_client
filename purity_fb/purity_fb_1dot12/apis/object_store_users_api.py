@@ -157,7 +157,7 @@ class ObjectStoreUsersApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def create_object_store_users(self, **kwargs):
+    def create_object_store_users(self, names, **kwargs):
         """
         Create a new object store user.
         This method makes a synchronous HTTP request by default. To make an
@@ -166,11 +166,11 @@ class ObjectStoreUsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_object_store_users(callback=callback_function)
+        >>> thread = api.create_object_store_users(names, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] names: A comma-separated list of resource names to import. To create a user, the user must be specified in the format <account-name>/<user-name>. (required)
         :param bool full_access: specifies whether object store user will be created with full permissions
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
@@ -178,12 +178,12 @@ class ObjectStoreUsersApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.create_object_store_users_with_http_info(**kwargs)
+            return self.create_object_store_users_with_http_info(names, **kwargs)
         else:
-            (data) = self.create_object_store_users_with_http_info(**kwargs)
+            (data) = self.create_object_store_users_with_http_info(names, **kwargs)
             return data
 
-    def create_object_store_users_with_http_info(self, **kwargs):
+    def create_object_store_users_with_http_info(self, names, **kwargs):
         """
         Create a new object store user.
         This method makes a synchronous HTTP request by default. To make an
@@ -192,11 +192,11 @@ class ObjectStoreUsersApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.create_object_store_users_with_http_info(callback=callback_function)
+        >>> thread = api.create_object_store_users_with_http_info(names, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
-        :param list[str] names: A comma-separated list of resource names. This cannot be provided together with the ids query parameters.
+        :param list[str] names: A comma-separated list of resource names to import. To create a user, the user must be specified in the format <account-name>/<user-name>. (required)
         :param bool full_access: specifies whether object store user will be created with full permissions
         :return: ObjectStoreUserResponse
                  If the method is called asynchronously,
@@ -218,6 +218,9 @@ class ObjectStoreUsersApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'names' is set
+        if ('names' not in params) or (params['names'] is None):
+            raise ValueError("Missing the required parameter `names` when calling `create_object_store_users`")
 
 
         collection_formats = {}

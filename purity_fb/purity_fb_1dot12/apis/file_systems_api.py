@@ -755,7 +755,7 @@ class FileSystemsApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def list_file_systems_performance(self, **kwargs):
+    def list_file_systems_performance(self, protocol, **kwargs):
         """
         List instant or historical file system performance.
         This method makes a synchronous HTTP request by default. To make an
@@ -764,12 +764,12 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_file_systems_performance(callback=callback_function)
+        >>> thread = api.list_file_systems_performance(protocol, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str protocol: to sample performance of a certain protocol (required)
         :param int resolution: sample frequency in milliseconds
-        :param str protocol: to sample performance of a certain protocol
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
@@ -786,12 +786,12 @@ class FileSystemsApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.list_file_systems_performance_with_http_info(**kwargs)
+            return self.list_file_systems_performance_with_http_info(protocol, **kwargs)
         else:
-            (data) = self.list_file_systems_performance_with_http_info(**kwargs)
+            (data) = self.list_file_systems_performance_with_http_info(protocol, **kwargs)
             return data
 
-    def list_file_systems_performance_with_http_info(self, **kwargs):
+    def list_file_systems_performance_with_http_info(self, protocol, **kwargs):
         """
         List instant or historical file system performance.
         This method makes a synchronous HTTP request by default. To make an
@@ -800,12 +800,12 @@ class FileSystemsApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.list_file_systems_performance_with_http_info(callback=callback_function)
+        >>> thread = api.list_file_systems_performance_with_http_info(protocol, callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
+        :param str protocol: to sample performance of a certain protocol (required)
         :param int resolution: sample frequency in milliseconds
-        :param str protocol: to sample performance of a certain protocol
         :param int end_time: Time to end sample in milliseconds since epoch.
         :param str filter: The filter to be used for query.
         :param list[str] ids: A comma-separated list of resource IDs. This cannot be provided together with the name or names query parameters.
@@ -821,7 +821,7 @@ class FileSystemsApi(object):
                  returns the request thread.
         """
 
-        all_params = ['resolution', 'protocol', 'end_time', 'filter', 'ids', 'limit', 'names', 'sort', 'start_time', 'start', 'token', 'total_only']
+        all_params = ['protocol', 'resolution', 'end_time', 'filter', 'ids', 'limit', 'names', 'sort', 'start_time', 'start', 'token', 'total_only']
         all_params.append('callback')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -836,6 +836,9 @@ class FileSystemsApi(object):
                 )
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'protocol' is set
+        if ('protocol' not in params) or (params['protocol'] is None):
+            raise ValueError("Missing the required parameter `protocol` when calling `list_file_systems_performance`")
 
 
         collection_formats = {}
